@@ -25,7 +25,7 @@
                   Создание компонентов
                 </span> 
               </p>
-              <a href="#" class="btn btn-primary">Перейти</a>
+              <button @click.prevent="toCreateComponentPage" href="#" class="btn btn-primary">Перейти</button>
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@
                   Создание оборудования
                 </span> 
               </p>
-              <a href="#" class="btn btn-primary">Перейти</a>
+              <button @click.prevent="toCreateHardwarePage" class="btn btn-primary">Перейти</button>
             </div>
           </div>
         </div>
@@ -99,5 +99,13 @@
 <script>
 export default {
   name: 'Home',
+  methods: {
+    toCreateComponentPage() {
+      this.$router.push('/create-component').catch(() => {});
+    },
+    toCreateHardwarePage() {
+      this.$router.push('/create-hardware').catch(() => {});
+    }
+  }
 }
 </script>
