@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-6">
-          <form class="border rounded p-2">
+          <form @submit.prevent="createComponent" class="border rounded p-2">
             <div class="input-group mb-3">
               <input 
                 v-model="name" 
@@ -42,7 +42,7 @@
               </label>
             </div>
             <div class="input-group mb-3">
-              <button @click.prevent="createComponent" class="btn btn-primary">Создать</button>
+              <button type="submit" class="btn btn-primary">Создать</button>
             </div>
           </form>          
         </div>

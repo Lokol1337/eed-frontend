@@ -1,6 +1,8 @@
+import components from '@/mocks/components.json'
+
 const hardwareComponent = {
   state: {
-    components: []
+    components: components
   },
 
   getters: {
@@ -9,7 +11,6 @@ const hardwareComponent = {
 
   mutations: {
     SET_COMPONENTS: (state, payload) => {
-      // state.components.push({payload});
       console.log(payload);
       state.components.push(payload);
     }
