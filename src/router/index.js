@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import CreateComponent from '../views/CreateComponent.vue'
 import CreateHardware from '../views/CreateHardware.vue'
+import HardwaresView from '../views/HardwaresView.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/create-hardware',
     name: CreateHardware,
     component: CreateHardware,
+  },
+  {
+    path: '/hardwares-view',
+    name: HardwaresView,
+    component: HardwaresView,
   }
 ]
 

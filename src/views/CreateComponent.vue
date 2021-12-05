@@ -100,8 +100,6 @@ export default {
           console.log(error);
         })
       }
-
-      // this.photos = files;
     },
     componentReset() {
       this.name = '';
@@ -119,15 +117,9 @@ export default {
         values: this.values,
         actualValue: this.actualValue,
       };
-      // this.getBase64(this.values[0]);
       this.$store.dispatch('SAVE_COMPONENTS', componentForSave);
       this.componentReset();
     }
   },
-  // computed: {
-  //   components() {
-  //     return this.$store.getters.COMPONENTS;
-  //   }
-  // }
 }
 </script>

@@ -4,23 +4,114 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-2">
-          config
+          <form @submit.prevent="createHardware" class="border rounded p-2"> 
+            <div class="input-group mb-3">
+              <input 
+                v-model="name" 
+                type="text" 
+                class="form-control" 
+                placeholder="Имя оборудования" 
+                maxlength="255"
+                required  
+              >
+            </div>
+            <div class="input-group mb-3">
+              <input
+                :key="fileInputKey"
+                @change="onFileChange" 
+                class="form-control"
+                type="file" 
+                id="formFileMultiple" 
+                required
+              > 
+            </div>
+            <div class="input-group mb-3">
+              <button type="submit" class="btn btn-primary">Сохранить</button>
+            </div>
+          </form>
         </div>
         <div class="col-12 col-sm-8">
-          <div>
-            <canvas ref="canvas">
-            </canvas>
+          <div class="create-hardware-page__canvas-wrp">
+            <div class="create-hardware-page__canvas" :style="{ 'background-image': 'url(' + backgroundImg + ')' }">
+              <img v-for="(hardwareComponent, i) in hardwareComponents" :key="i" 
+                :src="hardwareComponent.photo"
+                :style="{
+                  top: hardwareComponent.top + 'px', 
+                  left: hardwareComponent.left + 'px', 
+                  width: hardwareComponent.width + 'px', 
+                  height: hardwareComponent.height + 'px'
+                }"
+                style="position: absolute"
+                @click.prevent="selectComponent(hardwareComponent)"
+              >
+            </div>
           </div>
         </div>
-        <div class="col-12 col-sm-2">
+        <div v-if="!isHardwareComponentSelect" class="col-12 col-sm-2">
           <div v-for="(component, i) in components" :key="i" style="border: 1px solid">
             <span>
               {{ component.name }}
             </span>
             <div v-for="(photo, j) in component.photos" :key="j">
-              <img :src="photo" style="max-width: 190px; height: auto;">
+              <img 
+                :src="photo" 
+                style="max-width: 190px; height: auto; cursor: pointer;"
+                @click.prevent="addComponentToCanvas(component)"
+              >
             </div>
           </div>
+        </div>
+        <div v-else class="col-12 col-sm-2">
+          <span>Компонент {{ selectedHardwareComponent.name }}</span>
+          <form class="border rounded p-2"> 
+            <div class="input-group mb-3">
+              <label>Ширина</label>
+              <input
+                v-model="selectedHardwareComponent.width"
+                type="number" 
+                class="form-control" 
+                placeholder="Ширина" 
+                maxlength="255"
+                required  
+              >
+            </div>
+            <div class="input-group mb-3">
+              <label>Высота</label>
+              <input
+                v-model="selectedHardwareComponent.height" 
+                type="number" 
+                class="form-control" 
+                placeholder="Высота" 
+                maxlength="255"
+                required  
+              >
+            </div>
+            <div class="input-group mb-3">
+              <label>Top</label>
+              <input
+                v-model="selectedHardwareComponent.top" 
+                type="number" 
+                class="form-control" 
+                placeholder="top" 
+                maxlength="255"
+                required  
+              >
+            </div>
+            <div class="input-group mb-3">
+              <label>Left</label>
+              <input
+                v-model="selectedHardwareComponent.left" 
+                type="number" 
+                class="form-control" 
+                placeholder="left" 
+                maxlength="255"
+                required  
+              >
+            </div>
+            <div class="input-group mb-3">
+              <button class="btn btn-primary" @click="closeHardwareComponent">Закрыть</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -29,24 +120,128 @@
 
 <script>
 export default {
+  data() {
+    return {
+      fileInputKey: 0,
+      name: '',
+      background: [],
+      // TODO: проверять на уникальность перед пушем
+      hardwareComponents: [],
+      isHardwareComponentSelect: false,
+      selectedHardwareComponent: null,
+    }
+  },
   methods: {
-    setBackground(imgSrc){
-      let cvn = this.$refs.canvas;
-      let ctx = cvn.getContext("2d");  
-      let bg = new Image();
-      bg.src = imgSrc;
-      bg.onload = function() {
-        ctx.drawImage(bg, 0 ,0);
+    getBase64(inputFile) {
+      const temporaryFileReader = new FileReader();
+      temporaryFileReader.readAsDataURL(inputFile);
+
+      return new Promise((resolve, reject) => {
+        temporaryFileReader.onerror = () => {
+          temporaryFileReader.abort();
+          reject(new DOMException("Problem parsing input file."));
+        };
+
+        temporaryFileReader.onload = () => {
+          resolve(temporaryFileReader.result);
+        };
+      });
+    },
+    onFileChange(e) {
+      const files = e.target.files || e.dataTransfer.files;
+      if (!files.length) return;
+
+      for (var i = 0; i < files.length; i++) {
+        this.getBase64(files[i]).then((res) => {
+          this.background.push(res);
+        }).catch((error) => {
+          console.log(error);
+        })
+      }
+    },
+    addComponentToCanvas(componentFromLib) {
+      let img = new Image();
+      img.src = componentFromLib.photos[0];
+
+      const imgWidth = img.width;
+      const imgHeight = img.height;
+
+      const hardwareComponent = {
+        name: componentFromLib.name,
+        photo: componentFromLib.photos[0],
+        top: 0,
+        left: 0,
+        width: imgWidth,
+        height: imgHeight,
+        // TODO: add ability to set something value
+        // values: []
+      } 
+      this.hardwareComponents.push(hardwareComponent);
+    },
+    selectComponent(hardwareComponent) {
+      this.selectedHardwareComponent = hardwareComponent; 
+      this.isHardwareComponentSelect = true;
+    },
+    closeHardwareComponent() {
+      this.selectedHardwareComponent = null;
+      this.isHardwareComponentSelect = false;
+    },
+    createHardware() {
+      const hardwareForSave = {
+        name: this.name,
+        background: this.background,
+        hardwareComponents: this.hardwareComponents,
       };
-    },    
+      this.$store.dispatch('SAVE_HARDWARES', hardwareForSave);
+      // this.hardwareReset();
+    }
   },
   computed: {
     components() {
       return this.$store.getters.COMPONENTS;
+    },
+    backgroundImg() {
+      if (this.background[0]) {
+        return this.background[0];
+      } else {
+        return 'Error'
+      }
     }
   },
-  mounted() {
-    this.func();
+  watch: {
+    selectedHardwareComponent: {
+      handler(val) {
+        if (val) {
+          for (let i = 0; i < this.hardwareComponents.length; i++) {
+            if (this.hardwareComponents[i].name === this.selectedHardwareComponent.name) {
+              // TODO: Из-за проверки на имя нельзя добавить два одинвковых
+              // фото одного компонента
+              // ---
+              // затирает компоненты с одинаковым именем
+              this.hardwareComponents[i] = val;
+            }
+          }
+        }
+      },
+      deep: true
+    }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .create-hardware-page {
+    &__canvas {
+      &-wrp {
+        display: flex;
+        justify-content: center;
+      }
+
+      position: relative;
+      width: 760px;
+      height: 270px;
+
+      background-size: 760px 270px;
+    }
+  }
+</style>

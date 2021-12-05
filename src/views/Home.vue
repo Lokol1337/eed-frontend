@@ -72,6 +72,26 @@
             </div>
           </div>
         </div>
+        <div class="col-12 col-sm-4 d-flex justify-content-center mt-3">
+          <div class="card" style="width: 18rem;">
+            <div class="d-flex justify-content-center">
+              <img 
+                src="@/assets/icons/hardware.svg" 
+                class="card-img-top"
+                style="color: red; width: 75px; height 75px" 
+              >
+            </div>            
+            <div class="card-body">
+              <h5 class="card-title">Просмотр оборудованиея</h5>
+              <p class="card-text">
+                <span>
+                  Не интерактивный шаблон
+                </span> 
+              </p>
+              <button @click.prevent="toHardwaresViewPage" class="btn btn-primary">Перейти</button>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="row mt-3">
         <div class="col-12">
@@ -105,6 +125,9 @@ export default {
     },
     toCreateHardwarePage() {
       this.$router.push('/create-hardware').catch(() => {});
+    },
+    toHardwaresViewPage() {
+      this.$router.push('/hardwares-view').catch(() => {});
     }
   }
 }
