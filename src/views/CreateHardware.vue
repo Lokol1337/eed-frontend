@@ -33,17 +33,22 @@
         <div class="col-12 col-sm-8">
           <div class="create-hardware-page__canvas-wrp">
             <div class="create-hardware-page__canvas" :style="{ 'background-image': 'url(' + backgroundImg + ')' }">
-              <img v-for="(hardwareComponent, i) in hardwareComponents" :key="i" 
-                :src="hardwareComponent.photo"
-                :style="{
-                  top: hardwareComponent.top + 'px', 
-                  left: hardwareComponent.left + 'px', 
-                  width: hardwareComponent.width + 'px', 
-                  height: hardwareComponent.height + 'px'
-                }"
-                style="position: absolute"
-                @click.prevent="selectComponent(hardwareComponent)"
+              <vue-draggable-resizable v-for="(hardwareComponent, i) in hardwareComponents" :key="i"  
+                @dragging="onDrag" 
+                @resizing="onResize"
+                :w="hardwareComponent.width"
+                :h="hardwareComponent.height" 
+                :parent="true"
               >
+                <img 
+                  :src="hardwareComponent.photo"
+                  :style="{ 
+                    width: hardwareComponent.width + 'px', 
+                    height: hardwareComponent.height + 'px'
+                  }"
+                  @click.prevent="selectComponent(hardwareComponent)"
+                >
+              </vue-draggable-resizable>
             </div>
           </div>
         </div>
@@ -109,7 +114,7 @@
               >
             </div>
             <div class="input-group mb-3">
-              <button class="btn btn-primary" @click="closeHardwareComponent">Закрыть</button>
+              <button class="btn btn-primary" @click.prevent="closeHardwareComponent">Закрыть</button>
             </div>
           </form>
         </div>
@@ -119,6 +124,10 @@
 </template>
 
 <script>
+import VueDraggableResizable from 'vue-draggable-resizable';
+// optionally import default styles
+import 'vue-draggable-resizable/dist/VueDraggableResizable.css';
+
 export default {
   data() {
     return {
@@ -131,17 +140,18 @@ export default {
       selectedHardwareComponent: null,
     }
   },
+  components: {
+    VueDraggableResizable,
+  },
   methods: {
     getBase64(inputFile) {
       const temporaryFileReader = new FileReader();
       temporaryFileReader.readAsDataURL(inputFile);
-
       return new Promise((resolve, reject) => {
         temporaryFileReader.onerror = () => {
           temporaryFileReader.abort();
           reject(new DOMException("Problem parsing input file."));
         };
-
         temporaryFileReader.onload = () => {
           resolve(temporaryFileReader.result);
         };
@@ -150,7 +160,6 @@ export default {
     onFileChange(e) {
       const files = e.target.files || e.dataTransfer.files;
       if (!files.length) return;
-
       for (var i = 0; i < files.length; i++) {
         this.getBase64(files[i]).then((res) => {
           this.background.push(res);
@@ -162,10 +171,8 @@ export default {
     addComponentToCanvas(componentFromLib) {
       let img = new Image();
       img.src = componentFromLib.photos[0];
-
       const imgWidth = img.width;
       const imgHeight = img.height;
-
       const hardwareComponent = {
         name: componentFromLib.name,
         photo: componentFromLib.photos[0],
@@ -194,7 +201,19 @@ export default {
       };
       this.$store.dispatch('SAVE_HARDWARES', hardwareForSave);
       // this.hardwareReset();
-    }
+    },
+    onDrag(x,y) {
+      console.log(x,y);
+    },
+    // TODO: если вызывать onResize без клика по картинке, selectedHardware 
+    // остается null и все ломается
+    onResize(x, y, width, height) {
+      // console.log(x, y, width, height);
+      // this.x = x
+      // this.y = y
+      this.selectedHardwareComponent.width = width;
+      this.selectedHardwareComponent.height = height;
+    },
   },
   computed: {
     components() {
@@ -236,11 +255,9 @@ export default {
         display: flex;
         justify-content: center;
       }
-
       position: relative;
       width: 760px;
       height: 270px;
-
       background-size: 760px 270px;
     }
   }
