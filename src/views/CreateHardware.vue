@@ -38,16 +38,23 @@
                 @resizing="onResize"
                 :w="hardwareComponent.width"
                 :h="hardwareComponent.height" 
+                :x="hardwareComponent.left"
+                :y="hardwareComponent.top"
                 :parent="true"
               >
-                <img 
-                  :src="hardwareComponent.photo"
-                  :style="{ 
-                    width: hardwareComponent.width + 'px', 
-                    height: hardwareComponent.height + 'px'
-                  }"
-                  @click.prevent="selectComponent(hardwareComponent)"
+                <button
+                  @keyup='moveByKeys'
+                  class="create-hardware-page__canvas-item-button"
                 >
+                  <img 
+                    :src="hardwareComponent.photo"
+                    :style="{ 
+                      width: hardwareComponent.width + 'px', 
+                      height: hardwareComponent.height + 'px'
+                    }"
+                    @click.prevent="selectComponent(hardwareComponent)" 
+                  >
+                </button>
               </vue-draggable-resizable>
             </div>
           </div>
@@ -72,45 +79,41 @@
             <div class="input-group mb-3">
               <label>Ширина</label>
               <input
-                v-model="selectedHardwareComponent.width"
+                v-model.number="selectedHardwareComponent.width"
                 type="number" 
                 class="form-control" 
                 placeholder="Ширина" 
                 maxlength="255"
-                required  
               >
             </div>
             <div class="input-group mb-3">
               <label>Высота</label>
               <input
-                v-model="selectedHardwareComponent.height" 
+                v-model.number="selectedHardwareComponent.height" 
                 type="number" 
                 class="form-control" 
                 placeholder="Высота" 
                 maxlength="255"
-                required  
               >
             </div>
             <div class="input-group mb-3">
               <label>Top</label>
               <input
-                v-model="selectedHardwareComponent.top" 
+                v-model.number="selectedHardwareComponent.top" 
                 type="number" 
                 class="form-control" 
                 placeholder="top" 
                 maxlength="255"
-                required  
               >
             </div>
             <div class="input-group mb-3">
               <label>Left</label>
               <input
-                v-model="selectedHardwareComponent.left" 
+                v-model.number="selectedHardwareComponent.left" 
                 type="number" 
                 class="form-control" 
                 placeholder="left" 
                 maxlength="255"
-                required  
               >
             </div>
             <div class="input-group mb-3">
@@ -171,8 +174,8 @@ export default {
     addComponentToCanvas(componentFromLib) {
       let img = new Image();
       img.src = componentFromLib.photos[0];
-      const imgWidth = img.width;
-      const imgHeight = img.height;
+      const imgWidth = Number(img.width);
+      const imgHeight = Number(img.height);
       const hardwareComponent = {
         name: componentFromLib.name,
         photo: componentFromLib.photos[0],
@@ -203,17 +206,37 @@ export default {
       // this.hardwareReset();
     },
     onDrag(x,y) {
-      console.log(x,y);
+      // console.log(x,y);
+
+      if (this.selectedHardwareComponent) {
+        this.selectedHardwareComponent.left = x;
+        this.selectedHardwareComponent.top = y;
+      }
     },
     // TODO: если вызывать onResize без клика по картинке, selectedHardware 
     // остается null и все ломается
     onResize(x, y, width, height) {
       // console.log(x, y, width, height);
-      // this.x = x
-      // this.y = y
-      this.selectedHardwareComponent.width = width;
-      this.selectedHardwareComponent.height = height;
+      
+      if (this.selectedHardwareComponent) {
+        this.selectedHardwareComponent.left = x;
+        this.selectedHardwareComponent.top = y;
+
+        this.selectedHardwareComponent.width = width;
+        this.selectedHardwareComponent.height = height;
+      }
     },
+    moveByKeys(event) {
+      if (event.keyCode == 38) {
+        this.selectedHardwareComponent.top--;
+      } else if (event.keyCode == 40) {
+        this.selectedHardwareComponent.top++;
+      } else if (event.keyCode == 37) {
+        this.selectedHardwareComponent.left--
+      } else if (event.keyCode == 39) {
+        this.selectedHardwareComponent.left++;
+      } 
+    }
   },
   computed: {
     components() {
@@ -255,10 +278,24 @@ export default {
         display: flex;
         justify-content: center;
       }
+
+      border: 1px solid;
       position: relative;
       width: 760px;
       height: 270px;
       background-size: 760px 270px;
+
+      &-item {
+        &-button {
+          border: none;
+          margin: 0;
+          padding: 0;
+          // width: auto;
+          // overflow: visible;
+
+          background: transparent;
+        }
+      }
     }
   }
 </style>
