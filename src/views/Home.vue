@@ -103,10 +103,10 @@
       <div class="row">
         <div class="col-12">                
           <div style="display: flex; justify-content: space-around;">
-            <a href="#">
+            <a href="https://www.mirea.ru/" target="_blank">
               <img src="@/assets/logo-mirea.png"  style="width: 100px; height: 100px">
             </a>
-            <a href="#">
+            <a href="https://vuc.mirea.ru/" target="_blank">
               <img src="@/assets/logo-vuc.png"  style="width: 100px; height: 100px">
             </a>
           </div>

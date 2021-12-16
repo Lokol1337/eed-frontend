@@ -32,7 +32,11 @@
         </div>
         <div class="col-12 col-sm-8">
           <div class="create-hardware-page__canvas-wrp">
-            <div class="create-hardware-page__canvas" :style="{ 'background-image': 'url(' + backgroundImg + ')' }">
+            <div 
+              class="create-hardware-page__canvas" 
+              style="background-color: #ffffff"
+              :style="{ 'background-image': 'url(' + backgroundImg + ')' }"
+            >
               <vue-draggable-resizable v-for="(hardwareComponent, i) in hardwareComponents" :key="i"  
                 @dragging="onDrag" 
                 @resizing="onResize"
@@ -246,7 +250,7 @@ export default {
       if (this.background[0]) {
         return this.background[0];
       } else {
-        return 'Error'
+        return '';
       }
     }
   },
