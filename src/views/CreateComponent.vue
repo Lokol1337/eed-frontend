@@ -38,7 +38,7 @@
                 for="flexCheckDefault" 
                 style="margin-left: 5px;"
               >
-                Может принмать значения
+                Может принмать значения?
               </label>
             </div>
             <div class="input-group mb-3">
@@ -52,7 +52,11 @@
               Изображения компонента {{ name }}
             </span>
             <div v-for="(photo, j) in photos" :key="j">
-              <img :src="photo">
+              <img
+                style="border-color: #86b7fe; box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);"
+                class="img-fluid"
+                :src="photo"
+              >
             </div>            
           </div>
         </div>
