@@ -26,10 +26,11 @@
                 required
               > 
             </div>
-            <div class="input-group mb-3">
+            <div class="input-group mb-3 form-check">
               <input 
                 v-model="isCanTakeValues"
-                class="form-check-input" 
+                class="form-check-input"
+                style="border-radius: 0.25em;" 
                 type="checkbox"
                 id="flexCheckDefault"
               >
@@ -66,6 +67,8 @@
 </template>
 
 <script>
+import { getBase64 } from '@/utils/base64.js';
+
 export default {
   data() {
     return {
@@ -78,27 +81,12 @@ export default {
     }
   },
   methods: {
-    getBase64(inputFile) {
-      const temporaryFileReader = new FileReader();
-      temporaryFileReader.readAsDataURL(inputFile);
-
-      return new Promise((resolve, reject) => {
-        temporaryFileReader.onerror = () => {
-          temporaryFileReader.abort();
-          reject(new DOMException("Problem parsing input file."));
-        };
-
-        temporaryFileReader.onload = () => {
-          resolve(temporaryFileReader.result);
-        };
-      });
-    },
     onFileChange(e) {
       const files = e.target.files || e.dataTransfer.files;
       if (!files.length) return;
 
       for (var i = 0; i < files.length; i++) {
-        this.getBase64(files[i]).then((res) => {
+        getBase64(files[i]).then((res) => {
           this.photos.push(res);
         }).catch((error) => {
           console.log(error);

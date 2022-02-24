@@ -135,6 +135,16 @@ import VueDraggableResizable from 'vue-draggable-resizable';
 // optionally import default styles
 import 'vue-draggable-resizable/dist/VueDraggableResizable.css';
 
+import { getBase64 } from '@/utils/base64.js';
+
+// TODO: подробить все на компоненты поменшьше
+// TODO: добавить возможность удаления оборудования с холста
+// TODO: добавить возможность экспортировать конфиг оборудования в JSON
+// TODO: добавить доки https://vue-styleguidist.github.io/docs/Documenting.html
+// TODO: напсиать кучу тестов
+// TODO: добавить добавление компонетнов с несколькими фото и возможность их переключения в зависмсости от состояния
+// TODO: добавить возможность настройки размера холста и соответсвенно бэкграунд изображения
+// TODO: добавить возможность добавления сцен для оборудавния с большим кол-вом холсстов
 export default {
   data() {
     return {
@@ -151,24 +161,11 @@ export default {
     VueDraggableResizable,
   },
   methods: {
-    getBase64(inputFile) {
-      const temporaryFileReader = new FileReader();
-      temporaryFileReader.readAsDataURL(inputFile);
-      return new Promise((resolve, reject) => {
-        temporaryFileReader.onerror = () => {
-          temporaryFileReader.abort();
-          reject(new DOMException("Problem parsing input file."));
-        };
-        temporaryFileReader.onload = () => {
-          resolve(temporaryFileReader.result);
-        };
-      });
-    },
     onFileChange(e) {
       const files = e.target.files || e.dataTransfer.files;
       if (!files.length) return;
       for (var i = 0; i < files.length; i++) {
-        this.getBase64(files[i]).then((res) => {
+        getBase64(files[i]).then((res) => {
           this.background.push(res);
         }).catch((error) => {
           console.log(error);
@@ -187,8 +184,6 @@ export default {
         left: 0,
         width: imgWidth,
         height: imgHeight,
-        // TODO: add ability to set something value
-        // values: []
       } 
       this.hardwareComponents.push(hardwareComponent);
     },
@@ -210,8 +205,6 @@ export default {
       // this.hardwareReset();
     },
     onDrag(x,y) {
-      // console.log(x,y);
-
       if (this.selectedHardwareComponent) {
         this.selectedHardwareComponent.left = x;
         this.selectedHardwareComponent.top = y;
@@ -219,9 +212,7 @@ export default {
     },
     // TODO: если вызывать onResize без клика по картинке, selectedHardware 
     // остается null и все ломается
-    onResize(x, y, width, height) {
-      // console.log(x, y, width, height);
-      
+    onResize(x, y, width, height) {      
       if (this.selectedHardwareComponent) {
         this.selectedHardwareComponent.left = x;
         this.selectedHardwareComponent.top = y;
@@ -261,7 +252,7 @@ export default {
           for (let i = 0; i < this.hardwareComponents.length; i++) {
             if (this.hardwareComponents[i].name === this.selectedHardwareComponent.name) {
               // TODO: Из-за проверки на имя нельзя добавить два одинвковых
-              // фото одного компонента
+              // фото(а тут, скорее всего, это и не надо) одного компонента
               // ---
               // затирает компоненты с одинаковым именем
               this.hardwareComponents[i] = val;
@@ -294,8 +285,6 @@ export default {
           border: none;
           margin: 0;
           padding: 0;
-          // width: auto;
-          // overflow: visible;
 
           background: transparent;
         }
