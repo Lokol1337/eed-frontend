@@ -11,7 +11,6 @@ const hardwareComponent = {
 
   mutations: {
     SET_COMPONENTS: (state, payload) => {
-      console.log(payload);
       state.components.push(payload);
     }
   },
