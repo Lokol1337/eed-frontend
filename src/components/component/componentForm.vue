@@ -43,6 +43,7 @@
 </template>
 
 <script>
+// TODO: добавить пропсы, чтобы можно было спускать данные, например из старницы редактирования
 import { convertFileToBase64OnChange } from "@/utils/file.js";
 
 export default {

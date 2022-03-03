@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import componentForm from '@/components/componentForm.vue';
-import componentPhotosView from '@/components/componentPhotosView.vue';
+import componentForm from '@/components/component/componentForm.vue';
+import componentPhotosView from '@/components/component/componentPhotosView.vue';
 
 import { convertFileToBase64OnChange } from '@/utils/file.js';
 

@@ -4,31 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-2">
-          <form @submit.prevent="createHardware" class="border rounded p-2"> 
-            <div class="input-group mb-3">
-              <input 
-                v-model="name" 
-                type="text" 
-                class="form-control" 
-                placeholder="Имя оборудования" 
-                maxlength="255"
-                required  
-              >
-            </div>
-            <div class="input-group mb-3">
-              <input
-                :key="fileInputKey"
-                @change="onFileChange" 
-                class="form-control"
-                type="file" 
-                id="formFileMultiple" 
-                required
-              > 
-            </div>
-            <div class="input-group mb-3">
-              <button type="submit" class="btn btn-primary">Сохранить</button>
-            </div>
-          </form>
+          <hardwareForm />
         </div>
         <div class="col-12 col-sm-8">
           <div class="create-hardware-page__canvas-wrp">
@@ -135,7 +111,7 @@ import VueDraggableResizable from 'vue-draggable-resizable';
 // optionally import default styles
 import 'vue-draggable-resizable/dist/VueDraggableResizable.css';
 
-import { getBase64 } from '@/utils/base64.js';
+import hardwareForm from '@/components/hardware/hardwareForm.vue';
 
 // TODO: подробить все на компоненты поменшьше
 // TODO: добавить возможность удаления оборудования с холста
@@ -161,19 +137,9 @@ export default {
   },
   components: {
     VueDraggableResizable,
+    hardwareForm,
   },
   methods: {
-    onFileChange(e) {
-      const files = e.target.files || e.dataTransfer.files;
-      if (!files.length) return;
-      for (var i = 0; i < files.length; i++) {
-        getBase64(files[i]).then((res) => {
-          this.background.push(res);
-        }).catch((error) => {
-          console.log(error);
-        })
-      }
-    },
     addComponentToCanvas(componentFromLib) {
       let img = new Image();
       img.src = componentFromLib.photos[0];
