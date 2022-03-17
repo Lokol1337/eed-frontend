@@ -2,7 +2,7 @@
   <form @submit.prevent="emitCreateHardware" class="border rounded p-2">
     <div class="input-group mb-3">
       <input
-        v-model="name"
+        v-model="hardware.name"
         type="text"
         class="form-control"
         placeholder="Имя оборудования"
@@ -12,7 +12,7 @@
     </div>
     <div class="input-group mb-3">
       <input
-        @change="onFileChange"
+        @change="onFileChangeHandler"
         class="form-control"
         type="file"
         id="formFileMultiple"
@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     async onFileChangeHandler(e) {
-      this.backgrounds.photos = await convertFileToBase64OnChange(e);
+      this.hardware.backgrounds = await convertFileToBase64OnChange(e);
       this.$emit('changeHardwareBackgrounds', this.hardware.backgrounds);
     },
     emitCreateHardware() {

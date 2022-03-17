@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-2">
-          <hardwareForm />
+          <hardwareForm @createHardware="createHardwareHandler" @changeHardwareBackgrounds="changeHardwareBackgroundsHandler"/>
         </div>
         <div class="col-12 col-sm-8">
           <div class="create-hardware-page__canvas-wrp">
@@ -113,6 +113,8 @@ import 'vue-draggable-resizable/dist/VueDraggableResizable.css';
 
 import hardwareForm from '@/components/hardware/hardwareForm.vue';
 
+// TODO: отрицательные значения координат не должны вводиться при ручном вводе
+// TODO: навесить валидацию на все формы
 // TODO: подробить все на компоненты поменшьше
 // TODO: добавить возможность удаления оборудования с холста
 // TODO: добавить возможность экспортировать конфиг оборудования в JSON
@@ -126,9 +128,8 @@ import hardwareForm from '@/components/hardware/hardwareForm.vue';
 export default {
   data() {
     return {
-      fileInputKey: 0,
       name: '',
-      background: [],
+      backgrounds: [],
       // TODO: проверять на уникальность перед пушем
       hardwareComponents: [],
       isHardwareComponentSelect: false,
@@ -163,14 +164,12 @@ export default {
       this.selectedHardwareComponent = null;
       this.isHardwareComponentSelect = false;
     },
-    createHardware() {
-      const hardwareForSave = {
-        name: this.name,
-        background: this.background,
-        hardwareComponents: this.hardwareComponents,
-      };
-      this.$store.dispatch('SAVE_HARDWARES', hardwareForSave);
-      // this.hardwareReset();
+    createHardwareHandler(hardware) {
+      hardware.hardwareComponents = this.hardwareComponents;
+      this.$store.dispatch('SAVE_HARDWARES', hardware);
+    },
+    changeHardwareBackgroundsHandler(backgrounds) {
+      this.backgrounds = backgrounds;
     },
     onDrag(x,y) {
       if (this.selectedHardwareComponent) {
@@ -178,8 +177,6 @@ export default {
         this.selectedHardwareComponent.top = y;
       }
     },
-    // TODO: если вызывать onResize без клика по картинке, selectedHardware 
-    // остается null и все ломается
     onResize(x, y, width, height) {      
       if (this.selectedHardwareComponent) {
         this.selectedHardwareComponent.left = x;
@@ -190,6 +187,8 @@ export default {
       }
     },
     moveByKeys(event) {
+      // TODO: валидировать. Не должно быть больше/меньше размеров холста
+      // TODO: переписать на свитч кейс
       if (event.keyCode == 38) {
         this.selectedHardwareComponent.top--;
       } else if (event.keyCode == 40) {
@@ -206,8 +205,8 @@ export default {
       return this.$store.getters.COMPONENTS;
     },
     backgroundImg() {
-      if (this.background[0]) {
-        return this.background[0];
+      if (this.backgrounds[0]) {
+        return this.backgrounds[0];
       } else {
         return '';
       }
