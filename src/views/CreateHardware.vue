@@ -4,40 +4,15 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-2">
-          <hardwareForm @createHardware="createHardwareHandler" @changeHardwareBackgrounds="changeHardwareBackgroundsHandler"/>
+          <hardwareForm 
+            @createHardware="createHardwareHandler" 
+          />
         </div>
         <div class="col-12 col-sm-8">
-          <div class="create-hardware-page__canvas-wrp">
-            <div 
-              class="create-hardware-page__canvas" 
-              style="background-color: #ffffff"
-              :style="{ 'background-image': 'url(' + backgroundImg + ')' }"
-            >
-              <vue-draggable-resizable v-for="(hardwareComponent, i) in hardwareComponents" :key="i"  
-                @dragging="onDrag" 
-                @resizing="onResize"
-                :w="hardwareComponent.width"
-                :h="hardwareComponent.height" 
-                :x="hardwareComponent.left"
-                :y="hardwareComponent.top"
-                :parent="true"
-              >
-                <button
-                  @keyup='moveByKeys'
-                  class="create-hardware-page__canvas-item-button"
-                >
-                  <img 
-                    :src="hardwareComponent.photo"
-                    :style="{ 
-                      width: hardwareComponent.width + 'px', 
-                      height: hardwareComponent.height + 'px'
-                    }"
-                    @click.prevent="selectComponent(hardwareComponent)" 
-                  >
-                </button>
-              </vue-draggable-resizable>
-            </div>
-          </div>
+          <hardwareCanvas
+            :hardwareComponents="hardwareComponents"
+            @selectComponent="selectComponentHandler"
+          />
         </div>
         <div v-if="!isHardwareComponentSelect" class="col-12 col-sm-2">
           <div v-for="(component, i) in components" :key="i" style="border: 1px solid">
@@ -107,12 +82,9 @@
 </template>
 
 <script>
-import VueDraggableResizable from 'vue-draggable-resizable';
-// optionally import default styles
-import 'vue-draggable-resizable/dist/VueDraggableResizable.css';
-
 import hardwareForm from '@/components/hardware/hardwareForm.vue';
-
+import hardwareCanvas from '@/components/hardware/hardwareCanvas.vue'
+// TODO: ВСЕ положить в стор, осбенно при создания обородувания (чтобы проще обмениваться состоянмия)
 // TODO: отрицательные значения координат не должны вводиться при ручном вводе
 // TODO: навесить валидацию на все формы
 // TODO: подробить все на компоненты поменшьше
@@ -122,27 +94,21 @@ import hardwareForm from '@/components/hardware/hardwareForm.vue';
 // TODO: напсиать кучу тестов
 // TODO: добавить добавление компонетнов с несколькими фото и возможность их переключения в зависмсости от состояния
 // TODO: добавить возможность настройки размера холста и соответсвенно бэкграунд изображения
-// TODO: добавить возможность добавления сцен для оборудавния с большим кол-вом холсстов
 // TODO: порезать это все на маленькие компонеты, которые легко тестировать
 // TODO: пертащить тудусы в доску на гитхаб, а то какой-то стыд
 export default {
   data() {
     return {
-      name: '',
-      backgrounds: [],
-      // TODO: проверять на уникальность перед пушем
-      hardwareComponents: [],
       isHardwareComponentSelect: false,
-      selectedHardwareComponent: null,
     }
   },
   components: {
-    VueDraggableResizable,
     hardwareForm,
+    hardwareCanvas,
   },
   methods: {
     addComponentToCanvas(componentFromLib) {
-      let img = new Image();
+      const img = new Image();
       img.src = componentFromLib.photos[0];
       const imgWidth = Number(img.width);
       const imgHeight = Number(img.height);
@@ -154,10 +120,10 @@ export default {
         width: imgWidth,
         height: imgHeight,
       } 
-      this.hardwareComponents.push(hardwareComponent);
+      this.$store.dispatch('ADD_HARDWARE_COMPONENT', hardwareComponent);
     },
-    selectComponent(hardwareComponent) {
-      this.selectedHardwareComponent = hardwareComponent; 
+    selectComponentHandler(hardwareComponent) {
+      this.$store.dispatch('ADD_SELECTED_COMPONENT', hardwareComponent); 
       this.isHardwareComponentSelect = true;
     },
     closeHardwareComponent() {
@@ -167,9 +133,6 @@ export default {
     createHardwareHandler(hardware) {
       hardware.hardwareComponents = this.hardwareComponents;
       this.$store.dispatch('SAVE_HARDWARES', hardware);
-    },
-    changeHardwareBackgroundsHandler(backgrounds) {
-      this.backgrounds = backgrounds;
     },
     onDrag(x,y) {
       if (this.selectedHardwareComponent) {
@@ -201,16 +164,16 @@ export default {
     }
   },
   computed: {
+    // TODO: проверять на уникальность перед пушем
+    hardwareComponents() {
+      return this.$store.getters.HARDWARE_COMPONENTS;
+    },
+    selectedHardwareComponent() {
+      return this.$store.getters.SELECTED_COMPONENT;
+    },
     components() {
       return this.$store.getters.COMPONENTS;
     },
-    backgroundImg() {
-      if (this.backgrounds[0]) {
-        return this.backgrounds[0];
-      } else {
-        return '';
-      }
-    }
   },
   watch: {
     selectedHardwareComponent: {

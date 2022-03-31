@@ -14,8 +14,8 @@ const hardware = {
   },
 
   actions: {
-    SAVE_HARDWARES: (state, payload) => {
-      state.commit('SET_HARDWARES', payload);
+    SAVE_HARDWARES: (context, payload) => {
+      context.commit('SET_HARDWARES', payload);
     }
   },
 }

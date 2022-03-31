@@ -15,5 +15,5 @@ export const convertFileToBase64OnChange = async (e) =>  {
     }
   }
   
-  return base64Files
+  return base64Files;
 }

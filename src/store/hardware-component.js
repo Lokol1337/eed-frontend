@@ -16,8 +16,8 @@ const hardwareComponent = {
   },
 
   actions: {
-    SAVE_COMPONENTS: (state, payload) => {
-      state.commit('SET_COMPONENTS', payload);
+    SAVE_COMPONENTS: (context, payload) => {
+      context.commit('SET_COMPONENTS', payload);
     }
   },
 }

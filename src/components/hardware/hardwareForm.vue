@@ -15,7 +15,6 @@
         @change="onFileChangeHandler"
         class="form-control"
         type="file"
-        id="formFileMultiple"
         required
       />
     </div>
@@ -34,14 +33,14 @@ export default {
     return {
       hardware: {
         name: '',
-        backgrounds: [],
+        backgrounds: '',
       }
     }
   },
   methods: {
     async onFileChangeHandler(e) {
-      this.hardware.backgrounds = await convertFileToBase64OnChange(e);
-      this.$emit('changeHardwareBackgrounds', this.hardware.backgrounds);
+      const files = await convertFileToBase64OnChange(e);
+      this.$store.dispatch('ADD_BACKGROUND', files[0])
     },
     emitCreateHardware() {
       this.$emit('createHardware', this.hardware);
