@@ -10,7 +10,7 @@
           <hardwareCanvas />
         </div>
         <div v-if="!isHardwareComponentSelect" class="col-12 col-sm-2">
-          <div
+          <!-- <div
             v-for="(component, i) in components"
             :key="i"
             style="border: 1px solid"
@@ -25,7 +25,8 @@
                 @click.prevent="addComponentToCanvas(component)"
               />
             </div>
-          </div>
+          </div> -->
+          <componentList />
         </div>
         <div v-else class="col-12 col-sm-2">
           <span>Компонент {{ selectedHardwareComponent.name }}</span>
@@ -88,6 +89,7 @@
 <script>
 import hardwareForm from "@/components/hardware/hardwareForm.vue";
 import hardwareCanvas from "@/components/hardware/hardwareCanvas.vue";
+import componentList from "@/components/hardware/componentList.vue";
 // TODO: ВСЕ положить в стор, осбенно при создания обородувания (чтобы проще обмениваться состоянмия)
 // TODO: отрицательные значения координат не должны вводиться при ручном вводе
 // TODO: навесить валидацию на все формы
@@ -108,24 +110,25 @@ export default {
   components: {
     hardwareForm,
     hardwareCanvas,
+    componentList
   },
   methods: {
-    addComponentToCanvas(componentFromLib) {
-      const img = new Image();
-      img.src = componentFromLib.photos[0];
-      const imgWidth = Number(img.width);
-      const imgHeight = Number(img.height);
-      const hardwareComponent = {
-        name: componentFromLib.name,
-        photo: componentFromLib.photos[0],
-        top: 0,
-        left: 0,
-        width: imgWidth,
-        height: imgHeight,
-      };
-      this.$store.dispatch("ADD_HARDWARE_COMPONENT", hardwareComponent);
-      this.$store.dispatch("ADD_SELECTED_COMPONENT", hardwareComponent);
-    },
+    // addComponentToCanvas(componentFromLib) {
+    //   const img = new Image();
+    //   img.src = componentFromLib.photos[0];
+    //   const imgWidth = Number(img.width);
+    //   const imgHeight = Number(img.height);
+    //   const hardwareComponent = {
+    //     name: componentFromLib.name,
+    //     photo: componentFromLib.photos[0],
+    //     top: 0,
+    //     left: 0,
+    //     width: imgWidth,
+    //     height: imgHeight,
+    //   };
+    //   this.$store.dispatch("ADD_HARDWARE_COMPONENT", hardwareComponent);
+    //   this.$store.dispatch("ADD_SELECTED_COMPONENT", hardwareComponent);
+    // },
     selectComponentHandler(hardwareComponent) {
       this.$store.dispatch("ADD_SELECTED_COMPONENT", hardwareComponent);
     },
@@ -145,9 +148,9 @@ export default {
     selectedHardwareComponent() {
       return this.$store.getters.SELECTED_COMPONENT;
     },
-    components() {
-      return this.$store.getters.COMPONENTS;
-    },
+    // components() {
+    //   return this.$store.getters.COMPONENTS;
+    // },
     isHardwareComponentSelect() {
       if (this.selectedHardwareComponent) {
         return true;
