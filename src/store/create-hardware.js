@@ -18,6 +18,12 @@ const createHardware = {
     SET_HARDWARE_COMPONENT: (state, payload) => {
       state.hardwareComponents.push(payload);
     },
+    // TODO: переделать на поиск и удаление по id, а не по name
+    REMOVE_HARDWARE_COMPONENT: (state, payload) => {
+      state.hardwareComponents = state.hardwareComponents.filter(component => {
+        return component.name !== payload;
+      })
+    },
     SET_BACKGROUND: (state, payload) => {
       state.background = payload;
     }
@@ -32,6 +38,9 @@ const createHardware = {
     },
     ADD_BACKGROUND: (context, payload) => {
       context.commit('SET_BACKGROUND', payload);
+    },
+    DELETE_HARDWARE_COMPONENT: (context, payload) => {
+      context.commit('REMOVE_HARDWARE_COMPONENT', payload);
     }
   },
 }

@@ -27,6 +27,7 @@ export default {
       img.src = componentFromLib.photos[0];
       const imgWidth = Number(img.width);
       const imgHeight = Number(img.height);
+      
       const hardwareComponent = {
         name: componentFromLib.name,
         photo: componentFromLib.photos[0],
@@ -35,6 +36,7 @@ export default {
         width: imgWidth,
         height: imgHeight,
       };
+
       this.$store.dispatch("ADD_HARDWARE_COMPONENT", hardwareComponent);
       this.$store.dispatch("ADD_SELECTED_COMPONENT", hardwareComponent);
     },

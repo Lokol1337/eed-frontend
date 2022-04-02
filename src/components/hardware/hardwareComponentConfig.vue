@@ -43,6 +43,11 @@
         />
       </div>
       <div class="input-group mb-3">
+        <button class="btn btn-danger" @click.prevent="deleteComponentFromCanvas">
+          Удалить
+        </button>
+      </div>
+      <div class="input-group mb-3">
         <button class="btn btn-primary" @click.prevent="closeHardwareComponent">
           Закрыть
         </button>
@@ -57,6 +62,11 @@ export default {
     closeHardwareComponent() {
       this.$store.dispatch("ADD_SELECTED_COMPONENT", null);
     },
+    deleteComponentFromCanvas () {
+      // TODO: заменить name на id
+      this.$store.dispatch("DELETE_HARDWARE_COMPONENT", this.selectedHardwareComponent.name)
+      this.closeHardwareComponent();
+    }
   },
   computed: {
     selectedHardwareComponent() {

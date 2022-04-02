@@ -25,15 +25,11 @@ import hardwareForm from "@/components/hardware/hardwareForm.vue";
 import hardwareCanvas from "@/components/hardware/hardwareCanvas.vue";
 import componentList from "@/components/hardware/componentList.vue";
 import hardwareComponentConfig from "@/components/hardware/hardwareComponentConfig.vue";
-// TODO: ВСЕ положить в стор, осбенно при создания обородувания (чтобы проще обмениваться состоянмия)
-// TODO: отрицательные значения координат не должны вводиться при ручном вводе
 // TODO: навесить валидацию на все формы
-// TODO: подробить все на компоненты поменшьше
-// TODO: добавить возможность удаления оборудования с холста
 // TODO: добавить возможность экспортировать конфиг оборудования в JSON
 // TODO: добавить доки https://vue-styleguidist.github.io/docs/Documenting.html
 // TODO: напсиать кучу тестов
-// TODO: добавить добавление компонетнов с несколькими фото и возможность их переключения в зависмсости от состояния
+// TODO: добавить добавление компонетнов с несколькими фото и возможность их переключения в зависмсости от состояния (progress)
 // TODO: добавить возможность настройки размера холста и соответсвенно бэкграунд изображения
 // TODO: порезать это все на маленькие компонеты, которые легко тестировать
 // TODO: пертащить тудусы в доску на гитхаб, а то какой-то стыд
