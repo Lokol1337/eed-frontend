@@ -50,7 +50,6 @@ export default {
     },
   },
   computed: {
-    // TODO: проверять на уникальность перед пушем
     hardwareComponents() {
       return this.$store.getters.HARDWARE_COMPONENTS;
     },

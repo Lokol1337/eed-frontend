@@ -49,7 +49,6 @@ export default {
       };
 
       this.$store.dispatch("ADD_HARDWARE_COMPONENT", hardwareComponent);
-      this.$store.dispatch("ADD_SELECTED_COMPONENT", hardwareComponent);
     },
     nextImg(photosArrLength) {
       if (this.imgIndex < photosArrLength - 1) {

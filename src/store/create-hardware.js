@@ -16,7 +16,10 @@ const createHardware = {
       state.selectedHardwareComponent = payload;
     },
     SET_HARDWARE_COMPONENT: (state, payload) => {
-      state.hardwareComponents.push(payload);
+      // TODO: переделать на id
+      if (!state.hardwareComponents.find(component => component.name === payload.name)) {
+        state.hardwareComponents.push(payload);
+      }
     },
     // TODO: переделать на поиск и удаление по id, а не по name
     REMOVE_HARDWARE_COMPONENT: (state, payload) => {
