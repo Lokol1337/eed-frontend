@@ -41,7 +41,7 @@ export default {
 
       const hardwareComponent = {
         name: componentFromLib.name,
-        photo: componentFromLib.photos[0],
+        photos: componentFromLib.photos,
         top: 0,
         left: 0,
         width: imgWidth,

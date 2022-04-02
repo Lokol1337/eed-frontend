@@ -57,6 +57,7 @@
 </template>
 
 <script>
+// TODO: вынести функционал переключения фото компонента в отдельный компонет
 export default {
   methods: {
     closeHardwareComponent() {
