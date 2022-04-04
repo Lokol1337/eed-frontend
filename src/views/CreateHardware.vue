@@ -4,7 +4,8 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-2">
-          <hardwareForm @createHardware="createHardwareHandler" />
+          <hardwareForm />
+          <canvasConfig class="mt-3"/>
         </div>
         <div class="col-12 col-sm-8">
           <hardwareCanvas />
@@ -25,12 +26,13 @@ import hardwareForm from "@/components/hardware/hardwareForm.vue";
 import hardwareCanvas from "@/components/hardware/hardwareCanvas.vue";
 import componentList from "@/components/hardware/componentList.vue";
 import hardwareComponentConfig from "@/components/hardware/hardwareComponentConfig.vue";
+import canvasConfig from "@/components/hardware/canvasConfig.vue";
 // TODO: навесить валидацию на все формы
 // TODO: добавить возможность экспортировать конфиг оборудования в JSON
 // TODO: добавить доки https://vue-styleguidist.github.io/docs/Documenting.html
 // TODO: напсиать кучу тестов
 // TODO: добавить добавление компонетнов с несколькими фото и возможность их переключения в зависмсости от состояния 
-// ,добавить добавления состояния (progress)
+// ,добавить добавления состояния (next)
 // TODO: добавить возможность настройки размера холста и соответсвенно бэкграунд изображения
 // TODO: пертащить тудусы в доску на гитхаб, а то какой-то стыд
 export default {
@@ -39,14 +41,11 @@ export default {
     hardwareCanvas,
     componentList,
     hardwareComponentConfig,
+    canvasConfig
   },
   methods: {
     selectComponentHandler(hardwareComponent) {
       this.$store.dispatch("ADD_SELECTED_COMPONENT", hardwareComponent);
-    },
-    createHardwareHandler(hardware) {
-      hardware.hardwareComponents = this.hardwareComponents;
-      this.$store.dispatch("SAVE_HARDWARES", hardware);
     },
   },
   computed: {

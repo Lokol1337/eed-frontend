@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="emitCreateHardware" class="border rounded p-2">
+  <form @submit.prevent="createHardware" class="border rounded p-2">
     <div class="input-group mb-3">
       <input
         v-model="hardware.name"
@@ -32,19 +32,26 @@ export default {
   data() {
     return {
       hardware: {
-        name: '',
-        backgrounds: '',
-      }
-    }
+        name: "",
+      },
+    };
   },
   methods: {
     async onFileChangeHandler(e) {
       const files = await convertFileToBase64OnChange(e);
-      this.$store.dispatch('ADD_BACKGROUND', files[0])
+      this.$store.dispatch("ADD_BACKGROUND", files[0]);
     },
-    emitCreateHardware() {
-      this.$emit('createHardware', this.hardware);
-    }
-  }
-}
+    createHardware() {
+      const hardwareForSend = {
+        name: this.hardware.name,
+        hardwareComponents: this.$store.getters.HARDWARE_COMPONENTS,
+        background: this.$store.getters.HARDWARE_BACKGROUND,
+        backgroundSettings: this.$store.getters.BACKGROUND_SETTINGS,
+      };
+      this.$store.dispatch("SAVE_HARDWARES", hardwareForSend);
+      // TODO: сбрасывать только в случае успешного сохранения сервером
+      this.$store.dispatch("RESET_CREATE_HARDWARE");
+    },
+  },
+};
 </script>

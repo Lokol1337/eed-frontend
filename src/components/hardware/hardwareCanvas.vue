@@ -2,7 +2,12 @@
   <div class="canvas">
     <div
       class="canvas__body"
-      :style="{ backgroundImage: 'url(' + bgImage + ')' }"
+      :style="{ 
+        backgroundImage: ('url(' + bgImage + ')'), 
+        width: `${backgroundSettings.width}px`,
+        height: `${backgroundSettings.height}px`,
+        backgroundSize: `${backgroundSettings.width}px ${backgroundSettings.height}px`
+      }"
     >
       <canvasComponent
         v-for="(hardwareComponent, i) in hardwareComponents"
@@ -32,6 +37,9 @@ export default {
     hardwareComponents() {
       return this.$store.getters.HARDWARE_COMPONENTS;
     },
+    backgroundSettings() {
+      return this.$store.getters.BACKGROUND_SETTINGS;
+    },
   },
 };
 </script>
@@ -44,19 +52,7 @@ export default {
   &__body {
     border: 1px solid;
     position: relative;
-    width: 760px;
-    height: 270px;
-    background-size: 760px 270px;
-  }
-
-  &__item {
-    &-button {
-      border: none;
-      margin: 0;
-      padding: 0;
-
-      background: transparent;
-    }
+    background-repeat: no-repeat;
   }
 }
 </style>

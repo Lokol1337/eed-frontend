@@ -118,7 +118,6 @@
 
 <script>
 export default {
-  name: 'Home',
   methods: {
     toCreateComponentPage() {
       this.$router.push('/create-component').catch(() => {});

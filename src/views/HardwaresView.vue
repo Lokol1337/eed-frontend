@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-12 col-sm-12">
           <div class="hardware-view-page__canvas-wrp">
-            <div class="hardware-view-page__canvas" :style="{ 'background-image': 'url(' + hardware.backgrounds + ')' }">
+            <div class="hardware-view-page__canvas" :style="{ 'background-image': 'url(' + hardware.background + ')' }">
               <img v-for="(hardwareComponent, i) in hardware.hardwareComponents" :key="i" 
                 :src="hardwareComponent.photo"
                 :style="{
