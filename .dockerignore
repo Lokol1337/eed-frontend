@@ -1,0 +1,12 @@
+.git/
+log/
+tmp/
+.gitignore
+.env
+.idea/
+.dockerignore
+README.md
+dist/
+node_modules/
+Dockerfile
+docker-compose.yml
