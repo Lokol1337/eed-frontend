@@ -37,6 +37,7 @@ export default {
     hardwareComponents() {
       return this.$store.getters.HARDWARE_COMPONENTS;
     },
+    // TODO: ВОЗМОЖНО добавить более гибкую настройку
     backgroundSettings() {
       return this.$store.getters.BACKGROUND_SETTINGS;
     },

@@ -27,6 +27,8 @@ import hardwareCanvas from "@/components/hardware/hardwareCanvas.vue";
 import componentList from "@/components/hardware/componentList.vue";
 import hardwareComponentConfig from "@/components/hardware/hardwareComponentConfig.vue";
 import canvasConfig from "@/components/hardware/canvasConfig.vue";
+// TODO: унифицировать размер холста всех компонентов и страниц
+// TODO: добавить возможность перемщения после клика в режиме создания упражнения
 // TODO: навесить валидацию на все формы
 // TODO: добавить возможность экспортировать конфиг оборудования в JSON
 // TODO: добавить доки https://vue-styleguidist.github.io/docs/Documenting.html

@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 import Home from '@/views/Home.vue'
 import CreateComponent from '@/views/CreateComponent.vue'
 import CreateHardware from '@/views/CreateHardware.vue'
 import HardwaresView from '@/views/HardwaresView.vue'
+import Login from '@/views/Login.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +29,11 @@ const routes = [
     path: '/hardwares-view',
     name: 'hardwaresView',
     component: HardwaresView,
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
   }
 ]
 
