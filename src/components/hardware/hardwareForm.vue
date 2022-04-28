@@ -50,7 +50,7 @@ export default {
       };
       this.$store.dispatch("SAVE_HARDWARES", hardwareForSend);
       // TODO: сбрасывать только в случае успешного сохранения сервером
-      this.$store.dispatch("RESET_CREATE_HARDWARE");
+      // this.$store.dispatch("RESET_CREATE_HARDWARE");
     },
   },
 };

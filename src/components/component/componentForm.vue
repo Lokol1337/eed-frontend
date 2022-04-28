@@ -33,7 +33,7 @@
         for="flexCheckDefault"
         style="margin-left: 5px"
       >
-        Может принмать значения?
+        Может принимать значения?
       </label>
     </div>
     <div class="input-group mb-3">
