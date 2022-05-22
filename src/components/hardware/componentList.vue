@@ -9,28 +9,23 @@
         {{ component.name }}
       </span>
       <div>
-        <button @click.prevent="prevImg">
-          prev
-        </button>
-        <img
-          :src="component.photos[imgIndex]"
-          style="max-width: 190px; height: auto; cursor: pointer"
-          @click.prevent="addComponentToCanvas(component)"
-        />
-        <button @click.prevent="nextImg(component.photos.length)">
-          next
-        </button>
+        <componentPhotosView :photos="component.photos" @clickByPhoto="addComponentToCanvas(component)"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import componentPhotosView from '@/components/componentPhotosView.vue'
+
 export default {
   data() {
     return {
       imgIndex: 0,
     }
+  },
+  components: {
+    componentPhotosView,
   },
   methods: {
     addComponentToCanvas(componentFromLib) {

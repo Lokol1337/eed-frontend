@@ -1,15 +1,15 @@
 <template>
   <div>
-    <LoginForm />
+    <loginForm />
   </div>
 </template>
 
 <script>
-import LoginForm from '@/components/auth/LoginForm.vue'
+import loginForm from '@/components/auth/loginForm.vue'
 
 export default {
   components: {
-    LoginForm
+    loginForm
   }
 }
 </script>

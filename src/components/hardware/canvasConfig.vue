@@ -31,8 +31,8 @@ export default {
     return {
       // TODO: навесить валидвцию
       canvasSetting: {
-        width: 0,
-        height: 0,
+        width: 600,
+        height: 200,
       }
     }
   },
@@ -40,6 +40,9 @@ export default {
     createConfig() {
       this.$store.dispatch('ADD_BACKGROUND_SETTINGS', this.canvasSetting);
     }
+  },
+  created() {
+    this.createConfig();
   }
 }
 </script>
