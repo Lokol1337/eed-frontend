@@ -41,6 +41,7 @@ export default {
         left: 0,
         width: imgWidth,
         height: imgHeight,
+        values: componentFromLib.values,
       };
 
       this.$store.dispatch("ADD_HARDWARE_COMPONENT", hardwareComponent);

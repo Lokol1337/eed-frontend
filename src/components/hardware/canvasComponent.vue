@@ -39,7 +39,7 @@ export default {
       }
     },
     onResize(x, y, width, height) {
-      if (this.hardwareComponent) {
+      if (this.hardwareComponent && (width !== 0 && height !== 0)) {
         this.hardwareComponent.left = x;
         this.hardwareComponent.top = y;
 

@@ -33,7 +33,6 @@ import canvasConfig from "@/components/hardware/canvasConfig.vue";
 // TODO: добавить возможность экспортировать конфиг оборудования в JSON
 // TODO: добавить доки https://vue-styleguidist.github.io/docs/Documenting.html
 // TODO: добавить добавление компонетнов с несколькими фото и возможность их переключения в зависмсости от состояния 
-// ,добавить добавления состояния (next)
 export default {
   components: {
     hardwareForm,

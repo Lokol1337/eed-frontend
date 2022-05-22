@@ -31,8 +31,8 @@ export default {
     return {
       // TODO: навесить валидвцию
       canvasSetting: {
-        width: 600,
-        height: 200,
+        width: 650,
+        height: 300,
       }
     }
   },
