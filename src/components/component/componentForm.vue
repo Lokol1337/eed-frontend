@@ -23,18 +23,43 @@
     <div class="input-group mb-3 form-check">
       <input
         v-model="component.isCanTakeValues"
+        @change="resetComponentValues"
         class="form-check-input"
         style="border-radius: 0.25em"
         type="checkbox"
-        id="flexCheckDefault"
+        id="isCanTakeValues"
       />
       <label
         class="form-check-label"
-        for="flexCheckDefault"
+        for="isCanTakeValues"
         style="margin-left: 5px"
       >
         Может принимать значения?
       </label>
+    </div>
+    <div class="input-group mb-3" v-if="component.isCanTakeValues">
+      <label for="valuesInput">
+        Добавьте значения, которые сможет принимать компонент
+      </label>
+      <div>
+        <div>
+        <input type="text" v-model="valueForAdd">
+        <button @click.prevent="addValue">
+          +
+        </button>
+      </div>
+        <div 
+          v-for="componentValue in component.values" 
+          :key="componentValue"
+        >
+          <span>
+            {{ componentValue }}
+          </span>
+          <button @click.prevent="deleteFromValuesList(componentValue)">
+            -
+          </button>
+        </div>
+      </div>      
     </div>
     <div class="input-group mb-3">
       <button type="submit" class="btn btn-primary">Создать</button>
@@ -53,7 +78,9 @@ export default {
         name: '',
         photos: [],
         isCanTakeValues: false,
-      }
+        values: [],
+      },
+      valueForAdd: '',
     };
   },
   methods: {
@@ -63,6 +90,22 @@ export default {
     },
     emitCreateComponent() {
       this.$emit('createComponent', this.component);
+    },
+    addValue() {
+      if (this.valueForAdd !== '' &&
+        !(this.component.values.find(arrValue => arrValue === this.valueForAdd))
+      ) {
+        this.component.values.push(this.valueForAdd);
+        this.valueForAdd = '';
+      } else {
+        alert('Уже есть в списке значений');
+      }
+    },
+    deleteFromValuesList(valueForDelete) {
+      this.component.values = this.component.values.filter(value => value !== valueForDelete);
+    },
+    resetComponentValues() {
+      this.component.values = [];
     }
   },
 };
