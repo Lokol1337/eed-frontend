@@ -10,7 +10,7 @@
   >
     <!-- <button @keyup="moveByKeys" class="canvas__item-button"> -->
     <img
-      :src="hardwareComponent.photos[0]"
+      :src="hardwareComponent.valuesAndPhotos[0].photo"
       :style="{
         width: hardwareComponent.width + 'px',
         height: hardwareComponent.height + 'px',

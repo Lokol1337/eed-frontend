@@ -9,20 +9,23 @@
         {{ component.name }}
       </span>
       <div>
-        <componentPhotosView :photos="component.photos" @clickByPhoto="addComponentToCanvas(component)"/>
+        <componentPhotosView
+          :valuesAndPhotos="component.valuesAndPhotos"
+          @clickByPhoto="addComponentToCanvas(component)"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import componentPhotosView from '@/components/componentPhotosView.vue'
+import componentPhotosView from "@/components/componentPhotosView.vue";
 
 export default {
   data() {
     return {
       imgIndex: 0,
-    }
+    };
   },
   components: {
     componentPhotosView,
@@ -30,18 +33,17 @@ export default {
   methods: {
     addComponentToCanvas(componentFromLib) {
       const img = new Image();
-      img.src = componentFromLib.photos[0];
+      img.src = componentFromLib.valuesAndPhotos[0].photo;
       const imgWidth = Number(img.width);
       const imgHeight = Number(img.height);
-
+      
       const hardwareComponent = {
         name: componentFromLib.name,
-        photos: componentFromLib.photos,
+        valuesAndPhotos: componentFromLib.valuesAndPhotos,
         top: 0,
         left: 0,
         width: imgWidth,
         height: imgHeight,
-        values: componentFromLib.values,
       };
 
       this.$store.dispatch("ADD_HARDWARE_COMPONENT", hardwareComponent);
@@ -49,13 +51,13 @@ export default {
     nextImg(photosArrLength) {
       if (this.imgIndex < photosArrLength - 1) {
         this.imgIndex++;
-      } 
+      }
     },
     prevImg() {
       if (this.imgIndex > 0) {
         this.imgIndex--;
       }
-    }
+    },
   },
   computed: {
     components() {
