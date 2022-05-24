@@ -11,55 +11,29 @@
       />
     </div>
     <div class="input-group mb-3">
-      <input
-        @change="onFileChangeHandler"
-        class="form-control"
-        type="file"
-        id="formFileMultiple"
-        multiple
-        required
-      />
-    </div>
-    <div class="input-group mb-3 form-check">
-      <input
-        v-model="component.isCanTakeValues"
-        @change="resetComponentValues"
-        class="form-check-input"
-        style="border-radius: 0.25em"
-        type="checkbox"
-        id="isCanTakeValues"
-      />
-      <label
-        class="form-check-label"
-        for="isCanTakeValues"
-        style="margin-left: 5px"
-      >
-        Может принимать значения?
-      </label>
-    </div>
-    <div class="input-group mb-3" v-if="component.isCanTakeValues">
-      <label for="valuesInput">
-        Добавьте значения, которые сможет принимать компонент
-      </label>
+      <!-- TODO: fix h tag, by semantic its not h -->
+      <h5 for="valuesInput">Добавьте занчения и фотографии этих значений</h5>
       <div>
         <div>
-        <input type="text" v-model="valueForAdd">
-        <button @click.prevent="addValue">
-          +
-        </button>
-      </div>
-        <div 
-          v-for="componentValue in component.values" 
-          :key="componentValue"
-        >
+          <input type="text" v-model="forAdd.value" />
+          <input type="file" ref="fileupload" @change="onFileChangeHandler($event)"/>
+          <img v-if="forAdd.photo !== ''" 
+            width="75" 
+            height="75" 
+            :src="forAdd.photo"
+          >
+          <button @click.prevent="addValue">+</button>
+        </div>
+        <div v-for="(valuePhoto, i) in component.valuesAndPhotos" :key="i">
           <span>
-            {{ componentValue }}
+            {{ valuePhoto.value }}
           </span>
-          <button @click.prevent="deleteFromValuesList(componentValue)">
+          <img width="75" height="75" :src="valuePhoto.photo">
+          <button @click.prevent="deleteFromValuesList(valuePhoto)">
             -
           </button>
         </div>
-      </div>      
+      </div>
     </div>
     <div class="input-group mb-3">
       <button type="submit" class="btn btn-primary">Создать</button>
@@ -75,38 +49,46 @@ export default {
   data() {
     return {
       component: {
-        name: '',
-        photos: [],
-        isCanTakeValues: false,
-        values: [],
+        name: "",
+        valuesAndPhotos: [],
       },
-      valueForAdd: '',
+      forAdd: {
+        value: '',
+        photo: '',
+      },
     };
   },
   methods: {
     async onFileChangeHandler(e) {
-      this.component.photos = await convertFileToBase64OnChange(e);
-      this.$emit('changeComponentPhotos', this.component.photos);
+      const photosBase64 = await convertFileToBase64OnChange(e);
+      this.forAdd.photo = photosBase64[0];
     },
     emitCreateComponent() {
-      this.$emit('createComponent', this.component);
+      this.$emit("createComponent", this.component);
     },
     addValue() {
-      if (this.valueForAdd !== '' &&
-        !(this.component.values.find(arrValue => arrValue === this.valueForAdd))
+      if (this.forAdd.value !== "" &&
+        !this.component.valuesAndPhotos.some(valuesAndPhotosSrc => valuesAndPhotosSrc.value === this.forAdd.value)
       ) {
-        this.component.values.push(this.valueForAdd);
-        this.valueForAdd = '';
+        const objForAdd = {...this.forAdd}
+        this.component.valuesAndPhotos.push(objForAdd);
+
+        this.forAdd.value = '';
+        this.forAdd.photo = '';
+        this.$refs.fileupload.value = null;
       } else {
-        alert('Уже есть в списке значений');
+        alert("Уже есть в списке значений");
       }
     },
-    deleteFromValuesList(valueForDelete) {
-      this.component.values = this.component.values.filter(value => value !== valueForDelete);
+    deleteFromValuesList(valuePhoto) {
+      this.component.valuesAndPhotos = this.component.valuesAndPhotos.filter(
+        (valuesAndPhotosSrc) => valuesAndPhotosSrc.value !== valuePhoto.value
+      );
     },
-    resetComponentValues() {
-      this.component.values = [];
-    }
+    resetComponentForm() {
+      // TODO: add reset component form
+      // this.component.values = [];
+    },
   },
 };
 </script>
