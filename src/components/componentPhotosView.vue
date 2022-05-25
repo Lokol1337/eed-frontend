@@ -2,13 +2,23 @@
   <div>
     <div>
       <span>{{ valuesAndPhotos[imgIndex].value }}</span>
-      <button @click.prevent="prevImg">prev</button>
+      <button 
+        v-if="valuesAndPhotos.length > 1"
+        @click.prevent="prevImg"
+      >
+        prev
+      </button>
       <img
         :src="valuesAndPhotos[imgIndex].photo"
         style="max-width: 190px; height: auto; cursor: pointer"
         @click.prevent="clickByPhoto"
       />
-      <button @click.prevent="nextImg(valuesAndPhotos.length)">next</button>
+      <button 
+        v-if="valuesAndPhotos.length > 1"
+        @click.prevent="nextImg"
+      >
+        next
+      </button>
     </div>
   </div>
 </template>
@@ -27,8 +37,8 @@ export default {
     };
   },
   methods: {
-    nextImg(photosArrLength) {
-      if (this.imgIndex < photosArrLength - 1) {
+    nextImg() {
+      if (this.imgIndex < this.valuesAndPhotos.length - 1) {
         this.imgIndex++;
       }
     },

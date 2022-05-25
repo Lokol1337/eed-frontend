@@ -12,7 +12,7 @@
   >
     <!-- <button @keyup="moveByKeys" class="canvas__item-button"> -->
     <img
-      :src="hardwareComponent.valuesAndPhotos[0].photo"
+      :src="hardwareComponent.valuesAndPhotos[imgIndex].photo"
       :style="{
         width: hardwareComponent.width + 'px',
         height: hardwareComponent.height + 'px',
@@ -25,7 +25,7 @@
 
 <script>
 // TODO: remove this!
-import { demoRequest } from '@/api/demoRequest.js';
+// import { demoRequest } from '@/api/demoRequest.js';
 
 export default {
   props: {
@@ -36,6 +36,11 @@ export default {
     hardwareComponent: {
       type: Object,
     },
+  },
+  data() {
+    return {
+      imgIndex: 0,
+    }
   },
   methods: {
     selectComponent() {
@@ -69,14 +74,29 @@ export default {
         this.hardwareComponent.left++;
       }
     },
+    changePhotoByClick() {
+      if (this.imgIndex === this.hardwareComponent.valuesAndPhotos.length - 1) {
+        this.imgIndex = 0;
+        return;
+      }
+
+      this.imgIndex++;
+    },
+    // TODO: remove this
     sendTestRequest() {
-      demoRequest(this.hardwareComponent);
+      // demoRequest(this.hardwareComponent);
+      console.log('Req send');
     },
     // TODO: remove this
     selectMethodByClick() {
       if (this.componentMode === 'createHardware') {
         return this.selectComponent();
       } else if (this.componentMode === 'viewHardware') {
+        this.$store.dispatch("ADD_SELECTED_COMPONENT", null);
+
+        if (!this.mode.draggable) {
+          this.changePhotoByClick();
+        }
         return this.sendTestRequest();
       } else {
         throw 'Oops, selectMethodByClick dont know that it do'

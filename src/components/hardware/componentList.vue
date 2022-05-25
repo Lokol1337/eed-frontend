@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="max-height: 500px; overflow-y: scroll">
     <div
       v-for="(component, i) in components"
       :key="i"
