@@ -22,9 +22,10 @@ const createHardware = {
     },
     // TODO: переделать на id
     SET_HARDWARE_COMPONENT: (state, payload) => {
-      if (!state.hardwareComponents.find(component => component.name === payload.name)) {
+      // TODO: think about adding to canvas process
+      // if (!state.hardwareComponents.find(component => component.name === payload.name)) {
         state.hardwareComponents.push(payload);
-      }
+      // }
     },
     // TODO: переделать на поиск и удаление по id, а не по name
     REMOVE_HARDWARE_COMPONENT: (state, payload) => {

@@ -48,6 +48,7 @@ import hardwareCanvas from "@/components/hardware/hardwareCanvas.vue";
 import componentList from "@/components/hardware/componentList.vue";
 import hardwareComponentConfig from "@/components/hardware/hardwareComponentConfig.vue";
 import canvasConfig from "@/components/hardware/canvasConfig.vue";
+// TODO: add to config z-index config
 // TODO: унифицировать размер холста всех компонентов и страниц
 // TODO: добавить возможность перемщения после клика в режиме создания упражнения
 // TODO: навесить валидацию на все формы

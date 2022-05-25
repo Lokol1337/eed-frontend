@@ -25,7 +25,7 @@
 
 <script>
 // TODO: remove this!
-// import { demoRequest } from '@/api/demoRequest.js';
+import { demoRequest } from '@/api/demoRequest.js';
 
 export default {
   props: {
@@ -84,8 +84,8 @@ export default {
     },
     // TODO: remove this
     sendTestRequest() {
-      // demoRequest(this.hardwareComponent);
-      console.log('Req send');
+      demoRequest(this.hardwareComponent);
+      // console.log('Req send');
     },
     // TODO: remove this
     selectMethodByClick() {
