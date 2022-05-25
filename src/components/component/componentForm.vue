@@ -51,6 +51,7 @@ export default {
       component: {
         name: "",
         valuesAndPhotos: [],
+        draggable: true,
       },
       forAdd: {
         value: '',

@@ -1,4 +1,4 @@
-import $api from './api'
+import $api from './api';
 
 const createUserFormData = (email, password) => {
   const formData = new FormData();

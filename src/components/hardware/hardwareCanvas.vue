@@ -13,6 +13,7 @@
         v-for="(hardwareComponent, i) in hardwareComponents"
         :key="i"
         :hardwareComponent="hardwareComponent"
+        :componentMode="canvasMode"
       />
     </div>
   </div>
@@ -22,24 +23,25 @@
 import canvasComponent from "@/components/hardware/canvasComponent.vue";
 
 export default {
+  props: {
+    canvasMode: {
+      type: String,
+      required: true,
+    },
+    bgImage: {
+      type: String,
+      required: true,
+    },
+    hardwareComponents: {
+      type: Array,
+      default: () => [],
+    },
+    backgroundSettings: {
+      type: Object,
+    }
+  },
   components: {
     canvasComponent,
-  },
-  methods: {
-    setBackground(background) {
-      this.$store.dispatch("ADD_BACKGROUND", background);
-    },
-  },
-  computed: {
-    bgImage() {
-      return this.$store.getters.HARDWARE_BACKGROUND;
-    },
-    hardwareComponents() {
-      return this.$store.getters.HARDWARE_COMPONENTS;
-    },
-    backgroundSettings() {
-      return this.$store.getters.BACKGROUND_SETTINGS;
-    },
   },
 };
 </script>

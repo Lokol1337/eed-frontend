@@ -43,6 +43,13 @@
         />
       </div>
       <div class="input-group mb-3">
+        <label>Dragable</label>
+        <input
+          v-model.number="selectedHardwareComponent.draggable"
+          type="checkbox"
+        />
+      </div>
+      <div class="input-group mb-3">
         <button class="btn btn-danger" @click.prevent="deleteComponentFromCanvas">
           Удалить
         </button>

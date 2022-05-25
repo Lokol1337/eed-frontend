@@ -6,6 +6,8 @@
     :h="hardwareComponent.height"
     :x="hardwareComponent.left"
     :y="hardwareComponent.top"
+    :draggable="mode.draggable"
+    :resizable="mode.resizable"
     :parent="true"
   >
     <!-- <button @keyup="moveByKeys" class="canvas__item-button"> -->
@@ -15,15 +17,22 @@
         width: hardwareComponent.width + 'px',
         height: hardwareComponent.height + 'px',
       }"
-      @click.prevent="selectComponent(hardwareComponent)"
+      @click.prevent="selectMethodByClick"
     />
     <!-- </button> -->
   </vue-draggable-resizable>
 </template>
 
 <script>
+// TODO: remove this!
+import { demoRequest } from '@/api/demoRequest.js';
+
 export default {
   props: {
+    componentMode: {
+      type: String,
+      required: true,
+    },
     hardwareComponent: {
       type: Object,
     },
@@ -60,6 +69,38 @@ export default {
         this.hardwareComponent.left++;
       }
     },
+    sendTestRequest() {
+      demoRequest(this.hardwareComponent);
+    },
+    // TODO: remove this
+    selectMethodByClick() {
+      if (this.componentMode === 'createHardware') {
+        return this.selectComponent();
+      } else if (this.componentMode === 'viewHardware') {
+        return this.sendTestRequest();
+      } else {
+        throw 'Oops, selectMethodByClick dont know that it do'
+      }
+    }
   },
+  computed: {
+    // TODO: Rename this property
+    mode() {
+      // TODO: switch case!
+      if (this.componentMode === 'createHardware') {
+        return {
+          draggable: true,
+          resizable: true,
+        }
+      } else if (this.componentMode === 'viewHardware') {
+        return {
+          draggable: this.hardwareComponent.draggable,
+          resizable: false,
+        }
+      } else {
+        throw 'Hey, set mode for canvasComponent'
+      }
+    },
+  }
 };
 </script>

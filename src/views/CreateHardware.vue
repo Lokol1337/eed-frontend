@@ -8,7 +8,28 @@
           <canvasConfig class="mt-3"/>
         </div>
         <div class="col-12 col-sm-8">
-          <hardwareCanvas />
+          <hardwareCanvas
+            v-if="canvasMode === 'createHardware'" 
+            canvasMode="createHardware"
+            :hardwareComponents="hardwareComponents"
+            :bgImage="bgImage"
+            :backgroundSettings="backgroundSettings"
+          />
+          <hardwareCanvas 
+            v-if="canvasMode === 'viewHardware'" 
+            canvasMode="viewHardware"
+            :hardwareComponents="hardwareComponents"
+            :bgImage="bgImage"
+            :backgroundSettings="backgroundSettings"
+          />
+          <div>
+            <span>
+              {{ canvasMode }}
+            </span>
+            <button @click="changeCanvasMode">
+              change mode
+            </button>
+          </div>          
         </div>
         <div v-if="!isHardwareComponentSelect" class="col-12 col-sm-2">
           <componentList />
@@ -34,6 +55,11 @@ import canvasConfig from "@/components/hardware/canvasConfig.vue";
 // TODO: добавить доки https://vue-styleguidist.github.io/docs/Documenting.html
 // TODO: добавить добавление компонетнов с несколькими фото и возможность их переключения в зависмсости от состояния 
 export default {
+  data() {
+    return {
+      canvasMode: 'createHardware',
+    }
+  },
   components: {
     hardwareForm,
     hardwareCanvas,
@@ -45,6 +71,13 @@ export default {
     selectComponentHandler(hardwareComponent) {
       this.$store.dispatch("ADD_SELECTED_COMPONENT", hardwareComponent);
     },
+    changeCanvasMode() {
+      if (this.canvasMode === 'createHardware') {
+        this.canvasMode = 'viewHardware';
+      } else if (this.canvasMode === 'viewHardware'){
+        this.canvasMode = 'createHardware';
+      }
+    }
   },
   computed: {
     hardwareComponents() {
@@ -58,6 +91,12 @@ export default {
         return true;
       }
       return false;
+    },
+    bgImage() {
+      return this.$store.getters.HARDWARE_BACKGROUND;
+    },
+    backgroundSettings() {
+      return this.$store.getters.BACKGROUND_SETTINGS;
     },
   },
 };

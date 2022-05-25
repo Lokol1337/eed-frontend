@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { login } from '@/api/auth.js'
+import { login } from '@/api/auth.js';
 
 export default {
   data() {
