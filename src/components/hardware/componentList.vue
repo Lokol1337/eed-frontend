@@ -36,17 +36,13 @@ export default {
       img.src = componentFromLib.valuesAndPhotos[0].photo;
       const imgWidth = Number(img.width);
       const imgHeight = Number(img.height);
-      
-      const hardwareComponent = {
-        name: componentFromLib.name,
-        valuesAndPhotos: componentFromLib.valuesAndPhotos,
-        top: 0,
-        left: 0,
-        width: imgWidth,
-        height: imgHeight,
-      };
 
-      this.$store.dispatch("ADD_HARDWARE_COMPONENT", hardwareComponent);
+      componentFromLib.top  = 0;
+      componentFromLib.left  = 0;
+      componentFromLib.width  = imgWidth;
+      componentFromLib.height  = imgHeight;
+
+      this.$store.dispatch("ADD_HARDWARE_COMPONENT", {...componentFromLib});
     },
     nextImg(photosArrLength) {
       if (this.imgIndex < photosArrLength - 1) {
