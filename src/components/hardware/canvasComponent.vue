@@ -10,22 +10,22 @@
     :resizable="mode.resizable"
     :parent="true"
   >
-    <!-- <button @keyup="moveByKeys" class="canvas__item-button"> -->
-    <img
-      :src="hardwareComponent.valuesAndPhotos[imgIndex].photo"
-      :style="{
-        width: hardwareComponent.width + 'px',
-        height: hardwareComponent.height + 'px',
-      }"
-      @click.prevent="selectMethodByClick"
-    />
-    <!-- </button> -->
+    <button @keyup="moveByKeys" class="canvas__item-button">
+      <img
+        :src="hardwareComponent.valuesAndPhotos[imgIndex].photo"
+        :style="{
+          width: hardwareComponent.width + 'px',
+          height: hardwareComponent.height + 'px',
+        }"
+        @click.prevent="selectMethodByClick"
+      />
+    </button>
   </vue-draggable-resizable>
 </template>
 
 <script>
 // TODO: remove this!
-import { demoRequest } from '@/api/demoRequest.js';
+import { demoRequest } from "@/api/demoRequest.js";
 
 export default {
   props: {
@@ -40,7 +40,7 @@ export default {
   data() {
     return {
       imgIndex: 0,
-    }
+    };
   },
   methods: {
     selectComponent() {
@@ -53,7 +53,7 @@ export default {
       }
     },
     onResize(x, y, width, height) {
-      if (this.hardwareComponent && (width !== 0 && height !== 0)) {
+      if (this.hardwareComponent && width !== 0 && height !== 0) {
         this.hardwareComponent.left = x;
         this.hardwareComponent.top = y;
 
@@ -63,15 +63,21 @@ export default {
     },
     moveByKeys(event) {
       // TODO: валидировать. Не должно быть больше/меньше размеров холста
-      // TODO: переписать на свитч кейс
-      if (event.keyCode == 38) {
-        this.hardwareComponent.top--;
-      } else if (event.keyCode == 40) {
-        this.hardwareComponent.top++;
-      } else if (event.keyCode == 37) {
-        this.hardwareComponent.left--;
-      } else if (event.keyCode == 39) {
-        this.hardwareComponent.left++;
+      switch (event.keyCode) {
+        case 38:
+          this.hardwareComponent.top--;
+          break;
+        case 40:
+          this.hardwareComponent.top++;
+          break;
+        case 37:
+          this.hardwareComponent.left--;
+          break;
+        case 39:
+          this.hardwareComponent.left++;
+          break;
+        default:
+          break;
       }
     },
     changePhotoByClick() {
@@ -89,9 +95,9 @@ export default {
     },
     // TODO: remove this
     selectMethodByClick() {
-      if (this.componentMode === 'createHardware') {
+      if (this.componentMode === "createHardware") {
         return this.selectComponent();
-      } else if (this.componentMode === 'viewHardware') {
+      } else if (this.componentMode === "viewHardware") {
         this.$store.dispatch("ADD_SELECTED_COMPONENT", null);
 
         if (!this.mode.draggable) {
@@ -99,28 +105,42 @@ export default {
         }
         return this.sendTestRequest();
       } else {
-        throw 'Oops, selectMethodByClick dont know that it do'
+        throw "Oops, selectMethodByClick dont know that it do";
       }
-    }
+    },
   },
   computed: {
     // TODO: Rename this property
     mode() {
       // TODO: switch case!
-      if (this.componentMode === 'createHardware') {
+      if (this.componentMode === "createHardware") {
         return {
           draggable: true,
           resizable: true,
-        }
-      } else if (this.componentMode === 'viewHardware') {
+        };
+      } else if (this.componentMode === "viewHardware") {
         return {
           draggable: this.hardwareComponent.draggable,
           resizable: false,
-        }
+        };
       } else {
-        throw 'Hey, set mode for canvasComponent'
+        throw "Hey, set mode for canvasComponent";
       }
     },
-  }
+    backgroundSettings() {
+      return this.$store.getters.BACKGROUND_SETTINGS;
+    },
+  },
 };
 </script>
+
+<style lang="scss" scoped>
+.canvas {
+  &__item-button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: none;
+  }
+}
+</style>
