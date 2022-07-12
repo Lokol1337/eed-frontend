@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import hardwareJson from '@/mocks/hardware.json';
+import hardwareJson from './P302O/P302O.json';
 
 import hardwareCanvas from './P302O/hardwareCanvas.vue';
 
