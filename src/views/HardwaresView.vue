@@ -21,7 +21,7 @@
 
 <script>
 import hardwareCanvas from "@/components/hardware/hardwareCanvas.vue";
-import hardwareJson from '@/mocks/hardware.json'
+import hardwareJson from '@/mocks/hardware.json';
 
 export default {
   components: {
