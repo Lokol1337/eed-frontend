@@ -2,272 +2,56 @@
     "name": "testLo",
     "blocks": [
         {
-            "name":"",
-            "background": "",
+            "name":"СС-О",
+            "background": "./images/backs/ss.png",
             "backgroundSettings": {
                 "width": 856,
                 "height": 300
             },
-            "blockComponents": [
+            "components": [
                 {
                     "name": "blever",
                     "valuesAndPhotos": [
                         {
-                            "value": "on",
-                            "photo": ""
+                            "value": "up",
+                            "photo": "./images/controls/lever3up.png"
                         },
                         {
-                            "value": "off",
-                            "photo": ""
-                        }
-                    ],
-                    "draggable": false,
-                    "top": 83,
-                    "left": 151,
-                    "width": 42,
-                    "height": 28
-                },
-                {
-                    "name": "lever2",
-                    "valuesAndPhotos": [
-                        {
-                            "value": "off",
-                            "photo": ""
+                            "value": "center",
+                            "photo": "./images/controls/lever3center.png"
                         },
                         {
-                            "value": "on",
-                            "photo": ""
+                            "value": "down",
+                            "photo": "./images/controls/lever3down.png"
                         }
                     ],
                     "draggable": false,
-                    "top": 87,
-                    "left": 203,
-                    "width": 24,
-                    "height": 27
-                },
-                {
-                    "name": "channel",
-                    "valuesAndPhotos": [
-                        {
-                            "value": "init",
-                            "photo": ""
-                        }
-                    ],
-                    "draggable": false,
-                    "top": 150,
-                    "left": 152,
-                    "width": 24,
-                    "height": 24
-                },
-                {
-                    "name": "rotator",
-                    "valuesAndPhotos": [
-                        {
-                            "value": "init",
-                            "photo": ""
-                        }
-                    ],
-                    "draggable": false,
-                    "top": 117,
-                    "left": 92,
-                    "width": 39,
-                    "height": 64
-                },
-                {
-                    "name": "rotator",
-                    "valuesAndPhotos": [
-                        {
-                            "value": "init",
-                            "photo": ""
-                        }
-                    ],
-                    "draggable": false,
-                    "top": 117,
-                    "left": 239,
-                    "width": 41,
-                    "height": 65
-                },
-                {
-                    "name": "jumper2",
-                    "valuesAndPhotos": [
-                        {
-                            "value": "init",
-                            "photo": ""
-                        }
-                    ],
-                    "draggable": true,
-                    "top": 148,
-                    "left": 183,
-                    "width": 15,
-                    "height": 33
-                },
-                {
-                    "name": "jumper2",
-                    "valuesAndPhotos": [
-                        {
-                            "value": "init",
-                            "photo": ""
-                        }
-                    ],
-                    "draggable": true,
-                    "top": 148,
-                    "left": 208,
-                    "width": 12,
-                    "height": 34
-                },
-                {
-                    "name": "lever2",
-                    "valuesAndPhotos": [
-                        {
-                            "value": "off",
-                            "photo": ""
-                        },
-                        {
-                            "value": "on",
-                            "photo": ""
-                        }
-                    ],
-                    "draggable": false,
-                    "top": 181,
-                    "left": 338,
-                    "width": 21,
-                    "height": 23
-                },
-                {
-                    "name": "lever2",
-                    "valuesAndPhotos": [
-                        {
-                            "value": "off",
-                            "photo": ""
-                        },
-                        {
-                            "value": "on",
-                            "photo": ""
-                        }
-                    ],
-                    "draggable": false,
-                    "top": 165,
-                    "left": 438,
-                    "width": 19,
-                    "height": 19
-                },
-                {
-                    "name": "lever2",
-                    "valuesAndPhotos": [
-                        {
-                            "value": "off",
-                            "photo": ""
-                        },
-                        {
-                            "value": "on",
-                            "photo": ""
-                        }
-                    ],
-                    "draggable": false,
-                    "top": 165,
-                    "left": 477,
-                    "width": 26,
-                    "height": 24
-                },
-                {
-                    "name": "lever2",
-                    "valuesAndPhotos": [
-                        {
-                            "value": "off",
-                            "photo": ""
-                        },
-                        {
-                            "value": "on",
-                            "photo": ""
-                        }
-                    ],
-                    "draggable": false,
-                    "top": 165,
-                    "left": 519,
-                    "width": 26,
-                    "height": 28
-                },
-                {
-                    "name": "lever2",
-                    "valuesAndPhotos": [
-                        {
-                            "value": "off",
-                            "photo": ""
-                        },
-                        {
-                            "value": "on",
-                            "photo": ""
-                        }
-                    ],
-                    "draggable": false,
-                    "top": 179,
-                    "left": 626,
-                    "width": 22,
-                    "height": 27
-                },
-                {
-                    "name": "rotator",
-                    "valuesAndPhotos": [
-                        {
-                            "value": "init",
-                            "photo": ""
-                        }
-                    ],
-                    "draggable": false,
-                    "top": 177,
-                    "left": 712,
-                    "width": 33,
-                    "height": 47
-                },
-                {
-                    "name": "rotator",
-                    "valuesAndPhotos": [
-                        {
-                            "value": "init",
-                            "photo": ""
-                        }
-                    ],
-                    "draggable": false,
-                    "top": 96,
-                    "left": 709,
-                    "width": 41,
-                    "height": 67
+                    "left": 100,
+                    "top": 60,
+                    "width": 32,
+                    "height": 72
                 },
                 {
                     "name": "blever",
                     "valuesAndPhotos": [
                         {
-                            "value": "on",
-                            "photo": ""
+                            "value": "up",
+                            "photo": "./images/controls/lever3up.png"
                         },
                         {
-                            "value": "off",
-                            "photo": ""
+                            "value": "center",
+                            "photo": "./images/controls/lever3center.png"
+                        },
+                        {
+                            "value": "down",
+                            "photo": "./images/controls/lever3down.png"
                         }
                     ],
                     "draggable": false,
-                    "top": 57,
-                    "left": 693,
-                    "width": 40,
-                    "height": 24
-                },
-                {
-                    "name": "lever2",
-                    "valuesAndPhotos": [
-                        {
-                            "value": "off",
-                            "photo": ""
-                        },
-                        {
-                            "value": "on",
-                            "photo": ""
-                        }
-                    ],
-                    "draggable": false,
-                    "top": 59,
-                    "left": 746,
-                    "width": 23,
-                    "height": 25
+                    "left": 138,
+                    "top": 60,
+                    "width": 32,
+                    "height": 72
                 }
             ]
         }

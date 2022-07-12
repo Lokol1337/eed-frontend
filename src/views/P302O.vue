@@ -7,9 +7,9 @@
           <div class="hardware-view-page__canvas-wrp">
             <hardwareCanvas
               canvasMode="viewHardware"
-              :hardwareComponents="hardware.hardwareComponents"
-              :bgImage="hardware.background"
-              :backgroundSettings="hardware.backgroundSettings"
+              :hardwareComponents="P302O.blocks[0].components"
+              :bgImage="P302O.blocks[0].background"
+              :backgroundSettings="P302O.blocks[0].backgroundSettings"
             />
           </div>
         </div>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import hardwareJson from './P302O/P302O.json';
+import P302OJSON from './P302O/P302O.json';
 
 import hardwareCanvas from './P302O/hardwareCanvas.vue';
 
@@ -28,8 +28,8 @@ export default {
     hardwareCanvas,
   },
   computed: {
-    hardware() {
-      return hardwareJson;
+    P302O() {
+      return P302OJSON;
     }
   }
 }
