@@ -10,7 +10,7 @@
             },
             "components": [
                 {
-                    "name": "blever",
+                    "name": "lever",
                     "valuesAndPhotos": [
                         {
                             "value": "up",
@@ -25,6 +25,7 @@
                             "photo": "./images/controls/lever3down.png"
                         }
                     ],
+                    "rotatable": false,
                     "draggable": false,
                     "left": 100,
                     "top": 60,
@@ -32,7 +33,7 @@
                     "height": 72
                 },
                 {
-                    "name": "blever",
+                    "name": "lever",
                     "valuesAndPhotos": [
                         {
                             "value": "up",
@@ -47,11 +48,27 @@
                             "photo": "./images/controls/lever3down.png"
                         }
                     ],
+                    "rotatable": false,
                     "draggable": false,
                     "left": 138,
                     "top": 60,
                     "width": 32,
                     "height": 72
+                },
+                {
+                    "name": "rotator",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "up",
+                            "photo": "./images/controls/rotator.png"
+                        }
+                    ],
+                    "rotatable": true,
+                    "draggable": false,
+                    "left": 87,
+                    "top": 144,
+                    "width": 23,
+                    "height": 50
                 }
             ]
         }

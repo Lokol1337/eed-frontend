@@ -6,8 +6,8 @@
     :h="hardwareComponent.height"
     :x="hardwareComponent.left"
     :y="hardwareComponent.top"
-    :draggable="mode.draggable"
-    :resizable="mode.resizable"
+    :draggable="hardwareComponent.draggable"
+    :resizable="false"
     :parent="true"
   >
     <button @keyup="moveByKeys" class="canvas__item-button">
@@ -85,51 +85,22 @@ export default {
         this.imgIndex = 0;
         return;
       }
-
       this.imgIndex++;
     },
     // TODO: remove this
     sendTestRequest() {
       demoRequest(this.hardwareComponent);
-      // console.log('Req send');
     },
-    // TODO: remove this
     selectMethodByClick() {
-      if (this.componentMode === "createHardware") {
-        return this.selectComponent();
-      } else if (this.componentMode === "viewHardware") {
-        this.$store.dispatch("ADD_SELECTED_COMPONENT", null);
-
-        if (!this.mode.draggable) {
+        if (this.hardwareComponent.draggable === false 
+          && this.hardwareComponent.rotatable === false) {
           this.changePhotoByClick();
+          return this.sendTestRequest();
+        } else if (this.hardwareComponent.draggable === true 
+          && this.hardwareComponent.rotatable === false) {
+          return this.sendTestRequest();
         }
-        return this.sendTestRequest();
-      } else {
-        throw "Oops, selectMethodByClick dont know that it do";
       }
-    },
-  },
-  computed: {
-    // TODO: Rename this property
-    mode() {
-      // TODO: switch case!
-      if (this.componentMode === "createHardware") {
-        return {
-          draggable: true,
-          resizable: true,
-        };
-      } else if (this.componentMode === "viewHardware") {
-        return {
-          draggable: this.hardwareComponent.draggable,
-          resizable: false,
-        };
-      } else {
-        throw "Hey, set mode for canvasComponent";
-      }
-    },
-    backgroundSettings() {
-      return this.$store.getters.BACKGROUND_SETTINGS;
-    },
   },
 };
 </script>
