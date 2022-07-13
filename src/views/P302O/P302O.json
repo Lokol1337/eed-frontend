@@ -231,8 +231,8 @@
           "rotatable": false,
           "divisionPrice": null,
           "draggable": true,
-          "left": 580,
-          "top": 38,
+          "left": 461,
+          "top": 99,
           "width": 15,
           "height": 30
         },
@@ -247,8 +247,8 @@
           "rotatable": false,
           "divisionPrice": null,
           "draggable": true,
-          "left": 600,
-          "top": 38,
+          "left": 480,
+          "top": 99,
           "width": 15,
           "height": 30
         },
@@ -263,8 +263,8 @@
           "rotatable": false,
           "divisionPrice": null,
           "draggable": true,
-          "left": 600,
-          "top": 38,
+          "left": 411,
+          "top": 99,
           "width": 15,
           "height": 30
         },
@@ -279,8 +279,8 @@
           "rotatable": false,
           "divisionPrice": null,
           "draggable": true,
-          "left": 620,
-          "top": 38,
+          "left": 514,
+          "top": 99,
           "width": 15,
           "height": 30
         },
@@ -295,8 +295,8 @@
           "rotatable": false,
           "divisionPrice": null,
           "draggable": true,
-          "left": 640,
-          "top": 38,
+          "left": 465,
+          "top": 60,
           "width": 27,
           "height": 21
         },
@@ -311,8 +311,8 @@
           "rotatable": false,
           "divisionPrice": null,
           "draggable": true,
-          "left": 680,
-          "top": 38,
+          "left": 512,
+          "top": 60,
           "width": 27,
           "height": 21
         },
@@ -582,25 +582,6 @@
           "rotatable": false,
           "draggable": false,
           "left": 517,
-          "top": 165,
-          "width": 25,
-          "height": 25
-        },
-        {
-          "name": "lever2",
-          "valuesAndPhotos": [
-            {
-              "value": "off",
-              "photo": "./images/controls/lever2off.png"
-            },
-            {
-              "value": "on",
-              "photo": "./images/controls/lever2on.png"
-            }
-          ],
-          "rotatable": false,
-          "draggable": false,
-          "left": 560,
           "top": 165,
           "width": 25,
           "height": 25
