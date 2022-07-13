@@ -636,6 +636,76 @@
                     "top": 165,
                     "width": 25,
                     "height": 25
+                },
+                {
+                    "name": "blever",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/bleverOff.png"
+                        },
+                        {
+                            "value": "on",
+                            "photo": "./images/controls/bleverOn.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": false,
+                    "left": 695,
+                    "top": 63,
+                    "width": 40,
+                    "height": 30
+                },
+                {
+                    "name": "lever2",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/lever2off.png"
+                        },
+                        {
+                            "value": "on",
+                            "photo": "./images/controls/lever2on.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": false,
+                    "left": 745,
+                    "top": 63,
+                    "width": 25,
+                    "height": 25
+                },
+                {
+                    "name": "channel.png",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/channel.png"
+                        }
+                    ],
+                    "rotatable": true,
+                    "divisionPrice": 30,
+                    "draggable": false,
+                    "left": 716,
+                    "top": 123,
+                    "width": 30,
+                    "height": 30
+                },
+                {
+                    "name": "channel.png",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/channel.png"
+                        }
+                    ],
+                    "rotatable": true,
+                    "divisionPrice": 30,
+                    "draggable": false,
+                    "left": 716,
+                    "top": 187,
+                    "width": 30,
+                    "height": 30
                 }
             ]
         },
