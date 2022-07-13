@@ -10,6 +10,7 @@
         <div class="col-12 col-sm-12">
           <div class="hardware-view-page__canvas-wrp">
             <hardwareCanvas
+              :key="packIdx"
               :hardwareComponents="P302O.blocks[packIdx].components"
               :bgImage="P302O.blocks[packIdx].background"
               :backgroundSettings="P302O.blocks[packIdx].backgroundSettings"
@@ -50,6 +51,8 @@ export default {
     }
   }
 }
+
+// TODO: добавить айдишники упаковкам и компонентам
 </script>
 
 <style lang="scss" scoped>
