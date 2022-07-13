@@ -385,25 +385,6 @@
                     "top": 182,
                     "width": 25,
                     "height": 25
-                },
-                {
-                    "name": "lever2",
-                    "valuesAndPhotos": [
-                        {
-                            "value": "off",
-                            "photo": "./images/controls/lever2off.png"
-                        },
-                        {
-                            "value": "on",
-                            "photo": "./images/controls/lever2on.png"
-                        }
-                    ],
-                    "rotatable": false,
-                    "draggable": false,
-                    "left": 600,
-                    "top": 182,
-                    "width": 25,
-                    "height": 25
                 }
             ]
         },
