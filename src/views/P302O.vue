@@ -31,7 +31,7 @@ export default {
   },
   data() {
     return {
-      packIdx: 0,
+      packIdx: 1,
     };
   },
   computed: {
