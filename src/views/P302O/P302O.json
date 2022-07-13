@@ -2102,6 +2102,384 @@
                 "height": 28
             }
         ]
-      }
+      },
+      {
+          "name": "ИПП",
+          "background": "./images/backs/ipp.png",
+          "backgroundSettings": {
+            "width": 1160,
+            "height": 600
+          },
+          "components": [
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 466,
+                "top": 138,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 448,
+                "top": 184,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 529,
+                "top": 184,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 446,
+                "top": 229,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 527,
+                "top": 229,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 465,
+                "top": 361,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 446,
+                "top": 410,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 446,
+                "top": 410,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 526,
+                "top": 409,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 444,
+                "top": 454,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 525,
+                "top": 455,
+                "width": 21,
+                "height": 28
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 133,
+              "top": 249,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 175,
+              "top": 249,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 217,
+              "top": 249,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 131,
+              "top": 479,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 173,
+              "top": 480,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 215,
+              "top": 480,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 770,
+              "top": 250,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 812,
+              "top": 250,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 855,
+              "top": 250,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 777,
+              "top": 474,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 818,
+              "top": 474,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 860,
+              "top": 474,
+              "width": 25,
+              "height": 25
+            }
+          ]
+        }
   ]
 }
