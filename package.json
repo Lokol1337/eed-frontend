@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "report": "node report.js"
+    "report": "node report.js",
+    "deploy": "sh deploy.sh"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.0",
