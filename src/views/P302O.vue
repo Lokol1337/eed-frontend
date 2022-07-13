@@ -4,6 +4,7 @@
     <button @click.prevent="nextPack">
       next pack
     </button>
+    <h3>{{ P302O.blocks[packIdx].name }}</h3>
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12">
@@ -31,7 +32,7 @@ export default {
   },
   data() {
     return {
-      packIdx: 1,
+      packIdx: 0,
     };
   },
   computed: {
