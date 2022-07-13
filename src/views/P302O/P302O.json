@@ -816,6 +816,55 @@
           "height": 15
         }
       ]
-    }
+    },
+    {
+        "name": "ПИТ",
+        "background": "./images/backs/pit.png",
+        "backgroundSettings": {
+          "width": 856,
+          "height": 300
+        },
+        "components": [
+            {
+                "name": "lever2",
+                "valuesAndPhotos": [
+                  {
+                    "value": "on",
+                    "photo": "./images/controls/lever2on.png"
+                  },
+                  {
+                    "value": "off",
+                    "photo": "./images/controls/lever2off.png"
+                  }
+                ],
+                "rotatable": false,
+                "draggable": false,
+                "left": 72,
+                "top": 143,
+                "width": 18,
+                "height": 18
+              },
+              {
+                "name": "lever2",
+                "valuesAndPhotos": [
+                  {
+                    "value": "on",
+                    "photo": "./images/controls/lever2on.png"
+                  },
+                  {
+                    "value": "off",
+                    "photo": "./images/controls/lever2off.png"
+                  }
+                ],
+                "rotatable": false,
+                "draggable": false,
+                "left": 457,
+                "top": 142,
+                "width": 18,
+                "height": 18
+              }
+        ]
+      }
+      
   ]
 }
