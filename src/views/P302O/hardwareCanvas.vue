@@ -13,7 +13,6 @@
         v-for="(hardwareComponent, i) in hardwareComponents"
         :key="i"
         :hardwareComponent="hardwareComponent"
-        :componentMode="canvasMode"
       />
     </div>
   </div>
@@ -24,10 +23,6 @@ import canvasComponent from "./canvasComponent.vue";
 
 export default {
   props: {
-    canvasMode: {
-      type: String,
-      required: true,
-    },
     bgImage: {
       type: String,
       required: true,

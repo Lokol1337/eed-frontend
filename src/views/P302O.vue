@@ -6,7 +6,6 @@
         <div class="col-12 col-sm-12">
           <div class="hardware-view-page__canvas-wrp">
             <hardwareCanvas
-              canvasMode="viewHardware"
               :hardwareComponents="P302O.blocks[0].components"
               :bgImage="P302O.blocks[0].background"
               :backgroundSettings="P302O.blocks[0].backgroundSettings"

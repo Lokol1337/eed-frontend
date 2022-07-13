@@ -59,16 +59,294 @@
                     "name": "rotator",
                     "valuesAndPhotos": [
                         {
-                            "value": "up",
+                            "value": 10,
                             "photo": "./images/controls/rotator.png"
+                        },
+                        {
+                            "value": 12
+                        },
+                        {
+                            "value": 14
+                        },
+                        {
+                            "value": 16
+                        },
+                        {
+                            "value": 18
+                        },
+                        {
+                            "value": 20
+                        },
+                        {
+                            "value": null
+                        },
+                        {
+                            "value": 0
+                        },
+                        {
+                            "value": 2
+                        },
+                        {
+                            "value": 4
+                        },
+                        {
+                            "value": 6
+                        },
+                        {
+                            "value": 8
                         }
                     ],
                     "rotatable": true,
+                    "divisionPrice": 30,
                     "draggable": false,
                     "left": 87,
                     "top": 144,
                     "width": 23,
                     "height": 50
+                },
+                {
+                    "name": "rotator",
+                    "valuesAndPhotos": [
+                        {
+                            "value": 0.1,
+                            "photo": "./images/controls/rotator.png"
+                        },
+                        {
+                            "value": 0.3
+                        },
+                        {
+                            "value": 0.4
+                        },
+                        {
+                            "value": null
+                        },
+                        {
+                            "value": null
+                        },
+                        {
+                            "value": null
+                        },
+                        {
+                            "value": null
+                        },
+                        {
+                            "value": null
+                        },
+                        {
+                            "value": null
+                        },
+                        {
+                            "value": null
+                        },
+                        {
+                            "value": null
+                        },
+                        {
+                            "value": null
+                        },
+                        {
+                            "value": null
+                        },
+                        {
+                            "value": null
+                        },
+                        {
+                            "value": null
+                        },
+                        {
+                            "value": null
+                        },
+                        {
+                            "value": null
+                        },
+                        {
+                            "value": 0
+                        }
+                    ],
+                    "rotatable": true,
+                    "divisionPrice": 20,
+                    "draggable": false,
+                    "left": 140,
+                    "top": 144,
+                    "width": 23,
+                    "height": 50
+                },
+                {
+                    "name": "channel",
+                    "valuesAndPhotos": [
+                        {
+                            "value": 10,
+                            "photo": "./images/controls/channel.png"
+                        },
+                        {
+                            "value": 12
+                        },
+                        {
+                            "value": 14
+                        },
+                        {
+                            "value": 16
+                        },
+                        {
+                            "value": 18
+                        },
+                        {
+                            "value": 20
+                        },
+                        {
+                            "value": null
+                        },
+                        {
+                            "value": 0
+                        },
+                        {
+                            "value": 2
+                        },
+                        {
+                            "value": 4
+                        },
+                        {
+                            "value": 6
+                        },
+                        {
+                            "value": 8
+                        }
+                    ],
+                    "rotatable": true,
+                    "divisionPrice": 40,
+                    "draggable": false,
+                    "left": 87,
+                    "top": 207,
+                    "width": 30,
+                    "height": 30
+                },
+                {
+                    "name": "jumper4",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "jumper4",
+                            "photo": "./images/controls/jumper4.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "divisionPrice": null,
+                    "draggable": true,
+                    "left": 580,
+                    "top": 38,
+                    "width": 15,
+                    "height": 30
+                },
+                {
+                    "name": "jumper4",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "jumper4",
+                            "photo": "./images/controls/jumper4.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "divisionPrice": null,
+                    "draggable": true,
+                    "left": 600,
+                    "top": 38,
+                    "width": 15,
+                    "height": 30
+                },
+                {
+                    "name": "jumper4",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "jumper4",
+                            "photo": "./images/controls/jumper4.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "divisionPrice": null,
+                    "draggable": true,
+                    "left": 600,
+                    "top": 38,
+                    "width": 15,
+                    "height": 30
+                },
+                {
+                    "name": "jumper4",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "jumper4",
+                            "photo": "./images/controls/jumper4.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "divisionPrice": null,
+                    "draggable": true,
+                    "left": 620,
+                    "top": 38,
+                    "width": 15,
+                    "height": 30
+                },
+                {
+                    "name": "jumper4",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "jumper4",
+                            "photo": "./images/controls/jumper4.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "divisionPrice": null,
+                    "draggable": true,
+                    "left": 640,
+                    "top": 38,
+                    "width": 15,
+                    "height": 30
+                },
+                {
+                    "name": "jumper4",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "jumper4",
+                            "photo": "./images/controls/jumper4.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "divisionPrice": null,
+                    "draggable": true,
+                    "left": 660,
+                    "top": 38,
+                    "width": 15,
+                    "height": 30
+                },
+                {
+                    "name": "jumper4",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "jumper4",
+                            "photo": "./images/controls/jumper4.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "divisionPrice": null,
+                    "draggable": true,
+                    "left": 680,
+                    "top": 38,
+                    "width": 15,
+                    "height": 30
+                },
+                {
+                    "name": "jumper4",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "jumper4",
+                            "photo": "./images/controls/jumper4.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "divisionPrice": null,
+                    "draggable": true,
+                    "left": 700,
+                    "top": 38,
+                    "width": 15,
+                    "height": 30
                 }
             ]
         }
