@@ -541,6 +541,101 @@
                     "top": 140,
                     "width": 25,
                     "height": 40
+                },
+                {
+                    "name": "lever2",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/lever2off.png"
+                        },
+                        {
+                            "value": "on",
+                            "photo": "./images/controls/lever2on.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": false,
+                    "left": 337,
+                    "top": 181,
+                    "width": 25,
+                    "height": 25
+                },
+                {
+                    "name": "lever2",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/lever2off.png"
+                        },
+                        {
+                            "value": "on",
+                            "photo": "./images/controls/lever2on.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": false,
+                    "left": 437,
+                    "top": 165,
+                    "width": 25,
+                    "height": 25
+                },
+                {
+                    "name": "lever2",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/lever2off.png"
+                        },
+                        {
+                            "value": "on",
+                            "photo": "./images/controls/lever2on.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": false,
+                    "left": 477,
+                    "top": 165,
+                    "width": 25,
+                    "height": 25
+                },
+                {
+                    "name": "lever2",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/lever2off.png"
+                        },
+                        {
+                            "value": "on",
+                            "photo": "./images/controls/lever2on.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": false,
+                    "left": 517,
+                    "top": 165,
+                    "width": 25,
+                    "height": 25
+                },
+                {
+                    "name": "lever2",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/lever2off.png"
+                        },
+                        {
+                            "value": "on",
+                            "photo": "./images/controls/lever2on.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": false,
+                    "left": 560,
+                    "top": 165,
+                    "width": 25,
+                    "height": 25
                 }
             ]
         },
