@@ -225,7 +225,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_vertical.png"
             }
           ],
           "rotatable": false,
@@ -241,7 +241,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_vertical.png"
             }
           ],
           "rotatable": false,
@@ -257,7 +257,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_vertical.png"
             }
           ],
           "rotatable": false,
@@ -273,7 +273,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_vertical.png"
             }
           ],
           "rotatable": false,
@@ -289,7 +289,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -297,31 +297,15 @@
           "draggable": true,
           "left": 640,
           "top": 38,
-          "width": 15,
-          "height": 30
+          "width": 27,
+          "height": 21
         },
         {
           "name": "jumper4",
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
-            }
-          ],
-          "rotatable": false,
-          "divisionPrice": null,
-          "draggable": true,
-          "left": 660,
-          "top": 38,
-          "width": 15,
-          "height": 30
-        },
-        {
-          "name": "jumper4",
-          "valuesAndPhotos": [
-            {
-              "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -329,24 +313,8 @@
           "draggable": true,
           "left": 680,
           "top": 38,
-          "width": 15,
-          "height": 30
-        },
-        {
-          "name": "jumper4",
-          "valuesAndPhotos": [
-            {
-              "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
-            }
-          ],
-          "rotatable": false,
-          "divisionPrice": null,
-          "draggable": true,
-          "left": 700,
-          "top": 38,
-          "width": 15,
-          "height": 30
+          "width": 27,
+          "height": 21
         },
         {
           "name": "lever2",
@@ -1010,7 +978,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1026,7 +994,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1042,7 +1010,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1058,7 +1026,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1151,7 +1119,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1167,7 +1135,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1183,7 +1151,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1199,7 +1167,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1215,7 +1183,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1231,7 +1199,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1247,7 +1215,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1655,7 +1623,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1671,7 +1639,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1697,7 +1665,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1713,7 +1681,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1729,7 +1697,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1745,7 +1713,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1761,7 +1729,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1777,7 +1745,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1793,7 +1761,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1809,7 +1777,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1825,7 +1793,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
@@ -1841,7 +1809,7 @@
           "valuesAndPhotos": [
             {
               "value": "jumper4",
-              "photo": "./images/controls/jumper4.png"
+              "photo": "./images/controls/jumper4_horizontal.png"
             }
           ],
           "rotatable": false,
