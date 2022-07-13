@@ -385,6 +385,50 @@
                     "top": 182,
                     "width": 25,
                     "height": 25
+                }
+            ]
+        },
+        {
+            "name": "ЛО",
+            "background": "./images/backs/lo.png",
+            "backgroundSettings": {
+                "width": 856,
+                "height": 300
+            },
+            "components": [
+                {
+                    "name": "jumper2",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "jumper2",
+                            "photo": "./images/controls/jumper2.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": true,
+                    "left": 107,
+                    "top": 90,
+                    "width": 20,
+                    "height": 10
+                },
+                {
+                    "name": "blever",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/bleverOff.png"
+                        },
+                        {
+                            "value": "on",
+                            "photo": "./images/controls/bleverOn.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": false,
+                    "left": 150,
+                    "top": 86,
+                    "width": 50,
+                    "height": 30
                 },
                 {
                     "name": "lever2",
@@ -400,21 +444,161 @@
                     ],
                     "rotatable": false,
                     "draggable": false,
-                    "left": 600,
-                    "top": 182,
+                    "left": 203,
+                    "top": 90,
                     "width": 25,
                     "height": 25
-                }
-            ]
-        },
-        {
-            "name": "ЛО",
-            "background": "./images/backs/lo.png",
-            "backgroundSettings": {
-                "width": 856,
-                "height": 300
-            },
-            "components":[
+                },
+                {
+                    "name": "rotator",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/rotator.png"
+                        }
+                    ],
+                    "rotatable": true,
+                    "divisionPrice": 30,
+                    "draggable": false,
+                    "left": 105,
+                    "top": 140,
+                    "width": 25,
+                    "height": 40
+                },
+                {
+                    "name": "channel",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/channel.png"
+                        }
+                    ],
+                    "rotatable": true,
+                    "divisionPrice": 30,
+                    "draggable": false,
+                    "left": 151,
+                    "top": 151,
+                    "width": 22,
+                    "height": 22
+                },
+                {
+                    "name": "jumper2",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/jumper2.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": true,
+                    "left": 185,
+                    "top": 152,
+                    "width": 10,
+                    "height": 25
+                },
+                {
+                    "name": "jumper2",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/jumper2.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": true,
+                    "left": 195,
+                    "top": 152,
+                    "width": 10,
+                    "height": 25
+                },
+                {
+                    "name": "jumper2",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/jumper2.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": true,
+                    "left": 210,
+                    "top": 152,
+                    "width": 10,
+                    "height": 25
+                },
+                {
+                    "name": "rotator",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/rotator.png"
+                        }
+                    ],
+                    "rotatable": true,
+                    "divisionPrice": 30,
+                    "draggable": false,
+                    "left": 245,
+                    "top": 140,
+                    "width": 25,
+                    "height": 40
+                },
+                {
+                    "name": "lever2",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/lever2off.png"
+                        },
+                        {
+                            "value": "on",
+                            "photo": "./images/controls/lever2on.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": false,
+                    "left": 337,
+                    "top": 181,
+                    "width": 25,
+                    "height": 25
+                },
+                {
+                    "name": "lever2",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/lever2off.png"
+                        },
+                        {
+                            "value": "on",
+                            "photo": "./images/controls/lever2on.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": false,
+                    "left": 437,
+                    "top": 165,
+                    "width": 25,
+                    "height": 25
+                },
+                {
+                    "name": "lever2",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/lever2off.png"
+                        },
+                        {
+                            "value": "on",
+                            "photo": "./images/controls/lever2on.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": false,
+                    "left": 477,
+                    "top": 165,
+                    "width": 25,
+                    "height": 25
+                },
                 {
                     "name": "lever2",
                     "valuesAndPhotos": [
@@ -430,9 +614,98 @@
                     "rotatable": false,
                     "draggable": false,
                     "left": 517,
-                    "top": 182,
+                    "top": 165,
                     "width": 25,
                     "height": 25
+                },
+                {
+                    "name": "lever2",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/lever2off.png"
+                        },
+                        {
+                            "value": "on",
+                            "photo": "./images/controls/lever2on.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": false,
+                    "left": 560,
+                    "top": 165,
+                    "width": 25,
+                    "height": 25
+                },
+                {
+                    "name": "blever",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/bleverOff.png"
+                        },
+                        {
+                            "value": "on",
+                            "photo": "./images/controls/bleverOn.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": false,
+                    "left": 695,
+                    "top": 63,
+                    "width": 40,
+                    "height": 30
+                },
+                {
+                    "name": "lever2",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/lever2off.png"
+                        },
+                        {
+                            "value": "on",
+                            "photo": "./images/controls/lever2on.png"
+                        }
+                    ],
+                    "rotatable": false,
+                    "draggable": false,
+                    "left": 745,
+                    "top": 63,
+                    "width": 25,
+                    "height": 25
+                },
+                {
+                    "name": "channel.png",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/channel.png"
+                        }
+                    ],
+                    "rotatable": true,
+                    "divisionPrice": 30,
+                    "draggable": false,
+                    "left": 716,
+                    "top": 123,
+                    "width": 30,
+                    "height": 30
+                },
+                {
+                    "name": "channel.png",
+                    "valuesAndPhotos": [
+                        {
+                            "value": "off",
+                            "photo": "./images/controls/channel.png"
+                        }
+                    ],
+                    "rotatable": true,
+                    "divisionPrice": 30,
+                    "draggable": false,
+                    "left": 716,
+                    "top": 187,
+                    "width": 30,
+                    "height": 30
                 }
             ]
         },
