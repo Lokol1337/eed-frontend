@@ -2234,22 +2234,6 @@
                 "rotatable": false,
                 "divisionPrice": null,
                 "draggable": true,
-                "left": 446,
-                "top": 410,
-                "width": 21,
-                "height": 28
-            },
-            {
-                "name": "jumper4",
-                "valuesAndPhotos": [
-                  {
-                    "value": "jumper4",
-                    "photo": "./images/controls/jumper4_vertical.png"
-                  }
-                ],
-                "rotatable": false,
-                "divisionPrice": null,
-                "draggable": true,
                 "left": 526,
                 "top": 409,
                 "width": 21,
