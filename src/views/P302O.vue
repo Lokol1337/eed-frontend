@@ -8,9 +8,12 @@
         <div class="col-12 col-sm-12">
           <div class="hardware-view-page__canvas-wrp">
             <hardwareCanvas
-              :hardwareComponents="actualPack.components"
-              :bgImage="actualPack.background"
-              :backgroundSettings="actualPack.backgroundSettings"
+              v-for="pack in allPacks.blocks"
+              :key="pack.name"
+              v-show="pack.name === actualPack.name"
+              :hardwareComponents="pack.components"
+              :bgImage="pack.background"
+              :backgroundSettings="pack.backgroundSettings"
             />
           </div>
         </div>
@@ -33,12 +36,8 @@ export default {
   data() {
     return {      
       actualPack: null,
+      allPacks: null,
     };
-  },
-  computed: {
-    allPacks() {
-      return P302OJSON;
-    }
   },
   methods: {
     selectPackHandler(pack) {
@@ -46,6 +45,7 @@ export default {
     }
   },
   created() {
+    this.allPacks = P302OJSON;
     this.actualPack = P302OJSON.blocks[0]
   }
 };
