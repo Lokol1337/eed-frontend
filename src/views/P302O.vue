@@ -1,19 +1,16 @@
 <template>
   <div class="p-302-0">
     <h1>P-302-0</h1>
-    <button @click.prevent="nextPack">
-      next pack
-    </button>
-    <h3>{{ P302O.blocks[packIdx].name }}</h3>
+    <packManager :packs="allPacks.blocks" @selectPack="selectPackHandler"/>
+    <h3>{{ actualPack.name }}</h3>
     <div class="container">
-      <div class="row">
+      <div class="row">        
         <div class="col-12 col-sm-12">
           <div class="hardware-view-page__canvas-wrp">
             <hardwareCanvas
-              :key="packIdx"
-              :hardwareComponents="P302O.blocks[packIdx].components"
-              :bgImage="P302O.blocks[packIdx].background"
-              :backgroundSettings="P302O.blocks[packIdx].backgroundSettings"
+              :hardwareComponents="actualPack.components"
+              :bgImage="actualPack.background"
+              :backgroundSettings="actualPack.backgroundSettings"
             />
           </div>
         </div>
@@ -23,38 +20,36 @@
 </template>
 
 <script>
-import P302OJSON from './P302O/P302O.json';
+import P302OJSON from "./P302O/P302O.json";
 
-import hardwareCanvas from './P302O/hardwareCanvas.vue';
+import hardwareCanvas from "./P302O/hardwareCanvas.vue";
+import packManager from "./P302O/packManager.vue";
 
 export default {
   components: {
     hardwareCanvas,
+    packManager,
   },
   data() {
-    return {
-      packIdx: 0,
+    return {      
+      actualPack: null,
     };
   },
   computed: {
-    P302O() {
+    allPacks() {
       return P302OJSON;
     }
   },
   methods: {
-    nextPack() {
-      if ((this.packIdx + 1) === this.P302O.blocks.length) {
-        this.packIdx = 0;
-      } else {
-        this.packIdx++;
-      }
+    selectPackHandler(pack) {
+      this.actualPack = pack;
     }
+  },
+  created() {
+    this.actualPack = P302OJSON.blocks[0]
   }
-}
-
-// TODO: добавить айдишники упаковкам и компонентам
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>
