@@ -368,6 +368,98 @@
           "top": 182,
           "width": 25,
           "height": 25
+        },
+        {
+          "name": "mover",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/mover.png"
+            }
+          ],
+          "rotatable": true,
+          "divisionPrice": 30,
+          "draggable": false,
+          "left": 405,
+          "top": 171,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 765,
+          "top": 66,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 737,
+          "top": 66,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_white",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_white_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_white_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 768,
+          "top": 180,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "lever2_vertical",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_vertical_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_vertical_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 734,
+          "top": 136,
+          "width": 25,
+          "height": 25
         }
       ]
     },
@@ -670,6 +762,139 @@
           "top": 187,
           "width": 30,
           "height": 30
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 334,
+          "top": 58,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 334,
+          "top": 95,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 625,
+          "top": 62,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "lever2_vertical",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_vertical_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_vertical_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 626,
+          "top": 181,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "button_pressed",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/button_unpressed.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/button_pressed.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 437,
+          "top": 201,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "button_pressed",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/button_unpressed.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/button_pressed.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 477,
+          "top": 201,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "button_pressed",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/button_unpressed.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/button_pressed.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 516,
+          "top": 201,
+          "width": 25,
+          "height": 25
         }
       ]
     },
@@ -1051,6 +1276,348 @@
           "top": 208,
           "width": 15,
           "height": 15
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 150,
+          "top": 157,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 86,
+          "top": 157,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 86,
+          "top": 157,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 215,
+          "top": 157,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 270,
+          "top": 157,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 327,
+          "top": 193,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 403,
+          "top": 193,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 522,
+          "top": 170,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 522,
+          "top": 206,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 564,
+          "top": 193,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 641,
+          "top": 193,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 683,
+          "top": 194,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 760,
+          "top": 194,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 764,
+          "top": 83,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 764,
+          "top": 59,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 686,
+          "top": 63,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 643,
+          "top": 63,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 567,
+          "top": 63,
+          "width": 18,
+          "height": 18
         }
       ]
     },
@@ -1099,6 +1666,120 @@
           "top": 142,
           "width": 18,
           "height": 18
+        },
+        {
+          "name": "light_white",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_white_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_white_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 65,
+          "top": 109,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 364,
+          "top": 111,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 389,
+          "top": 111,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 450,
+          "top": 111,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 744,
+          "top": 111,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 769,
+          "top": 111,
+          "width": 25,
+          "height": 25
         }
       ]
     },
@@ -1571,6 +2252,63 @@
           "top": 123,
           "width": 32,
           "height": 72
+        },
+        {
+          "name": "button_pressed",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/button_unpressed.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/button_pressed.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 381,
+          "top": 232,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 587,
+          "top": 206,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/anti_button_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/anti_button_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 730,
+          "top": 195,
+          "width": 20,
+          "height": 20
         }
       ]
     },
@@ -1645,6 +2383,82 @@
           "top": 137,
           "width": 26,
           "height": 19
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 150,
+          "top": 472,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 356,
+          "top": 472,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 398,
+          "top": 472,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "button_pressed",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/button_unpressed.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/button_pressed.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 376,
+          "top": 518,
+          "width": 25,
+          "height": 25
         }
       ]
     },
@@ -2100,6 +2914,82 @@
                 "top": 336,
                 "width": 18,
                 "height": 28
+            },
+            {
+              "name": "light_white",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/light_white_off.png"
+                },
+                {
+                  "value": "on",
+                  "photo": "./images/controls/light_white_on.png"
+                }
+              ],
+              "rotatable": false,
+              "draggable": false,
+              "left": 769,
+              "top": 366,
+              "width": 35,
+              "height": 35
+            },
+            {
+              "name": "light_white",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/light_white_off.png"
+                },
+                {
+                  "value": "on",
+                  "photo": "./images/controls/light_white_on.png"
+                }
+              ],
+              "rotatable": false,
+              "draggable": false,
+              "left": 981,
+              "top": 375,
+              "width": 35,
+              "height": 35
+            },
+            {
+              "name": "light_red",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/light_red_off.png"
+                },
+                {
+                  "value": "on",
+                  "photo": "./images/controls/light_red_on.png"
+                }
+              ],
+              "rotatable": false,
+              "draggable": false,
+              "left": 818,
+              "top": 370,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "light_red",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/light_red_off.png"
+                },
+                {
+                  "value": "on",
+                  "photo": "./images/controls/light_red_on.png"
+                }
+              ],
+              "rotatable": false,
+              "draggable": false,
+              "left": 948,
+              "top": 380,
+              "width": 25,
+              "height": 25
             }
         ]
       },
@@ -2460,6 +3350,25 @@
               "draggable": false,
               "left": 860,
               "top": 474,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "light_red",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/light_red_off.png"
+                },
+                {
+                  "value": "on",
+                  "photo": "./images/controls/light_red_on.png"
+                }
+              ],
+              "rotatable": false,
+              "draggable": false,
+              "left": 539,
+              "top": 357,
               "width": 25,
               "height": 25
             }
