@@ -77,7 +77,6 @@
             { "value": 150, "photo": "./images/controls/rotator.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 87,
           "top": 144,
@@ -96,7 +95,6 @@
             { "value": 35, "photo": "./images/controls/rotator.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 20,
           "draggable": false,
           "left": 145,
           "top": 144,
@@ -120,7 +118,6 @@
             { "value": 300, "photo": "./images/controls/channel.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 40,
           "draggable": false,
           "left": 85,
           "top": 207,
@@ -139,7 +136,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 461,
           "top": 99,
@@ -158,7 +154,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 480,
           "top": 99,
@@ -177,7 +172,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 411,
           "top": 99,
@@ -196,7 +190,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 514,
           "top": 99,
@@ -215,7 +208,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 465,
           "top": 60,
@@ -234,7 +226,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 512,
           "top": 60,
@@ -294,7 +285,6 @@
             { "value": "off", "photo": "./images/controls/mover.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 405,
           "top": 171,
@@ -454,7 +444,6 @@
             { "value": 160, "photo": "./images/controls/rotator.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 105,
           "top": 130,
@@ -478,7 +467,6 @@
             { "value": 300, "photo": "./images/controls/channel.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 152,
           "top": 148,
@@ -549,7 +537,6 @@
             { "value": 160, "photo": "./images/controls/rotator.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 246,
           "top": 133,
@@ -701,7 +688,6 @@
             { "value": 300, "photo": "./images/controls/channel.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 715,
           "top": 120,
@@ -721,7 +707,6 @@
             { "value": 200, "photo": "./images/controls/channel.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 716,
           "top": 187,
@@ -872,7 +857,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 334,
           "top": 111,
@@ -888,7 +872,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 364,
           "top": 111,
@@ -904,7 +887,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 261,
           "top": 78,
@@ -920,7 +902,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 224,
           "top": 78,
@@ -936,7 +917,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 120,
           "top": 110,
@@ -952,7 +932,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 217,
           "top": 208,
@@ -968,7 +947,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 327,
           "top": 206,
@@ -984,7 +962,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 121,
           "top": 243,
@@ -1000,7 +977,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 404,
           "top": 206,
@@ -1016,7 +992,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 523,
           "top": 183,
@@ -1032,7 +1007,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 565,
           "top": 206,
@@ -1048,7 +1022,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 522,
           "top": 219,
@@ -1064,7 +1037,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 641,
           "top": 207,
@@ -1080,7 +1052,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 684,
           "top": 207,
@@ -1096,7 +1067,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 567,
           "top": 76,
@@ -1112,7 +1082,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 760,
           "top": 207,
@@ -1128,7 +1097,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 686,
           "top": 76,
@@ -1144,7 +1112,6 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 643,
           "top": 76,
@@ -1163,7 +1130,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 482,
           "top": 112,
@@ -1182,7 +1148,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 423,
           "top": 112,
@@ -1201,7 +1166,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 242,
           "top": 111,
@@ -1220,7 +1184,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 180,
           "top": 111,
@@ -1708,7 +1671,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 109,
           "top": 123,
@@ -1727,7 +1689,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 298,
           "top": 69,
@@ -1746,7 +1707,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 298,
           "top": 170,
@@ -1765,7 +1725,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 408,
           "top": 68,
@@ -1784,7 +1743,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 409,
           "top": 170,
@@ -1803,7 +1761,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 600,
           "top": 123,
@@ -1822,7 +1779,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 600,
           "top": 168,
@@ -1838,7 +1794,6 @@
             { "value": "jumper8", "photo": "./images/controls/jumper8.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 298,
           "top": 94,
@@ -1854,7 +1809,6 @@
             { "value": "jumper8", "photo": "./images/controls/jumper8.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 409,
           "top": 94,
@@ -1920,7 +1874,6 @@
             { "value": 90, "photo": "./images/controls/rotator.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 691,
           "top": 160,
@@ -1952,7 +1905,6 @@
             { "value": 120, "photo": "./images/controls/rotator.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 106,
           "top": 135,
@@ -1975,7 +1927,6 @@
             { "value": 110, "photo": "./images/controls/rotator.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 83,
           "top": 193,
@@ -2016,7 +1967,6 @@
             { "value": 45, "photo": "./images/controls/rotator.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 417,
           "top": 136,
@@ -2039,7 +1989,6 @@
             { "value": 110, "photo": "./images/controls/rotator.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 440,
           "top": 194,
@@ -2237,7 +2186,6 @@
             { "value": "jumper8", "photo": "./images/controls/jumper8.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 69,
           "top": 66,
@@ -2253,7 +2201,6 @@
             { "value": "jumper8", "photo": "./images/controls/jumper8.png" }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 414,
           "top": 67,
@@ -2272,7 +2219,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 71,
           "top": 137,
@@ -2291,7 +2237,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 97,
           "top": 137,
@@ -2385,7 +2330,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 241,
           "top": 94,
@@ -2404,7 +2348,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 349,
           "top": 94,
@@ -2423,7 +2366,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 241,
           "top": 176,
@@ -2442,7 +2384,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 349,
           "top": 176,
@@ -2461,7 +2402,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 794,
           "top": 96,
@@ -2480,7 +2420,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 896,
           "top": 96,
@@ -2499,7 +2438,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 792,
           "top": 175,
@@ -2518,7 +2456,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 895,
           "top": 175,
@@ -2537,7 +2474,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 450,
           "top": 119,
@@ -2556,7 +2492,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 691,
           "top": 119,
@@ -2583,7 +2518,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 142,
           "top": 85,
@@ -2602,7 +2536,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 243,
           "top": 86,
@@ -2621,7 +2554,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 344,
           "top": 86,
@@ -2640,7 +2572,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 471,
           "top": 88,
@@ -2659,7 +2590,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 570,
           "top": 88,
@@ -2678,7 +2608,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 668,
           "top": 88,
@@ -2697,7 +2626,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 795,
           "top": 88,
@@ -2716,7 +2644,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 892,
           "top": 88,
@@ -2735,7 +2662,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 993,
           "top": 89,
@@ -2754,7 +2680,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 984,
           "top": 434,
@@ -2795,7 +2720,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 144,
           "top": 335,
@@ -2814,7 +2738,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 244,
           "top": 335,
@@ -2833,7 +2756,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 348,
           "top": 335,
@@ -2852,7 +2774,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 472,
           "top": 336,
@@ -2871,7 +2792,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 572,
           "top": 336,
@@ -2890,7 +2810,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 670,
           "top": 336,
@@ -2899,6 +2818,76 @@
           "id": 9016,
           "initValue": null,
           "currentValue": null
+        },
+        {
+          "name": "light_white",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_white_off.png"
+            },
+            { "value": "on", "photo": "./images/controls/light_white_on.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 769,
+          "top": 366,
+          "width": 35,
+          "height": 35,
+          "id": 9018,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "light_white",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_white_off.png"
+            },
+            { "value": "on", "photo": "./images/controls/light_white_on.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 981,
+          "top": 375,
+          "width": 35,
+          "height": 35,
+          "id": 9019,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            { "value": "off", "photo": "./images/controls/light_red_off.png" },
+            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 818,
+          "top": 370,
+          "width": 25,
+          "height": 25,
+          "id": 9020,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            { "value": "off", "photo": "./images/controls/light_red_off.png" },
+            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 948,
+          "top": 380,
+          "width": 25,
+          "height": 25,
+          "id": 9021,
+          "currentValue": "off",
+          "initValue": "off"
         }
       ],
       "id": 9
@@ -2917,7 +2906,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 466,
           "top": 138,
@@ -2936,7 +2924,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 448,
           "top": 184,
@@ -2955,7 +2942,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 529,
           "top": 184,
@@ -2974,7 +2960,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 446,
           "top": 229,
@@ -2993,7 +2978,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 527,
           "top": 229,
@@ -3012,7 +2996,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 465,
           "top": 361,
@@ -3031,7 +3014,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 446,
           "top": 410,
@@ -3050,7 +3032,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 526,
           "top": 409,
@@ -3069,7 +3050,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 444,
           "top": 454,
@@ -3088,7 +3068,6 @@
             }
           ],
           "rotatable": false,
-          "divisionPrice": null,
           "draggable": true,
           "left": 525,
           "top": 455,
@@ -3114,7 +3093,6 @@
             { "value": 300, "photo": "./images/controls/channel.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 133,
           "top": 249,
@@ -3140,7 +3118,6 @@
             { "value": 300, "photo": "./images/controls/channel.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 175,
           "top": 249,
@@ -3166,7 +3143,6 @@
             { "value": 300, "photo": "./images/controls/channel.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 217,
           "top": 249,
@@ -3192,7 +3168,6 @@
             { "value": 300, "photo": "./images/controls/channel.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 131,
           "top": 479,
@@ -3218,7 +3193,6 @@
             { "value": 300, "photo": "./images/controls/channel.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 173,
           "top": 480,
@@ -3244,7 +3218,6 @@
             { "value": 300, "photo": "./images/controls/channel.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 215,
           "top": 480,
@@ -3270,7 +3243,6 @@
             { "value": 300, "photo": "./images/controls/channel.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 770,
           "top": 250,
@@ -3296,7 +3268,6 @@
             { "value": 300, "photo": "./images/controls/channel.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 812,
           "top": 250,
@@ -3322,7 +3293,6 @@
             { "value": 300, "photo": "./images/controls/channel.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 855,
           "top": 250,
@@ -3348,7 +3318,6 @@
             { "value": 300, "photo": "./images/controls/channel.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 777,
           "top": 474,
@@ -3374,7 +3343,6 @@
             { "value": 300, "photo": "./images/controls/channel.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 818,
           "top": 474,
@@ -3400,7 +3368,6 @@
             { "value": 300, "photo": "./images/controls/channel.png" }
           ],
           "rotatable": true,
-          "divisionPrice": 30,
           "draggable": false,
           "left": 860,
           "top": 474,
@@ -3409,6 +3376,22 @@
           "id": 10021,
           "initValue": 0,
           "currentValue": 0
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            { "value": "off", "photo": "./images/controls/light_red_off.png" },
+            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 539,
+          "top": 357,
+          "width": 25,
+          "height": 25,
+          "id": 10023,
+          "currentValue": "off",
+          "initValue": "off"
         }
       ],
       "id": 10
