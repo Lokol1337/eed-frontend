@@ -46,7 +46,6 @@ fs.readFile("../src/views/P302O/P302O.json", (err, data) => {
           comp.initValue = comp.valuesAndPhotos[0].value
           console.log(`${blockId}`)
           console.log(comp)
-          
           newObj.blocks[blockId].components.push(comp);
         }
         compId++;
