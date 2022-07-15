@@ -11,7 +11,7 @@ fs.readFile("../src/views/P302O/P302O.json", (err, data) => {
 
   oldObj.blocks.forEach((block) => {
     block.components.forEach((comp) => {
-      //console.log(comp.name);
+      delete comp.divisionPrice
       setNew.add(comp.name);
     });
   });
@@ -22,6 +22,7 @@ fs.readFile("../src/views/P302O/P302O.json", (err, data) => {
     newObj.blocks.forEach((block) => {
       block.components.forEach((comp) => {
         //console.log(comp.name);
+        delete comp.divisionPrice
         setNew.delete(comp.name);
       });
     });
@@ -43,14 +44,16 @@ fs.readFile("../src/views/P302O/P302O.json", (err, data) => {
         {
           comp.currentValue = comp.valuesAndPhotos[0].value
           comp.initValue = comp.valuesAndPhotos[0].value
-          //console.log(`${blockId}:${comp}`)
+          console.log(`${blockId}`)
+          console.log(comp)
+          
           newObj.blocks[blockId].components.push(comp);
         }
         compId++;
       });
       blockId++;
     });
-    console.log(newObj.blocks[0].components)
+    //console.log(newObj.blocks[0].components)
     fs.writeFile("../src/views/P302O/P302O_2.json",JSON.stringify(newObj),(err)=>{console.log(err)})
   });
 });
