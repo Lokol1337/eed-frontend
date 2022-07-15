@@ -282,7 +282,13 @@
         {
           "name": "mover",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/mover.png" }
+            { "value": 0, "photo": "./images/controls/mover.png" },
+            { "value": 30, "photo": "./images/controls/mover.png" },
+            { "value": 60, "photo": "./images/controls/mover.png" },
+            { "value": 90, "photo": "./images/controls/mover.png" },
+            { "value": 120, "photo": "./images/controls/mover.png" },
+            { "value": 150, "photo": "./images/controls/mover.png" },
+            { "value": 180, "photo": "./images/controls/mover.png" }
           ],
           "rotatable": true,
           "draggable": false,
@@ -291,8 +297,8 @@
           "width": 30,
           "height": 30,
           "id": 1015,
-          "currentValue": "off",
-          "initValue": "off"
+          "currentValue": 0,
+          "initValue": 0
         },
         {
           "name": "light_red",
