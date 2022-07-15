@@ -35,7 +35,7 @@ export default {
   data() {
     return {
       imgIndex: 0,
-      degreeOfRotation: 0,
+      degreeOfRotation:  this.hardwareComponent.initValue,
     };
   },
   methods: {
@@ -46,20 +46,32 @@ export default {
       }
     },
     changePhotoByClick() {
+      //console.log(this.imgIndex)
       if (this.imgIndex === this.hardwareComponent.valuesAndPhotos.length - 1) {
         this.imgIndex = 0;
+         this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.imgIndex].value;
         return;
       }
       this.imgIndex++;
+      this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.imgIndex].value;
     },
     rotate() {
-      this.degreeOfRotation += this.hardwareComponent.divisionPrice;
+      if (this.imgIndex === this.hardwareComponent.valuesAndPhotos.length - 1) {
+        this.imgIndex = 0;
+      }
+      else
+      {
+        this.imgIndex++;
+      }
+      this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.imgIndex].value;
+      this.degreeOfRotation = this.hardwareComponent.valuesAndPhotos[this.imgIndex].value;
     },
     // TODO: remove this
     sendTestRequest() {
       demoRequest(this.hardwareComponent);
     },
     selectMethodByClick() {
+      
       if (
         this.hardwareComponent.draggable === false &&
         this.hardwareComponent.rotatable === false
