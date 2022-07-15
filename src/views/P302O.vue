@@ -25,7 +25,8 @@
 <script>
 
 //import P302OJSON from "./P302O/P302O.json";
-import P302OJSON from './P302O/P302O_1.json';
+//import P302OJSON from './P302O/P302O_1.json';
+import P302OJSON from "./P302O/P302O_2.json";
 
 import hardwareCanvas from "./P302O/hardwareCanvas.vue";
 import packManager from "./P302O/packManager.vue";
