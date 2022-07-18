@@ -105,16 +105,13 @@
           "initValue": "off"
         },
         {
-          "name": "button_6",
+          "name": "button_1",
           "valuesAndPhotos": [
             {
               "value": "off",
               "photo": "./images/p-330-6/controls/button-6-1.png"
             },
-            {
-              "value": "on",
-              "photo": "./images/p-330-6/controls/button-6-2.png"
-            }
+            { "value": "on", "photo": "./images/p-330-6/controls/button-6-2.png" }
           ],
           "rotatable": false,
           "draggable": false,
@@ -122,7 +119,7 @@
           "top": 177,
           "width": 15,
           "height": 25,
-          "id": 20006,
+          "id": 20001,
           "currentValue": "off",
           "initValue": "off"
         },
