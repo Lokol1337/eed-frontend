@@ -3431,7 +3431,7 @@
           "top": 124,
           "width": 25,
           "height": 25,
-          "id": 1003,
+          "id": 11001,
           "initValue": -150,
           "currentValue": -150
         },
@@ -3456,7 +3456,7 @@
           "top": 217,
           "width": 25,
           "height": 25,
-          "id": 1003,
+          "id": 11002,
           "initValue": -150,
           "currentValue": -150
         },
@@ -3481,7 +3481,7 @@
           "top": 198,
           "width": 25,
           "height": 25,
-          "id": 1003,
+          "id": 11003,
           "initValue": -150,
           "currentValue": -150
         },
@@ -3500,7 +3500,7 @@
           "top": 123,
           "width": 25,
           "height": 50,
-          "id": 1003,
+          "id": 11004,
           "initValue": -60,
           "currentValue": -60
         },
@@ -3516,7 +3516,7 @@
           "top": 105,
           "width": 30,
           "height": 30,
-          "id": 1016,
+          "id": 11005,
           "currentValue": "off",
           "initValue": "off"
         },
@@ -3532,7 +3532,7 @@
           "top": 105,
           "width": 30,
           "height": 30,
-          "id": 1016,
+          "id": 11006,
           "currentValue": "off",
           "initValue": "off"
         },
@@ -3548,7 +3548,7 @@
           "top": 105,
           "width": 30,
           "height": 30,
-          "id": 1016,
+          "id": 11007,
           "currentValue": "off",
           "initValue": "off"
         },
@@ -3564,7 +3564,7 @@
           "top": 221,
           "width": 30,
           "height": 30,
-          "id": 1016,
+          "id": 11008,
           "currentValue": "off",
           "initValue": "off"
         },
@@ -3580,7 +3580,7 @@
           "top": 221,
           "width": 30,
           "height": 30,
-          "id": 1016,
+          "id": 11009,
           "currentValue": "off",
           "initValue": "off"
         },
@@ -3596,7 +3596,7 @@
           "top": 221,
           "width": 30,
           "height": 30,
-          "id": 1016,
+          "id": 11010,
           "currentValue": "off",
           "initValue": "off"
         },
@@ -3615,7 +3615,7 @@
           "top": 245,
           "width": 30,
           "height": 30,
-          "id": 1018,
+          "id": 11011,
           "currentValue": "off",
           "initValue": "off"
         },
@@ -3632,16 +3632,17 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 882,
           "top": 246,
           "width": 25,
           "height": 25,
-          "id": 1019,
+          "id": 11012,
           "currentValue": "off",
           "initValue": "off"
         }
-      ]
+      ],
+      "id": 11
   }
   ]
 }

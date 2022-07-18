@@ -9,7 +9,1129 @@
         "height": 520
       },
       "components": [
-      ]
+        {
+          "name": "button_1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-1-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-1-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 259,
+          "top": 57,
+          "width": 15,
+          "height": 25,
+          "id": 20001,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button_2",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-2-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-2-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 259,
+          "top": 81,
+          "width": 15,
+          "height": 25,
+          "id": 20002,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button_3",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-3-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-3-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 259,
+          "top": 105,
+          "width": 15,
+          "height": 25,
+          "id": 20003,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button_4",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-4-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-4-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 259,
+          "top": 129,
+          "width": 15,
+          "height": 25,
+          "id": 20004,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button_5",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-5-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-5-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 259,
+          "top": 153,
+          "width": 15,
+          "height": 25,
+          "id": 20005,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button_6",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-6-1.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/p-330-6/controls/button-6-2.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 259,
+          "top": 177,
+          "width": 15,
+          "height": 25,
+          "id": 20006,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "4-pin",
+          "initValue": null,
+          "currentValue": null,
+          "valuesAndPhotos": [
+            { "value": "4-pin", "photo": "./images/p-330-6/controls/4-pin.png" }
+          ],
+          "rotatable": false,
+          "draggable": true,
+          "left": 128,
+          "top": 49,
+          "width": 19,
+          "height": 19,
+          "id": 20007
+        },
+        {
+          "name": "4-pin",
+          "initValue": null,
+          "currentValue": null,
+          "valuesAndPhotos": [
+            { "value": "4-pin", "photo": "./images/p-330-6/controls/4-pin.png" }
+          ],
+          "rotatable": false,
+          "draggable": true,
+          "left": 159,
+          "top": 76,
+          "width": 19,
+          "height": 19,
+          "id": 20008
+        },
+        {
+          "name": "8-pin",
+          "initValue": null,
+          "currentValue": null,
+          "valuesAndPhotos": [
+            { "value": "8-pin", "photo": "./images/p-330-6/controls/8-pin.png" }
+          ],
+          "rotatable": false,
+          "draggable": true,
+          "left": 139,
+          "top": 129,
+          "width": 42,
+          "height": 19,
+          "id": 20009
+        },
+        {
+          "name": "puck",
+          "valuesAndPhotos": [
+            { "value": -150, "photo": "./images/controls/puck.png" },
+            { "value": -120, "photo": "./images/controls/puck.png" },
+            { "value": -90, "photo": "./images/controls/puck.png" },
+            { "value": -55, "photo": "./images/controls/puck.png" },
+            { "value": -30, "photo": "./images/controls/puck.png" },
+            { "value": 0, "photo": "./images/controls/puck.png" },
+            { "value": 25, "photo": "./images/controls/puck.png" },
+            { "value": 55, "photo": "./images/controls/puck.png" },
+            { "value": 90, "photo": "./images/controls/puck.png" },
+            { "value": 120, "photo": "./images/controls/puck.png" },
+            { "value": 150, "photo": "./images/controls/puck.png" }
+          ],
+          "rotatable": true,
+          "draggable": false,
+          "left": 509,
+          "top": 186,
+          "width": 20,
+          "height": 20,
+          "id": 20010,
+          "initValue": -150,
+          "currentValue": -150
+        },
+        {
+          "name": "puck",
+          "valuesAndPhotos": [
+            { "value": -150, "photo": "./images/controls/puck.png" },
+            { "value": -120, "photo": "./images/controls/puck.png" },
+            { "value": -90, "photo": "./images/controls/puck.png" },
+            { "value": -55, "photo": "./images/controls/puck.png" },
+            { "value": -30, "photo": "./images/controls/puck.png" },
+            { "value": 0, "photo": "./images/controls/puck.png" },
+            { "value": 25, "photo": "./images/controls/puck.png" },
+            { "value": 55, "photo": "./images/controls/puck.png" },
+            { "value": 90, "photo": "./images/controls/puck.png" },
+            { "value": 120, "photo": "./images/controls/puck.png" },
+            { "value": 150, "photo": "./images/controls/puck.png" }
+          ],
+          "rotatable": true,
+          "draggable": false,
+          "left": 277,
+          "top": 440,
+          "width": 20,
+          "height": 20,
+          "id": 20011,
+          "initValue": -150,
+          "currentValue": -150
+        },
+        {
+          "name": "puck",
+          "valuesAndPhotos": [
+            { "value": -150, "photo": "./images/controls/puck.png" },
+            { "value": -120, "photo": "./images/controls/puck.png" },
+            { "value": -90, "photo": "./images/controls/puck.png" },
+            { "value": -55, "photo": "./images/controls/puck.png" },
+            { "value": -30, "photo": "./images/controls/puck.png" },
+            { "value": 0, "photo": "./images/controls/puck.png" },
+            { "value": 25, "photo": "./images/controls/puck.png" },
+            { "value": 55, "photo": "./images/controls/puck.png" },
+            { "value": 90, "photo": "./images/controls/puck.png" },
+            { "value": 120, "photo": "./images/controls/puck.png" },
+            { "value": 150, "photo": "./images/controls/puck.png" }
+          ],
+          "rotatable": true,
+          "draggable": false,
+          "left": 379,
+          "top": 448,
+          "width": 20,
+          "height": 20,
+          "id": 20011,
+          "initValue": -150,
+          "currentValue": -150
+        },
+        {
+          "name": "light",
+          "valuesAndPhotos": [
+            { "value": "off", "photo": "./images/p-330-6/controls/light_1.png" },
+            { "value": "on", "photo": "./images/p-330-6/controls/light_2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 593,
+          "top": 50,
+          "width": 12,
+          "height": 12,
+          "id": 20012,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "light",
+          "valuesAndPhotos": [
+            { "value": "off", "photo": "./images/p-330-6/controls/light_1.png" },
+            { "value": "on", "photo": "./images/p-330-6/controls/light_2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 671,
+          "top": 50,
+          "width": 12,
+          "height": 12,
+          "id": 20013,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "light",
+          "valuesAndPhotos": [
+            { "value": "off", "photo": "./images/p-330-6/controls/light_1.png" },
+            { "value": "on", "photo": "./images/p-330-6/controls/light_2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 737,
+          "top": 50,
+          "width": 12,
+          "height": 12,
+          "id": 20014,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "light",
+          "valuesAndPhotos": [
+            { "value": "off", "photo": "./images/p-330-6/controls/light_1.png" },
+            { "value": "on", "photo": "./images/p-330-6/controls/light_2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 112,
+          "top": 373,
+          "width": 12,
+          "height": 12,
+          "id": 20015,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "light",
+          "valuesAndPhotos": [
+            { "value": "off", "photo": "./images/p-330-6/controls/light_1.png" },
+            { "value": "on", "photo": "./images/p-330-6/controls/light_2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 382,
+          "top": 319,
+          "width": 12,
+          "height": 12,
+          "id": 20016,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "light",
+          "valuesAndPhotos": [
+            { "value": "off", "photo": "./images/p-330-6/controls/light_1.png" },
+            { "value": "on", "photo": "./images/p-330-6/controls/light_2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 698,
+          "top": 320,
+          "width": 12,
+          "height": 12,
+          "id": 20017,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "rotator",
+          "valuesAndPhotos": [
+            { "value": -105, "photo": "./images/controls/rotator.png" },
+            { "value": -70, "photo": "./images/controls/rotator.png" },
+            { "value": -35, "photo": "./images/controls/rotator.png" },
+            { "value": 0, "photo": "./images/controls/rotator.png" },
+            { "value": 35, "photo": "./images/controls/rotator.png" },
+            { "value": 70, "photo": "./images/controls/rotator.png" },
+            { "value": 105, "photo": "./images/controls/rotator.png" }
+          ],
+          "rotatable": true,
+          "draggable": false,
+          "left": 732,
+          "top": 178,
+          "width": 17,
+          "height": 30,
+          "id": 20018,
+          "initValue": -105,
+          "currentValue": -105
+        },
+        {
+          "name": "rotator",
+          "valuesAndPhotos": [
+            { "value": -150, "photo": "./images/controls/rotator.png" },
+            { "value": -120, "photo": "./images/controls/rotator.png" },
+            { "value": -90, "photo": "./images/controls/rotator.png" },
+            { "value": -55, "photo": "./images/controls/rotator.png" },
+            { "value": -30, "photo": "./images/controls/rotator.png" },
+            { "value": 0, "photo": "./images/controls/rotator.png" },
+            { "value": 25, "photo": "./images/controls/rotator.png" },
+            { "value": 55, "photo": "./images/controls/rotator.png" },
+            { "value": 90, "photo": "./images/controls/rotator.png" },
+            { "value": 120, "photo": "./images/controls/rotator.png" },
+            { "value": 150, "photo": "./images/controls/rotator.png" }
+          ],
+          "rotatable": true,
+          "draggable": false,
+          "left": 808,
+          "top": 185,
+          "width": 17,
+          "height": 30,
+          "id": 20019,
+          "initValue": -150,
+          "currentValue": -150
+        },
+        {
+          "name": "rotator",
+          "valuesAndPhotos": [
+            { "value": -150, "photo": "./images/controls/rotator.png" },
+            { "value": -120, "photo": "./images/controls/rotator.png" },
+            { "value": -90, "photo": "./images/controls/rotator.png" },
+            { "value": -55, "photo": "./images/controls/rotator.png" },
+            { "value": -30, "photo": "./images/controls/rotator.png" },
+            { "value": 0, "photo": "./images/controls/rotator.png" },
+            { "value": 25, "photo": "./images/controls/rotator.png" },
+            { "value": 55, "photo": "./images/controls/rotator.png" },
+            { "value": 90, "photo": "./images/controls/rotator.png" },
+            { "value": 120, "photo": "./images/controls/rotator.png" },
+            { "value": 150, "photo": "./images/controls/rotator.png" }
+          ],
+          "rotatable": true,
+          "draggable": false,
+          "left": 870,
+          "top": 185,
+          "width": 17,
+          "height": 30,
+          "id": 20020,
+          "initValue": -150,
+          "currentValue": -150
+        },
+        {
+          "name": "rotator",
+          "valuesAndPhotos": [
+            { "value": -150, "photo": "./images/controls/rotator.png" },
+            { "value": -120, "photo": "./images/controls/rotator.png" },
+            { "value": -90, "photo": "./images/controls/rotator.png" },
+            { "value": -55, "photo": "./images/controls/rotator.png" },
+            { "value": -30, "photo": "./images/controls/rotator.png" },
+            { "value": 0, "photo": "./images/controls/rotator.png" },
+            { "value": 25, "photo": "./images/controls/rotator.png" },
+            { "value": 55, "photo": "./images/controls/rotator.png" },
+            { "value": 90, "photo": "./images/controls/rotator.png" },
+            { "value": 120, "photo": "./images/controls/rotator.png" },
+            { "value": 150, "photo": "./images/controls/rotator.png" }
+          ],
+          "rotatable": true,
+          "draggable": false,
+          "left": 452,
+          "top": 393,
+          "width": 17,
+          "height": 30,
+          "id": 20021,
+          "initValue": -150,
+          "currentValue": -150
+        },
+        {
+          "name": "rotator",
+          "valuesAndPhotos": [
+            { "value": -120, "photo": "./images/controls/rotator.png" },
+            { "value": -90, "photo": "./images/controls/rotator.png" },
+            { "value": -55, "photo": "./images/controls/rotator.png" },
+            { "value": -30, "photo": "./images/controls/rotator.png" },
+            { "value": 0, "photo": "./images/controls/rotator.png" },
+            { "value": 25, "photo": "./images/controls/rotator.png" },
+            { "value": 55, "photo": "./images/controls/rotator.png" },
+            { "value": 90, "photo": "./images/controls/rotator.png" },
+            { "value": 120, "photo": "./images/controls/rotator.png" },
+            { "value": 150, "photo": "./images/controls/rotator.png" }
+          ],
+          "rotatable": true,
+          "draggable": false,
+          "left": 452,
+          "top": 443,
+          "width": 17,
+          "height": 30,
+          "id": 20021,
+          "initValue": -120,
+          "currentValue": -120
+        },
+        {
+          "name": "non-state-button-red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/non-state-button-red_1.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/p-330-6/controls/non-state-button-red_2.png" 
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 109,
+          "top": 293,
+          "width": 15,
+          "height": 15,
+          "id": 20022,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "non-state-button-white-frame",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/non-state-button-white-frame-1.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/p-330-6/controls/non-state-button-white-frame-2.png" 
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 111,
+          "top": 413,
+          "width": 18,
+          "height": 18,
+          "id": 20023,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "non-state-button-black-frame",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/non-state-button-black-frame-1.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/p-330-6/controls/non-state-button-black-frame-2.png" 
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 244,
+          "top": 439,
+          "width": 20,
+          "height": 20,
+          "id": 20024,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "lever2_vertical",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_vertical_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_vertical_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 309,
+          "top": 441,
+          "width": 20,
+          "height": 20,
+          "id": 20025,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "lever2_vertical",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_vertical_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_vertical_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 333,
+          "top": 441,
+          "width": 20,
+          "height": 20,
+          "id": 20026,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "lever2_vertical",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_vertical_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_vertical_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 751,
+          "top": 340,
+          "width": 20,
+          "height": 20,
+          "id": 20027,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "lever2_vertical",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_vertical_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_vertical_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 858,
+          "top": 340,
+          "width": 20,
+          "height": 20,
+          "id": 20028,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "non-state-button-white-frame",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/non-state-button-white-frame-1.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/p-330-6/controls/non-state-button-white-frame-2.png" 
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 380,
+          "top": 417,
+          "width": 18,
+          "height": 18,
+          "id": 20029,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "non-state-button-white-frame",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/non-state-button-white-frame-1.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/p-330-6/controls/non-state-button-white-frame-2.png" 
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 380,
+          "top": 391,
+          "width": 18,
+          "height": 18,
+          "id": 20030,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "lever2_vertical",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_vertical_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_vertical_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 380,
+          "top": 367,
+          "width": 18,
+          "height": 18,
+          "id": 20031,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "non-state-button-white",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/non-state-button-white-1.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/p-330-6/controls/non-state-button-white-2.png" 
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 448,
+          "top": 316,
+          "width": 13,
+          "height": 13,
+          "id": 20032,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "non-state-button-white",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/non-state-button-white-1.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/p-330-6/controls/non-state-button-white-2.png" 
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 462,
+          "top": 316,
+          "width": 13,
+          "height": 13,
+          "id": 20033,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "non-state-button-white",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/non-state-button-white-1.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/p-330-6/controls/non-state-button-white-2.png" 
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 524,
+          "top": 316,
+          "width": 13,
+          "height": 13,
+          "id": 20034,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "mover",
+          "valuesAndPhotos": [
+            { "value": 0, "photo": "./images/controls/mover.png" },
+            { "value": 30, "photo": "./images/controls/mover.png" },
+            { "value": 60, "photo": "./images/controls/mover.png" },
+            { "value": 90, "photo": "./images/controls/mover.png" },
+            { "value": 120, "photo": "./images/controls/mover.png" },
+            { "value": 150, "photo": "./images/controls/mover.png" },
+            { "value": 180, "photo": "./images/controls/mover.png" }
+          ],
+          "rotatable": true,
+          "draggable": false,
+          "left": 654,
+          "top": 441,
+          "width": 20,
+          "height": 20,
+          "id": 20035,
+          "currentValue": 0,
+          "initValue": 0
+        },
+        {
+          "name": "mover",
+          "valuesAndPhotos": [
+            { "value": 0, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 30, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 60, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 90, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 120, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 150, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 180, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 210, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 240, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 270, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 300, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 330, "photo": "./images/p-330-6/controls/mover.png" }
+          ],
+          "rotatable": true,
+          "draggable": false,
+          "left": 692,
+          "top": 396,
+          "width": 27,
+          "height": 27,
+          "id": 20036,
+          "currentValue": 0,
+          "initValue": 0
+        },
+        {
+          "name": "mover",
+          "valuesAndPhotos": [
+            { "value": 0, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 30, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 60, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 90, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 120, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 150, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 180, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 210, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 240, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 270, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 300, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 330, "photo": "./images/p-330-6/controls/mover.png" }
+          ],
+          "rotatable": true,
+          "draggable": false,
+          "left": 774,
+          "top": 340,
+          "width": 27,
+          "height": 27,
+          "id": 20037,
+          "currentValue": 0,
+          "initValue": 0
+        },
+        {
+          "name": "mover",
+          "valuesAndPhotos": [
+            { "value": 0, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 30, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 60, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 90, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 120, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 150, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 180, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 210, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 240, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 270, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 300, "photo": "./images/p-330-6/controls/mover.png" },
+            { "value": 330, "photo": "./images/p-330-6/controls/mover.png" }
+          ],
+          "rotatable": true,
+          "draggable": false,
+          "left": 803,
+          "top": 340,
+          "width": 27,
+          "height": 27,
+          "id": 20038,
+          "currentValue": 0,
+          "initValue": 0
+        },
+        {
+          "name": "power_light",
+          "valuesAndPhotos": [
+            { "value": "off", "photo": "./images/p-330-6/controls/power_light_off.png" },
+            { "value": "on", "photo": "./images/p-330-6/controls/power_light_on.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 831,
+          "top": 340,
+          "width": 25,
+          "height": 25,
+          "id": 20039,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button-2-ПР-ОК",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-2-ПР-ОК-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-2-ПР-ОК-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 424,
+          "top": 317,
+          "width": 15,
+          "height": 25,
+          "id": 20040,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button-4-ПР-ОК",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-4-ПР-ОК-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-4-ПР-ОК-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 424,
+          "top": 341,
+          "width": 15,
+          "height": 25,
+          "id": 20041,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "4-ПР-ОК-ТР",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/4-ПР-ТР-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/4-ПР-ТР-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 424,
+          "top": 365,
+          "width": 15,
+          "height": 25,
+          "id": 20042,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button-ГЕН",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-ГЕН-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-ГЕН-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 420,
+          "top": 418,
+          "width": 15,
+          "height": 25,
+          "id": 20043,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button-УВК",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-УВК-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-УВК-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 475,
+          "top": 340,
+          "width": 15,
+          "height": 25,
+          "id": 20044,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button-КСС",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-КСС-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-КСС-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 501,
+          "top": 314,
+          "width": 15,
+          "height": 25,
+          "id": 20045,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button-КТЧ",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-КТЧ-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-КТЧ-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 501,
+          "top": 338,
+          "width": 15,
+          "height": 25,
+          "id": 20046,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button-ГЕН",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-ГЕН-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-ГЕН-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 527,
+          "top": 338,
+          "width": 15,
+          "height": 25,
+          "id": 20047,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button-УВК",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-УВК-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-УВК-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 527,
+          "top": 362,
+          "width": 15,
+          "height": 25,
+          "id": 20048,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button-СЛ",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-СЛ-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-СЛ-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 499,
+          "top": 406,
+          "width": 15,
+          "height": 25,
+          "id": 20049,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button-КАН",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-КАН-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-КАН-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 499,
+          "top": 430,
+          "width": 15,
+          "height": 25,
+          "id": 20050,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button-ОБЩ",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-ОБЩ-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-ОБЩ-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 499,
+          "top": 454,
+          "width": 15,
+          "height": 25,
+          "id": 20051,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button-ВЫЗ",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-ВЫЗ-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-ВЫЗ-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 525,
+          "top": 406,
+          "width": 15,
+          "height": 25,
+          "id": 20052,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "button-ДУ",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/p-330-6/controls/button-ДУ-1.png"
+            },
+            { "value": "on", "photo": "./images/p-330-6/controls/button-ДУ-2.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 525,
+          "top": 454,
+          "width": 15,
+          "height": 25,
+          "id": 20053,
+          "currentValue": "off",
+          "initValue": "off"
+        }
+      ],
+      "id": 20
     }
   ]
 }
+
