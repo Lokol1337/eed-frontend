@@ -1,0 +1,3388 @@
+{
+  "name": "П-302-О",
+  "blocks": [
+    {
+      "name": "СС-О",
+      "background": "./images/backs/ss.png",
+      "backgroundSettings": {
+        "width": 856,
+        "height": 300
+      },
+      "components": [
+        {
+            "name": "jumper2",
+            "valuesAndPhotos": [
+              {
+                "value": "jumper2",
+                "photo": "./images/controls/jumper2.png"
+              }
+            ],
+            "rotatable": false,
+            "draggable": true,
+            "left": 530,
+            "top": 143,
+            "width": 10,
+            "height": 30
+          },
+        {
+          "name": "lever",
+          "valuesAndPhotos": [
+            {
+              "value": "up",
+              "photo": "./images/controls/lever3up.png"
+            },
+            {
+              "value": "center",
+              "photo": "./images/controls/lever3center.png"
+            },
+            {
+              "value": "down",
+              "photo": "./images/controls/lever3down.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 100,
+          "top": 60,
+          "width": 32,
+          "height": 72
+        },
+        {
+          "name": "lever",
+          "valuesAndPhotos": [
+            {
+              "value": "up",
+              "photo": "./images/controls/lever3up.png"
+            },
+            {
+              "value": "center",
+              "photo": "./images/controls/lever3center.png"
+            },
+            {
+              "value": "down",
+              "photo": "./images/controls/lever3down.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 138,
+          "top": 60,
+          "width": 32,
+          "height": 72
+        },
+        {
+          "name": "rotator",
+          "valuesAndPhotos": [
+            {
+              "value": 10,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 12
+            },
+            {
+              "value": 14
+            },
+            {
+              "value": 16
+            },
+            {
+              "value": 18
+            },
+            {
+              "value": 20
+            },
+            {
+              "value": null
+            },
+            {
+              "value": 0
+            },
+            {
+              "value": 2
+            },
+            {
+              "value": 4
+            },
+            {
+              "value": 6
+            },
+            {
+              "value": 8
+            }
+          ],
+          "rotatable": true,
+          "divisionPrice": 30,
+          "draggable": false,
+          "left": 87,
+          "top": 144,
+          "width": 23,
+          "height": 50
+        },
+        {
+          "name": "rotator",
+          "valuesAndPhotos": [
+            {
+              "value": 0.1,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 0.3
+            },
+            {
+              "value": 0.4
+            },
+            {
+              "value": null
+            },
+            {
+              "value": null
+            },
+            {
+              "value": null
+            },
+            {
+              "value": null
+            },
+            {
+              "value": null
+            },
+            {
+              "value": null
+            },
+            {
+              "value": null
+            },
+            {
+              "value": null
+            },
+            {
+              "value": null
+            },
+            {
+              "value": null
+            },
+            {
+              "value": null
+            },
+            {
+              "value": null
+            },
+            {
+              "value": null
+            },
+            {
+              "value": null
+            },
+            {
+              "value": 0
+            }
+          ],
+          "rotatable": true,
+          "divisionPrice": 20,
+          "draggable": false,
+          "left": 140,
+          "top": 144,
+          "width": 23,
+          "height": 50
+        },
+        {
+          "name": "channel",
+          "valuesAndPhotos": [
+            {
+              "value": 10,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 12
+            },
+            {
+              "value": 14
+            },
+            {
+              "value": 16
+            },
+            {
+              "value": 18
+            },
+            {
+              "value": 20
+            },
+            {
+              "value": null
+            },
+            {
+              "value": 0
+            },
+            {
+              "value": 2
+            },
+            {
+              "value": 4
+            },
+            {
+              "value": 6
+            },
+            {
+              "value": 8
+            }
+          ],
+          "rotatable": true,
+          "divisionPrice": 40,
+          "draggable": false,
+          "left": 87,
+          "top": 207,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_vertical.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 461,
+          "top": 99,
+          "width": 15,
+          "height": 30
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_vertical.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 480,
+          "top": 99,
+          "width": 15,
+          "height": 30
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_vertical.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 411,
+          "top": 99,
+          "width": 15,
+          "height": 30
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_vertical.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 514,
+          "top": 99,
+          "width": 15,
+          "height": 30
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 465,
+          "top": 60,
+          "width": 27,
+          "height": 21
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 512,
+          "top": 60,
+          "width": 27,
+          "height": 21
+        },
+        {
+          "name": "lever2",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_horizontal_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_horizontal_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 467,
+          "top": 182,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "lever2",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_horizontal_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_horizontal_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 517,
+          "top": 182,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "mover",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/mover.png"
+            }
+          ],
+          "rotatable": true,
+          "divisionPrice": 30,
+          "draggable": false,
+          "left": 405,
+          "top": 171,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 765,
+          "top": 66,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 737,
+          "top": 66,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_white",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_white_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_white_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 768,
+          "top": 180,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "lever2_vertical",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_vertical_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_vertical_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 734,
+          "top": 136,
+          "width": 25,
+          "height": 25
+        }
+      ]
+    },
+    {
+      "name": "ЛО",
+      "background": "./images/backs/lo.png",
+      "backgroundSettings": {
+        "width": 856,
+        "height": 300
+      },
+      "components": [
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": true,
+          "left": 107,
+          "top": 90,
+          "width": 20,
+          "height": 10
+        },
+        {
+          "name": "blever",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/bleverOff.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/bleverOn.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 150,
+          "top": 86,
+          "width": 50,
+          "height": 30
+        },
+        {
+          "name": "lever2",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_horizontal_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_horizontal_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 203,
+          "top": 90,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "rotator",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/rotator.png"
+            }
+          ],
+          "rotatable": true,
+          "divisionPrice": 30,
+          "draggable": false,
+          "left": 105,
+          "top": 140,
+          "width": 25,
+          "height": 40
+        },
+        {
+          "name": "channel",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/channel.png"
+            }
+          ],
+          "rotatable": true,
+          "divisionPrice": 30,
+          "draggable": false,
+          "left": 151,
+          "top": 151,
+          "width": 22,
+          "height": 22
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": true,
+          "left": 185,
+          "top": 152,
+          "width": 10,
+          "height": 25
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": true,
+          "left": 195,
+          "top": 152,
+          "width": 10,
+          "height": 25
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": true,
+          "left": 210,
+          "top": 152,
+          "width": 10,
+          "height": 25
+        },
+        {
+          "name": "rotator",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/rotator.png"
+            }
+          ],
+          "rotatable": true,
+          "divisionPrice": 30,
+          "draggable": false,
+          "left": 245,
+          "top": 140,
+          "width": 25,
+          "height": 40
+        },
+        {
+          "name": "lever2",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_horizontal_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_horizontal_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 337,
+          "top": 181,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "lever2",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_horizontal_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_horizontal_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 437,
+          "top": 165,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "lever2",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_horizontal_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_horizontal_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 477,
+          "top": 165,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "lever2",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_horizontal_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_horizontal_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 517,
+          "top": 165,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "blever",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/bleverOff.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/bleverOn.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 695,
+          "top": 63,
+          "width": 40,
+          "height": 30
+        },
+        {
+          "name": "lever2",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_horizontal_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_horizontal_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 745,
+          "top": 63,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "channel.png",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/channel.png"
+            }
+          ],
+          "rotatable": true,
+          "divisionPrice": 30,
+          "draggable": false,
+          "left": 716,
+          "top": 123,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": "channel.png",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/channel.png"
+            }
+          ],
+          "rotatable": true,
+          "divisionPrice": 30,
+          "draggable": false,
+          "left": 716,
+          "top": 187,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 334,
+          "top": 58,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 334,
+          "top": 95,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 625,
+          "top": 62,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "lever2_vertical",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_vertical_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_vertical_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 626,
+          "top": 181,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "button_pressed",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/button_unpressed.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/button_pressed.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 437,
+          "top": 201,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "button_pressed",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/button_unpressed.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/button_pressed.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 477,
+          "top": 201,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "button_pressed",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/button_unpressed.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/button_pressed.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 516,
+          "top": 201,
+          "width": 25,
+          "height": 25
+        }
+      ]
+    },
+    {
+      "name": "ГО-12",
+      "background": "./images/backs/go.png",
+      "backgroundSettings": {
+        "width": 856,
+        "height": 300
+      },
+      "components": [
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 334,
+          "top": 111,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 364,
+          "top": 111,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 261,
+          "top": 78,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 224,
+          "top": 78,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 120,
+          "top": 110,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 217,
+          "top": 208,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 327,
+          "top": 206,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 121,
+          "top": 243,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 404,
+          "top": 206,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 523,
+          "top": 183,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 565,
+          "top": 206,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 522,
+          "top": 219,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 641,
+          "top": 207,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 684,
+          "top": 207,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 567,
+          "top": 76,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 760,
+          "top": 207,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 686,
+          "top": 76,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 643,
+          "top": 76,
+          "width": 15,
+          "height": 8
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 482,
+          "top": 112,
+          "width": 17,
+          "height": 12
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 423,
+          "top": 112,
+          "width": 17,
+          "height": 12
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 242,
+          "top": 111,
+          "width": 17,
+          "height": 12
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 180,
+          "top": 111,
+          "width": 17,
+          "height": 12
+        },
+        {
+          "name": "lever4",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_horizontal_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_horizontal_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 272,
+          "top": 208,
+          "width": 15,
+          "height": 15
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 150,
+          "top": 157,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 86,
+          "top": 157,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 86,
+          "top": 157,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 215,
+          "top": 157,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 270,
+          "top": 157,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 327,
+          "top": 193,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 403,
+          "top": 193,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 522,
+          "top": 170,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 522,
+          "top": 206,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 564,
+          "top": 193,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 641,
+          "top": 193,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 683,
+          "top": 194,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 760,
+          "top": 194,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 764,
+          "top": 83,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 764,
+          "top": 59,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 686,
+          "top": 63,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 643,
+          "top": 63,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 567,
+          "top": 63,
+          "width": 18,
+          "height": 18
+        }
+      ]
+    },
+    {
+      "name": "ПИТ",
+      "background": "./images/backs/pit.png",
+      "backgroundSettings": {
+        "width": 856,
+        "height": 300
+      },
+      "components": [
+        {
+          "name": "lever2",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_horizontal_on.png"
+            },
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_horizontal_off.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 72,
+          "top": 143,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "lever2",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_horizontal_on.png"
+            },
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_horizontal_off.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 457,
+          "top": 142,
+          "width": 18,
+          "height": 18
+        },
+        {
+          "name": "light_white",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_white_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_white_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 65,
+          "top": 109,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 364,
+          "top": 111,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 389,
+          "top": 111,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 450,
+          "top": 111,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 744,
+          "top": 111,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 769,
+          "top": 111,
+          "width": 25,
+          "height": 25
+        }
+      ]
+    },
+    {
+      "name": "ВКО-12",
+      "background": "./images/backs/vko.png",
+      "backgroundSettings": {
+        "width": 856,
+        "height": 300
+      },
+      "components": [
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 109,
+          "top": 123,
+          "width": 20,
+          "height": 19
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 298,
+          "top": 69,
+          "width": 20,
+          "height": 19
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 298,
+          "top": 170,
+          "width": 20,
+          "height": 19
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 408,
+          "top": 68,
+          "width": 20,
+          "height": 19
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 409,
+          "top": 170,
+          "width": 20,
+          "height": 19
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 600,
+          "top": 123,
+          "width": 20,
+          "height": 19
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 600,
+          "top": 168,
+          "width": 20,
+          "height": 19
+        },
+        {
+          "name": "jumper8",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper8",
+              "photo": "./images/controls/jumper8.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 298,
+          "top": 94,
+          "width": 18,
+          "height": 40
+        },
+        {
+          "name": "jumper8",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper8",
+              "photo": "./images/controls/jumper8.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 409,
+          "top": 94,
+          "width": 18,
+          "height": 40
+        },
+        {
+          "name": "lever2",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_horizontal_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_horizontal_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 702,
+          "top": 209,
+          "width": 15,
+          "height": 15
+        },
+        {
+          "name": "lever2",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_horizontal_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_horizontal_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 738,
+          "top": 209,
+          "width": 15,
+          "height": 15
+        },
+        {
+          "name": "rotator",
+          "valuesAndPhotos": [
+            {
+              "value": 10,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 12
+            },
+            {
+              "value": 14
+            },
+            {
+              "value": 16
+            },
+            {
+              "value": 18
+            },
+            {
+              "value": 20
+            },
+            {
+              "value": null
+            },
+            {
+              "value": 0
+            },
+            {
+              "value": 2
+            },
+            {
+              "value": 4
+            },
+            {
+              "value": 6
+            },
+            {
+              "value": 8
+            }
+          ],
+          "rotatable": true,
+          "divisionPrice": 30,
+          "draggable": false,
+          "left": 691,
+          "top": 160,
+          "width": 23,
+          "height": 40
+        }
+      ]
+    },
+    {
+      "name": "ЩКНЧ1",
+      "background": "./images/backs/shknch1.png",
+      "backgroundSettings": {
+        "width": 856,
+        "height": 300
+      },
+      "components": [
+        {
+          "name": "rotator1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/rotator.png"
+            }
+          ],
+          "rotatable": true,
+          "divisionPrice": 30,
+          "draggable": false,
+          "left": 106,
+          "top": 135,
+          "width": 20,
+          "height": 35
+        },
+        {
+          "name": "rotator2",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/rotator.png"
+            }
+          ],
+          "rotatable": true,
+          "divisionPrice": 30,
+          "draggable": false,
+          "left": 83,
+          "top": 193,
+          "width": 20,
+          "height": 35
+        },
+        {
+          "name": "lever1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_horizontal_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_horizontal_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 113,
+          "top": 235,
+          "width": 20,
+          "height": 20
+        },
+        {
+          "name": "rotator3",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/rotator.png"
+            }
+          ],
+          "rotatable": true,
+          "divisionPrice": 30,
+          "draggable": false,
+          "left": 417,
+          "top": 136,
+          "width": 20,
+          "height": 35
+        },
+        {
+          "name": "rotator4",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/rotator.png"
+            }
+          ],
+          "rotatable": true,
+          "divisionPrice": 30,
+          "draggable": false,
+          "left": 440,
+          "top": 194,
+          "width": 20,
+          "height": 35
+        },
+        {
+          "name": "lever2",
+          "valuesAndPhotos": [
+            {
+              "value": "up",
+              "photo": "./images/controls/lever3up.png"
+            },
+            {
+              "value": "center",
+              "photo": "./images/controls/lever3center.png"
+            },
+            {
+              "value": "down",
+              "photo": "./images/controls/lever3down.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 508,
+          "top": 123,
+          "width": 32,
+          "height": 72
+        },
+        {
+          "name": "lever3",
+          "valuesAndPhotos": [
+            {
+              "value": "up",
+              "photo": "./images/controls/lever3up.png"
+            },
+            {
+              "value": "center",
+              "photo": "./images/controls/lever3center.png"
+            },
+            {
+              "value": "down",
+              "photo": "./images/controls/lever3down.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 546,
+          "top": 123,
+          "width": 32,
+          "height": 72
+        },
+        {
+          "name": "lever4",
+          "valuesAndPhotos": [
+            {
+              "value": "up",
+              "photo": "./images/controls/lever3up.png"
+            },
+            {
+              "value": "center",
+              "photo": "./images/controls/lever3center.png"
+            },
+            {
+              "value": "down",
+              "photo": "./images/controls/lever3down.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 587,
+          "top": 123,
+          "width": 32,
+          "height": 72
+        },
+        {
+          "name": "lever5",
+          "valuesAndPhotos": [
+            {
+              "value": "up",
+              "photo": "./images/controls/lever3up.png"
+            },
+            {
+              "value": "center",
+              "photo": "./images/controls/lever3center.png"
+            },
+            {
+              "value": "down",
+              "photo": "./images/controls/lever3down.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 650,
+          "top": 123,
+          "width": 32,
+          "height": 72
+        },
+        {
+          "name": "lever6",
+          "valuesAndPhotos": [
+            {
+              "value": "up",
+              "photo": "./images/controls/lever3up.png"
+            },
+            {
+              "value": "center",
+              "photo": "./images/controls/lever3center.png"
+            },
+            {
+              "value": "down",
+              "photo": "./images/controls/lever3down.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 690,
+          "top": 123,
+          "width": 32,
+          "height": 72
+        },
+        {
+          "name": "lever7",
+          "valuesAndPhotos": [
+            {
+              "value": "up",
+              "photo": "./images/controls/lever3up.png"
+            },
+            {
+              "value": "center",
+              "photo": "./images/controls/lever3center.png"
+            },
+            {
+              "value": "down",
+              "photo": "./images/controls/lever3down.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 745,
+          "top": 123,
+          "width": 32,
+          "height": 72
+        },
+        {
+          "name": "button_pressed",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/button_unpressed.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/button_pressed.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 381,
+          "top": 232,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 587,
+          "top": 206,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/anti_button_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/anti_button_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 730,
+          "top": 195,
+          "width": 20,
+          "height": 20
+        }
+      ]
+    },
+    {
+      "name": "ЩКНЧ2",
+      "background": "./images/backs/shknch.png",
+      "backgroundSettings": {
+        "width": 756,
+        "height": 550
+      },
+      "components": [
+        {
+          "name": "jumper1",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper8",
+              "photo": "./images/controls/jumper8.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 69,
+          "top": 66,
+          "width": 27,
+          "height": 39
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper8",
+              "photo": "./images/controls/jumper8.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 414,
+          "top": 67,
+          "width": 27,
+          "height": 39
+        },
+        {
+          "name": "jumper3",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 71,
+          "top": 137,
+          "width": 26,
+          "height": 19
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 97,
+          "top": 137,
+          "width": 26,
+          "height": 19
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 150,
+          "top": 472,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 356,
+          "top": 472,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 398,
+          "top": 472,
+          "width": 25,
+          "height": 25
+        },
+        {
+          "name": "button_pressed",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/button_unpressed.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/button_pressed.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 376,
+          "top": 518,
+          "width": 25,
+          "height": 25
+        }
+      ]
+    },
+    {
+      "name": "ЩКВЧ",
+      "background": "./images/backs/shkvch.png",
+      "backgroundSettings": {
+        "width": 1160,
+        "height": 360
+      },
+      "components": [
+        {
+          "name": "jumper1",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 241,
+          "top": 94,
+          "width": 42,
+          "height": 38
+        },
+        {
+          "name": "jumper2",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 349,
+          "top": 94,
+          "width": 42,
+          "height": 38
+        },
+        {
+          "name": "jumper3",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 241,
+          "top": 176,
+          "width": 42,
+          "height": 38
+        },
+        {
+          "name": "jumper4",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 349,
+          "top": 176,
+          "width": 42,
+          "height": 38
+        },
+        {
+          "name": "jumper5",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 794,
+          "top": 96,
+          "width": 42,
+          "height": 38
+        },
+        {
+          "name": "jumper6",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 896,
+          "top": 96,
+          "width": 42,
+          "height": 38
+        },
+        {
+          "name": "jumper7",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 792,
+          "top": 175,
+          "width": 42,
+          "height": 38
+        },
+        {
+          "name": "jumper6",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 895,
+          "top": 175,
+          "width": 42,
+          "height": 38
+        },
+        {
+          "name": "jumper8",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 450,
+          "top": 119,
+          "width": 42,
+          "height": 38
+        },
+        {
+          "name": "jumper8",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            }
+          ],
+          "rotatable": false,
+          "divisionPrice": null,
+          "draggable": true,
+          "left": 691,
+          "top": 119,
+          "width": 42,
+          "height": 38
+        }
+      ]
+    },
+    {
+        "name": "ДСВ",
+        "background": "./images/backs/dsv.png",
+        "backgroundSettings": {
+          "width": 1160,
+          "height": 600
+        },
+        "components": [
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 142,
+                "top": 85,
+                "width": 18,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 243,
+                "top": 86,
+                "width": 18,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 344,
+                "top": 86,
+                "width": 18,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 471,
+                "top": 88,
+                "width": 18,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 570,
+                "top": 88,
+                "width": 18,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 668,
+                "top": 88,
+                "width": 18,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 795,
+                "top": 88,
+                "width": 18,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 892,
+                "top": 88,
+                "width": 18,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 993,
+                "top": 89,
+                "width": 18,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 984,
+                "top": 434,
+                "width": 18,
+                "height": 28
+            },
+            {
+              "name": "lever1",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/lever2_vertical_off.png"
+                },
+                {
+                  "value": "on",
+                  "photo": "./images/controls/lever2_vertical_on.png"
+                }
+              ],
+              "rotatable": false,
+              "draggable": false,
+              "left": 800,
+              "top": 428,
+              "width": 20,
+              "height": 20
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 144,
+                "top": 335,
+                "width": 18,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 244,
+                "top": 335,
+                "width": 18,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 348,
+                "top": 335,
+                "width": 18,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 472,
+                "top": 336,
+                "width": 18,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 572,
+                "top": 336,
+                "width": 18,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 670,
+                "top": 336,
+                "width": 18,
+                "height": 28
+            },
+            {
+              "name": "light_white",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/light_white_off.png"
+                },
+                {
+                  "value": "on",
+                  "photo": "./images/controls/light_white_on.png"
+                }
+              ],
+              "rotatable": false,
+              "draggable": false,
+              "left": 769,
+              "top": 366,
+              "width": 35,
+              "height": 35
+            },
+            {
+              "name": "light_white",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/light_white_off.png"
+                },
+                {
+                  "value": "on",
+                  "photo": "./images/controls/light_white_on.png"
+                }
+              ],
+              "rotatable": false,
+              "draggable": false,
+              "left": 981,
+              "top": 375,
+              "width": 35,
+              "height": 35
+            },
+            {
+              "name": "light_red",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/light_red_off.png"
+                },
+                {
+                  "value": "on",
+                  "photo": "./images/controls/light_red_on.png"
+                }
+              ],
+              "rotatable": false,
+              "draggable": false,
+              "left": 818,
+              "top": 370,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "light_red",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/light_red_off.png"
+                },
+                {
+                  "value": "on",
+                  "photo": "./images/controls/light_red_on.png"
+                }
+              ],
+              "rotatable": false,
+              "draggable": false,
+              "left": 948,
+              "top": 380,
+              "width": 25,
+              "height": 25
+            }
+        ]
+      },
+      {
+          "name": "ИПП",
+          "background": "./images/backs/ipp.png",
+          "backgroundSettings": {
+            "width": 1160,
+            "height": 600
+          },
+          "components": [
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 466,
+                "top": 138,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 448,
+                "top": 184,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 529,
+                "top": 184,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 446,
+                "top": 229,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 527,
+                "top": 229,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 465,
+                "top": 361,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 446,
+                "top": 410,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 526,
+                "top": 409,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 444,
+                "top": 454,
+                "width": 21,
+                "height": 28
+            },
+            {
+                "name": "jumper4",
+                "valuesAndPhotos": [
+                  {
+                    "value": "jumper4",
+                    "photo": "./images/controls/jumper4_vertical.png"
+                  }
+                ],
+                "rotatable": false,
+                "divisionPrice": null,
+                "draggable": true,
+                "left": 525,
+                "top": 455,
+                "width": 21,
+                "height": 28
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 133,
+              "top": 249,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 175,
+              "top": 249,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 217,
+              "top": 249,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 131,
+              "top": 479,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 173,
+              "top": 480,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 215,
+              "top": 480,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 770,
+              "top": 250,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 812,
+              "top": 250,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 855,
+              "top": 250,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 777,
+              "top": 474,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 818,
+              "top": 474,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "channel.png",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/channel.png"
+                }
+              ],
+              "rotatable": true,
+              "divisionPrice": 30,
+              "draggable": false,
+              "left": 860,
+              "top": 474,
+              "width": 25,
+              "height": 25
+            },
+            {
+              "name": "light_red",
+              "valuesAndPhotos": [
+                {
+                  "value": "off",
+                  "photo": "./images/controls/light_red_off.png"
+                },
+                {
+                  "value": "on",
+                  "photo": "./images/controls/light_red_on.png"
+                }
+              ],
+              "rotatable": false,
+              "draggable": false,
+              "left": 539,
+              "top": 357,
+              "width": 25,
+              "height": 25
+            }
+          ]
+      },
+      {
+        "name": " ДП",
+        "background": "./images/backs/dp.png",
+        "backgroundSettings": {
+          "width": 1160,
+          "height": 600
+        },
+        "components": [
+        ]
+    }
+  ]
+}
