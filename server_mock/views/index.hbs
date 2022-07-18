@@ -1,0 +1,19 @@
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>{{title}}</h1>
+        <h3>Values</h3>
+        <table border="1px">
+            {{#each values}}
+            <tr>   
+                <td>{{this.id}}</td>
+                <td>{{this.name}}</td>
+                <td> {{this.value}}</td>
+                <td>{{this.date}}</td>
+            </tr>
+            {{/each}}
+        </table>
+</body>
+<html>

@@ -69,6 +69,7 @@ export default {
       box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
       transform: translate(0, -25%);
       transition: 0.5s;
+      cursor: pointer;
     }
 
     &-title {
