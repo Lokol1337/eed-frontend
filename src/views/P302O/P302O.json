@@ -3410,6 +3410,237 @@
         "height": 350
       },
       "components": [
+        {
+          "name": "puck",
+          "valuesAndPhotos": [
+            { "value": -150, "photo": "./images/controls/puck.png" },
+            { "value": -120, "photo": "./images/controls/puck.png" },
+            { "value": -90, "photo": "./images/controls/puck.png" },
+            { "value": -55, "photo": "./images/controls/puck.png" },
+            { "value": -30, "photo": "./images/controls/puck.png" },
+            { "value": 0, "photo": "./images/controls/puck.png" },
+            { "value": 25, "photo": "./images/controls/puck.png" },
+            { "value": 55, "photo": "./images/controls/puck.png" },
+            { "value": 90, "photo": "./images/controls/puck.png" },
+            { "value": 120, "photo": "./images/controls/puck.png" },
+            { "value": 150, "photo": "./images/controls/puck.png" }
+          ],
+          "rotatable": true,
+          "draggable": false,
+          "left": 108,
+          "top": 124,
+          "width": 25,
+          "height": 25,
+          "id": 1003,
+          "initValue": -150,
+          "currentValue": -150
+        },
+        {
+          "name": "puck",
+          "valuesAndPhotos": [
+            { "value": -150, "photo": "./images/controls/puck.png" },
+            { "value": -120, "photo": "./images/controls/puck.png" },
+            { "value": -90, "photo": "./images/controls/puck.png" },
+            { "value": -55, "photo": "./images/controls/puck.png" },
+            { "value": -30, "photo": "./images/controls/puck.png" },
+            { "value": 0, "photo": "./images/controls/puck.png" },
+            { "value": 25, "photo": "./images/controls/puck.png" },
+            { "value": 55, "photo": "./images/controls/puck.png" },
+            { "value": 90, "photo": "./images/controls/puck.png" },
+            { "value": 120, "photo": "./images/controls/puck.png" },
+            { "value": 150, "photo": "./images/controls/puck.png" }
+          ],
+          "rotatable": true,
+          "draggable": false,
+          "left": 106,
+          "top": 217,
+          "width": 25,
+          "height": 25,
+          "id": 1003,
+          "initValue": -150,
+          "currentValue": -150
+        },
+        {
+          "name": "puck",
+          "valuesAndPhotos": [
+            { "value": -150, "photo": "./images/controls/puck.png" },
+            { "value": -120, "photo": "./images/controls/puck.png" },
+            { "value": -90, "photo": "./images/controls/puck.png" },
+            { "value": -55, "photo": "./images/controls/puck.png" },
+            { "value": -30, "photo": "./images/controls/puck.png" },
+            { "value": 0, "photo": "./images/controls/puck.png" },
+            { "value": 25, "photo": "./images/controls/puck.png" },
+            { "value": 55, "photo": "./images/controls/puck.png" },
+            { "value": 90, "photo": "./images/controls/puck.png" },
+            { "value": 120, "photo": "./images/controls/puck.png" },
+            { "value": 150, "photo": "./images/controls/puck.png" }
+          ],
+          "rotatable": true,
+          "draggable": false,
+          "left": 155,
+          "top": 198,
+          "width": 25,
+          "height": 25,
+          "id": 1003,
+          "initValue": -150,
+          "currentValue": -150
+        },
+        {
+          "name": "rotator",
+          "valuesAndPhotos": [
+            { "value": -60, "photo": "./images/controls/rotator.png" },
+            { "value": -30, "photo": "./images/controls/rotator.png" },
+            { "value": 0, "photo": "./images/controls/rotator.png" },
+            { "value": 30, "photo": "./images/controls/rotator.png" },
+            { "value": 60, "photo": "./images/controls/rotator.png" }
+          ],
+          "rotatable": true,
+          "draggable": false,
+          "left": 777,
+          "top": 123,
+          "width": 25,
+          "height": 50,
+          "id": 1003,
+          "initValue": -60,
+          "currentValue": -60
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            { "value": "off", "photo": "./images/controls/light_red_off.png" },
+            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 883,
+          "top": 105,
+          "width": 30,
+          "height": 30,
+          "id": 1016,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            { "value": "off", "photo": "./images/controls/light_red_off.png" },
+            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 920,
+          "top": 105,
+          "width": 30,
+          "height": 30,
+          "id": 1016,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            { "value": "off", "photo": "./images/controls/light_red_off.png" },
+            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 957,
+          "top": 105,
+          "width": 30,
+          "height": 30,
+          "id": 1016,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            { "value": "off", "photo": "./images/controls/light_red_off.png" },
+            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 737,
+          "top": 221,
+          "width": 30,
+          "height": 30,
+          "id": 1016,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            { "value": "off", "photo": "./images/controls/light_red_off.png" },
+            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 773,
+          "top": 221,
+          "width": 30,
+          "height": 30,
+          "id": 1016,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "light_red",
+          "valuesAndPhotos": [
+            { "value": "off", "photo": "./images/controls/light_red_off.png" },
+            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 809,
+          "top": 221,
+          "width": 30,
+          "height": 30,
+          "id": 1016,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "light_white",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/light_white_off.png"
+            },
+            { "value": "on", "photo": "./images/controls/light_white_on.png" }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 946,
+          "top": 245,
+          "width": 30,
+          "height": 30,
+          "id": 1018,
+          "currentValue": "off",
+          "initValue": "off"
+        },
+        {
+          "name": "lever2_vertical",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/lever2_vertical_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/lever2_vertical_on.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": true,
+          "left": 882,
+          "top": 246,
+          "width": 25,
+          "height": 25,
+          "id": 1019,
+          "currentValue": "off",
+          "initValue": "off"
+        }
       ]
   }
   ]
