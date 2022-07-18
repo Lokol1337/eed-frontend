@@ -1,6 +1,6 @@
 <template>
-  <div class="p-330-6">
-    <h1>П-302-0</h1>
+  <div class="p-302-0">
+    <h1>П-330-6</h1>
     <packManager :packs="allPacks.blocks" @selectPack="selectPackHandler"/>
     <h3>{{ actualPack.name }}</h3>
     <div class="container">
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import P3306JSON from "./P302O/P3306.json";
+import P302OJSON from "./P302O/P302O.json";
 
 import hardwareCanvas from "./P302O/hardwareCanvas.vue";
 import packManager from "./P302O/packManager.vue";
@@ -45,8 +45,8 @@ export default {
     }
   },
   created() {
-    this.allPacks = P3306JSON;
-    this.actualPack = P3306JSON.blocks[0]
+    this.allPacks = P302OJSON;
+    this.actualPack = P302OJSON.blocks[0]
   }
 };
 </script>
