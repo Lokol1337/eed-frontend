@@ -50,7 +50,7 @@ export default {
     return {
       componentsForMenu: [
         {
-          name: "jumper2",
+          name: "jumper2_vertical",
           valuesAndPhotos: [
             {
               value: "jumper2",
@@ -63,7 +63,96 @@ export default {
           top: 20,
           width: 10,
           height: 30,
+        },{
+          name: "jumper2_horizontal",
+          valuesAndPhotos: [
+            {
+              value: "jumper2",
+              photo: "./images/controls/jumper2.png",
+            },
+          ],
+          rotatable: false,
+          draggable: true,
+          left: 20,
+          top: 20,
+          width: 30,
+          height: 10,
         },
+        {
+          name: "jumper4_horizontal",
+          valuesAndPhotos: [
+            {
+              value: "jumper4_horizontal",
+              photo: "./images/controls/jumper4_horizontal.png",
+            },
+          ],
+          rotatable: false,
+          draggable: true,
+          left: 20,
+          top: 20,
+          width: 27,
+          height: 21,
+        },
+        {
+          name: "jumper4_vertical",
+          valuesAndPhotos: [
+            {
+              value: "jumper4_vertical",
+              photo: "./images/controls/jumper4_vertical.png",
+            },
+          ],
+          rotatable: false,
+          draggable: true,
+          left: 20,
+          top: 20,
+          width: 15,
+          height: 30,
+        },
+        {
+          name: "jumper8",
+          valuesAndPhotos: [
+            {
+              value: "jumper8",
+              photo: "./images/controls/jumper8.png",
+            },
+          ],
+          rotatable: false,
+          draggable: true,
+          left: 20,
+          top: 20,
+          width: 27,
+          height: 39,
+        },
+        {
+          name: "4-pin",
+          valuesAndPhotos: [
+            {
+              value: "jumper8",
+              photo: "./images/p-330-6/controls/4-pin.png",
+            },
+          ],
+          rotatable: false,
+          draggable: true,
+          left: 20,
+          top: 20,
+          width: 19,
+          height: 19,
+        },
+        {
+          name: "8-pin",
+          valuesAndPhotos: [
+            {
+              value: "jumper8",
+              photo: "./images/p-330-6/controls/8-pin.png",
+            },
+          ],
+          rotatable: false,
+          draggable: true,
+          left: 20,
+          top: 20,
+          width: 42,
+          height: 19,
+        }
       ],
       hardwareComponentsData: [],
     };
