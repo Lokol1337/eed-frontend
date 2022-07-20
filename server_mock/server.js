@@ -25,7 +25,7 @@ app.post("/someEndpoint", urlencodedParser, function (request, response) {
   if(!request.body) return response.sendStatus(400);
   //console.log(request.body);
   let date = new Date()
-  values.push({id:request.body.id, name:request.body.name, date: date.getHours().toString() + ":" + date.getMinutes().toString()+ ":" + date.getSeconds().toString() + "." + date.getMilliseconds().toString(), value:request.body.currentValue})
+  values.unshift({id:request.body.id, name:request.body.name, date: date.getHours().toString() + ":" + date.getMinutes().toString()+ ":" + date.getSeconds().toString() + "." + date.getMilliseconds().toString(), value:request.body.currentValue})
   response.send(``);
 });
 
