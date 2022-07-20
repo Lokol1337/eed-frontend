@@ -41,7 +41,7 @@
           "width": 32,
           "height": 72,
           "id": 1001,
-          "caption": null
+          "caption": "ЦРК"
         },
         {
           "name": "lever",
@@ -62,22 +62,22 @@
           "id": 1002,
           "initValue": "up",
           "currentValue": "up",
-          "caption": null
+          "caption": "ВЫЗ."
         },
         {
           "name": "rotator",
           "valuesAndPhotos": [
-            { "value": -150, "photo": "./images/controls/rotator.png" },
-            { "value": -120, "photo": "./images/controls/rotator.png" },
-            { "value": -90, "photo": "./images/controls/rotator.png" },
-            { "value": -55, "photo": "./images/controls/rotator.png" },
-            { "value": -30, "photo": "./images/controls/rotator.png" },
-            { "value": 0, "photo": "./images/controls/rotator.png" },
-            { "value": 25, "photo": "./images/controls/rotator.png" },
-            { "value": 55, "photo": "./images/controls/rotator.png" },
-            { "value": 90, "photo": "./images/controls/rotator.png" },
-            { "value": 120, "photo": "./images/controls/rotator.png" },
-            { "value": 150, "photo": "./images/controls/rotator.png" }
+            { "value": -150, "photo": "./images/controls/rotator.png", "realValue": "0", "units": "км" },
+            { "value": -120, "photo": "./images/controls/rotator.png", "realValue": "2", "units": "км" },
+            { "value": -90, "photo": "./images/controls/rotator.png", "realValue": "4", "units": "км" },
+            { "value": -55, "photo": "./images/controls/rotator.png", "realValue": "6", "units": "км" },
+            { "value": -30, "photo": "./images/controls/rotator.png", "realValue": "8", "units": "км" },
+            { "value": 0, "photo": "./images/controls/rotator.png", "realValue": "10", "units": "км" },
+            { "value": 25, "photo": "./images/controls/rotator.png", "realValue": "12", "units": "км" },
+            { "value": 55, "photo": "./images/controls/rotator.png", "realValue": "14", "units": "км" },
+            { "value": 90, "photo": "./images/controls/rotator.png", "realValue": "16", "units": "км" },
+            { "value": 120, "photo": "./images/controls/rotator.png", "realValue": "18", "units": "км" },
+            { "value": 150, "photo": "./images/controls/rotator.png", "realValue": "20", "units": "км" }
           ],
           "rotatable": true,
           "draggable": false,
@@ -88,15 +88,15 @@
           "id": 1003,
           "initValue": -150,
           "currentValue": -150,
-          "caption": null
+          "caption": "РП"
         },
         {
           "name": "rotator",
           "valuesAndPhotos": [
-            { "value": -35, "photo": "./images/controls/rotator.png" },
-            { "value": -15, "photo": "./images/controls/rotator.png" },
-            { "value": 15, "photo": "./images/controls/rotator.png" },
-            { "value": 35, "photo": "./images/controls/rotator.png" }
+            { "value": -35, "photo": "./images/controls/rotator.png", "realValue": "0", "units": "Нп" },
+            { "value": -15, "photo": "./images/controls/rotator.png", "realValue": "0.1", "units": "Нп" },
+            { "value": 15, "photo": "./images/controls/rotator.png", "realValue": "0.3", "units": "Нп" },
+            { "value": 35, "photo": "./images/controls/rotator.png", "realValue": "0.4", "units": "Нп" }
           ],
           "rotatable": true,
           "draggable": false,
@@ -107,20 +107,20 @@
           "id": 1004,
           "initValue": -35,
           "currentValue": -35,
-          "caption": null
+          "caption": "РМ"
         },
         {
           "name": "channel",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/channel.png" },
-            { "value": 30, "photo": "./images/controls/channel.png" },
-            { "value": 70, "photo": "./images/controls/channel.png" },
-            { "value": 110, "photo": "./images/controls/channel.png" },
-            { "value": 145, "photo": "./images/controls/channel.png" },
-            { "value": 175, "photo": "./images/controls/channel.png" },
-            { "value": 215, "photo": "./images/controls/channel.png" },
-            { "value": 260, "photo": "./images/controls/channel.png" },
-            { "value": 300, "photo": "./images/controls/channel.png" }
+            { "value": 0, "photo": "./images/controls/channel.png", "realValue": "1", "units": "канал" },
+            { "value": 30, "photo": "./images/controls/channel.png", "realValue": "2", "units": "канал" },
+            { "value": 70, "photo": "./images/controls/channel.png", "realValue": "3", "units": "канал" },
+            { "value": 110, "photo": "./images/controls/channel.png", "realValue": "4", "units": "канал" },
+            { "value": 145, "photo": "./images/controls/channel.png", "realValue": "5", "units": "канал" },
+            { "value": 175, "photo": "./images/controls/channel.png", "realValue": "6", "units": "канал" },
+            { "value": 215, "photo": "./images/controls/channel.png", "realValue": "7", "units": "канал" },
+            { "value": 260, "photo": "./images/controls/channel.png", "realValue": "8", "units": "канал" },
+            { "value": 300, "photo": "./images/controls/channel.png", "realValue": "9", "units": "канал" }
           ],
           "rotatable": true,
           "draggable": false,
@@ -252,11 +252,15 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/lever2_horizontal_off.png"
+              "photo": "./images/controls/lever2_horizontal_off.png", 
+              "realValue": null, 
+              "units": null 
             },
             {
               "value": "on",
-              "photo": "./images/controls/lever2_horizontal_on.png"
+              "photo": "./images/controls/lever2_horizontal_on.png", 
+              "realValue": "ВКЛ", 
+              "units": null 
             }
           ],
           "rotatable": false,
@@ -268,18 +272,22 @@
           "id": 1012,
           "initValue": "off",
           "currentValue": "off",
-          "caption": null
+          "caption": "ВА"
         },
         {
           "name": "lever2",
           "valuesAndPhotos": [
             {
-              "value": "off",
-              "photo": "./images/controls/lever2_horizontal_off.png"
+              "value": "on",
+              "photo": "./images/controls/lever2_horizontal_off.png", 
+              "realValue": "МЕСТ", 
+              "units": null 
             },
             {
-              "value": "on",
-              "photo": "./images/controls/lever2_horizontal_on.png"
+              "value": "off",
+              "photo": "./images/controls/lever2_horizontal_on.png", 
+              "realValue": "ВН", 
+              "units": null 
             }
           ],
           "rotatable": false,
@@ -289,9 +297,9 @@
           "width": 25,
           "height": 25,
           "id": 1013,
-          "initValue": "off",
-          "currentValue": "off",
-          "caption": null
+          "initValue": "on",
+          "currentValue": "on",
+          "caption": "ПИТ"
         },
         {
           "name": "mover",
@@ -313,7 +321,7 @@
           "id": 1015,
           "currentValue": 0,
           "initValue": 0,
-          "caption": null
+          "caption": "РГ"
         },
         {
           "name": "light_red",
@@ -374,11 +382,15 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/lever2_vertical_off.png"
+              "photo": "./images/controls/lever2_vertical_off.png",
+              "realValue": "ВКЛ", 
+              "units": null
             },
             {
               "value": "on",
-              "photo": "./images/controls/lever2_vertical_on.png"
+              "photo": "./images/controls/lever2_vertical_on.png",
+              "realValue": "ВЫКЛ", 
+              "units": null 
             }
           ],
           "rotatable": false,
