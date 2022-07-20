@@ -18,6 +18,11 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-12">
+          <textShowVue @inputText="inputTextHandler"/>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -27,11 +32,13 @@ import P3306JSON from "./P302O/P302O.json";
 
 import hardwareCanvas from "./P302O/hardwareCanvas.vue";
 import packManager from "./P302O/packManager.vue";
+import textShowVue from "./P302O/textShow.vue";
 
 export default {
   components: {
     hardwareCanvas,
     packManager,
+    textShowVue,
   },
   data() {
     return {      
@@ -42,6 +49,9 @@ export default {
   methods: {
     selectPackHandler(pack) {
       this.actualPack = pack;
+    },
+    inputTextHandler(text) {
+      console.log(text);
     }
   },
   created() {
