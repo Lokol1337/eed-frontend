@@ -21,22 +21,29 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-12">
+          <textShowVue @inputText="inputTextHandler"/>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import P3306JSON from "./P302O/P3306.json";
+import P3306JSON from "./P302O/P302O.json";
 
 import hardwareCanvas from "./P302O/hardwareCanvas.vue";
 import packManager from "./P302O/packManager.vue";
 import menuForShow from "./P302O/menuForShow.vue" 
+import textShowVue from "./P302O/textShow.vue";
 
 export default {
   components: {
     hardwareCanvas,
     packManager,
     menuForShow,
+    textShowVue,
   },
   data() {
     return {      
@@ -49,6 +56,9 @@ export default {
     selectPackHandler(pack) {
       this.actualPack = pack;
       this.packForShow = pack.name;
+    },
+    inputTextHandler(text) {
+      console.log(text);
     }
   },
   created() {

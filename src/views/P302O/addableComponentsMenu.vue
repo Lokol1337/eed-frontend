@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="menu-wrp">
     <h1>menu</h1>
     <div
       v-for="(component, i) in addableComponents"
@@ -35,6 +35,11 @@ export default {
 .menu {
   display: flex;
   flex-direction: column;
+
+  &-wrp {
+    overflow: auto;
+    height: 300px;
+  }
 
   &__img {
     max-width: 50px;
