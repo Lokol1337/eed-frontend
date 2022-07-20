@@ -15,18 +15,18 @@
         :hardwareComponent="hardwareComponent"
       />
     </div>
-    <div>
+    <!-- <div>
       <addableComponentsMenu
         :addableComponents="componentsForMenu"
         @selectComponent="selectComponentHandler"
       />
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import canvasComponent from "./canvasComponent.vue";
-import addableComponentsMenu from "./addableComponentsMenu.vue";
+// import addableComponentsMenu from "./addableComponentsMenu.vue";
 
 export default {
   props: {
@@ -44,7 +44,7 @@ export default {
   },
   components: {
     canvasComponent,
-    addableComponentsMenu,
+    // addableComponentsMenu,
   },
   data() {
     return {
