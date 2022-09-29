@@ -2,7 +2,9 @@
   <div class="pack-manger container">
     <div class="pack-manger__list row">
       <div
+        
         v-for="pack in packs"
+        :id="pack.id"
         :key="pack.name"
         class="pack-manger__card col-4 col-sm-4 col-md-3 col-lg-1"
         :style="{

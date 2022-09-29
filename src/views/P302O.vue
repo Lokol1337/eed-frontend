@@ -9,14 +9,18 @@
       type="file"
     />
     <button @click.prevent="exportJSON">export</button>
+    <script type="javascript">
+      if(window.innerWidth < 800) {
+      }
+
+    </script>
     <div class="container-fluid" :key="reRenderKey">
-<<<<<<< HEAD
       <div class="row justify-content-center">
         <div class="col-auto col-sm-auto col-md-auto col-xl-auto col-lg-auto align-self-center">
           <menuForShow :rectColor="'green'" :packName="packForShow" />
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <div class="hardware-view-page__canvas-wrp d-xl-none d-lg-block d-md-block d-xs-block d-block" :key="reRenderKey" style="zoom:90%  ">
+          <div class="hardware-view-page__canvas-wrp d-xl-none d-lg-block d-md-block d-xs-block d-block " :key="reRenderKey" style="zoom:90%  ">
             <hardwareCanvas
               v-for="pack in allPacks.blocks"
               :key="pack.name"
@@ -26,17 +30,8 @@
               :backgroundSettings="pack.backgroundSettings"
             />
           </div>
-        </div>
-        <div class="row">
+
           <div class="hardware-view-page__canvas-wrp d-xl-block d-none" :key="reRenderKey" style="zoom:100%  ">
-=======
-      <div class="row">
-        <div class="col-lg-2 col-xl-2">
-          <menuForShow :rectColor="'green'" :packName="packForShow" />
-        </div>
-        <div class="col-lg-10 col-xl-10">
-          <div class="hardware-view-page__canvas-wrp" :key="reRenderKey">
->>>>>>> cd89d591f2fd714b968b09c93050a88a4951adb9
             <hardwareCanvas
               v-for="pack in allPacks.blocks"
               :key="pack.name"
