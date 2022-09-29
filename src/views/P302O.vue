@@ -9,11 +9,7 @@
       type="file"
     />
     <button @click.prevent="exportJSON">export</button>
-    <script type="javascript">
-      if(window.innerWidth < 800) {
-      }
 
-    </script>
     <div class="container-fluid" :key="reRenderKey">
       <div class="row justify-content-center">
         <div class="col-auto col-sm-auto col-md-auto col-xl-auto col-lg-auto align-self-center">
@@ -23,6 +19,7 @@
           <div class="hardware-view-page__canvas-wrp d-xl-none d-lg-block d-md-block d-xs-block d-block " :key="reRenderKey" style="zoom:90%  ">
             <hardwareCanvas
               v-for="pack in allPacks.blocks"
+              :id = "'block' + pack.id"
               :key="pack.name"
               v-show="pack.name === actualPack.name"
               :hardwareComponents="pack.components"
@@ -31,10 +28,11 @@
             />
           </div>
 
-          <div class="hardware-view-page__canvas-wrp d-xl-block d-none" :key="reRenderKey" style="zoom:100%  ">
+          <div id="mainBlock" class="hardware-view-page__canvas-wrp d-xl-block d-none" :key="reRenderKey" style="zoom:100%  ">
             <hardwareCanvas
               v-for="pack in allPacks.blocks"
               :key="pack.name"
+              :id = "'block' + pack.id"
               v-show="pack.name === actualPack.name"
               :hardwareComponents="pack.components"
               :bgImage="pack.background"
@@ -59,6 +57,7 @@ import hardwareCanvas from "./P302O/hardwareCanvas.vue";
 import packManager from "./P302O/packManager.vue";
 import menuForShow from "./P302O/menuForShow.vue";
 import textShowVue from "./P302O/textShow.vue";
+import { EvalSourceMapDevToolPlugin } from "webpack";
 
 export default {
   components: {
@@ -72,9 +71,26 @@ export default {
       actualPack: null,
       allPacks: null,
       packForShow: null,
+      width: window.innerWidth,
+      imgWidth: 0,
+      imgId: 1,
+      zoom: 100,
     };
   },
   methods: {
+    updateZoom(){
+      this.imgWidth = document.getElementById('block' + this.imgId).width;
+      if(this.width > this.imgWidth){
+        this.zoom = Math.floor((this.width - this.imgWidth)/this.imgWidth) + 100;
+      }
+      else if(this.width < this.imgWidth){
+        this.zoom = 100 - Math.ceil((this.width - this.imgWidth)/this.imgWidth);
+      }
+    },
+    updateWidth() {
+      this.width = window.innerWidth;
+      this.updateZoom;
+    },
     selectPackHandler(pack) {
       this.actualPack = pack;
       this.packForShow = pack.name;
@@ -119,6 +135,7 @@ export default {
     },
   },
   created() {
+    window.addEventListener('resize', this.updateWidth);
     this.allPacks = P3306JSON;
     this.actualPack = P3306JSON.blocks[0];
   },
