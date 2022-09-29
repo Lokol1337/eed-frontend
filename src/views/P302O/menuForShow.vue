@@ -140,7 +140,7 @@ export default {
 <style lang="scss" scoped>
 .menu-for-show {
   position: relative;
-
+  width:auto;
   &__border {
   }
 }

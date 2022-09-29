@@ -9,13 +9,25 @@
       type="file"
     />
     <button @click.prevent="exportJSON">export</button>
-    <div class="container" :key="reRenderKey">
-      <div class="row">
-        <div class="col-2 col-sm-2">
+    <div class="container-fluid" :key="reRenderKey">
+      <div class="row justify-content-center">
+        <div class="col-auto col-sm-auto col-md-auto col-xl-auto col-lg-auto align-self-center">
           <menuForShow :rectColor="'green'" :packName="packForShow" />
         </div>
-        <div class="col-10 col-sm-10">
-          <div class="hardware-view-page__canvas-wrp" :key="reRenderKey">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="hardware-view-page__canvas-wrp d-xl-none d-lg-block d-md-block d-xs-block d-block" :key="reRenderKey" style="zoom:90%  ">
+            <hardwareCanvas
+              v-for="pack in allPacks.blocks"
+              :key="pack.name"
+              v-show="pack.name === actualPack.name"
+              :hardwareComponents="pack.components"
+              :bgImage="pack.background"
+              :backgroundSettings="pack.backgroundSettings"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="hardware-view-page__canvas-wrp d-xl-block d-none" :key="reRenderKey" style="zoom:100%  ">
             <hardwareCanvas
               v-for="pack in allPacks.blocks"
               :key="pack.name"
