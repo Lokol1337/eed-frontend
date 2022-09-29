@@ -16,7 +16,7 @@
           <menuForShow :rectColor="'green'" :packName="packForShow" />
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <div class="hardware-view-page__canvas-wrp d-xl-none d-lg-block d-md-block d-xs-block d-block " :key="reRenderKey" style="zoom:90%  ">
+          <!-- <div class="hardware-view-page__canvas-wrp d-xl-none d-lg-block d-md-block d-xs-block d-block " :key="reRenderKey" style="zoom:90%  ">
             <hardwareCanvas
               v-for="pack in allPacks.blocks"
               :id = "'block' + pack.id"
@@ -26,9 +26,9 @@
               :bgImage="pack.background"
               :backgroundSettings="pack.backgroundSettings"
             />
-          </div>
+          </div> -->
 
-          <div id="mainBlock" class="hardware-view-page__canvas-wrp d-xl-block d-none" :key="reRenderKey" style="zoom:100%  ">
+          <div id="mainBlock" class="hardware-view-page__canvas-wrp " :key="reRenderKey" :style="'zoom:' + this.zoom + '%'">
             <hardwareCanvas
               v-for="pack in allPacks.blocks"
               :key="pack.name"
@@ -59,6 +59,13 @@ import menuForShow from "./P302O/menuForShow.vue";
 import textShowVue from "./P302O/textShow.vue";
 
 export default {
+  created(){
+    console.log('getFirstZoom');
+    this.getFistZoom();
+    window.addEventListener('resize', this.updateWidth);
+    this.allPacks = P3306JSON;
+    this.actualPack = P3306JSON.blocks[0];
+  },
   components: {
     hardwareCanvas,
     packManager,
@@ -73,22 +80,44 @@ export default {
       width: window.innerWidth,
       imgWidth: 0,
       imgId: 1,
-      zoom: 100,
+      zoom: 80,
+      firstZoom:0
     };
   },
   methods: {
+    getFistZoom(){
+      console.log('getFirstZoom');
+      let firstZoom = 0;
+      let imgWidth = 856;
+      if(this.width > imgWidth){
+        firstZoom = Math.floor((this.width - imgWidth)/this.imgWidth * 100) + 100;
+      }
+      else if(this.width < imgWidth){
+        firstZoom = Math.ceil((this.width - imgWidth)/this.imgWidth * 100) + 100;
+      }
+      this.firstZoom = firstZoom;
+
+      //document.getElementById('mainBlock').style.zoom = this.firstZoom + '%';
+      
+    },
     updateZoom(){
-      this.imgWidth = document.getElementById('block' + this.imgId).width;
+      this.imgWidth = document.getElementById('block' + this.imgId).children[0].style.width;
+      this.imgWidth = this.imgWidth.substr(0,this.imgWidth.length - 2);
+      this.imgWidth = parseInt(this.imgWidth);
+
       if(this.width > this.imgWidth){
-        this.zoom = Math.floor((this.width - this.imgWidth)/this.imgWidth) + 100;
+        this.zoom = Math.floor((this.width - this.imgWidth)/this.imgWidth * 100) + 100;
       }
       else if(this.width < this.imgWidth){
-        this.zoom = 100 - Math.ceil((this.width - this.imgWidth)/this.imgWidth);
+        this.zoom = Math.ceil((this.width - this.imgWidth)/this.imgWidth * 100) + 100;
       }
+      document.getElementById('mainBlock').style.zoom = this.zoom + '%';
     },
     updateWidth() {
-      this.width = window.innerWidth;
-      this.updateZoom;
+      const $html = document.documentElement;
+      const width = $html.clientWidth;
+      this.width = width;
+      this.updateZoom();
     },
     selectPackHandler(pack) {
       this.actualPack = pack;
@@ -133,13 +162,14 @@ export default {
 
     },
   },
-  created() {
-    window.addEventListener('resize', this.updateWidth);
-    this.allPacks = P3306JSON;
-    this.actualPack = P3306JSON.blocks[0];
-  },
+
+  // created() {
+  //   window.addEventListener('resize', this.updateWidth);
+  //   this.allPacks = P3306JSON;
+  //   this.actualPack = P3306JSON.blocks[0];
+  // },
 };
 </script>
 
 <style lang="scss" scoped>
-</style>
+</style>    
