@@ -57,7 +57,6 @@ import hardwareCanvas from "./P302O/hardwareCanvas.vue";
 import packManager from "./P302O/packManager.vue";
 import menuForShow from "./P302O/menuForShow.vue";
 import textShowVue from "./P302O/textShow.vue";
-import { EvalSourceMapDevToolPlugin } from "webpack";
 
 export default {
   components: {
