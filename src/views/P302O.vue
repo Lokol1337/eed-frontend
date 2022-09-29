@@ -9,12 +9,12 @@
       type="file"
     />
     <button @click.prevent="exportJSON">export</button>
-    <div class="container" :key="reRenderKey">
+    <div class="container-fluid" :key="reRenderKey">
       <div class="row">
-        <div class="col-2 col-sm-2">
+        <div class="col-lg-2 col-xl-2">
           <menuForShow :rectColor="'green'" :packName="packForShow" />
         </div>
-        <div class="col-10 col-sm-10">
+        <div class="col-lg-10 col-xl-10">
           <div class="hardware-view-page__canvas-wrp" :key="reRenderKey">
             <hardwareCanvas
               v-for="pack in allPacks.blocks"
