@@ -1,6 +1,6 @@
 <template>
   <div class="pack-manger container">
-    <div class="pack-manger__list row">
+    <div class="pack-manger__list row mb-4">
       <div
         
         v-for="pack in packs"
@@ -69,7 +69,7 @@ export default {
 
     &:hover {
       box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
-      transform: translate(0, -25%);
+      // transform: translate(0, -25%);
       transition: 0.5s;
       cursor: pointer;
     }

@@ -66,6 +66,7 @@ export default {
     this.actualPack = P3306JSON.blocks[0];
   },
   mounted(){
+    
     this.getFistZoom();
     var buttonItem = document.querySelectorAll('.btnBlock'), index, button;
     for (index = 0; index < buttonItem.length; index++) {
@@ -73,7 +74,7 @@ export default {
       button.addEventListener('click', this.updateZoom);
     }
       //console.log(event.currentTarget.id);
-
+    document.getElementById(this.imgId).click();
   },
   destroyed(){
     var buttonItem = document.querySelectorAll('.btnBlock'), index, button;

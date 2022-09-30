@@ -2,7 +2,7 @@
   <div class="main">
     <div class="container">
       <div class="row">
-        <div class="col-6 d-flex justify-content-center">
+        <div class="col-12 col-lg-6 col-xl-6 col-md-6 d-flex justify-content-center">
           <div class="card" style="width: 18rem">
             <!-- <img class="card-img-top" alt="Card image cap" /> -->
             <div class="card-body">
@@ -15,7 +15,7 @@
             </div>
           </div>
         </div>
-        <div class="col-6 d-flex justify-content-center">
+        <div class="col-12 col-lg-6 col-xl-6 col-md-6 d-flex justify-content-center">
           <div class="card" style="width: 18rem">
             <!-- <img class="card-img-top" alt="Card image cap" /> -->
             <div class="card-body">
@@ -29,13 +29,13 @@
         </div>
       </div>
       <div class="row mt-4">
-        <div class="col-4 d-flex justify-content-center">
+        <div class="col-12 col-md-4 d-flex justify-content-center">
           <img src="./mirea1.png" width="150" height="150">
         </div>
-        <div class="col-4 d-flex justify-content-center">
+        <div class="col-12 col-md-4 d-flex justify-content-center">
           <img src="./mirea2.png" width="150" height="150">
         </div>
-        <div class="col-4 d-flex justify-content-center">
+        <div class="col-12 col-md-4 d-flex justify-content-center">
           <img src="./mirea3.png" width="150" height="150">
         </div>
       </div>
