@@ -6,7 +6,7 @@
         v-for="pack in packs"
         :id="pack.id"
         :key="pack.name"
-        class="pack-manger__card col-4 col-sm-4 col-md-3 col-lg-1"
+        class="pack-manger__card col-4 col-sm-4 col-md-3 col-lg-1 btnBlock"
         :style="{
           borderColor: borderColor(pack.name),
         }"

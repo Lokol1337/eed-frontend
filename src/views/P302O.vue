@@ -15,7 +15,7 @@
         <div class="col-auto col-sm-auto col-md-auto col-xl-auto col-lg-auto align-self-center">
           <menuForShow :rectColor="'green'" :packName="packForShow" />
         </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-0">
           <!-- <div class="hardware-view-page__canvas-wrp d-xl-none d-lg-block d-md-block d-xs-block d-block " :key="reRenderKey" style="zoom:90%  ">
             <hardwareCanvas
               v-for="pack in allPacks.blocks"
@@ -60,11 +60,27 @@ import textShowVue from "./P302O/textShow.vue";
 
 export default {
   created(){
-    console.log('getFirstZoom');
-    this.getFistZoom();
+    //this.getFistZoom();
     window.addEventListener('resize', this.updateWidth);
     this.allPacks = P3306JSON;
     this.actualPack = P3306JSON.blocks[0];
+  },
+  mounted(){
+    this.getFistZoom();
+    var buttonItem = document.querySelectorAll('.btnBlock'), index, button;
+    for (index = 0; index < buttonItem.length; index++) {
+      button = buttonItem[index];
+      button.addEventListener('click', this.updateZoom);
+    }
+      //console.log(event.currentTarget.id);
+
+  },
+  destroyed(){
+    var buttonItem = document.querySelectorAll('.btnBlock'), index, button;
+    for (index = 0; index < buttonItem.length; index++) {
+      button = buttonItem[index];
+      button.addEventListener('click', this.updateZoom);
+    }
   },
   components: {
     hardwareCanvas,
@@ -86,34 +102,38 @@ export default {
   },
   methods: {
     getFistZoom(){
-      console.log('getFirstZoom');
       let firstZoom = 0;
       let imgWidth = 856;
       if(this.width > imgWidth){
-        firstZoom = Math.floor((this.width - imgWidth)/this.imgWidth * 100) + 100;
+        firstZoom = Math.floor((this.width - imgWidth)/imgWidth * 100) + 100 - 5;
       }
       else if(this.width < imgWidth){
-        firstZoom = Math.ceil((this.width - imgWidth)/this.imgWidth * 100) + 100;
+        firstZoom = Math.ceil((this.width - imgWidth)/imgWidth * 100) + 100 - 5;
       }
       this.firstZoom = firstZoom;
-
-      //document.getElementById('mainBlock').style.zoom = this.firstZoom + '%';
+      document.getElementById('mainBlock').style.zoom = this.firstZoom + '%';
       
     },
     updateZoom(){
+      if(event.currentTarget.id){
+        this.imgId = event.currentTarget.id;
+      }
+      
       this.imgWidth = document.getElementById('block' + this.imgId).children[0].style.width;
       this.imgWidth = this.imgWidth.substr(0,this.imgWidth.length - 2);
+      
       this.imgWidth = parseInt(this.imgWidth);
 
       if(this.width > this.imgWidth){
-        this.zoom = Math.floor((this.width - this.imgWidth)/this.imgWidth * 100) + 100;
+        this.zoom = Math.floor((this.width - this.imgWidth)/this.imgWidth * 100) + 100 - 5;
       }
       else if(this.width < this.imgWidth){
-        this.zoom = Math.ceil((this.width - this.imgWidth)/this.imgWidth * 100) + 100;
+        this.zoom = Math.ceil((this.width - this.imgWidth)/this.imgWidth * 100) + 100 - 5;
       }
       document.getElementById('mainBlock').style.zoom = this.zoom + '%';
     },
     updateWidth() {
+      console.log(this.imgId);
       const $html = document.documentElement;
       const width = $html.clientWidth;
       this.width = width;
