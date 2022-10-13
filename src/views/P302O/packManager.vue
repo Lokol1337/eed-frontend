@@ -12,6 +12,7 @@
         }"
         @click.prevent="selectPack(pack)"
       >
+      
         <span class="pack-manger__card-title">
           {{ pack.name }}
         </span>

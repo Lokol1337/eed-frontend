@@ -13,7 +13,7 @@
     <div class="container-fluid" :key="reRenderKey">
       <div class="row justify-content-center">
         <div class="col-auto col-sm-auto col-md-auto col-xl-auto col-lg-auto align-self-center">
-          <menuForShow :rectColor="'green'" :packName="packForShow" />
+          <menuForShow :rectColor="'green'" :packName="packForShow" :packs = "allPacks.blocks" @selectPack="selectPackHandler"/>
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-0">
           <!-- <div class="hardware-view-page__canvas-wrp d-xl-none d-lg-block d-md-block d-xs-block d-block " :key="reRenderKey" style="zoom:90%  ">
@@ -68,7 +68,7 @@ export default {
   mounted(){
     
     this.getFistZoom();
-    var buttonItem = document.querySelectorAll('.btnBlock'), index, button;
+    var buttonItem = document.querySelectorAll('.menu-for-show__border'), index, button;
     for (index = 0; index < buttonItem.length; index++) {
       button = buttonItem[index];
       button.addEventListener('click', this.updateZoom);
@@ -134,9 +134,10 @@ export default {
       document.getElementById('mainBlock').style.zoom = this.zoom + '%';
     },
     updateWidth() {
-      console.log(this.imgId);
+      
       const $html = document.documentElement;
       const width = $html.clientWidth;
+      console.log(width);
       this.width = width;
       this.updateZoom();
     },

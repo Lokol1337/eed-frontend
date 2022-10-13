@@ -1,23 +1,28 @@
 <template>
   <div class="menu-for-show">
+    
     <div
       class="menu-for-show__border"
-      v-for="config in configs"
+
+      v-for="config in configs"  
+      
       :key="config.name"
-      v-show="config.name === packName"
+      :id = "config.id"
       :style="{
         width: config.rectangleWidth + 'px',
         height: config.rectangleHeight + 'px',
         zIndex: 2,
         border: `3px solid ${config.rectangleColor}`,
-        borderRadius: 5 + 'px',
         position: 'absolute',
         top: config.top + 'px',
         left: config.left + 'px',
-      }"
-    >
-    </div>
-    <img
+        display:block,
+      }" 
+      @click.prevent="selectPack(packs[config.id - 1])"
+    > 
+    
+  </div>
+  <img
       src="images/all_packages_min.png"
       :style="{
         width: 190 + 'px',
@@ -25,10 +30,12 @@
         zIndex: 1,
       }"
     />
-  </div>
+    </div>
+    
 </template>
 
 <script>
+
 export default {
   props: {
     rectColor: {
@@ -38,7 +45,17 @@ export default {
     packName: {
       type: String,
       // default: 'ВКО-12',
-    } 
+    },
+    packs: {
+      type: Array,
+      required: true,
+    },
+  },
+  methods: {
+    selectPack(pack) {
+      this.actualPack = pack.name;
+      this.$emit('selectPack', pack);
+    }
   },
   data() {
     return {
@@ -50,6 +67,7 @@ export default {
           rectangleColor: this.rectColor,
           top: 4,
           left: 2,
+          id: 5,
         },
         {
           name: 'СС-О',
@@ -58,6 +76,7 @@ export default {
           rectangleColor: this.rectColor,
           top: 40,
           left: 2,
+          id: 1,
         },
         {
           name: 'ЛО',
@@ -66,6 +85,7 @@ export default {
           rectangleColor: this.rectColor,
           top: 67,
           left: 2,
+          id: 2,
         },
         {
           name: 'ГО-12',
@@ -74,6 +94,7 @@ export default {
           rectangleColor: this.rectColor,
           top: 100,
           left: 2,
+          id: 3,
         },
         {
           name: 'ПИТ',
@@ -82,6 +103,7 @@ export default {
           rectangleColor: this.rectColor,
           top: 155,
           left: 2,
+          id: 4,
         },
         {
           name: 'ЩКНЧ1',
@@ -90,6 +112,7 @@ export default {
           rectangleColor: this.rectColor,
           top: 37,
           left: 65,
+          id: 6,
         },
         {
           name: 'ЩКНЧ2',
@@ -98,6 +121,7 @@ export default {
           rectangleColor: this.rectColor,
           top: 67,
           left: 65,
+          id: 7,
         },
         {
           name: 'ЩКВЧ',
@@ -106,6 +130,7 @@ export default {
           rectangleColor: this.rectColor,
           top: 155,
           left: 65,
+          id: 8,
         },
         {
           name: 'ИПП',
@@ -114,6 +139,7 @@ export default {
           rectangleColor: this.rectColor,
           top: 37,
           left: 130,
+          id: 10,
         },
         {
           name: 'ДСВ',
@@ -122,6 +148,7 @@ export default {
           rectangleColor: this.rectColor,
           top: 100,
           left: 130,
+          id: 9,
         },
         {
           name: 'ДП',
@@ -130,11 +157,13 @@ export default {
           rectangleColor: this.rectColor,
           top: 155,
           left: 130,
+          id: 11,
         },              
       ],
     };
   },
 };
+
 </script>
 
 <style lang="scss" scoped>
