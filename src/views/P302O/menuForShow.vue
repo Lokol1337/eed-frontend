@@ -12,7 +12,7 @@
         width: config.rectangleWidth + 'px',
         height: config.rectangleHeight + 'px',
         zIndex: 2,
-        border: `3px solid ${config.rectangleColor}`,
+        border: `0px solid ${config.rectangleColor}`,
         position: 'absolute',
         top: config.top + 'px',
         left: config.left + 'px',
@@ -53,7 +53,12 @@ export default {
   },
   methods: {
     selectPack(pack) {
+      document.getElementById(pack.id).style.border = '3px solid';
+      document.getElementById(this.actualPack.id).style.border = '0px solid';
       this.actualPack = pack.name;
+      console.log(this.actualPack);
+      
+
       // for(let i = 0; i<configs.lenght(); i++)
       this.$emit('selectPack', pack);
     }

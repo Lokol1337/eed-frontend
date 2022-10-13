@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="pack-manger container">
     <div class="pack-manger__list row mb-4">
       <div
@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-</template>
+</template> -->
 
 <script>
 export default {
