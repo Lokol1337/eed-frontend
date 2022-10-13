@@ -1,5 +1,5 @@
 <template>
-  <div class="menu-for-show">
+  <div class="menu-for-show ">
     
     <div
       class="menu-for-show__border"
@@ -16,6 +16,7 @@
         position: 'absolute',
         top: config.top + 'px',
         left: config.left + 'px',
+        cursor: 'pointer',
         display:block,
       }" 
       @click.prevent="selectPack(packs[config.id - 1])"
@@ -53,11 +54,17 @@ export default {
   },
   methods: {
     selectPack(pack) {
-      document.getElementById(pack.id).style.border = '3px solid';
-      document.getElementById(this.actualPack.id).style.border = '0px solid';
-      this.actualPack = pack.name;
-      
+      let borderImgArr = [];
+      borderImgArr = document.getElementsByClassName('menu-for-show__border');
 
+      console.log( borderImgArr.length);
+      console.log('1321241');
+      for(let i = 0; i < borderImgArr.length; i++){
+        console.log(borderImgArr[i].style.border);
+        borderImgArr[i].style.border = '0px solid';  
+      }
+      document.getElementById(pack.id).style.border = '3px solid green';
+      this.actualPack = pack.name;
       // for(let i = 0; i<configs.lenght(); i++)
       this.$emit('selectPack', pack);
     }
