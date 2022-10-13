@@ -54,7 +54,7 @@ export default {
   methods: {
     selectPack(pack) {
       this.actualPack = pack.name;
-      for(let i = 0; i<configs.lenght(); i++)
+      // for(let i = 0; i<configs.lenght(); i++)
       this.$emit('selectPack', pack);
     }
   },
