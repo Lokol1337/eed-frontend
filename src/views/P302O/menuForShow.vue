@@ -56,7 +56,6 @@ export default {
       document.getElementById(pack.id).style.border = '3px solid';
       document.getElementById(this.actualPack.id).style.border = '0px solid';
       this.actualPack = pack.name;
-      console.log(this.actualPack);
       
 
       // for(let i = 0; i<configs.lenght(); i++)
