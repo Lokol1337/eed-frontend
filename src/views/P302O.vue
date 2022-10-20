@@ -11,8 +11,9 @@
     <button @click.prevent="exportJSON">export</button>
 
     <div class="container-fluid" :key="reRenderKey">
-      <div class="row justify-content-center">
-        <div class="col-auto col-sm-auto col-md-auto col-xl-auto col-lg-auto align-self-center">
+      <div class="row justify-content-end" >
+        <a id="btnMenuForShow" v-on:click="showMenu()" class="menu-btn" style="transform: translateX(0%); "><span></span></a>
+        <div id="menuForShow" class="col-auto col-sm-auto col-md-auto col-xl-auto col-lg-auto d-absilute d-none" style="transform: translateX(100%);">
           <menuForShow :rectColor="'green'" :packName="packForShow" :packs = "allPacks.blocks" @selectPack="selectPackHandler"/>
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-0">
@@ -51,6 +52,9 @@
 </template>
 
 <script>
+
+
+
 import P3306JSON from "./P302O/P302O.json";
 
 import hardwareCanvas from "./P302O/hardwareCanvas.vue";
@@ -102,6 +106,23 @@ export default {
     };
   },
   methods: {
+    showMenu(){
+            
+      if(document.getElementById('menuForShow').style.transform == 'translateX(100%)'){
+        document.getElementById('menuForShow').style.transform = 'translateX(0%)';
+        document.getElementById('btnMenuForShow').style.transform = 'translateX(0%)';
+        document.getElementById('btnMenuForShow').classList.add('menu-btn_active'); 
+        document.getElementById('menuForShow').classList.remove('d-none');
+
+      }
+      else{
+        console.log('else');
+        document.getElementById('menuForShow').style.transform = 'translateX(100%)';
+        document.getElementById('btnMenuForShow').style.transform = 'translateX(0%)';
+        document.getElementById('btnMenuForShow').classList.remove('menu-btn_active');
+        document.getElementById('menuForShow').classList.add('d-none');
+      }
+    },
     getFistZoom(){
       let firstZoom = 0;
       let imgWidth = 856;
@@ -194,4 +215,48 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.menu-btn {
+  cursor: pointer;
+  rotate: 180deg;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+}
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after {
+  position: absolute;
+  top: 50%; margin-top: -1px;
+  left: 50%; margin-left: -10px;
+  width: 20px;
+  height: 2px;
+  background-color: #222;
+}
+.menu-btn span::before,
+.menu-btn span::after {
+  content: '';
+  display: block;
+  transition: 0.2s;
+}
+.menu-btn span::before {
+  transform: translateY(-5px);
+}
+.menu-btn span::after {
+  transform: translateY(5px);
+}
+
+.menu-btn_active span:before {
+  transform: rotate(35deg);
+  width: 10px;
+  transform-origin: left bottom;
+}
+.menu-btn_active span:after {
+  transform: rotate(-35deg);
+  width: 10px;
+  transform-origin: left top;
+}
+
 </style>    
