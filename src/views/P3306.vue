@@ -102,7 +102,6 @@ export default {
       document.getElementById('mainBlock').style.zoom = this.zoom + '%';
     },
     updateWidth() {
-      console.log(this.imgId);
       const $html = document.documentElement;
       const width = $html.clientWidth;
       this.width = width;

@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="pack-manger container">
     <div class="pack-manger__list row mb-4">
       <div
@@ -12,6 +12,7 @@
         }"
         @click.prevent="selectPack(pack)"
       >
+      
         <span class="pack-manger__card-title">
           {{ pack.name }}
         </span>
@@ -19,7 +20,7 @@
       </div>
     </div>
   </div>
-</template>
+</template> -->
 
 <script>
 export default {
