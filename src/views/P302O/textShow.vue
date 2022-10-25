@@ -1,8 +1,8 @@
-<template>
+<!-- <template>
     <div class="container-fluid">
         <textarea v-model="text" @change.prevent="changeText" class="w-100"></textarea>
     </div>
-</template>
+</template> -->
 
 <script>
 export default {

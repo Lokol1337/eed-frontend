@@ -1,22 +1,29 @@
 <template>
+  
   <div class="p-330-6">
+    <div>
+            <VueSidebarMenuAkahon @selectPackParent="selectPackHandler"/>
+      </div>
+
     <h1>П-302-0</h1>
-    <packManager :packs="allPacks.blocks" @selectPack="selectPackHandler" />
-    <h3>{{ actualPack.name }}</h3>
-    <input
+    <packManager :packs="allPacks.blocks" @selectPackParent="selectPackHandler" />
+    <h3>{{ actualPack.name}}</h3>
+    <!-- <input
       @change.prevent="importJSON"
       style="margin-right: 15px"
       type="file"
     />
-    <button @click.prevent="exportJSON">export</button>
+    <button @click.prevent="exportJSON">export</button> -->
 
     <div class="container-fluid" :key="reRenderKey">
-      <div class="row justify-content-end" >
-        <a id="btnMenuForShow" v-on:click="showMenu()" class="menu-btn" style="transform: translateX(0%); "><span></span></a>
-        <div id="menuForShow" class="col-auto col-sm-auto col-md-auto col-xl-auto col-lg-auto d-absilute d-none" style="transform: translateX(100%);">
-          <menuForShow :rectColor="'green'" :packName="packForShow" :packs = "allPacks.blocks" @selectPack="selectPackHandler"/>
+      <div class="row " >
+        
+        
+        <div class="col-auto col-sm-auto col-md-auto col-lg-auto col-xl-auto p-0">
+          <div style="width: 85px;">
+          </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-0">
+        <div class="col-9 col-sm-9 col-md-10 col-lg-11 col-xl-11 p-0" >
           <!-- <div class="hardware-view-page__canvas-wrp d-xl-none d-lg-block d-md-block d-xs-block d-block " :key="reRenderKey" style="zoom:90%  ">
             <hardwareCanvas
               v-for="pack in allPacks.blocks"
@@ -28,8 +35,8 @@
               :backgroundSettings="pack.backgroundSettings"
             />
           </div> -->
-
-          <div id="mainBlock" class="hardware-view-page__canvas-wrp " :key="reRenderKey" :style="'zoom:' + this.zoom + '%'">
+          
+          <div id="mainBlock" class="hardware-view-page__canvas-wrp" :key="reRenderKey" :style="'zoom:' + this.zoom + '%;'">
             <hardwareCanvas
               v-for="pack in allPacks.blocks"
               :key="pack.name"
@@ -59,8 +66,11 @@ import P3306JSON from "./P302O/P302O.json";
 
 import hardwareCanvas from "./P302O/hardwareCanvas.vue";
 import packManager from "./P302O/packManager.vue";
-import menuForShow from "./P302O/menuForShow.vue";
+//import menuForShow from "./P302O/menuForShow.vue";
 import textShowVue from "./P302O/textShow.vue";
+import VueSidebarMenuAkahon from "./P302O/sideBarMenu.vue";
+  
+
 
 export default {
   created(){
@@ -88,9 +98,10 @@ export default {
     }
   },
   components: {
+    VueSidebarMenuAkahon,
     hardwareCanvas,
     packManager,
-    menuForShow,
+    //menuForShow,
     textShowVue,
   },
   data() {
@@ -127,10 +138,10 @@ export default {
       let firstZoom = 0;
       let imgWidth = 856;
       if(this.width > imgWidth){
-        firstZoom = Math.floor((this.width - imgWidth)/imgWidth * 100) + 100 - 5;
+        firstZoom = Math.floor((this.width - imgWidth - 100)/imgWidth * 100) + 100;
       }
       else if(this.width < imgWidth){
-        firstZoom = Math.ceil((this.width - imgWidth)/imgWidth * 100) + 100 - 5;
+        firstZoom = Math.ceil((this.width - imgWidth - 100)/imgWidth * 100) + 100;
       }
       this.firstZoom = firstZoom;
       document.getElementById('mainBlock').style.zoom = this.firstZoom + '%';
@@ -147,10 +158,10 @@ export default {
       this.imgWidth = parseInt(this.imgWidth);
 
       if(this.width > this.imgWidth){
-        this.zoom = Math.floor((this.width - this.imgWidth)/this.imgWidth * 100) + 100 - 5;
+        this.zoom = Math.floor((this.width - 100 - this.imgWidth)/this.imgWidth * 100) + 100;
       }
       else if(this.width < this.imgWidth){
-        this.zoom = Math.ceil((this.width - this.imgWidth)/this.imgWidth * 100) + 100 - 5;
+        this.zoom = Math.ceil((this.width - 100 - this.imgWidth)/this.imgWidth * 100) + 100;
       }
       document.getElementById('mainBlock').style.zoom = this.zoom + '%';
     },
