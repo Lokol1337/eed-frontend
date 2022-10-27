@@ -2,8 +2,8 @@
   
   <div class="p-330-6">
     <div>
-            <VueSidebarMenuAkahon @selectPackParent="selectPackHandler"/>
-      </div>
+      <VueSidebarMenuAkahon @selectPackParent="selectPackHandler"/>
+    </div>
 
     <h1>П-302-0</h1>
     <packManager :packs="allPacks.blocks" @selectPackParent="selectPackHandler" />

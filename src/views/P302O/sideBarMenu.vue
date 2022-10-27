@@ -5,8 +5,11 @@
       :class="isOpened ? 'open' : ''"
       :style="cssVars"
     >
+      <div class="justify-content-center">
+        <img src="/eed-frontend/img/mirea2.5911f2c7.png" class="my-2" style="width: 40px;">
+      </div>
       <div
-        class="logo-details"
+        class="logo-details my-1"
         style="margin: 6px 14px 0 14px;"
       >
         <img
