@@ -8,6 +8,7 @@
       
       :key="config.name"
       :id = "config.id"
+      :title = "config.name"
       :style="{
         width: config.rectangleWidth + 'px',
         height: config.rectangleHeight + 'px',

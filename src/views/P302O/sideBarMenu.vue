@@ -2,30 +2,34 @@
         <!-- <packManager :packs="allPacks.blocks" @selectPack="selectPackHandler" /> -->
     <div
       class="sidebar"
+      @mouseover="isOpened = true , slowMenu = 'is-active'" 
+      @mouseleave="isOpened = false, slowMenu = ''"
       :class="isOpened ? 'open' : ''"
       :style="cssVars"
     >
-      <div class="justify-content-center">
-        <img src="/eed-frontend/img/mirea2.5911f2c7.png" class="my-2" style="width: 40px;">
+      <div 
+        :class="'row justify-content-start'">
+        <div class="col-auto">
+          <img src="/eed-frontend/img/mirea2.5911f2c7.png" class="mt-4 mb-2" style="width: 40px;">
+        </div>    
       </div>
       <div
         class="logo-details my-1"
-        style="margin: 6px 14px 0 14px;"
       >
         <img
           v-if="menuLogo"
-          :src="menuLogo"
-          alt="menu-logo"
-          class="menu-logo icon"
         >
-        
-       
         <i
           class="bx"
-          :class="isOpened ? 'bx-menu-alt-right' : 'bx-menu'"
+          :class="isOpened ? 'bx-menu' : 'bx-menu'"
           id="btn"
-          @click="isOpened = !isOpened"
         />
+        <label 
+          style="color:white;"
+          :class="'hiddenblock ' + slowMenu"
+          >
+          Menu
+        </label>
       </div>
   
       <div style="display: flex ; flex-direction:column; justify-content: space-between; flex-grow: 1; max-height: calc(100% - 60px); ">
@@ -33,9 +37,17 @@
           id="my-scroll"
           style="margin: 6px 14px 0 14px;"
         >
-        <div class="row">
-            <div id="menuForShow" class="col-auto col-sm-auto col-md-auto col-xl-auto col-lg-auto" >
-                <menuForShow :rectColor="'green'" :packName="packForShow" :packs = "allPacks.blocks" @selectPack="selectPackHandler"/>
+        <div class="row justify-content-center">
+            <div 
+              id="menuForShow" 
+              :class="'col-auto col-sm-auto col-md-auto col-xl-auto col-lg-auto hiddenblock' + ' ' + slowMenu" >
+              
+                <menuForShow 
+                  :rectColor="'green'" 
+                  :packName="packForShow" 
+                  :packs = "allPacks.blocks" 
+                  @selectPack="selectPackHandler"
+                />
             </div>
         </div>
         </div>
@@ -223,7 +235,9 @@
             imgWidth: 0,
         imgId: 1,
         zoom: 80,
-        firstZoom:0
+        firstZoom:0,
+        slowMenu: '',
+        vucIcon: 'justify-content-center',
         }
       },
       mounted() {
@@ -260,6 +274,7 @@
       },
       watch: {
         isOpened() {
+          
           // window.document.body.style.paddingLeft = this.isOpened && this.isPaddingLeft ? this.menuOpenedPaddingLeftBody : this.menuClosedPaddingLeftBody
         }
       }
@@ -276,12 +291,27 @@
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
+    .hiddenblock {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all ease 0.5s;
+      transform: translate(-10%, 0);
+    }
+    
+    .hiddenblock.is-active {
+      opacity: 1;
+      pointer-events: auto;
+      transition: all ease 1s;
+      transform: translate(0, 0);
+      visibility: visible;
+    }
     body {
       transition: all 0.5s ease;
     }
     .menu-logo {
       width: 30px;
-      margin: 0 10px 0 10px;
+      margin: 0 0 0 0;
     }
     .sidebar {
       position: relative;
@@ -324,7 +354,7 @@
       opacity: 1;
     }
     .sidebar .logo-details #btn {
-      position: absolute;
+      /* position: absolute;
       top: 50%;
       right: 0;
       transform: translateY(-50%);
@@ -333,10 +363,10 @@
       font-size: 23px;
       text-align: center;
       cursor: pointer;
-      transition: all 0.5s ease;
+      transition: all 0.5s ease; */
     }
     .sidebar.open .logo-details #btn {
-      text-align: right;
+      /* text-align: right; */
     }
     .sidebar i {
       color: var(--icons-color);
@@ -354,7 +384,7 @@
     }
     .sidebar li {
       position: relative;
-      margin: 8px 0;
+      margin: 0 0;
       list-style: none;
     }
     .sidebar li .tooltip {
