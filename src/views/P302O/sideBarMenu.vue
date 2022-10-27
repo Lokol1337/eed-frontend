@@ -1,34 +1,20 @@
 <template>
         <!-- <packManager :packs="allPacks.blocks" @selectPack="selectPackHandler" /> -->
     <div
-      class="sidebar"
+      class="sidebar p-2"
       @mouseover="isOpened = true , slowMenu = 'is-active'" 
       @mouseleave="isOpened = false, slowMenu = ''"
       :class="isOpened ? 'open' : ''"
       :style="cssVars"
     >
-      <div 
-        :class="'row justify-content-start'">
+      <div class="row justify-content-center mb-3">
         <div class="col-auto">
-          <img src="/eed-frontend/img/mirea2.5911f2c7.png" class="mt-4 mb-2" style="width: 40px;">
-        </div>    
-      </div>
-      <div
-        class="logo-details my-1"
-      >
-        <img
-          v-if="menuLogo"
-        >
-        <i
-          class="bx"
-          :class="isOpened ? 'bx-menu' : 'bx-menu'"
-          id="btn"
-        />
+        <img src="/eed-frontend/img/mirea2.5911f2c7.png" style="width: 40px;">
+        </div>
         <label 
-          style="color:white;"
-          :class="'hiddenblock ' + slowMenu"
-          >
-          Menu
+          style="color:white; white-space: nowrap;"
+          :class="'mt-1 hiddenblock ' + slowMenu"
+          >&nbsp;ВУЦ РТУ МИРЭА
         </label>
       </div>
   
