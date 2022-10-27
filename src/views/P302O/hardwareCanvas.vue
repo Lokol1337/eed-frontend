@@ -13,6 +13,7 @@
         v-for="(hardwareComponent, i) in allComponents"
         :key="i"
         :hardwareComponent="hardwareComponent"
+        :hardZoom = "hardZoom" 
       />
     </div>
     <!-- <div>
@@ -30,6 +31,9 @@ import canvasComponent from "./canvasComponent.vue";
 
 export default {
   props: {
+    zoom: {
+      type: Number,
+    },
     bgImage: {
       type: String,
       required: true,
@@ -42,12 +46,18 @@ export default {
       type: Object,
     },
   },
+  watch:{
+    zoom(val){
+      this.hardZoom = val
+    }
+  },
   components: {
     canvasComponent,
     // addableComponentsMenu,
   },
   data() {
     return {
+      hardZoom: this.zoom,
       componentsForMenu: [
         {
           name: "jumper2_vertical",
