@@ -10,7 +10,7 @@
     :parent="true"
     :scale = "(hardZoomScale)"
   >
-  <h1>{{dataServ}}</h1>
+  <!-- <h1>{{dataServ['id']}}</h1> -->
     <img
       class="component-img"
       
@@ -44,8 +44,9 @@ export default {
     return {
       imgIndex: 0,
       degreeOfRotation:  this.hardwareComponent.initValue,
+      img_src: this.hardwareComponent.valuesAndPhotos.photo,
       hardZoomScale: this.hardZoom / 100.0,
-      dataServ: ''
+      dataServ: []
     };
   },
   watch: {
@@ -55,10 +56,17 @@ export default {
   },
   computed: {
       change(){
-        if(this.dataServ === ''){
+        console.log("change()");
+        if(this.dataServ.length < 1){
           return '';
         }
+        console.log("Я ИЗМЕНИЛСЯ! Z");
         debugger;
+        if (this.hardwareComponent.valuesAndPhotos.length > 1) {
+          console.log("Блок с состояниями");
+        } else {
+          console.log("Перетаскивающийся блок");
+        }
         return this.dataServ;
       }
   },
@@ -88,22 +96,36 @@ export default {
     // TODO: remove this
     async sendTestRequest() {
       const {data} = await demoRequest(this.hardwareComponent);
-      
       console.log(data);
     },
     sendTestRequest2() {
       let socket = new WebSocket("ws://localhost:8000/");
 
+      var session_id = 0;
+      var sendData = [session_id, this.hardwareComponent.id];
+ 
+      if (this.hardwareComponent.draggable) {
+        console.log("Перетаскивающийся блок");
+        sendData.push(this.hardwareComponent.left);
+        sendData.push(this.hardwareComponent.top);
+      } else {
+        console.log("Блок с состояниями");
+        sendData.push(this.hardwareComponent.currentValue);
+      }
+
       socket.onopen = function() {
         alert("[open] Соединение установлено");
         alert("Отправляем данные на сервер");
-        socket.send("Меня зовут Джон");
+        console.log(sendData);
+        socket.send(sendData);
       };
+
       const v = this;
       //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
       socket.onmessage = function(event) {
         alert(`[message] Данные получены с сервера: ${event.data}`);
-        v.dataServ = event.data;
+        v.dataServ = JSON.parse(event.data);
+        console.log(v.dataServ);
       };
 
       socket.onclose = function(event) {
@@ -121,7 +143,6 @@ export default {
       };
     },
     selectMethodByClick() {
-      
       if (
         this.hardwareComponent.draggable === false &&
         this.hardwareComponent.rotatable === false
