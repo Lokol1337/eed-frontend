@@ -10,8 +10,10 @@
     :parent="true"
     :scale = "(hardZoomScale)"
   >
+  <h1>{{dataServ}}</h1>
     <img
       class="component-img"
+      
       :src="hardwareComponent.valuesAndPhotos[imgIndex].photo"
       :style="{
         width: hardwareComponent.width + 'px',
@@ -42,12 +44,22 @@ export default {
     return {
       imgIndex: 0,
       degreeOfRotation:  this.hardwareComponent.initValue,
-      hardZoomScale: this.hardZoom / 100.0
+      hardZoomScale: this.hardZoom / 100.0,
+      dataServ: ''
     };
   },
   watch: {
       hardZoom(val){
         this.hardZoomScale = val / 100.0
+      }
+  },
+  computed: {
+      change(){
+        if(this.dataServ === ''){
+          return '';
+        }
+        debugger;
+        return this.dataServ;
       }
   },
   methods: {
@@ -74,8 +86,39 @@ export default {
       this.degreeOfRotation = this.hardwareComponent.valuesAndPhotos[this.imgIndex].value;
     },
     // TODO: remove this
-    sendTestRequest() {
-      demoRequest(this.hardwareComponent);
+    async sendTestRequest() {
+      const {data} = await demoRequest(this.hardwareComponent);
+      
+      console.log(data);
+    },
+    sendTestRequest2() {
+      let socket = new WebSocket("ws://localhost:8000/");
+
+      socket.onopen = function() {
+        alert("[open] Соединение установлено");
+        alert("Отправляем данные на сервер");
+        socket.send("Меня зовут Джон");
+      };
+      const v = this;
+      //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
+      socket.onmessage = function(event) {
+        alert(`[message] Данные получены с сервера: ${event.data}`);
+        v.dataServ = event.data;
+      };
+
+      socket.onclose = function(event) {
+        if (event.wasClean) {
+          alert(`[close] Соединение закрыто чисто, код=${event.code} причина=${event.reason}`);
+        } else {
+          // например, сервер убил процесс или сеть недоступна
+          // обычно в этом случае event.code 1006
+          alert('[close] Соединение прервано');
+        }
+      };
+
+      socket.onerror = function(error) {
+        alert(`[error] ${error.message}`);
+      };
     },
     selectMethodByClick() {
       
@@ -84,18 +127,18 @@ export default {
         this.hardwareComponent.rotatable === false
       ) {
         this.changePhotoByClick();
-        return this.sendTestRequest();
+        return this.sendTestRequest2();
       } else if (
         this.hardwareComponent.draggable === true &&
         this.hardwareComponent.rotatable === false
       ) {
-        return this.sendTestRequest();
+        return this.sendTestRequest2();
       } else if (
         this.hardwareComponent.draggable === false &&
         this.hardwareComponent.rotatable === true
       ) {
         this.rotate();
-        return this.sendTestRequest();
+        return this.sendTestRequest2();
       }
     },
     onDrag(x, y) {
