@@ -18,7 +18,8 @@
         height: hardwareComponent.height + 'px',
         transform: `rotate(${degreeOfRotation}deg)`,
       }"
-      @click.prevent="selectMethodByClick"
+      @mouseup.prevent="selectMethodByClick"
+      @touchend.prevent="selectMethodByClick"
     />
   </vue-draggable-resizable>
 </template>
@@ -50,13 +51,7 @@ export default {
       }
   },
   methods: {
-    onDrag(x, y) {
-      if (this.hardwareComponent) {
-        this.hardwareComponent.left = x;
-        this.hardwareComponent.top = y;
-      }
-      console.log(this.hardZoomScale);
-    },
+    
     changePhotoByClick() {
       //console.log(this.imgIndex)
       if (this.imgIndex === this.hardwareComponent.valuesAndPhotos.length - 1) {
@@ -102,6 +97,13 @@ export default {
         this.rotate();
         return this.sendTestRequest();
       }
+    },
+    onDrag(x, y) {
+      if (this.hardwareComponent) {
+        this.hardwareComponent.left = x;
+        this.hardwareComponent.top = y;
+      }
+      console.log(this.hardZoomScale);
     },
   },
 };
