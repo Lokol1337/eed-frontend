@@ -1,2 +1,2 @@
-const $url = 'http://localhost:8000/someEndPoint';
+const $url = 'ws://localhost:8000/';
 export default $url;

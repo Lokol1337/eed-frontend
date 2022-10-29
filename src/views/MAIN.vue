@@ -44,11 +44,17 @@
 </template>
 
 <script>
+import Vue from "vue";
+import VueSession from "vue-session";
+Vue.use(VueSession);
 export default {
+  
   methods: {
     goToPath(route) {
       this.$router.push(route);
-    }
+    },
+  },
+  mounted() {
   }
 };
 </script>

@@ -27,8 +27,15 @@
 </template>
 
 <script>
+ 
 // TODO: remove this!
 import { demoRequest } from "@/api/demoRequest.js";
+import $url from '@/api/config.js';
+import Vue from "vue";
+import VueSession from "vue-session";
+Vue.use(VueSession);
+
+
 
 export default {
   props:['hardZoom','hardwareComponent'],
@@ -70,6 +77,12 @@ export default {
         return this.dataServ;
       }
   },
+  mounted(){
+      this.$session.start();
+      this.$session.set('session_id', Date.now().toString(32));
+    // console.log(this.$session.get('session_id'))
+  },
+
   methods: {
     
     changePhotoByClick() {
@@ -99,22 +112,19 @@ export default {
       console.log(data);
     },
     sendTestRequest2() {
-      let socket = new WebSocket("ws://localhost:8000/");
+      let socket = new WebSocket($url);
 
-      var session_id = 0;
+      // var session_id = 0;
       var sendData = new Map([
+        ['session_id', this.$session.get('session_id')],
         ['id',this.hardwareComponent.id],
-        ['session_id', session_id],
+        ['draggble', this.hardwareComponent.draggable],
+        ['rotatable', this.hardwareComponent.rotatable],
+        ['currentValue',this.hardwareComponent.currentValue],
+        ['left',this.hardwareComponent.left],
+        ['top', this.hardwareComponent.top]
       ]);
  
-      if (this.hardwareComponent.draggable) {
-        console.log("Перетаскивающийся блок");
-        sendData.push(this.hardwareComponent.left);
-        sendData.push(this.hardwareComponent.top);
-      } else {
-        sendData.set('currentValue',this.hardwareComponent.currentValue);
-      }
-
       socket.onopen = function() {
         socket.send(JSON.stringify(Array.from(sendData.entries())));
       };
@@ -122,15 +132,13 @@ export default {
       const v = this;
       //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
       socket.onmessage = function(event) {
-        v.dataServ = JSON.parse(event.data);
+        v.dataServ = new Map(JSON.parse(event.data));
       };
 
       socket.onclose = function(event) {
         if (event.wasClean) { 
           //
         } else {
-          // например, сервер убил процесс или сеть недоступна
-          // обычно в этом случае event.code 1006
           //
         }
       };
@@ -164,7 +172,7 @@ export default {
         this.hardwareComponent.left = x;
         this.hardwareComponent.top = y;
       }
-      console.log(this.hardZoomScale);
+      // console.log(this.hardZoomScale);
     },
   },
 };
