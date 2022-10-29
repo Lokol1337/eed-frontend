@@ -116,7 +116,6 @@ export default {
       }
 
       socket.onopen = function() {
-        console.log(JSON.stringify(Array.from(sendData.entries())));
         socket.send(JSON.stringify(Array.from(sendData.entries())));
       };
 
