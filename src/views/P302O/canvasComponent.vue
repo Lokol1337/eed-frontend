@@ -102,39 +102,37 @@ export default {
       let socket = new WebSocket("ws://localhost:8000/");
 
       var session_id = 0;
-      var sendData = [session_id, this.hardwareComponent.id];
+      var sendData = new Map([
+        ['id',this.hardwareComponent.id],
+        ['session_id', session_id],
+      ]);
  
       if (this.hardwareComponent.draggable) {
         console.log("Перетаскивающийся блок");
         sendData.push(this.hardwareComponent.left);
         sendData.push(this.hardwareComponent.top);
       } else {
-        console.log("Блок с состояниями");
-        sendData.push(this.hardwareComponent.currentValue);
+        sendData.set('currentValue',this.hardwareComponent.currentValue);
       }
 
       socket.onopen = function() {
-        alert("[open] Соединение установлено");
-        alert("Отправляем данные на сервер");
-        console.log(sendData);
-        socket.send(sendData);
+        console.log(JSON.stringify(Array.from(sendData.entries())));
+        socket.send(JSON.stringify(Array.from(sendData.entries())));
       };
 
       const v = this;
       //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
       socket.onmessage = function(event) {
-        alert(`[message] Данные получены с сервера: ${event.data}`);
         v.dataServ = JSON.parse(event.data);
-        console.log(v.dataServ);
       };
 
       socket.onclose = function(event) {
-        if (event.wasClean) {
-          alert(`[close] Соединение закрыто чисто, код=${event.code} причина=${event.reason}`);
+        if (event.wasClean) { 
+          //
         } else {
           // например, сервер убил процесс или сеть недоступна
           // обычно в этом случае event.code 1006
-          alert('[close] Соединение прервано');
+          //
         }
       };
 
