@@ -121,8 +121,8 @@ export default {
         ['draggble', this.hardwareComponent.draggable],
         ['rotatable', this.hardwareComponent.rotatable],
         ['currentValue',this.hardwareComponent.currentValue],
-        ['left',this.hardwareComponent.left],
-        ['top', this.hardwareComponent.top]
+        ['left',this.hardwareComponent.left/this.hardZoomScale],
+        ['top', this.hardwareComponent.top/this.hardZoomScale]
       ]);
  
       socket.onopen = function() {
