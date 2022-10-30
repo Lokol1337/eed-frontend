@@ -106,6 +106,8 @@ export default {
     sendTestRequest() {
       let socket = new WebSocket($url);
 
+      // PROMISES: https://stackoverflow.com/questions/42304996/javascript-using-promises-on-websocket
+
       var sendData = new Map([
         ['session_id', this.$session.get('session_id')],
         ['id',this.hardwareComponent.id],
@@ -115,7 +117,7 @@ export default {
         ['left',this.hardwareComponent.left/this.hardZoomScale],
         ['top', this.hardwareComponent.top/this.hardZoomScale]
       ]);
- 
+
       socket.onopen = function() {
         socket.send(JSON.stringify(Array.from(sendData.entries())));
       };
@@ -123,8 +125,12 @@ export default {
       const v = this;
       //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
       socket.onmessage = function(event) {
-        v.dataServ = new Map(JSON.parse(event.data));
-        // console.log(v.dataServ);
+        try {
+          v.dataServ = new Map(JSON.parse(event.data));  
+          // console.log(v.dataServ);
+        } catch (event) {
+          console.log(event);
+        }
       };
 
       socket.onclose = function(event) {
