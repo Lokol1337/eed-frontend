@@ -79,6 +79,7 @@ export default {
           top: 4,
           left: 2,
           id: 5,
+          zoom: 100,
         },
         {
           name: 'СС-О',
