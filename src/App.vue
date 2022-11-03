@@ -17,6 +17,13 @@
   text-align: center;
   color: #2c3e50;
   background-color: #f4f7fa;
+  height: 100%;
+}
+html {
+  height: 100%;
+}
+body{
+  height: 100%;
 }
 
 #nav {
