@@ -190,7 +190,7 @@ export default {
   display: flex;
   justify-content: center;
 border-radius: 15px;
-box-shadow: 21px 18px 10px 0px rgba(34, 60, 80, 0.2);
+box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 border:none;
   &__body {
     position: relative;
