@@ -17,6 +17,14 @@ id="sidebar"
     :class="'mt-1 hiddenblock ' + slowMenu"
     >&nbsp;ВУЦ РТУ МИРЭА
   </label>
+  <div class="w-100">
+
+  </div>
+  <div 
+    :class="'mt-1 col-auto hiddenblock ' + slowMenu"
+  >
+    
+    </div>
 </div>
 
 <div style="display: flex ; flex-direction:column; justify-content: space-between; flex-grow: 1; max-height: calc(100% - 60px); ">
@@ -179,7 +187,7 @@ props: {
   //! Styles
   bgColor: {
     type: String,
-    default: '#11101d',
+    default: '#292c63',
   },
   secondaryColor: {
     type: String,
@@ -291,7 +299,7 @@ components:
 },
 
 computed: {
-  
+
   cssVars() {
     return {
       // '--padding-left-body': this.isOpened ? this.menuOpenedPaddingLeftBody : this.menuClosedPaddingLeftBody,
@@ -302,9 +310,9 @@ computed: {
       '--icons-color': this.iconsColor,
       '--items-tooltip-color': this.itemsTooltipColor,
       '--serach-input-text-color': this.searchInputTextColor,
-      '--menu-items-hover-color': this.menuItemsHoverColor,
-      '--menu-items-text-color': this.menuItemsTextColor,
-      '--menu-footer-text-color': this.menuFooterTextColor,
+      // '--menu-items-hover-color': this.menuItemsHoverColor,
+      // '--menu-items-text-color': this.menuItemsTextColor,
+      // '--menu-footer-text-color': this.menuFooterTextColor,
     }
   },
 },
@@ -330,6 +338,7 @@ padding: 0;
 box-sizing: border-box;
 font-family: 'Poppins', sans-serif;
 }
+
 .hiddenblock {
 opacity: 0;
 visibility: hidden;
