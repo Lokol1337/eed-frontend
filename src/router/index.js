@@ -5,7 +5,7 @@ import VueRouter from 'vue-router';
 // import CreateComponent from '@/views/CreateComponent.vue';
 // import CreateHardware from '@/views/CreateHardware.vue';
 // import HardwaresView from '@/views/HardwaresView.vue';
-// import Login from '@/views/Login.vue';
+import Login from '@/views/Login.vue';
 
 // not designer hardware, demo page P-302-O
 import P3020 from '@/views/P302O.vue';
@@ -35,11 +35,11 @@ const routes = [
   //   name: 'hardwaresView',
   //   component: HardwaresView,
   // },
-  // {
-  //   path: '/login',
-  //   name: 'login',
-  //   component: Login,
-  // },
+  {
+    path: '/',
+    name: 'login',
+    component: Login,
+  },
   {
     path: '/p-302-o',
     name: 'p-302-o',
@@ -51,7 +51,7 @@ const routes = [
     component: P3306
   },
   {
-    path: '/',
+    path: '/main',
     name: 'main',
     component: MAIN,
   }

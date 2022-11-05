@@ -9,5 +9,5 @@ const createUserFormData = (email, password) => {
 
 export const login = (email, password) => {
   const formData = createUserFormData(email, password);
-  return $api.post('/token', formData);
+  return $api.post('/main', formData);
 }
