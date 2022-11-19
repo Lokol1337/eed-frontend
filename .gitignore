@@ -1,7 +1,10 @@
+*.gitignore
 .DS_Store
 node_modules
 /dist
 report.js
+
+eed-frontend/
 
 # local env files
 .env.local
@@ -24,3 +27,6 @@ pnpm-debug.log*
 
 # Example photos
 photos
+
+.gitignore
+
