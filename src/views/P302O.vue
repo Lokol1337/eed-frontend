@@ -1,6 +1,5 @@
 <template>
   
-  
   <div class="p-330-6">
     <div class="container-fluid pt-4">
       <div class="row">
@@ -42,7 +41,7 @@
     />
     <button @click.prevent="exportJSON">export</button> -->
 
-    <div class="container-fluid" :key="reRenderKey">
+    <div class="container-fluid pb-5" :key="reRenderKey">
       <div class="row " >
         
         
@@ -50,7 +49,8 @@
           <div style="width: 85px;">
           </div>
         </div>
-        <div class="col-9 col-sm-9 col-md-10 col-lg-11 col-xl-11 p-0" >
+        <div id="canvasBlock" class="col-9 col-sm-9 col-md-10 col-lg-11 col-xl-11 p-0" 
+          style="width: auto">
           <!-- <div class="hardware-view-page__canvas-wrp d-xl-none d-lg-block d-md-block d-xs-block d-block " :key="reRenderKey" style="zoom:90%  ">
             <hardwareCanvas
               v-for="pack in allPacks.blocks"
@@ -91,7 +91,7 @@
 
 
 
-import P3306JSON from "./P302O/P302O.json";
+import P302OJSON from "./P302O/P302O.json";
 
 import hardwareCanvas from "./P302O/hardwareCanvas.vue";
 import packManager from "./P302O/packManager.vue";
@@ -105,8 +105,8 @@ export default {
   created(){
     //this.getFistZoom();
     window.addEventListener('resize', this.updateWidth);
-    this.allPacks = P3306JSON;
-    this.actualPack = P3306JSON.blocks[0];
+    this.allPacks = P302OJSON;
+    this.actualPack = P302OJSON.blocks[0];
   },
   mounted(){
     
@@ -180,9 +180,9 @@ export default {
       if(event.currentTarget.id){
         this.imgId = event.currentTarget.id;
       }
-      
+
       this.imgWidth = document.getElementById('block' + this.imgId).children[0].style.width;
-      this.imgWidth = this.imgWidth.substr(0,this.imgWidth.length - 2);
+      this.imgWidth = this.imgWidth.substr(0,this.imgWidth.length - 2); // убираем символы 'px'
       
       this.imgWidth = parseInt(this.imgWidth);
 
@@ -198,7 +198,7 @@ export default {
       
       const $html = document.documentElement;
       const width = $html.clientWidth;
-      console.log(width);
+      console.log("WIDTH: " + width);
       this.width = width;
       this.updateZoom();
     },
@@ -248,8 +248,8 @@ export default {
 
   // created() {
   //   window.addEventListener('resize', this.updateWidth);
-  //   this.allPacks = P3306JSON;
-  //   this.actualPack = P3306JSON.blocks[0];
+  //   this.allPacks = P302OJSON;
+  //   this.actualPack = P302OJSON.blocks[0];
   // },
 };
 </script>

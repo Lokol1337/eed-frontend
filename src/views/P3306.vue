@@ -1,5 +1,5 @@
 <template>
-  <div class="p-302-0">
+  <div class="p-330-6">
     <div class="container-fluid pt-4">
       <div class="row">
         <div class="col-auto col-sm-auto col-md-auto col-lg-auto col-xl-auto p-0">
@@ -55,8 +55,8 @@
 </template>
 
 <script>
-import P302OJSON from "./P302O/P3306.json";
-import VueSidebarMenuAkahon from "./P302O/sideBerMenuP3036.vue";
+import P3306JSON from "./P302O/P3306.json";
+import VueSidebarMenuAkahon from "./P302O/sideBarMenuP3306.vue";
 import hardwareCanvas from "./P302O/hardwareCanvas.vue";
 import packManager from "./P302O/packManager.vue";
 
@@ -64,8 +64,8 @@ export default {
   created(){
     //this.getFistZoom();
     window.addEventListener('resize', this.updateWidth);
-    this.allPacks = P302OJSON;
-    this.actualPack = P302OJSON.blocks[0];
+    this.allPacks = P3306JSON;
+    this.actualPack = P3306JSON.blocks[0];
     console.log();
   },
   mounted(){

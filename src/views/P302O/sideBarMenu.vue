@@ -343,14 +343,14 @@ font-family: 'Poppins', sans-serif;
 opacity: 0;
 visibility: hidden;
 pointer-events: none;
-transition: all ease 0.5s;
+transition: all ease 0.3s;
 transform: translate(-10%, 0);
 }
 
 .hiddenblock.is-active {
 opacity: 1;
 pointer-events: auto;
-transition: all ease 1s;
+transition: all ease 0.5s;
 transform: translate(0, 0);
 visibility: visible;
 }
@@ -375,7 +375,7 @@ width: 78px;
 background: var(--bg-color);
 /* padding: 6px 14px 0 14px; */
 z-index: 99;
-transition: all 0.5s ease;
+transition: all 0.75s ease;
 }
 .sidebar.open30 {
 width: 30%;
@@ -391,14 +391,14 @@ position: relative;
 }
 .sidebar .logo-details .icon {
 opacity: 0;
-transition: all 0.5s ease;
+transition: all 0.75s ease;
 }
 .sidebar .logo-details .logo_name {
 color: var(--logo-title-color);
 font-size: 20px;
 font-weight: 600;
 opacity: 0;
-transition: all 0.5s ease;
+transition: all 0.75s ease;
 }
 .sidebar.open .logo-details .icon,
 .sidebar.open .logo-details .logo_name {

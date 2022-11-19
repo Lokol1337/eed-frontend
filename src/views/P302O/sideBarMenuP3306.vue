@@ -38,13 +38,12 @@ id="sidebar"
         :class="'col-auto col-sm-auto col-md-auto col-xl-auto col-lg-auto hiddenblock' + ' ' + slowMenu" 
         style = "zoom:100%;"
         >
-        
-          <!-- <menuForShow 
+          <menuForShowP3306 
             :rectColor="'green'" 
             :packName="packForShow" 
             :packs = "allPacks.blocks" 
             @selectPack="selectPackHandler"
-          /> -->
+          />
       </div>
   </div>
   </div>
@@ -54,8 +53,8 @@ id="sidebar"
 </template>
 
 <script>
-// import menuForShow from './menuForShow.vue';
-import P3306JSON from "./P302O.json";
+import menuForShowP3306 from './menuForShowP3306.vue';
+import P3306JSON from "./P3306.json";
 // import packManager from "./packManager.vue";
 export default {
   created(){
@@ -294,7 +293,7 @@ methods: {
 },
 components:
 {
-  // menuForShow,
+  menuForShowP3306,
   // packManager,      
 },
 

@@ -9,7 +9,7 @@ import Login from '@/views/Login.vue';
 
 // not designer hardware, demo page P-302-O
 import P3020 from '@/views/P302O.vue';
-import P3306 from '@/views/P3306.vue';
+import P3306 from '@/views/P3306_test.vue';
 import MAIN from '@/views/MAIN.vue';
 
 Vue.use(VueRouter);
