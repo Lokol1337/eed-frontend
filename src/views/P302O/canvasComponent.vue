@@ -9,6 +9,7 @@
     :resizable="false"
     :parent="true"
     :scale = "(hardZoomScale)"
+    :id = hardwareComponent.id
   >
     <img
       class="component-img"
@@ -85,8 +86,9 @@ export default {
     changePhotoByClick() {
       //console.log(this.imgIndex)
       if (this.imgIndex === this.hardwareComponent.valuesAndPhotos.length - 1) {
-        this.imgIndex = 0;
+         this.imgIndex = 0;
          this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.imgIndex].value;
+         console.log(this.hardwareComponent);
         return;
       }
       this.imgIndex++;
@@ -126,7 +128,9 @@ export default {
       //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
       socket.onmessage = function(event) {
         try {
-          v.dataServ = new Map(JSON.parse(event.data));  
+          v.dataServ = new Map(JSON.parse(event.data));
+          if(v.dataServ['id'])  
+            document.getElementById(v.dataServ['id']).click();
           // console.log(v.dataServ);
         } catch (event) {
           console.log(event);
