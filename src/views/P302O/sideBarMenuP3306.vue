@@ -38,8 +38,7 @@ id="sidebar"
         :class="'col-auto col-sm-auto col-md-auto col-xl-auto col-lg-auto hiddenblock' + ' ' + slowMenu" 
         style = "zoom:100%;"
         >
-        
-          <menuForShow 
+          <menuForShowP3306 
             :rectColor="'green'" 
             :packName="packForShow" 
             :packs = "allPacks.blocks" 
@@ -54,8 +53,8 @@ id="sidebar"
 </template>
 
 <script>
-import menuForShow from './menuForShow.vue';
-import P3306JSON from "./P302O.json";
+import menuForShowP3306 from './menuForShowP3306.vue';
+import P3306JSON from "./P3306.json";
 // import packManager from "./packManager.vue";
 export default {
   created(){
@@ -294,7 +293,7 @@ methods: {
 },
 components:
 {
-  menuForShow,
+  menuForShowP3306,
   // packManager,      
 },
 
@@ -343,14 +342,14 @@ font-family: 'Poppins', sans-serif;
 opacity: 0;
 visibility: hidden;
 pointer-events: none;
-transition: all ease 0.3s;
+transition: all ease 0.5s;
 transform: translate(-10%, 0);
 }
 
 .hiddenblock.is-active {
 opacity: 1;
 pointer-events: auto;
-transition: all ease 0.5s;
+transition: all ease 1s;
 transform: translate(0, 0);
 visibility: visible;
 }
@@ -375,7 +374,7 @@ width: 78px;
 background: var(--bg-color);
 /* padding: 6px 14px 0 14px; */
 z-index: 99;
-transition: all 0.75s ease;
+transition: all 0.5s ease;
 }
 .sidebar.open30 {
 width: 30%;
@@ -391,14 +390,14 @@ position: relative;
 }
 .sidebar .logo-details .icon {
 opacity: 0;
-transition: all 0.75s ease;
+transition: all 0.5s ease;
 }
 .sidebar .logo-details .logo_name {
 color: var(--logo-title-color);
 font-size: 20px;
 font-weight: 600;
 opacity: 0;
-transition: all 0.75s ease;
+transition: all 0.5s ease;
 }
 .sidebar.open .logo-details .icon,
 .sidebar.open .logo-details .logo_name {

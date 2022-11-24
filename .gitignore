@@ -1,4 +1,3 @@
-*.gitignore
 .DS_Store
 node_modules
 /dist
@@ -27,6 +26,4 @@ pnpm-debug.log*
 
 # Example photos
 photos
-
-.gitignore
 
