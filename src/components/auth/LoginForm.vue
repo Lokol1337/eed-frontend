@@ -1,34 +1,24 @@
 <template>
-  <div>
-    <!-- <form @submit.prevent="submitLogin">
-      <input type="text" placeholder="login" v-model="email">
-      <input type="text" placeholder="password" v-model="password">
-      <button type="submit"></button>
-    </form> -->
-    <div class="auth-wrapper">
+  <div :style="`background: url(${require('@/components/auth/backgroundLogin.png')}) no-repeat center; background-color:#007cbe;`">
+     
+    <div class="auth-wrapper ">
+      
       <div class="auth-content">
-        <div class="auth-bg"> 
-          <span class="r"></span> 
-          <span class="r s"></span> 
-          <span class="r s"></span> 
-          <span class="r"></span> 
-        </div>
-        <div class="card">
-          <div class="card-body text-center">
-            <h3 style="margin-bottom: 2rem!important;">Авторизация</h3> 
-
+        <div>
+        <img src="@/components/auth/mirea2.png" width="55%"/>
+      </div>
+        <div class="card " style="background-color: inherit;" >
+          <div class="card-body text-center"> 
             <form method="post" action="#/main" id="loginForm"> 
               <div class="input-group mb-3"> 
-                <input class="form-control" id="username" placeholder="Username or eMail" type="text" name="username" value="test" v-model="username"> 
+                <input class="form-control" id="username" placeholder="Имя пользователя или почта" type="text" name="username" value="test" v-model="username"> 
               </div>
               <div class="input-group mb-4"> 
-                <input class="form-control" id="password" placeholder="Password" type="password" name="password" value="pass" v-model="password"> 
+                <input class="form-control" id="password" placeholder="Пароль" type="password" name="password" value="pass" v-model="password"> 
               </div > 
               <div class="my-4"><span class="my-2" id="loginError" style="color: red;"></span></div>
-              <button type="button" @click="submitLogin" name="login" class="btn btn-primary shadow-2">Войти</button>
-
+              <button type="button" @click="submitLogin" name="login" class="btn shadow-2" style="background-color: #007cbe; border-color:white; color:white; width: 100%;">Войти</button>
             </form>
-          
           </div>
         </div>
       </div>
@@ -173,7 +163,7 @@ export default {
   background: transparent;
 }
 .auth-wrapper .card {
-  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  /* box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2); */
   margin-bottom: 0;
   border:0;
   padding: 2rem 2rem 4rem 2rem;
@@ -183,7 +173,7 @@ export default {
 }
 .auth-wrapper .auth-content {
   border: 0;
-  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  /* box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2); */
   border-radius: 0.25rem;
   position: relative;
   width: 390px;
