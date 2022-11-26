@@ -10,11 +10,12 @@
     :parent="true"
     :scale = "(hardZoomScale)"
     :id = hardwareComponent.id
+    
   >
     <img
       class="component-img"
       
-      :src="hardwareComponent.valuesAndPhotos[imgIndex].photo"
+      :src="hardwareComponent.valuesAndPhotos[this.imgIndex].photo"
       :style="{
         width: hardwareComponent.width + 'px',
         height: hardwareComponent.height + 'px',
@@ -36,7 +37,7 @@ Vue.use(VueSession);
 
 
 export default {
-  props:['hardZoom','hardwareComponent'],
+  props:['hardZoom', 'hardwareComponents', 'hardwareComponent', 'imgIndex'],
   // props: {
   //   hardwareComponent: {
   //     type: Object,
@@ -47,7 +48,6 @@ export default {
   // },
   data() {
     return {
-      imgIndex: 0,
       degreeOfRotation:  this.hardwareComponent.initValue,
       img_src: this.hardwareComponent.valuesAndPhotos.photo,
       hardZoomScale: this.hardZoom / 100.0,
@@ -105,6 +105,20 @@ export default {
       this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.imgIndex].value;
       this.degreeOfRotation = this.hardwareComponent.valuesAndPhotos[this.imgIndex].value;
     },
+    emitNextComponents(hardwareComponents){
+      this.$emit('nextHardwareComponents', hardwareComponents);
+    },
+    findHardwareComponentById(id){
+      let index = -1;
+      this.hardwareComponents.forEach((element, i) => {
+        //console.log(parseInt(element.id) + " ? " + parseInt(id) + " = " + (parseInt(element.id) == parseInt(id)));
+        if (parseInt(element.id) == parseInt(id)) {
+          index = i;
+          return;
+        }
+      });
+      return index;
+    },
     sendTestRequest() {
       let socket = new WebSocket($url);
 
@@ -129,8 +143,16 @@ export default {
       socket.onmessage = function(event) {
         try {
           v.dataServ = new Map(JSON.parse(event.data));
-          if(v.dataServ['id'])  
-            document.getElementById(v.dataServ['id']).click();
+          if(v.dataServ.get('id')) {
+            let indexNextHwCmp = v.findHardwareComponentById(v.dataServ.get('id'));
+            //let nextHwCmp = v.hardwareComponents[indexNextHwCmp];
+            console.log(v.hardwareComponents[indexNextHwCmp]);
+            console.log("PREV_imgindex: " + v.hardwareComponents[indexNextHwCmp].imgIndex);
+            v.hardwareComponents[indexNextHwCmp].imgIndex = (1+v.hardwareComponents[indexNextHwCmp].imgIndex) % v.hardwareComponents[indexNextHwCmp].valuesAndPhotos.length;
+            console.log("NEW_imgindex: " + v.hardwareComponents[indexNextHwCmp].imgIndex);
+            v.emitNextComponents(v.hardwareComponents);
+          }
+
           // console.log(v.dataServ);
         } catch (event) {
           console.log(event);

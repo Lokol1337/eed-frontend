@@ -1,4 +1,5 @@
 <template>
+
   <div class="canvas">
     <div
       class="canvas__body"
@@ -10,11 +11,15 @@
       }"
       style="border-radius: 15px;"
     >
-      <canvasComponent
-        v-for="(hardwareComponent, i) in allComponents"
-        :key="i"
-        :hardwareComponent="hardwareComponent"
-        :hardZoom = "hardZoom" 
+      <canvasComponent 
+        v-for="hardwareComponent in allComponents"
+          v-on:nextHardwareComponents="nextHardwareComponentListener($event)"
+          :key="hardwareComponent.id"
+          :imgIndex="hardwareComponent.imgIndex"
+          :rerenderStatment="rerenderStatment"
+          :hardwareComponents="allComponents"
+          :hardwareComponent="hardwareComponent"
+          :hardZoom = "hardZoom" 
       />
     </div>
     <!-- <div>
@@ -59,6 +64,7 @@ export default {
   data() {
     return {
       hardZoom: this.zoom,
+      rerenderStatment: 0,
       componentsForMenu: [
         {
           name: "jumper2_vertical",
@@ -170,10 +176,18 @@ export default {
   },
   computed: {
     allComponents() {
+      this.hardwareComponentsData.forEach(element => {
+        element.imgIndex = 0;
+      });
       return this.hardwareComponentsData;
     }
   },
   methods: {
+    nextHardwareComponentListener(nextHardwareComponents) {
+      console.log(nextHardwareComponents);
+      this.hardwareComponentsData = nextHardwareComponents;
+      this.rerenderStatment++;
+    },
     selectComponentHandler(component) {
       console.log("added component");
       this.hardwareComponentsData.push({...component});
