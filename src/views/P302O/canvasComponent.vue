@@ -38,14 +38,6 @@ Vue.use(VueSession);
 
 export default {
   props:['hardZoom', 'hardwareComponents', 'hardwareComponent', 'imgIndex'],
-  // props: {
-  //   hardwareComponent: {
-  //     type: Object,
-  //   },
-  //   hardZoom: {
-  //     type: Number,
-  //   }
-  // },
   data() {
     return {
       degreeOfRotation:  this.hardwareComponent.initValue,
@@ -82,7 +74,6 @@ export default {
   },
 
   methods: {
-    
     changePhotoByClick() {
       //console.log(this.imgIndex)
       if (this.imgIndex === this.hardwareComponent.valuesAndPhotos.length - 1) {
@@ -98,8 +89,7 @@ export default {
       if (this.imgIndex === this.hardwareComponent.valuesAndPhotos.length - 1) {
         this.imgIndex = 0;
       }
-      else
-      {
+      else {
         this.imgIndex++;
       }
       this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.imgIndex].value;
@@ -126,11 +116,11 @@ export default {
 
       var sendData = new Map([
         ['session_id', this.$session.get('session_id')],
-        ['id',this.hardwareComponent.id],
+        ['id', this.hardwareComponent.id],
         ['draggble', this.hardwareComponent.draggable],
         ['rotatable', this.hardwareComponent.rotatable],
         ['currentValue',this.hardwareComponent.currentValue],
-        ['left',this.hardwareComponent.left/this.hardZoomScale],
+        ['left', this.hardwareComponent.left/this.hardZoomScale],
         ['top', this.hardwareComponent.top/this.hardZoomScale]
       ]);
 
@@ -143,13 +133,16 @@ export default {
       socket.onmessage = function(event) {
         try {
           v.dataServ = new Map(JSON.parse(event.data));
-          if(v.dataServ.get('id')) {
-            let indexNextHwCmp = v.findHardwareComponentById(v.dataServ.get('id'));
-            //let nextHwCmp = v.hardwareComponents[indexNextHwCmp];
-            console.log(v.hardwareComponents[indexNextHwCmp]);
-            console.log("PREV_imgindex: " + v.hardwareComponents[indexNextHwCmp].imgIndex);
-            v.hardwareComponents[indexNextHwCmp].imgIndex = (1+v.hardwareComponents[indexNextHwCmp].imgIndex) % v.hardwareComponents[indexNextHwCmp].valuesAndPhotos.length;
-            console.log("NEW_imgindex: " + v.hardwareComponents[indexNextHwCmp].imgIndex);
+          if(v.dataServ.has('next_id')) {
+            let indexNowHwCmp = v.findHardwareComponentById(v.dataServ.get('id'));
+            v.hardwareComponents[indexNowHwCmp].imgIndex += 1;
+            v.hardwareComponents[indexNowHwCmp].imgIndex %= v.hardwareComponents[indexNowHwCmp].valuesAndPhotos.length;
+
+            let indexNextHwCmp = v.findHardwareComponentById(v.dataServ.get('next_id'));
+            // console.log("PREV_imgindex: " + v.hardwareComponents[indexNextHwCmp].imgIndex);
+            v.hardwareComponents[indexNextHwCmp].imgIndex += 1;
+            v.hardwareComponents[indexNextHwCmp].imgIndex %= v.hardwareComponents[indexNextHwCmp].valuesAndPhotos.length;
+            // console.log("NEW_imgindex: " + v.hardwareComponents[indexNextHwCmp].imgIndex);
             v.emitNextComponents(v.hardwareComponents);
           }
 
