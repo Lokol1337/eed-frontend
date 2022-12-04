@@ -9,7 +9,8 @@ import Login from '@/views/Login.vue';
 
 // not designer hardware, demo page P-302-O
 import P3020 from '@/views/P302O.vue';
-import P3306 from '@/views/P3306_test.vue';
+import P3306 from '@/views/P3306.vue';
+import P327_2 from '@/views/P327-2.vue';
 import MAIN from '@/views/MAIN.vue';
 
 Vue.use(VueRouter);
@@ -49,6 +50,11 @@ const routes = [
     path: '/p-330-6',
     name: 'p-330-6',
     component: P3306
+  },
+  {
+    path: '/p-327-2',
+    name: 'p-327-2',
+    component: P327_2
   },
   {
     path: '/main',

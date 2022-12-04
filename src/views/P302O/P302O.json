@@ -29,8 +29,7 @@
           "valuesAndPhotos": [
             { "value": "up", "photo": "./images/controls/lever3up.png" },
             {
-              "value": "center",
-              "photo": "./images/controls/lever3center.png"
+              "value": "center", "photo": "./images/controls/lever3center.png"
             },
             { "value": "down", "photo": "./images/controls/lever3down.png" }
           ],

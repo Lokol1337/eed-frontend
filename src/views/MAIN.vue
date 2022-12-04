@@ -1,8 +1,8 @@
 <template>
   <div class="main">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-lg-6 col-xl-6 col-md-6 d-flex justify-content-center">
+    <div class="container pt-5" style="background-color: #f4f7fa;">
+      <div class="row d-dlex justify-content-center">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
           <div class="card" style="width: 18rem">
             <!-- <img class="card-img-top" alt="Card image cap" /> -->
             <div class="card-body">
@@ -15,7 +15,21 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-6 col-xl-6 col-md-6 d-flex justify-content-center">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+          <div class="card" style="width: 18rem">
+            <!-- <img class="card-img-top" alt="Card image cap" /> -->
+            <div class="card-body">
+              <h5 class="card-title">П-327-2</h5>
+              <p class="card-text">
+                Комплекс аппаратуры тонального телеграфирования П-327 используется для организации 
+                сетей открытой и закрытой телеграфной связи обеспечивающий документированный обмен
+                информацией между пунктами управления различных звеньев управления.
+              </p>
+              <button class="btn btn-primary" @click.prevent="goToPath('/p-327-2')">Начать</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
           <div class="card" style="width: 18rem">
             <!-- <img class="card-img-top" alt="Card image cap" /> -->
             <div class="card-body">

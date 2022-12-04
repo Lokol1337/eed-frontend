@@ -1,0 +1,21 @@
+{
+    "name": "П-327-2",
+    "blocks": [
+    {
+        "name": "BLOCK-1",
+        "background": "./images/backs/p-327-2_1.png",
+        "backgroundSettings": { "width": 1000, "height": 206 },
+        "components": [
+        ], 
+        "id": 1
+    },
+    {
+        "name": "BLOCK-2",
+        "background": "./images/backs/p-327-2_2.png",
+        "backgroundSettings": { "width": 1000, "height": 210 },
+        "components": [
+        ], 
+        "id": 2
+    }
+    ]
+}
