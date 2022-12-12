@@ -1,6 +1,6 @@
 <template>
   
-  <div class="p-330-6">
+  <div class="p-327-2">
     <div class="container-fluid pt-4">
       <div class="row">
         <div class="col-auto col-sm-auto col-md-auto col-lg-auto col-xl-auto p-0">

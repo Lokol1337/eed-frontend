@@ -132,13 +132,13 @@ export default {
       //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
       socket.onmessage = function(event) {
         try {
-          v.dataServ = new Map(JSON.parse(event.data));
-          if(v.dataServ.has('next_id')) {
-            let indexNowHwCmp = v.findHardwareComponentById(v.dataServ.get('id'));
+          v.dataServ = JSON.parse(event.data);
+          if(v.dataServ['next_id']) {
+            let indexNowHwCmp = v.findHardwareComponentById(v.dataServ['id']);
             v.hardwareComponents[indexNowHwCmp].imgIndex += 1;
             v.hardwareComponents[indexNowHwCmp].imgIndex %= v.hardwareComponents[indexNowHwCmp].valuesAndPhotos.length;
 
-            let indexNextHwCmp = v.findHardwareComponentById(v.dataServ.get('next_id'));
+            let indexNextHwCmp = v.findHardwareComponentById(v.dataServ['next_id']);
             // console.log("PREV_imgindex: " + v.hardwareComponents[indexNextHwCmp].imgIndex);
             v.hardwareComponents[indexNextHwCmp].imgIndex += 1;
             v.hardwareComponents[indexNextHwCmp].imgIndex %= v.hardwareComponents[indexNextHwCmp].valuesAndPhotos.length;

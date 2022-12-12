@@ -3,7 +3,7 @@
     "blocks": [
     {
         "name": "BLOCK-1",
-        "background": "./images/backs/p-327-2_1.png",
+        "background": "./images/p-327-2/p-327-2_1_clear.png",
         "backgroundSettings": { "width": 1000, "height": 206 },
         "components": [
         ], 
@@ -11,7 +11,7 @@
     },
     {
         "name": "BLOCK-2",
-        "background": "./images/backs/p-327-2_2.png",
+        "background": "./images/p-327-2/p-327-2_2_clear.png",
         "backgroundSettings": { "width": 1000, "height": 210 },
         "components": [
         ], 
