@@ -1,7 +1,7 @@
 <template>
 
   <div class="canvas">
-    <div
+    <div :key="rerenderStatment"
       class="canvas__body"
       :style="{
         backgroundImage: 'url(' + bgImage + ')',
@@ -11,15 +11,15 @@
       }"
       style="border-radius: 15px;"
     >
-      <canvasComponent 
+      <canvasComponent
         v-for="hardwareComponent in allComponents"
-          v-on:nextHardwareComponents="nextHardwareComponentListener($event)"
+          v-on:sendRequest="sendRequestListener($event)"
           :key="hardwareComponent.id"
-          :imgIndex="hardwareComponent.imgIndex"
+          :id="hardwareComponent.id"
           :rerenderStatment="rerenderStatment"
-          :hardwareComponents="allComponents"
+          :hardwareComponents="allComponents" 
           :hardwareComponent="hardwareComponent"
-          :hardZoom = "hardZoom" 
+          :hardZoom = "hardZoom"    
       />
     </div>
     <!-- <div>
@@ -32,8 +32,10 @@
 </template>
 
 <script>
-import canvasComponent from "./canvasComponent.vue";
 // import addableComponentsMenu from "./addableComponentsMenu.vue";
+
+import canvasComponent from "./canvasComponent.vue";
+import * as hwCmpHandler from "../hwComponentsHandle.js";
 
 export default {
   props: {
@@ -51,6 +53,16 @@ export default {
     backgroundSettings: {
       type: Object,
     },
+    serverHandler: {
+      type: Object,
+    },
+    stepServerData: {
+      type: Array,
+      default: () => [],
+    },
+    sessionId: {
+      type: String
+    }
   },
   watch:{
     zoom(val){
@@ -65,6 +77,7 @@ export default {
     return {
       hardZoom: this.zoom,
       rerenderStatment: 0,
+      actionIds: null,
       componentsForMenu: [
         {
           name: "jumper2_vertical",
@@ -176,25 +189,117 @@ export default {
   },
   computed: {
     allComponents() {
-      this.hardwareComponentsData.forEach(element => {
-        element.imgIndex = 0;
-      });
       return this.hardwareComponentsData;
     }
   },
   methods: {
-    nextHardwareComponentListener(nextHardwareComponents) {
-      console.log(nextHardwareComponents);
-      this.hardwareComponentsData = nextHardwareComponents;
-      this.rerenderStatment++;
+    sendRequestListener(hardwareComponent) {
+      console.log(hardwareComponent);
+      this.sendRequest(hardwareComponent);
     },
     selectComponentHandler(component) {
       console.log("added component");
       this.hardwareComponentsData.push({...component});
-    }
+    },
+    isNeedToChangeYellow(hardwareComponent) {
+      let arrayNextActions = this.stepServerData['next_actions']; // может не работать
+      let nextAction = this.serverHandler.findNextActionById(arrayNextActions, hardwareComponent.id);
+      if (nextAction == null) {
+        console.log("isNeedToChangeYellow() -> notFound");
+        return false;
+      } else {
+        if (nextAction['currentValue'] == hardwareComponent.currentValue)
+          return true;
+      }
+      return false;
+    },
+    changeYellow(hardwareComponent){
+      if (this.isNeedToChangeYellow(hardwareComponent)) {
+        let index = this.findHardwareComponentById(hardwareComponent.id);
+        if (this.hardwareComponentsData[index].backgroundColor == "yellow") {
+          this.hardwareComponentsData[index].backgroundColor = "";
+          this.hardwareComponentsData[index].opacity = "";
+        }
+        // Принудительное обновление <template> 
+        this.rerenderStatment++;
+      }
+    },
+    sendRequest(hardwareComponent) {
+      let socket = this.serverHandler.getSocket();
+      
+      this.serverHandler.sendElse(v.sessionId, hardwareComponent, hardwareComponent.hardZoomScale);
+      console.log("SERVER SENDING_DATA: " + JSON.stringify(Array.from(this.serverHandler.sendData.entries())));
+      
+      this.serverHandler.socket.onopen = function() {
+        console.log("ONOPEN!");
+        this.serverHandler.socket.send(JSON.stringify(Array.from(this.serverHandler.sendData.entries())));
+      };
+      
+      this.serverHandler.socket.onerror = function(error) {
+        alert(`[error] ${error.message}`);
+      };
+      
+      let v = this;
+      //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
+      socket.onmessage = function(event) {
+          try {
+            let server_data = this.serverHandler.parseServerData(event.data);
+            if(this.serverHandler.checkData(v.data)) {
+              console.log("ДАННЫЕ С СЕРВЕРА ПОЛУЧЕНЫ!");
+
+              if (this.serverHandler.is_training) {
+
+                if (server_data['status'] && server_data.length == 1) {
+                  if (server_data['status'] == "correct") {
+                    console.log("CORRECT ACTION!");
+                    v.changeYellow(hardwareComponent);
+                  } else {
+                    console.log("INCORRECT ACTION!");
+
+                    // Отменяем предыдущее действие пользователя и надеемся, что рычажок не подсвечивался жёлтым
+                    v.hardwareComponentsData = hwCmpHandler.revertHwCmpCurrentValue(v.hardwareComponentsData, hardwareComponent);
+
+                    // Принудительное обновление <template> 
+                    v.rerenderStatment++;
+                  }
+                  return;
+                } else {
+                  v.annotation = hwCmpHandler.getAnnotation(server_data);
+                  // Сделать emit для аннотации
+                  
+                  v.hardwareComponentsData = hwCmpHandler.uploadHwComponents_Training(v.hardwareComponentsData, server_data);
+
+                  // Принудительное обновление <template> 
+                  v.rerenderStatment++;
+                }
+
+              } else {
+                console.log("НЕ ТРЕННИРОВКА");
+              }
+              
+            } else {
+              console.log("НЕВЕРНАЯ СТРУКТУРА ДАННЫХ СЕРВЕРА!");
+            }
+
+          } catch (event) {
+            console.log(event);
+          }
+      };
+
+      socket.onclose = function(event) {
+          if (event.wasClean) { 
+            //
+          } else {
+            //
+          }
+      };
+
+    },
   },
   created() {
     this.hardwareComponentsData = this.hardwareComponents;
+    console.log("ServerHandler: " + this.serverHandler);
+    console.log("hwSESSION_ID: " + this.sessionId);
   },
 };
 </script>

@@ -248,6 +248,7 @@ methods: {
   selectPackHandler(pack) {
       this.actualPack = pack;
       this.packForShow = pack.name;
+      this.nowPack = pack;
       this.$emit('selectPackParent', pack);
   },
   getFistZoom(){

@@ -1,5 +1,5 @@
-const host = '51.195.16.18'
-const port = 8080
+const host = 'localhost'
+const port = 8081
 
 const $url =`ws://${host}:${port}`;
 export default $url;

@@ -82,7 +82,7 @@
             top: 0,
             left: 190/this.count_column * 0,
             zoom: 100,
-            src: "images/backs/p-327-2_1.png"
+            src: "images/p-327-2/p-327-2_1.png"
           },    
           {
             name: 'BLOCK-2',
@@ -92,7 +92,7 @@
             top: 40,
             left: 190/this.count_column * 0,
             zoom: 100,
-            src: "images/backs/p-327-2_2.png"
+            src: "images/p-327-2/p-327-2_2.png"
           },           
         ],
       };

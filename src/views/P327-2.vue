@@ -51,17 +51,6 @@
         </div>
         <div id="canvasBlock" class="col-9 col-sm-9 col-md-10 col-lg-11 col-xl-11 p-0" 
           style="width: auto">
-          <!-- <div class="hardware-view-page__canvas-wrp d-xl-none d-lg-block d-md-block d-xs-block d-block " :key="reRenderKey" style="zoom:90%  ">
-            <hardwareCanvas
-              v-for="pack in allPacks.blocks"
-              :id = "'block' + pack.id"
-              :key="pack.name"
-              v-show="pack.name === actualPack.name"
-              :hardwareComponents="pack.components"
-              :bgImage="pack.background"
-              :backgroundSettings="pack.backgroundSettings"
-            />
-          </div> -->
           
           <div id="mainBlock" class="hardware-view-page__canvas-wrp" :key="reRenderKey" :style="'zoom:' + this.zoom + '%;'">
             <hardwareCanvas
@@ -80,6 +69,7 @@
       </div>
       <div class="row">
         <div class="col-12">
+          <p id="p-annotation">Переведите левый верхний рычаг ЦРК вниз</p>
           <textShowVue @inputText="inputTextHandler" />
         </div>
       </div>
@@ -93,7 +83,7 @@
 
 import JSON from "./P327-2/P327-2.json";
 
-import hardwareCanvas from "./P302O/hardwareCanvas.vue";
+import hardwareCanvas from "./P327-2/hardwareCanvas.vue";
 import packManager from "./P302O/packManager.vue";
 //import menuForShow from "./P302O/menuForShow.vue";
 import textShowVue from "./P302O/textShow.vue";
@@ -131,7 +121,7 @@ export default {
     hardwareCanvas,
     packManager,
     //menuForShow,
-    textShowVue,
+    textShowVue
   },
   data() {
     return {

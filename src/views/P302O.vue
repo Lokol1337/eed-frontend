@@ -32,7 +32,7 @@
       <VueSidebarMenuAkahon @selectPackParent="selectPackHandler"/>
     </div>
 
-    <packManager :packs="allPacks.blocks" @selectPackParent="selectPackHandler" />
+    <!-- <packManager :packs="allPacks.blocks" @selectPackParent="selectPackHandler" /> -->
     
     <!-- <input
       @change.prevent="importJSON"
@@ -41,7 +41,7 @@
     />
     <button @click.prevent="exportJSON">export</button> -->
 
-    <div class="container-fluid pb-5" :key="reRenderKey">
+    <div class="container-fluid pb-5">
       <div class="row " >
         
         
@@ -51,21 +51,9 @@
         </div>
         <div id="canvasBlock" class="col-9 col-sm-9 col-md-10 col-lg-11 col-xl-11 p-0" 
           style="width: auto">
-          <!-- <div class="hardware-view-page__canvas-wrp d-xl-none d-lg-block d-md-block d-xs-block d-block " :key="reRenderKey" style="zoom:90%  ">
-            <hardwareCanvas
-              v-for="pack in allPacks.blocks"
-              :id = "'block' + pack.id"
-              :key="pack.name"
-              v-show="pack.name === actualPack.name"
-              :hardwareComponents="pack.components"
-              :bgImage="pack.background"
-              :backgroundSettings="pack.backgroundSettings"
-            />
-          </div> -->
           
-          <div id="mainBlock" class="hardware-view-page__canvas-wrp" :key="reRenderKey" :style="'zoom:' + this.zoom + '%;'">
+          <div id="mainBlock" class="hardware-view-page__canvas-wrp" :key="rerenderStatment" :style="{zoom: `${zoom}%`}">
             <hardwareCanvas
-              :zoom = "zoom"
               v-for="pack in allPacks.blocks"
               :key="pack.name"
               :id = "'block' + pack.id"
@@ -73,14 +61,20 @@
               :hardwareComponents="pack.components"
               :bgImage="pack.background"
               :backgroundSettings="pack.backgroundSettings"
-
+              :sessionId="sessionId"
+              :serverHandler="serverHandler"
+              :stepServerData="stepServerData"
+              :zoom = "zoom"
             />
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-12">
-          <textShowVue @inputText="inputTextHandler" />
+        <div class="col-12 mt-3">
+          <p id="p-annotation"> {{this.annotation}}</p>
+          <!-- <textShowVue @inputText="inputTextHandler" 
+            :text = "this.annotation"
+          /> -->
         </div>
       </div>
     </div>
@@ -90,34 +84,65 @@
 <script>
 
 
-
 import P302OJSON from "./P302O/P302O.json";
-
 import hardwareCanvas from "./P302O/hardwareCanvas.vue";
-import packManager from "./P302O/packManager.vue";
-//import menuForShow from "./P302O/menuForShow.vue";
-import textShowVue from "./P302O/textShow.vue";
 import VueSidebarMenuAkahon from "./P302O/sideBarMenu.vue";
-  
+import ServerHandler from '@/api/ServerHandler.js';
+import * as hwCmpHandler from "./hwComponentsHandle.js";
+
 
 
 export default {
-  created(){
-    //this.getFistZoom();
-    window.addEventListener('resize', this.updateWidth);
-    this.allPacks = P302OJSON;
-    this.actualPack = P302OJSON.blocks[0];
+  data() {
+    return {
+      actualPack: null,
+      allPacks: null,
+      packForShow: null,
+      width: window.innerWidth,
+      imgWidth: 0,
+      imgId: 1,
+      zoom: 80,
+      firstZoom:0,
+      actualId: 1001,
+      annotation: "1. Выйти в окно",
+      rerenderStatment: 0,
+      serverHandler: null,
+      sessionId: null,
+      stepServerData: null,
+      trainingStatus: true,
+      exersiseId: 0
+    };
   },
-  mounted(){
+
+  created() {
+    window.addEventListener('resize', this.updateWidth);
+    this.allPacks = hwCmpHandler.setNullImgIndex(P302OJSON);
+    this.actualPack = P302OJSON.blocks[0];
     
+    this.$session.start();
+    this.$session.set('session_id', Date.now().toString(32));
+    this.sessionId = this.$session.get('session_id');
+    console.log("SESSION_ID: " + this.sessionId);
+
+  },
+
+  mounted(){
+
     this.getFistZoom();
     var buttonItem = document.querySelectorAll('.menu-for-show__border'), index, button;
     for (index = 0; index < buttonItem.length; index++) {
       button = buttonItem[index];
       button.addEventListener('click', this.updateZoom);
     }
-      //console.log(event.currentTarget.id);
-    document.getElementById(this.imgId).click();
+
+    console.log("start listenServer()");
+    this.listenServer();
+    console.log("stepServerData: " + this.stepServerData);
+    console.log("serverHandler: " + this.serverHandler);
+    console.log("end listenServer()");
+
+    //console.log(event.currentTarget.id);
+    //document.getElementById(this.imgId).click();
   },
   destroyed(){
     var buttonItem = document.querySelectorAll('.btnBlock'), index, button;
@@ -129,25 +154,14 @@ export default {
   components: {
     VueSidebarMenuAkahon,
     hardwareCanvas,
-    packManager,
+    // packManager,
     //menuForShow,
-    textShowVue,
+    // textShowVue,
   },
-  data() {
-    return {
-      actualPack: null,
-      allPacks: null,
-      packForShow: null,
-      width: window.innerWidth,
-      imgWidth: 0,
-      imgId: 1,
-      zoom: 80,
-      firstZoom:0
-    };
+  computed: {
   },
   methods: {
     showMenu(){
-            
       if(document.getElementById('menuForShow').style.transform == 'translateX(100%)'){
         document.getElementById('menuForShow').style.transform = 'translateX(0%)';
         document.getElementById('btnMenuForShow').style.transform = 'translateX(0%)';
@@ -172,8 +186,8 @@ export default {
       else if(this.width < imgWidth){
         firstZoom = Math.ceil((this.width - imgWidth - 100)/imgWidth * 100) + 100;
       }
-      this.firstZoom = firstZoom;
-      document.getElementById('mainBlock').style.zoom = this.firstZoom + '%';
+      this.zoom = firstZoom;
+      //document.getElementById('mainBlock').style.zoom = this.firstZoom + '%';
       
     },
     updateZoom(){
@@ -195,7 +209,6 @@ export default {
       document.getElementById('mainBlock').style.zoom = this.zoom + '%';
     },
     updateWidth() {
-      
       const $html = document.documentElement;
       const width = $html.clientWidth;
       console.log("WIDTH: " + width);
@@ -244,13 +257,78 @@ export default {
         });
 
     },
-  },
+    async connect(){
+      let v = this;
+      // PROMISES: https://stackoverflow.com/questions/42304996/javascript-using-promises-on-websocket
+      return new Promise(function(resolve, reject) {
+        let serverHandler = new ServerHandler();
+        serverHandler.sendFirst(v.$session.get('session_id'), v.trainingStatus, v.exersiseId);
+        console.log("SERVER SENDING_DATA: " + JSON.stringify(Array.from(serverHandler.sendData.entries())));
 
-  // created() {
-  //   window.addEventListener('resize', this.updateWidth);
-  //   this.allPacks = P302OJSON;
-  //   this.actualPack = P302OJSON.blocks[0];
-  // },
+        serverHandler.socket.onopen = function() {
+          console.log("ONOPEN!");
+          serverHandler.socket.send(JSON.stringify(Array.from(serverHandler.sendData.entries())));
+          resolve(serverHandler);
+        };
+
+        serverHandler.socket.onerror = function(error) {
+          alert(`[error] ${error.message}`);
+          reject(error);
+        };
+      });
+    },
+    listenServer() {
+      console.log("listenServer()");
+      const v = this;
+
+      this.connect().then(function(serverHandler) {
+        console.log("ДОЖДАЛСЯ!");
+        v.serverHandler = serverHandler;
+        // Принудительное обновление <template> hardwareCanvas
+        v.rerenderStatment++;
+
+        //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
+        v.serverHandler.socket.onmessage = function(event) {
+            try {
+              let server_data = v.serverHandler.parseServerData(event.data);
+              //v.serverHandler.changeStepServerData(server_data); // В идеале сделать так
+              if(v.serverHandler.checkData(v.data)) {
+                console.log("ДАННЫЕ С СЕРВЕРА ПОЛУЧЕНЫ!");
+
+                if (v.serverHandler.is_training) {
+                  v.annotation = hwCmpHandler.getAnnotation(server_data);
+                  v.allPacks = hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data);
+                  v.stepServerData = server_data;
+
+                  // Принудительное обновление <template> hardwareCanvas
+                  v.rerenderStatment++;
+
+                } else {
+                  console.log("НЕ ТРЕННИРОВКА");
+                }
+                
+              } else {
+                console.log("НЕВЕРНАЯ СТРУКТУРА ДАННЫХ СЕРВЕРА!");
+              }
+
+            } catch (event) {
+              console.log("CATCH: " + event);
+            }
+        };
+
+        v.serverHandler.socket.onclose = function(event) {
+            if (event.wasClean) { 
+              //
+            } else {
+              //
+            }
+        };
+          
+      }).catch(function(error) {
+        console.log("ОШИБКА ПОДКЛЮЧЕНИЯ К СЕРВЕРУ", error);
+      });
+    }
+  },
 };
 </script>
 

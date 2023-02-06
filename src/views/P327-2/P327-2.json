@@ -6,8 +6,22 @@
         "background": "./images/p-327-2/p-327-2_1_clear.png",
         "backgroundSettings": { "width": 1000, "height": 206 },
         "components": [
+            {
+                "name": "",
+                "initValue": null,
+                "currentValue": null,
+                "valuesAndPhotos": [
+                  { "value": "", "photo": "./images/controls/jumper2.png" }
+                ],
+                "rotatable": false,
+                "draggable": true,
+                
+                "id": 3100,
+                "caption": null
+            }
+            
         ], 
-        "id": 1
+        "id": 3000
     },
     {
         "name": "BLOCK-2",

@@ -10,16 +10,18 @@
     :parent="true"
     :scale = "(hardZoomScale)"
     :id = hardwareComponent.id
-    
+    :style="{
+      backgroundColor: hardwareComponent.backgroundColor,
+      opacity: hardwareComponent.opacity}"
   >
     <img
       class="component-img"
       
-      :src="hardwareComponent.valuesAndPhotos[this.imgIndex].photo"
+      :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo"
       :style="{
         width: hardwareComponent.width + 'px',
         height: hardwareComponent.height + 'px',
-        transform: `rotate(${degreeOfRotation}deg)`,
+        transform: `rotate(${degreeOfRotation}deg)`
       }"
       @mouseup.prevent="selectMethodByClick"
       @touchend.prevent="selectMethodByClick"
@@ -30,14 +32,15 @@
 <script>
  
 // TODO: remove this!
-import $url from '@/api/config.js';
+// import $url from '@/api/config.js';
 import Vue from "vue";
 import VueSession from "vue-session";
+
 Vue.use(VueSession);
 
 
 export default {
-  props:['hardZoom', 'hardwareComponents', 'hardwareComponent', 'imgIndex'],
+  props:['hardZoom', 'hardwareComponents', 'hardwareComponent', /*'hardwareComponent.imgIndex',*/ 'id'],
   data() {
     return {
       degreeOfRotation:  this.hardwareComponent.initValue,
@@ -58,7 +61,7 @@ export default {
           return '';
         }
         console.log("Я ИЗМЕНИЛСЯ! Z");
-        debugger;
+        //debugger;
         if (this.hardwareComponent.valuesAndPhotos.length > 1) {
           console.log("Блок с состояниями");
         } else {
@@ -68,121 +71,39 @@ export default {
       }
   },
   mounted(){
-      this.$session.start();
-      this.$session.set('session_id', Date.now().toString(32));
-    // console.log(this.$session.get('session_id'))
+      // this.$session.start();
+      // this.$session.set('session_id', Date.now().toString(32));
+      // console.log(this.$session.get('session_id'));
   },
 
   methods: {
     changePhotoByClick() {
-      //console.log(this.imgIndex)
-      if (this.imgIndex === this.hardwareComponent.valuesAndPhotos.length - 1) {
-         this.imgIndex = 0;
-         this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.imgIndex].value;
-         console.log(this.hardwareComponent);
-        return;
-      }
-      this.imgIndex++;
-      this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.imgIndex].value;
+      this.changeCurrentValue();
+
     },
     rotate() {
-      if (this.imgIndex === this.hardwareComponent.valuesAndPhotos.length - 1) {
-        this.imgIndex = 0;
+      this.changeCurrentValue();
+      if (this.hardwareComponent.imgIndex === this.hardwareComponent.valuesAndPhotos.length - 1) {
+        this.hardwareComponent.imgIndex = 0;
       }
       else {
-        this.imgIndex++;
+        this.hardwareComponent.imgIndex++;
       }
-      this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.imgIndex].value;
-      this.degreeOfRotation = this.hardwareComponent.valuesAndPhotos[this.imgIndex].value;
+      this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].value;
+      this.degreeOfRotation = this.hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].value;
     },
-    emitNextComponents(hardwareComponents){
-      this.$emit('nextHardwareComponents', hardwareComponents);
-    },
-    findHardwareComponentById(id){
-      let index = -1;
-      this.hardwareComponents.forEach((element, i) => {
-        //console.log(parseInt(element.id) + " ? " + parseInt(id) + " = " + (parseInt(element.id) == parseInt(id)));
-        if (parseInt(element.id) == parseInt(id)) {
-          index = i;
-          return;
-        }
-      });
-      return index;
-    },
-    sendTestRequest() {
-      let socket = new WebSocket($url);
-
-      // PROMISES: https://stackoverflow.com/questions/42304996/javascript-using-promises-on-websocket
-
-      var sendData = new Map([
-        ['session_id', this.$session.get('session_id')],
-        ['id', this.hardwareComponent.id],
-        ['draggble', this.hardwareComponent.draggable],
-        ['rotatable', this.hardwareComponent.rotatable],
-        ['currentValue',this.hardwareComponent.currentValue],
-        ['left', this.hardwareComponent.left/this.hardZoomScale],
-        ['top', this.hardwareComponent.top/this.hardZoomScale]
-      ]);
-
-      socket.onopen = function() {
-        socket.send(JSON.stringify(Array.from(sendData.entries())));
-      };
-
-      const v = this;
-      //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
-      socket.onmessage = function(event) {
-        try {
-          v.dataServ = JSON.parse(event.data);
-          if(v.dataServ['next_id']) {
-            let indexNowHwCmp = v.findHardwareComponentById(v.dataServ['id']);
-            v.hardwareComponents[indexNowHwCmp].imgIndex += 1;
-            v.hardwareComponents[indexNowHwCmp].imgIndex %= v.hardwareComponents[indexNowHwCmp].valuesAndPhotos.length;
-
-            let indexNextHwCmp = v.findHardwareComponentById(v.dataServ['next_id']);
-            // console.log("PREV_imgindex: " + v.hardwareComponents[indexNextHwCmp].imgIndex);
-            v.hardwareComponents[indexNextHwCmp].imgIndex += 1;
-            v.hardwareComponents[indexNextHwCmp].imgIndex %= v.hardwareComponents[indexNextHwCmp].valuesAndPhotos.length;
-            // console.log("NEW_imgindex: " + v.hardwareComponents[indexNextHwCmp].imgIndex);
-            v.emitNextComponents(v.hardwareComponents);
-          }
-
-          // console.log(v.dataServ);
-        } catch (event) {
-          console.log(event);
-        }
-      };
-
-      socket.onclose = function(event) {
-        if (event.wasClean) { 
-          //
-        } else {
-          //
-        }
-      };
-
-      socket.onerror = function(error) {
-        alert(`[error] ${error.message}`);
-      };
+    changeCurrentValue(){
+      this.hardwareComponent.imgIndex += 1;
+      this.hardwareComponent.imgIndex %= this.hardwareComponent.valuesAndPhotos.length;
+      this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].value;
     },
     selectMethodByClick() {
-      if (
-        this.hardwareComponent.draggable === false &&
-        this.hardwareComponent.rotatable === false
-      ) {
+      if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === false) {
         this.changePhotoByClick();
-        return this.sendTestRequest();
-      } else if (
-        this.hardwareComponent.draggable === true &&
-        this.hardwareComponent.rotatable === false
-      ) {
-        return this.sendTestRequest();
-      } else if (
-        this.hardwareComponent.draggable === false &&
-        this.hardwareComponent.rotatable === true
-      ) {
+      } else if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === true) {
         this.rotate();
-        return this.sendTestRequest();
-      }
+      } else if (this.hardwareComponent.draggable === true && this.hardwareComponent.rotatable === false);
+      return this.sendRequest();
     },
     onDrag(x, y) {
       if (this.hardwareComponent) {
@@ -191,6 +112,9 @@ export default {
       }
       // console.log(this.hardZoomScale);
     },
+    sendRequest() {
+      this.$emit('sendRequest', this.hardwareComponent);
+    }
   },
 };
 </script>
