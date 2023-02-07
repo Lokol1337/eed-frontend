@@ -25,9 +25,10 @@ export function findHardwareById(apparat_id, allPacks_blocks) {
 export function findNumberOfCurrentValue(hwComponent, currentValue) {
   let valuesAndPhotos_array = hwComponent.valuesAndPhotos;
   let index = -1;
+  console.log(valuesAndPhotos_array);
   valuesAndPhotos_array.forEach((element, i) => {
       //console.log(parseInt(element.id) + " ? " + parseInt(id) + " = " + (parseInt(element.id) == parseInt(id)));
-      if (parseInt(element['value']) == currentValue) {
+      if (element['value'] == currentValue) {
         index = i;
         return;
       }
@@ -56,9 +57,10 @@ export function setNullImgIndex(allPacks){
 }
 
 export function uploadHwComponents_Training(allPacks, server_data) {
-  allPacks = setNullBackgroundColors(allPacks);
+  // allPacks = setNullBackgroundColors(allPacks);
   
   let next_actions = server_data['next_actions'];
+  console.log(next_actions);
   next_actions.forEach(action => {
     console.log(action);
 
@@ -68,23 +70,24 @@ export function uploadHwComponents_Training(allPacks, server_data) {
     let hwCmpId = findHardwareComponentById(action['next_id'], next_pack.components);
     let nextHwComponent = next_pack.components[hwCmpId];
 
-    // Подсветить необходимые компоненты
+  //   // Подсветить необходимые компоненты
     if (action['draggable']) {
       console.log("NEXT ELEMENT IS DRAGGABLE");
-    } else {
+    } 
+    else {
       console.log("NEXT ELEMENT IS NOT DRAGGABLE");
       // console.log("previous_imgIndex: " + nextHwComponent.imgIndex);
-      let imgIndex = findNumberOfCurrentValue(nextHwComponent, action['current_value']);
-      if (imgIndex == -1)
-        console.log("findNumberOfCurrentValue() -> NOT FOUND"); 
-      nextHwComponent.imgIndex = imgIndex;
+      // let imgIndex = findNumberOfCurrentValue(nextHwComponent, action['current_value']);
+      // if (imgIndex == -1)
+      //   console.log("findNumberOfCurrentValue() -> NOT FOUND"); 
+      // nextHwComponent.imgIndex = imgIndex;
       // console.log("next_imgIndex: " + nextHwComponent.imgIndex);
     }
 
     nextHwComponent.backgroundColor = "yellow";
     nextHwComponent.opacity = "80%";
 
-    // Обновляем массив allPacks
+  //   // Обновляем массив allPacks
     allPacks.blocks[packId].components[hwCmpId] = nextHwComponent;
   });
   return allPacks;

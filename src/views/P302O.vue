@@ -44,7 +44,7 @@
     <div class="container-fluid pb-5">
       <div class="row " >
         
-        
+            
         <div class="col-auto col-sm-auto col-md-auto col-lg-auto col-xl-auto p-0">
           <div style="width: 85px;">
           </div>
@@ -65,6 +65,9 @@
               :serverHandler="serverHandler"
               :stepServerData="stepServerData"
               :zoom = "zoom"
+              @ann="(i) => annotation = i"
+              @step="(i) => stepServerData = i "
+              @allP="(i) => rerenderAllPacks(i)"
             />
           </div>
         </div>
@@ -108,7 +111,7 @@ export default {
       rerenderStatment: 0,
       serverHandler: null,
       sessionId: null,
-      stepServerData: null,
+      stepServerData: Object,
       trainingStatus: true,
       exersiseId: 0
     };
@@ -161,6 +164,9 @@ export default {
   computed: {
   },
   methods: {
+    rerenderAllPacks(i){
+      hwCmpHandler.uploadHwComponents_Training(this.allPacks, i)
+    },
     showMenu(){
       if(document.getElementById('menuForShow').style.transform == 'translateX(100%)'){
         document.getElementById('menuForShow').style.transform = 'translateX(0%)';
@@ -291,15 +297,16 @@ export default {
         v.serverHandler.socket.onmessage = function(event) {
             try {
               let server_data = v.serverHandler.parseServerData(event.data);
-              //v.serverHandler.changeStepServerData(server_data); // В идеале сделать так
+              // v.serverHandler.changeStepServerData(server_data); // В идеале сделать так
               if(v.serverHandler.checkData(v.data)) {
                 console.log("ДАННЫЕ С СЕРВЕРА ПОЛУЧЕНЫ!");
-
+                console.log("Я P302O");
                 if (v.serverHandler.is_training) {
+                  console.log("ТРЕНИРОВКА!!!");
                   v.annotation = hwCmpHandler.getAnnotation(server_data);
                   v.allPacks = hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data);
+                  console.log(typeof(server_data));
                   v.stepServerData = server_data;
-
                   // Принудительное обновление <template> hardwareCanvas
                   v.rerenderStatment++;
 
@@ -311,7 +318,8 @@ export default {
                 console.log("НЕВЕРНАЯ СТРУКТУРА ДАННЫХ СЕРВЕРА!");
               }
 
-            } catch (event) {
+            } 
+            catch (event) {
               console.log("CATCH: " + event);
             }
         };

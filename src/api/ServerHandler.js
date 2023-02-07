@@ -36,7 +36,7 @@ export default class ServerHandler {
     }
 
     parseServerData(data) {
-        return JSON.parse(data)
+        return JSON.parse(data);
     }
 
     checkData(data) {

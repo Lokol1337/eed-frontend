@@ -100,9 +100,13 @@ export default {
     selectMethodByClick() {
       if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === false) {
         this.changePhotoByClick();
-      } else if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === true) {
+      } 
+      else if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === true) {
         this.rotate();
-      } else if (this.hardwareComponent.draggable === true && this.hardwareComponent.rotatable === false);
+      }
+      //  else if (this.hardwareComponent.draggable === true && this.hardwareComponent.rotatable === false){
+        
+      // }
       return this.sendRequest();
     },
     onDrag(x, y) {

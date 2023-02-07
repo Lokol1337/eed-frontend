@@ -20,6 +20,7 @@
           :hardwareComponents="allComponents" 
           :hardwareComponent="hardwareComponent"
           :hardZoom = "hardZoom"    
+          :sessionId = "sessionId"
       />
     </div>
     <!-- <div>
@@ -35,8 +36,8 @@
 // import addableComponentsMenu from "./addableComponentsMenu.vue";
 
 import canvasComponent from "./canvasComponent.vue";
-import * as hwCmpHandler from "../hwComponentsHandle.js";
-
+// import * as hwCmpHandler from "../hwComponentsHandle.js";
+import ServerHandler from '@/api/ServerHandler.js';
 export default {
   props: {
     zoom: {
@@ -57,7 +58,7 @@ export default {
       type: Object,
     },
     stepServerData: {
-      type: Array,
+      type: Object,
       default: () => [],
     },
     sessionId: {
@@ -194,6 +195,7 @@ export default {
   },
   methods: {
     sendRequestListener(hardwareComponent) {
+      console.log("sendReq");
       console.log(hardwareComponent);
       this.sendRequest(hardwareComponent);
     },
@@ -214,7 +216,7 @@ export default {
       return false;
     },
     changeYellow(hardwareComponent){
-      if (this.isNeedToChangeYellow(hardwareComponent)) {
+      // if (this.isNeedToChangeYellow(hardwareComponent)) {
         let index = this.findHardwareComponentById(hardwareComponent.id);
         if (this.hardwareComponentsData[index].backgroundColor == "yellow") {
           this.hardwareComponentsData[index].backgroundColor = "";
@@ -222,62 +224,64 @@ export default {
         }
         // Принудительное обновление <template> 
         this.rerenderStatment++;
-      }
+      // }
+    },
+    findHardwareComponentById(id){
+      let index = -1;
+      this.hardwareComponents.forEach((element, i) => {
+        //console.log(parseInt(element.id) + " ? " + parseInt(id) + " = " + (parseInt(element.id) == parseInt(id)));
+        if (parseInt(element.id) == parseInt(id)) {
+          index = i;
+          return;
+        }
+      });
+      return index;
     },
     sendRequest(hardwareComponent) {
-      let socket = this.serverHandler.getSocket();
-      
-      this.serverHandler.sendElse(v.sessionId, hardwareComponent, hardwareComponent.hardZoomScale);
-      console.log("SERVER SENDING_DATA: " + JSON.stringify(Array.from(this.serverHandler.sendData.entries())));
-      
-      this.serverHandler.socket.onopen = function() {
-        console.log("ONOPEN!");
-        this.serverHandler.socket.send(JSON.stringify(Array.from(this.serverHandler.sendData.entries())));
-      };
-      
-      this.serverHandler.socket.onerror = function(error) {
-        alert(`[error] ${error.message}`);
-      };
-      
       let v = this;
+      let is_training = v.serverHandler.is_training;
+      v.serverHandler = new ServerHandler();
+      v.serverHandler.is_training = is_training;
+      // let socket = this.serverHandler.getSocket();
+      v.serverHandler.sendElse(v.sessionId, hardwareComponent, hardwareComponent.hardZoomScale);
+      // console.log("SERVER SENDING_DATA: " + JSON.stringify(Array.from(this.serverHandler.sendData.entries())));
+      // console.log(this.serverHandler.socket);
+      v.serverHandler.socket.onopen = function() {
+        console.log("ONOPEN!");
+        v.serverHandler.socket.send(JSON.stringify(Array.from(v.serverHandler.sendData.entries())));
+      };    
+      //TODO: Я ТУТ ПОДКОМЕНТИЛ, СЕЙЧАС РАБОТА НА ЧИСТОМ ДОВЕРИИИ!!!! 
+      // this.serverHandler.socket.onerror = function(error) {
+      //   alert(`[error] ${error.message}`);
+      // };
+      
+      
       //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
-      socket.onmessage = function(event) {
+      v.serverHandler.socket.onmessage = function(event) {
           try {
-            let server_data = this.serverHandler.parseServerData(event.data);
-            if(this.serverHandler.checkData(v.data)) {
+            console.log("Я hardwareCanvas");
+            let server_data = v.serverHandler.parseServerData(event.data);
+            if(server_data) {
               console.log("ДАННЫЕ С СЕРВЕРА ПОЛУЧЕНЫ!");
 
-              if (this.serverHandler.is_training) {
-
-                if (server_data['status'] && server_data.length == 1) {
-                  if (server_data['status'] == "correct") {
-                    console.log("CORRECT ACTION!");
-                    v.changeYellow(hardwareComponent);
-                  } else {
-                    console.log("INCORRECT ACTION!");
-
-                    // Отменяем предыдущее действие пользователя и надеемся, что рычажок не подсвечивался жёлтым
-                    v.hardwareComponentsData = hwCmpHandler.revertHwCmpCurrentValue(v.hardwareComponentsData, hardwareComponent);
-
-                    // Принудительное обновление <template> 
-                    v.rerenderStatment++;
-                  }
-                  return;
-                } else {
-                  v.annotation = hwCmpHandler.getAnnotation(server_data);
-                  // Сделать emit для аннотации
-                  
-                  v.hardwareComponentsData = hwCmpHandler.uploadHwComponents_Training(v.hardwareComponentsData, server_data);
-
-                  // Принудительное обновление <template> 
-                  v.rerenderStatment++;
+              if (v.serverHandler.is_training) {
+                console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+                if(server_data['status'] == "correct" && server_data['validation'] == false){
+                  v.changeYellow(hardwareComponent);
                 }
-
-              } else {
+                if(server_data['status'] == "correct" && server_data['validation'] == true){
+                  v.changeYellow(hardwareComponent);
+                  v.$emit('ann', server_data['annotation']);
+                  v.$emit('step',server_data);
+                  v.$emit('allP',server_data);
+                  // hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data)
+                }
+              }
+              else {
                 console.log("НЕ ТРЕННИРОВКА");
               }
-              
-            } else {
+            } 
+            else {
               console.log("НЕВЕРНАЯ СТРУКТУРА ДАННЫХ СЕРВЕРА!");
             }
 
@@ -286,20 +290,20 @@ export default {
           }
       };
 
-      socket.onclose = function(event) {
-          if (event.wasClean) { 
-            //
-          } else {
-            //
-          }
-      };
+      // socket.onclose = function(event) {
+      //     if (event.wasClean) { 
+      //       //
+      //     } else {
+      //       //
+      //     }
+      // };
 
     },
   },
   created() {
     this.hardwareComponentsData = this.hardwareComponents;
-    console.log("ServerHandler: " + this.serverHandler);
-    console.log("hwSESSION_ID: " + this.sessionId);
+    // console.log("ServerHandler: " + this.serverHandler);
+    // console.log("hwSESSION_ID: " + this.sessionId);
   },
 };
 </script>
