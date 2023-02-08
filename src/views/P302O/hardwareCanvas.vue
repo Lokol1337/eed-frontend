@@ -11,6 +11,7 @@
       }"
       style="border-radius: 15px;"
     >
+      
       <canvasComponent
         v-for="hardwareComponent in allComponents"
           v-on:sendRequest="sendRequestListener($event)"

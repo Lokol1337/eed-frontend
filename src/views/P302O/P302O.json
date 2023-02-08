@@ -1603,7 +1603,54 @@
           "currentValue": "off",
           "initValue": "off",
           "caption": null
-        }
+        },
+        {
+          "name": "+0,2НП",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": ""
+            },
+            {
+              "value": "cabel_hotizontal",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 322,
+          "top": 217,
+          "width": 26,
+          "height": 8,
+          "id": 3203,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null
+      },
+      {
+        "name": "ГО-УУ-кабель",
+        "valuesAndPhotos": [
+          {
+            "value": "none",
+            "photo": ""
+          },
+          {
+            "value": "cabel",
+            "photo": "./images/p-302-o/cabels/1.2.4_2.png"
+          }
+        ],
+        "rotatable": false,
+        "draggable": false,
+        "left": 0,
+        "top": 0,
+        "width": 856,
+        "height": 458,
+        "id": 6302,
+        "currentValue": "cabel",
+        "initValue": "none",
+        "caption": null,
+        "ids": [6202, 3203]
+    }
       ],
       "id": 3
     },
@@ -2307,7 +2354,125 @@
           "currentValue": "off",
           "initValue": "off",
           "caption": null
-        }
+        },
+        {
+          "name": "ВЫХ",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": ""
+            },
+            {
+              "value": "cabel_hotizontal",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 76,
+          "top": 242,
+          "width": 35,
+          "height": 15,
+          "id": 6201,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null
+        },
+        {
+          "name": "ВХ",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": ""
+            },
+            {
+              "value": "cabel_hotizontal",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 434,
+          "top": 242,
+          "width": 35,
+          "height": 15,
+          "id": 6202,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null
+        },
+        {
+          "name": "ВХ-ВЫХ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": ""
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/1.2.3_1.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 856,
+          "height": 331,
+          "id": 6301,
+          "currentValue": "cabel",
+          "initValue": "none",
+          "caption": null,
+          "ids": [6201, 6202]
+        },
+        {
+          "name": "УУ-ГО-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": ""
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/1.2.4_1.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 856,
+          "height": 331,
+          "id": 6302,
+          "currentValue": "cabel",
+          "initValue": "none",
+          "caption": null,
+          "ids": [6202, 3203]
+      },
+      {
+        "name": "УУ-ДСВ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": ""
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/1.2.5_1.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 856,
+          "height": 331,
+          "id": 6303,
+          "currentValue": "cabel",
+          "initValue": "none",
+          "caption": null,
+          "ids": [6202, 9204]
+      }
       ],
       "id": 6
     },
@@ -3063,6 +3228,53 @@
           "currentValue": "off",
           "initValue": "off",
           "caption": null
+        },
+        {
+          "name": "ГТВ -1,5НП",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": ""
+            },
+            {
+              "value": "cabel_vertical",
+              "photo": "./images/controls/v_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 977,
+          "top": 427,
+          "width": 18,
+          "height": 42,
+          "id": 9204,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null
+        },
+        {
+          "name": "ДСВ-УУ-кабель",
+            "valuesAndPhotos": [
+              {
+                "value": "none",
+                "photo": ""
+              },
+              {
+                "value": "cabel",
+                "photo": "./images/p-302-o/cabels/1.2.5_2.png"
+              }
+            ],
+            "rotatable": false,
+            "draggable": false,
+            "left": 0,
+            "top": 0,
+            "width": 1160,
+            "height": 596,
+            "id": 6303,
+            "currentValue": "cabel",
+            "initValue": "none",
+            "caption": null,
+            "ids": [6202, 9204]
         }
       ],
       "id": 9

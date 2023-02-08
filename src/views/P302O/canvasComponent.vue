@@ -1,5 +1,5 @@
 <template>
-  <vue-draggable-resizable
+  <vue-draggable-resizable v-if="!hardwareComponent.draggable"
     @dragging="onDrag"
     :w="hardwareComponent.width"
     :h="hardwareComponent.height"
@@ -12,19 +12,48 @@
     :id = hardwareComponent.id
     :style="{
       backgroundColor: hardwareComponent.backgroundColor,
-      opacity: hardwareComponent.opacity}"
+      opacity: hardwareComponent.opacity
+    }"
   >
-    <img
-      class="component-img"
-      :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo"
-      :style="{
-        width: hardwareComponent.width + 'px',
-        height: hardwareComponent.height + 'px',
-        transform: `rotate(${degreeOfRotation}deg)`
-      }"
-      @mouseup.prevent="selectMethodByClick"
-      @touchend.prevent="selectMethodByClick"
-    />
+      <img v-if="hardwareComponent.currentValue !== 'none' && hardwareComponent.currentValue !== 'cabel'"
+        class="component-img"
+        :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo"
+        :style="{
+          width: hardwareComponent.width + 'px',
+          height: hardwareComponent.height + 'px',
+          transform: `rotate(${degreeOfRotation}deg)`,
+          zIndex: 0.4,
+          verticalAlign: `top`
+        }"
+        @mouseup.prevent="selectMethodByClick"
+        @touchend.prevent="selectMethodByClick"
+      />
+
+      <img v-if="hardwareComponent.currentValue === 'none'"
+        class="component-img"
+        :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex+1].photo"
+        :style="{
+          width: hardwareComponent.width + 'px',
+          height: hardwareComponent.height + 'px',
+          transform: `rotate(${degreeOfRotation}deg)`,
+          zIndex: 0.2,
+          verticalAlign: `top`
+        }"
+        @mouseup.prevent="selectMethodByClick"
+        @touchend.prevent="selectMethodByClick"
+      />
+
+      <img v-if="hardwareComponent.currentValue === 'cabel'"
+        :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex+1].photo"
+        :style="{
+          width: hardwareComponent.width + 'px',
+          height: hardwareComponent.height + 'px',
+          transform: `rotate(${degreeOfRotation}deg)`,
+          zIndex: 0.1,
+          verticalAlign: `top`
+        }"
+      />
+
   </vue-draggable-resizable>
 </template>
 
