@@ -17,7 +17,7 @@
       border: `none`
     }"
   >
-      <img v-if="hardwareComponent.currentValue !== 'cabel' && hardwareComponent.currentValue !== 'none'"
+      <img v-if="hardwareComponent.currentValue !== 'cabel' && hardwareComponent.currentValue !== 'none' && hardwareComponent.caption !== 'arrow'"
         class="component-img"
         :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo"
         :style="{

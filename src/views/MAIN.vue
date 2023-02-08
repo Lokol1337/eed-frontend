@@ -22,6 +22,7 @@
                     <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',12)">Норматив 1.2</button></li>
                     <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',13)">Норматив 1.3</button></li>
                     <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',14)">Норматив 1.4 </button></li>
+                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',15)">Норматив 1.5 </button></li>
                     <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',16)">Норматив 1.6</button></li>
                     <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',18)">Норматив 1.8 </button></li>
                     <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',19)">Норматив 1.9 </button></li>
