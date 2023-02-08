@@ -12,13 +12,14 @@ export default class ServerHandler {
         return this.socket;
     }
 
-    sendFirst(session_id, is_training, ex_id) {
+    sendFirst(session_id, is_training, ex_id ,norm) {
         this.is_training = is_training;
-
+        this.norm = norm;
         this.sendData = new Map([
             ['session_id', session_id],
             ['is_training', is_training],
-            ['ex_id', ex_id]
+            ['ex_id', ex_id],
+            ['norm', norm]
         ]);
     }
 

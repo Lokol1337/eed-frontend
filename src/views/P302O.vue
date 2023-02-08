@@ -92,7 +92,8 @@ import hardwareCanvas from "./P302O/hardwareCanvas.vue";
 import VueSidebarMenuAkahon from "./P302O/sideBarMenu.vue";
 import ServerHandler from '@/api/ServerHandler.js';
 import * as hwCmpHandler from "./hwComponentsHandle.js";
-
+// import axios from 'axios';
+// import get from 'axios';
 
 
 export default {
@@ -270,9 +271,9 @@ export default {
       // PROMISES: https://stackoverflow.com/questions/42304996/javascript-using-promises-on-websocket
       return new Promise(function(resolve, reject) {
         let serverHandler = new ServerHandler();
-        serverHandler.sendFirst(v.$session.get('session_id'), v.trainingStatus, v.exersiseId);
-        console.log("SERVER SENDING_DATA: " + JSON.stringify(Array.from(serverHandler.sendData.entries())));
-
+        // console.log(window.location.href);
+        console.log(v.$route.query.norm, 'params');
+        serverHandler.sendFirst(v.$session.get('session_id'), v.trainingStatus, v.exersiseId,String(v.$route.query.norm));
         serverHandler.socket.onopen = function() {
           console.log("ONOPEN!");
           serverHandler.socket.send(JSON.stringify(Array.from(serverHandler.sendData.entries())));
