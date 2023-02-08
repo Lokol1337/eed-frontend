@@ -887,11 +887,11 @@
           "name": "ВЫХ",
           "valuesAndPhotos": [
             {
-              "value": "none",
-              "photo": ""
+              "value": "off",
+              "photo": " "
             },
             {
-              "value": "cabel_hotizontal",
+              "value": "on",
               "photo": "./images/controls/h_cabel_head.png"
             }
           ],
@@ -902,8 +902,8 @@
           "width": 35,
           "height": 15,
           "id": 2201,
-          "currentValue": "none",
-          "initValue": "none",
+          "currentValue": "off",
+          "initValue": "off",
           "caption": null
         },
         {
@@ -911,7 +911,7 @@
           "valuesAndPhotos": [
             {
               "value": "none",
-              "photo": ""
+              "photo": " "
             },
             {
               "value": "cabel",
@@ -925,7 +925,7 @@
           "width": 696,
           "height": 132,
           "id": 2301,
-          "currentValue": "cabel",
+          "currentValue": "none",
           "initValue": "none",
           "caption": null,
           "ids": [6202, 2201]
@@ -976,7 +976,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 255,
           "top": 88,
           "width": 25,
@@ -2088,11 +2088,11 @@
           "name": "СТ",
           "valuesAndPhotos": [
             {
-              "value": "none",
-              "photo": ""
+              "value": "off",
+              "photo": " "
             },
             {
-              "value": "cabel_hotizontal",
+              "value": "on",
               "photo": "./images/controls/h_cabel_head.png"
             }
           ],
@@ -2103,19 +2103,19 @@
           "width": 29,
           "height": 13,
           "id": 5201,
-          "currentValue": "none",
-          "initValue": "none",
+          "currentValue": "off",
+          "initValue": "off",
           "caption": null
         },
         {
           "name": "СТ",
           "valuesAndPhotos": [
             {
-              "value": "none",
-              "photo": ""
+              "value": "off",
+              "photo": " "
             },
             {
-              "value": "cabel_hotizontal",
+              "value": "on",
               "photo": "./images/controls/h_cabel_head.png"
             }
           ],
@@ -2126,8 +2126,8 @@
           "width": 29,
           "height": 13,
           "id": 5202,
-          "currentValue": "none",
-          "initValue": "none",
+          "currentValue": "off",
+          "initValue": "off",
           "caption": null
         },
         {
@@ -2135,7 +2135,7 @@
           "valuesAndPhotos": [
             {
               "value": "none",
-              "photo": ""
+              "photo": " "
             },
             {
               "value": "cabel",
@@ -2149,7 +2149,7 @@
           "width": 856,
           "height": 348,
           "id": 5301,
-          "currentValue": "cabel",
+          "currentValue": "none",
           "initValue": "none",
           "caption": null,
           "ids": [5201, 5202]
@@ -2508,7 +2508,7 @@
           "valuesAndPhotos": [
             {
               "value": "none",
-              "photo": ""
+              "photo": " "
             },
             {
               "value": "cabel",

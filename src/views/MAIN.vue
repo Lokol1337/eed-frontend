@@ -21,6 +21,7 @@
                     <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',13)">Начать 13</button></li>
                     <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',18)">Начать 18 </button></li>
                     <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',14)">Начать 14 </button></li>
+                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',19)">Начать 19 </button></li>
                   </ul>
                 </div>
               </center>

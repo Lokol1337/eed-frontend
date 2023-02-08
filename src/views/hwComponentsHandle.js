@@ -3,7 +3,8 @@
 export function findHardwareComponentById(id, hardwareComponents){
     let index = -1;
     hardwareComponents.forEach((element, i) => {
-      //console.log(parseInt(element.id) + " ? " + parseInt(id) + " = " + (parseInt(element.id) == parseInt(id)));
+      console.log(parseInt(element.id) + " ? " + parseInt(id) + " = " + (parseInt(element.id) == parseInt(id)));
+
       if (parseInt(element.id) == parseInt(id)) {
         index = i;
         return;
@@ -98,6 +99,7 @@ if(next_actions[0]['name'] != "nan"){
     let hwCmpId = findHardwareComponentById(action['next_id'], next_pack.components);
     
     let nextHwComponent = next_pack.components[hwCmpId];
+    console.log(next_pack.components,"aaaaa",hwCmpId);
     console.log(nextHwComponent);
   //   // Подсветить необходимые компоненты
     if (action['draggable']) {
