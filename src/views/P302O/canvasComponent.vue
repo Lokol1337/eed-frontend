@@ -41,8 +41,17 @@
         @mouseup.prevent="selectMethodByClick"
         @touchend.prevent="selectMethodByClick"
       />
-
       <img v-if="hardwareComponent.currentValue === 'cabel'"
+      class=""
+        :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo"
+        :style="{
+          width: hardwareComponent.width + 'px',
+          height: hardwareComponent.height + 'px',
+          transform: `rotate(${degreeOfRotation}deg)`,
+          verticalAlign: `top`
+        }"
+      />
+      <img v-if="hardwareComponent.caption === 'arrow'"
       class=""
         :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo"
         :style="{
