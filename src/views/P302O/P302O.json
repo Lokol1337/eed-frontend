@@ -914,16 +914,16 @@
               "photo": " "
             },
             {
-              "value": "cabel",
+              "value": "on",
               "photo": "./images/p-302-o/cabels/1.2.7_2.png"
             }
           ],
           "rotatable": false,
           "draggable": false,
-          "left": 0,
-          "top": 127,
-          "width": 696,
-          "height": 132,
+          "left": -2,
+          "top": 11,
+          "width": 863,
+          "height": 342,
           "id": 2301,
           "currentValue": "none",
           "initValue": "none",
@@ -1663,11 +1663,11 @@
         "name": "ГО-УУ-кабель",
         "valuesAndPhotos": [
           {
-            "value": "none",
+            "value": "off",
             "photo": " "
           },
           {
-            "value": "cabel",
+            "value": "on",
             "photo": "./images/p-302-o/cabels/1.2.4_2.png"
           }
         ],
@@ -1678,8 +1678,8 @@
         "width": 856,
         "height": 321,
         "id": 3301,
-        "currentValue": "none",
-        "initValue": "none",
+        "currentValue": "off",
+        "initValue": "off",
         "caption": null,
         "ids": [6202, 3203]
       }
@@ -2138,7 +2138,7 @@
               "photo": " "
             },
             {
-              "value": "cabel",
+              "value": "on",
               "photo": "./images/p-302-o/cabels/1.2.6_1.png"
             }
           ],
@@ -2511,7 +2511,7 @@
               "photo": " "
             },
             {
-              "value": "cabel",
+              "value": "on",
               "photo": "./images/p-302-o/cabels/1.2.3_1.png"
             }
           ],
@@ -2522,8 +2522,8 @@
           "width": 859,
           "height": 330,
           "id": 6301,
-          "currentValue": "none",
-          "initValue": "none",
+          "currentValue": "off",
+          "initValue": "off",
           "caption": null,
           "ids": [6201, 6202]
         },
@@ -2531,11 +2531,11 @@
           "name": "УУ-ГО-кабель",
           "valuesAndPhotos": [
             {
-              "value": "none",
+              "value": "off",
               "photo": " "
             },
             {
-              "value": "cabel",
+              "value": "on",
               "photo": "./images/p-302-o/cabels/1.2.4_1.png"
             }
           ],
@@ -2546,11 +2546,42 @@
           "width": 856,
           "height": 330,
           "id": 6302,
-          "currentValue": "none",
-          "initValue": "none",
+          "currentValue": "off",
+          "initValue": "off",
           "caption": null,
           "ids": [6202, 3203]
-      }
+        },
+        {
+          "name": "arrow",
+          "valuesAndPhotos": [
+            {
+              "value": "1",
+              "photo": "./images/p-302-o/arrow/1.png"
+            },
+            { 
+              "value": "2", 
+              "photo": "./images/p-302-o/arrow/2.png" 
+            },
+            {
+              "value": "3",
+              "photo": "./images/p-302-o/arrow/3.png"
+            },
+            { 
+              "value": "4", 
+              "photo": "./images/p-302-o/arrow/4.png" 
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 189,
+          "top": 162,
+          "width": 151,
+          "height": 93,
+          "id": 6401,
+          "currentValue": "cabel",
+          "initValue": "1",
+          "caption": "arrow"
+        }
       ],
       "id": 6
     },
@@ -3334,11 +3365,11 @@
           "name": "ДСВ-УУ-кабель",
             "valuesAndPhotos": [
               {
-                "value": "none",
+                "value": "off",
                 "photo": " "
               },
               {
-                "value": "cabel",
+                "value": "on",
                 "photo": "./images/p-302-o/cabels/1.2.5_2.png"
               }
             ],
@@ -3349,8 +3380,8 @@
             "width": 1160,
             "height": 732,
             "id": 9301,
-            "currentValue": "none",
-            "initValue": "none",
+            "currentValue": "off",
+            "initValue": "off",
             "caption": null,
             "ids": [6202, 9204]
         }
