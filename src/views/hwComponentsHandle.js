@@ -60,17 +60,34 @@ export function setNullImgIndex(allPacks){
 
 export function uploadHwComponents_Training(allPacks, server_data) {
   // allPacks = setNullBackgroundColors(allPacks);
-  
+  console.log('uploadHwComponents_Training')
   let next_actions = server_data['next_actions'];
+  let now_actions = server_data['array_actions'];
+  console.log('uploadHwComponents_Training')
   console.log(next_actions);
+  // console.log(now_actions);
+if(now_actions)
+  if(now_actions[0]['name'] != "nan"){
+    now_actions.forEach(action =>{
+      let packId = findHardwareById(action['apparat_id'], allPacks.blocks);
+      let next_pack = allPacks.blocks[packId];
+      let hwCmpId = findHardwareComponentById(action['action_id'], next_pack.components);
+      let nextHwComponent = next_pack.components[hwCmpId];
+      allPacks.blocks[packId].components[hwCmpId] = nextHwComponent;
+      let imgIndex = findNumberOfCurrentValue(nextHwComponent, action['action_value']);
+      nextHwComponent.imgIndex = imgIndex;
+    });
+  }
   next_actions.forEach(action => {
-    console.log(action);
+    console.log(action,"AAAA");
 
     let packId = findHardwareById(action['apparat_id'], allPacks.blocks);
-    console.log(packId);
+    console.log(packId,"bbbbbb");
+
     let next_pack = allPacks.blocks[packId];
 
     let hwCmpId = findHardwareComponentById(action['next_id'], next_pack.components);
+    
     let nextHwComponent = next_pack.components[hwCmpId];
     console.log(nextHwComponent);
   //   // Подсветить необходимые компоненты
@@ -79,12 +96,6 @@ export function uploadHwComponents_Training(allPacks, server_data) {
     } 
     else {
       console.log("NEXT ELEMENT IS NOT DRAGGABLE");
-      // console.log("previous_imgIndex: " + nextHwComponent.imgIndex);
-      // let imgIndex = findNumberOfCurrentValue(nextHwComponent, action['current_value']);
-      // if (imgIndex == -1)
-      //   console.log("findNumberOfCurrentValue() -> NOT FOUND"); 
-      // nextHwComponent.imgIndex = imgIndex;
-      // console.log("next_imgIndex: " + nextHwComponent.imgIndex);
     }
 
     nextHwComponent.backgroundColor = "yellow";

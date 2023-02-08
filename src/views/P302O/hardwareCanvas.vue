@@ -237,6 +237,7 @@ export default {
       return index;
     },
     sendRequest(hardwareComponent) {
+      
       console.log("hardwareComponent",hardwareComponent);
       let v = this;
       let is_training = v.serverHandler.is_training;
