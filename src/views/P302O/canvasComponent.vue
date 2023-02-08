@@ -1,6 +1,7 @@
 <template>
   <vue-draggable-resizable v-if="!hardwareComponent.draggable"
     @dragging="onDrag"
+    :class="curZindex"
     :w="hardwareComponent.width"
     :h="hardwareComponent.height"
     :x="hardwareComponent.left" 
@@ -15,28 +16,25 @@
       opacity: hardwareComponent.opacity
     }"
   >
-      <img v-if="hardwareComponent.currentValue !== 'none' && hardwareComponent.currentValue !== 'cabel'"
+      <img v-if="hardwareComponent.currentValue !== 'cabel' && hardwareComponent.currentValue !== 'none'"
         class="component-img"
         :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo"
         :style="{
           width: hardwareComponent.width + 'px',
           height: hardwareComponent.height + 'px',
           transform: `rotate(${degreeOfRotation}deg)`,
-          zIndex: 0.4,
           verticalAlign: `top`
         }"
         @mouseup.prevent="selectMethodByClick"
         @touchend.prevent="selectMethodByClick"
       />
-
       <img v-if="hardwareComponent.currentValue === 'none'"
         class="component-img"
-        :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex+1].photo"
+        :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo"
         :style="{
           width: hardwareComponent.width + 'px',
           height: hardwareComponent.height + 'px',
           transform: `rotate(${degreeOfRotation}deg)`,
-          zIndex: 0.2,
           verticalAlign: `top`
         }"
         @mouseup.prevent="selectMethodByClick"
@@ -44,12 +42,12 @@
       />
 
       <img v-if="hardwareComponent.currentValue === 'cabel'"
-        :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex+1].photo"
+      class=""
+        :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo"
         :style="{
           width: hardwareComponent.width + 'px',
           height: hardwareComponent.height + 'px',
           transform: `rotate(${degreeOfRotation}deg)`,
-          zIndex: 0.1,
           verticalAlign: `top`
         }"
       />
@@ -71,6 +69,7 @@ export default {
   props:['hardZoom', 'hardwareComponents', 'hardwareComponent', /*'hardwareComponent.imgIndex',*/ 'id'],
   data() {
     return {
+      curZindex : 1,
       degreeOfRotation:  this.hardwareComponent.initValue,
       img_src: this.hardwareComponent.valuesAndPhotos.photo,
       hardZoomScale: this.hardZoom / 100.0,
@@ -101,6 +100,9 @@ export default {
   mounted(){
       if(this.hardwareComponent.rotatable){
         this.degreeOfRotation = this.hardwareComponent.currentValue;
+      }
+      if(this.hardwareComponent.currentValue === "cabel"){
+        this.curZindex = "cabel";
       }
       // this.$session.start();
       // this.$session.set('session_id', Date.now().toString(32));
@@ -143,6 +145,7 @@ export default {
         //  else if (this.hardwareComponent.draggable === true && this.hardwareComponent.rotatable === false){
           
         // }
+
         return this.sendRequest();
       }
     },
@@ -160,13 +163,15 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-// elem.onselectstart = function() {
-//     return false;
-// };
-// TODO: это работатет не всегда хорошо
-.component-img {
-  // pointer-events: none;
-  // user-select: none;
+<style  scoped>
+.btnTop{
+  z-index: 1000;
 }
+.cabel{
+  z-index: -1!important;
+}
+.none{
+  z-index: 500;
+}
+
 </style>

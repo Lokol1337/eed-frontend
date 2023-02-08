@@ -1646,7 +1646,7 @@
         "width": 856,
         "height": 458,
         "id": 6302,
-        "currentValue": "cabel",
+        "currentValue": "none",
         "initValue": "none",
         "caption": null,
         "ids": [6202, 3203]
@@ -2359,11 +2359,11 @@
           "name": "ВЫХ",
           "valuesAndPhotos": [
             {
-              "value": "none",
-              "photo": ""
+              "value": "off",
+              "photo": " "
             },
             {
-              "value": "cabel_hotizontal",
+              "value": "on",
               "photo": "./images/controls/h_cabel_head.png"
             }
           ],
@@ -2374,19 +2374,19 @@
           "width": 35,
           "height": 15,
           "id": 6201,
-          "currentValue": "none",
-          "initValue": "none",
+          "currentValue": "off",
+          "initValue": "off",
           "caption": null
         },
         {
           "name": "ВХ",
           "valuesAndPhotos": [
             {
-              "value": "none",
-              "photo": ""
+              "value": "off",
+              "photo": " "
             },
             {
-              "value": "cabel_hotizontal",
+              "value": "on",
               "photo": "./images/controls/h_cabel_head.png"
             }
           ],
@@ -2397,7 +2397,7 @@
           "width": 35,
           "height": 15,
           "id": 6202,
-          "currentValue": "none",
+          "currentValue": "off",
           "initValue": "none",
           "caption": null
         },
