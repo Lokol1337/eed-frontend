@@ -1,6 +1,21 @@
 <template>
   <div class="main">
+
+    <div class="mb-4 w-100 p-1" style="background-color: #292c63;">
+        <div class="col-12 col-md-12 d-flex justify-content-center align-items-center">
+          <img src="./mirea2.png" height="40">
+          <h6 class="m-0" style="color: white">&nbsp;&nbsp;ВУЦ РТУ МИРЭА</h6>
+        </div>
+        <!--<div class="col-12 col-md-4 d-flex justify-content-center">
+          <img src="./mirea1.png" height="40">
+        </div>
+        <div class="col-12 col-md-4 d-flex justify-content-center">
+          <img src="./mirea3.png" height="40">
+        </div>-->
+    </div>
+
     <div class="container pt-5" style="background-color: #f4f7fa;">
+
       <div class="row d-dlex justify-content-center">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
           <div class="card" style="width: 18rem">
@@ -13,19 +28,28 @@
               </p>
               <center>
                 <div class="dropdown ">
-                  <button class="btn btn-primary dropdown-toggle w-100" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="btn btn-outline dropdown-toggle w-100" type="button" id="dropdownMenuButton1" 
+                  style="background-color: #292c63; color: #f4f7fa;" data-bs-toggle="dropdown" aria-expanded="false">
                     Прохождение норматива
                   </button>
                   <ul class="dropdown-menu w-100 h-100" aria-labelledby="dropdownMenuButton1">
                     
-                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',11)">Норматив 1.1</button></li>
-                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',12)">Норматив 1.2</button></li>
-                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',13)">Норматив 1.3</button></li>
-                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',14)">Норматив 1.4 </button></li>
-                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',15)">Норматив 1.5 </button></li>
-                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',16)">Норматив 1.6</button></li>
-                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',18)">Норматив 1.8 </button></li>
-                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',19)">Норматив 1.9 </button></li>
+                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',11)">Норматив 1.1</button></li>
+                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',12)">Норматив 1.2</button></li>
+                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',13)">Норматив 1.3</button></li>
+                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',14)">Норматив 1.4 </button></li>
+                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',15)">Норматив 1.5 </button></li>
+                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',16)">Норматив 1.6</button></li>
+                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',18)">Норматив 1.8 </button></li>
+                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',19)">Норматив 1.9 </button></li>
                   </ul>
                 </div>
               </center>
@@ -42,7 +66,8 @@
                 сетей открытой и закрытой телеграфной связи обеспечивающий документированный обмен
                 информацией между пунктами управления различных звеньев управления.
               </p>
-              <button class="btn btn-primary" @click.prevent="goToPath('/p-327-2')">Начать</button>
+              <button class="btn btn-outline" style="background-color: #292c63; color: #f4f7fa;" 
+                @click.prevent="goToPath('/p-327-2')">Начать</button>
             </div>
           </div>
         </div>
@@ -54,22 +79,13 @@
               <p class="card-text">
                 Аппаратура для образования шести каналов тональной частоты по радиорелейным, тропосферным и кабельным (П-296, П-268) линиям связи.
               </p>
-              <button class="btn btn-primary" @click.prevent="goToPath('/p-330-6')">Начать</button>
+              <button class="btn btn-outline" style="background-color: #292c63; color: #f4f7fa;"
+                @click.prevent="goToPath('/p-330-6')">Начать</button>
             </div>
           </div>
         </div>
       </div>
-      <div class="row mt-4">
-        <div class="col-12 col-md-4 d-flex justify-content-center">
-          <img src="./mirea1.png" width="150" height="150">
-        </div>
-        <div class="col-12 col-md-4 d-flex justify-content-center">
-          <img src="./mirea2.png" width="150" height="150">
-        </div>
-        <div class="col-12 col-md-4 d-flex justify-content-center">
-          <img src="./mirea3.png" width="150" height="150">
-        </div>
-      </div>
+      
     </div>
   </div>
 </template>
