@@ -884,24 +884,51 @@
           "caption": null
         },
         {
-          "name": "button_pressed",
+          "name": "ВЫХ",
           "valuesAndPhotos": [
             {
-              "value": "off",
-              "photo": "./images/controls/button_unpressed.png"
+              "value": "none",
+              "photo": ""
             },
-            { "value": "on", "photo": "./images/controls/button_pressed.png" }
+            {
+              "value": "cabel_hotizontal",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
-          "left": 516,
-          "top": 201,
-          "width": 25,
-          "height": 25,
-          "id": 2024,
-          "currentValue": "off",
-          "initValue": "off",
+          "left": 678,
+          "top": 161,
+          "width": 35,
+          "height": 15,
+          "id": 2201,
+          "currentValue": "none",
+          "initValue": "none",
           "caption": null
+        },
+        {
+          "name": "ЛО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": ""
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/1.2.7_2.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 127,
+          "width": 696,
+          "height": 132,
+          "id": 2301,
+          "currentValue": "cabel",
+          "initValue": "none",
+          "caption": null,
+          "ids": [6202, 2201]
         }
       ],
       "id": 2
@@ -1625,7 +1652,7 @@
           "draggable": false,
           "left": 322,
           "top": 217,
-          "width": 26,
+          "width": 28,
           "height": 8,
           "id": 3203,
           "currentValue": "off",
@@ -1649,13 +1676,13 @@
         "left": 0,
         "top": 0,
         "width": 856,
-        "height": 458,
-        "id": 6302,
+        "height": 321,
+        "id": 3301,
         "currentValue": "none",
         "initValue": "none",
         "caption": null,
         "ids": [6202, 3203]
-    }
+      }
       ],
       "id": 3
     },
@@ -2056,6 +2083,76 @@
           "initValue": -90,
           "currentValue": -90,
           "caption": null
+        },
+        {
+          "name": "СТ",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": ""
+            },
+            {
+              "value": "cabel_hotizontal",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 107,
+          "top": 114,
+          "width": 29,
+          "height": 13,
+          "id": 5201,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null
+        },
+        {
+          "name": "СТ",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": ""
+            },
+            {
+              "value": "cabel_hotizontal",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 595,
+          "top": 114,
+          "width": 29,
+          "height": 13,
+          "id": 5202,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null
+        },
+        {
+          "name": "СТ-СТ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": ""
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/1.2.6_1.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 6,
+          "width": 856,
+          "height": 348,
+          "id": 5301,
+          "currentValue": "cabel",
+          "initValue": "none",
+          "caption": null,
+          "ids": [5201, 5202]
         }
       ],
       "id": 5
@@ -2374,7 +2471,7 @@
           ],
           "rotatable": false,
           "draggable": false,
-          "left": 76,
+          "left": 75,
           "top": 242,
           "width": 35,
           "height": 15,
@@ -2422,8 +2519,8 @@
           "draggable": false,
           "left": 0,
           "top": 0,
-          "width": 856,
-          "height": 331,
+          "width": 859,
+          "height": 330,
           "id": 6301,
           "currentValue": "none",
           "initValue": "none",
@@ -2447,36 +2544,12 @@
           "left": 0,
           "top": 0,
           "width": 856,
-          "height": 331,
+          "height": 330,
           "id": 6302,
           "currentValue": "none",
           "initValue": "none",
           "caption": null,
           "ids": [6202, 3203]
-      },
-      {
-        "name": "УУ-ДСВ-кабель",
-          "valuesAndPhotos": [
-            {
-              "value": "none",
-              "photo": " "
-            },
-            {
-              "value": "cabel",
-              "photo": "./images/p-302-o/cabels/1.2.5_1.png"
-            }
-          ],
-          "rotatable": false,
-          "draggable": false,
-          "left": 0,
-          "top": 0,
-          "width": 856,
-          "height": 331,
-          "id": 6303,
-          "currentValue": "none",
-          "initValue": "none",
-          "caption": null,
-          "ids": [6202, 9204]
       }
       ],
       "id": 6
@@ -3272,10 +3345,10 @@
             "rotatable": false,
             "draggable": false,
             "left": 0,
-            "top": 0,
+            "top": 37,
             "width": 1160,
-            "height": 596,
-            "id": 6303,
+            "height": 732,
+            "id": 9301,
             "currentValue": "none",
             "initValue": "none",
             "caption": null,
