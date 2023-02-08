@@ -11,7 +11,18 @@
                 Аппаратура для уплотнения кабеля дальней связи П-296 и
                 радиорелейных линий двенадцатью телефонными каналами.
               </p>
-              <button class="btn btn-primary" @click.prevent="goToPath('/p-302-o',12)">Начать</button>
+              <center>
+                <div class="dropdown ">
+                  <button class="btn btn-primary dropdown-toggle w-100" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Прохождение норматива
+                  </button>
+                  <ul class="dropdown-menu w-100 h-100" aria-labelledby="dropdownMenuButton1">
+                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',12)">Начать 12</button></li>
+                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',13)">Начать 13</button></li>
+                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',14)">Начать 14 </button></li>
+                  </ul>
+                </div>
+              </center>
             </div>
           </div>
         </div>
