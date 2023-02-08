@@ -17,11 +17,14 @@
                     Прохождение норматива
                   </button>
                   <ul class="dropdown-menu w-100 h-100" aria-labelledby="dropdownMenuButton1">
-                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',16)">Начать 16</button></li>
-                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',13)">Начать 13</button></li>
-                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',18)">Начать 18 </button></li>
-                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',14)">Начать 14 </button></li>
-                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',19)">Начать 19 </button></li>
+                    
+                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',11)">Норматив 1.1</button></li>
+                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',12)">Норматив 1.2</button></li>
+                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',13)">Норматив 1.3</button></li>
+                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',14)">Норматив 1.4 </button></li>
+                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',16)">Норматив 1.6</button></li>
+                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',18)">Норматив 1.8 </button></li>
+                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',19)">Норматив 1.9 </button></li>
                   </ul>
                 </div>
               </center>
