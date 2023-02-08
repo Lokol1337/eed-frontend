@@ -13,7 +13,8 @@
     :id = hardwareComponent.id
     :style="{
       backgroundColor: hardwareComponent.backgroundColor,
-      opacity: hardwareComponent.opacity
+      opacity: hardwareComponent.opacity,
+      border: `none`
     }"
   >
       <img v-if="hardwareComponent.currentValue !== 'cabel' && hardwareComponent.currentValue !== 'none'"
