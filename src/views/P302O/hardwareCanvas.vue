@@ -290,8 +290,13 @@ export default {
                     }
                   }
                 }
-                else{
+                else if(server_data['finish'] && server_data['array_actions'][0]!="nan"){
                   v.changeYellow(hardwareComponent);
+                  v.$emit('ann', server_data['annotation']);
+                  v.$emit('step',server_data);
+                  v.$emit('allP',server_data);
+                }
+                else{
                   alert("УРАА!");
                 }
               }

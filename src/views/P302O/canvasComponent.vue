@@ -1,7 +1,7 @@
 <template>
   <vue-draggable-resizable v-if="!hardwareComponent.draggable"
     @dragging="onDrag"
-    :class="curZindex"
+    :class="curZindex "
     :w="hardwareComponent.width"
     :h="hardwareComponent.height"
     :x="hardwareComponent.left" 
@@ -101,8 +101,14 @@ export default {
       if(this.hardwareComponent.rotatable){
         this.degreeOfRotation = this.hardwareComponent.currentValue;
       }
-      if(this.hardwareComponent.currentValue === "cabel"){
+      if(this.hardwareComponent.currentValue === "none"){
         this.curZindex = "cabel";
+      }
+      else if(this.hardwareComponent.currentValue === "cabel"){
+        this.curZindex = "none";
+      }
+      else{
+        this.curZindex = "btnTop";
       }
       // this.$session.start();
       // this.$session.set('session_id', Date.now().toString(32));
@@ -165,13 +171,13 @@ export default {
 
 <style  scoped>
 .btnTop{
-  z-index: 1000;
+  z-index: 98!important;
 }
 .cabel{
   z-index: -1!important;
 }
 .none{
-  z-index: 500;
+  z-index: 1!important;
 }
 
 </style>

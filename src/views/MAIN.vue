@@ -17,7 +17,7 @@
                     Прохождение норматива
                   </button>
                   <ul class="dropdown-menu w-100 h-100" aria-labelledby="dropdownMenuButton1">
-                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',12)">Начать 12</button></li>
+                    <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',16)">Начать 16</button></li>
                     <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',13)">Начать 13</button></li>
                     <li><button class="btn btn-primary w-100 h-100" @click.prevent="goToPath('/p-302-o',14)">Начать 14 </button></li>
                   </ul>

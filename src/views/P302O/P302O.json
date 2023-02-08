@@ -950,9 +950,9 @@
           ],
           "rotatable": false,
           "draggable": true,
-          "left": 261,
-          "top": 78,
-          "width": 15,
+          "left": 255,
+          "top": 88,
+          "width": 25,
           "height": 8,
           "id": 3002,
           "initValue": null,
@@ -962,17 +962,22 @@
         {
           "name": "jumper2",
           "valuesAndPhotos": [
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "off", "photo": " " 
+            },
+            { 
+              "value": "jumper2", "photo": "./images/controls/jumper2.png" 
+            }
           ],
           "rotatable": false,
-          "draggable": true,
-          "left": 224,
-          "top": 78,
-          "width": 15,
+          "draggable": false,
+          "left": 220,
+          "top": 88,
+          "width": 25,
           "height": 8,
           "id": 3003,
-          "initValue": null,
-          "currentValue": null,
+          "initValue": "off",
+          "currentValue": "off",
           "caption": null
         },
         {
@@ -1608,11 +1613,11 @@
           "name": "+0,2НП",
           "valuesAndPhotos": [
             {
-              "value": "none",
-              "photo": ""
+              "value": "off",
+              "photo": " "
             },
             {
-              "value": "cabel_hotizontal",
+              "value": "on",
               "photo": "./images/controls/h_cabel_head.png"
             }
           ],
@@ -1623,8 +1628,8 @@
           "width": 26,
           "height": 8,
           "id": 3203,
-          "currentValue": "none",
-          "initValue": "none",
+          "currentValue": "off",
+          "initValue": "off",
           "caption": null
       },
       {
@@ -1632,7 +1637,7 @@
         "valuesAndPhotos": [
           {
             "value": "none",
-            "photo": ""
+            "photo": " "
           },
           {
             "value": "cabel",
@@ -2398,7 +2403,7 @@
           "height": 15,
           "id": 6202,
           "currentValue": "off",
-          "initValue": "none",
+          "initValue": "off",
           "caption": null
         },
         {
@@ -2420,7 +2425,7 @@
           "width": 856,
           "height": 331,
           "id": 6301,
-          "currentValue": "cabel",
+          "currentValue": "none",
           "initValue": "none",
           "caption": null,
           "ids": [6201, 6202]
@@ -2430,7 +2435,7 @@
           "valuesAndPhotos": [
             {
               "value": "none",
-              "photo": ""
+              "photo": " "
             },
             {
               "value": "cabel",
@@ -2444,7 +2449,7 @@
           "width": 856,
           "height": 331,
           "id": 6302,
-          "currentValue": "cabel",
+          "currentValue": "none",
           "initValue": "none",
           "caption": null,
           "ids": [6202, 3203]
@@ -2454,7 +2459,7 @@
           "valuesAndPhotos": [
             {
               "value": "none",
-              "photo": ""
+              "photo": " "
             },
             {
               "value": "cabel",
@@ -2468,7 +2473,7 @@
           "width": 856,
           "height": 331,
           "id": 6303,
-          "currentValue": "cabel",
+          "currentValue": "none",
           "initValue": "none",
           "caption": null,
           "ids": [6202, 9204]
@@ -3233,11 +3238,11 @@
           "name": "ГТВ -1,5НП",
           "valuesAndPhotos": [
             {
-              "value": "none",
-              "photo": ""
+              "value": "off",
+              "photo": " "
             },
             {
-              "value": "cabel_vertical",
+              "value": "on",
               "photo": "./images/controls/v_cabel_head.png"
             }
           ],
@@ -3248,8 +3253,8 @@
           "width": 18,
           "height": 42,
           "id": 9204,
-          "currentValue": "none",
-          "initValue": "none",
+          "currentValue": "off",
+          "initValue": "off",
           "caption": null
         },
         {
@@ -3257,7 +3262,7 @@
             "valuesAndPhotos": [
               {
                 "value": "none",
-                "photo": ""
+                "photo": " "
               },
               {
                 "value": "cabel",
@@ -3271,7 +3276,7 @@
             "width": 1160,
             "height": 596,
             "id": 6303,
-            "currentValue": "cabel",
+            "currentValue": "none",
             "initValue": "none",
             "caption": null,
             "ids": [6202, 9204]

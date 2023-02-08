@@ -66,26 +66,35 @@ export function uploadHwComponents_Training(allPacks, server_data) {
   console.log('uploadHwComponents_Training')
   console.log(next_actions);
   // console.log(now_actions);
-if(now_actions)
+if(now_actions){
+  
   if(now_actions[0]['name'] != "nan"){
     now_actions.forEach(action =>{
       let packId = findHardwareById(action['apparat_id'], allPacks.blocks);
       let next_pack = allPacks.blocks[packId];
+      console.log(next_pack,"next_packnext_packnext_packnext_packnext_pack");
       let hwCmpId = findHardwareComponentById(action['action_id'], next_pack.components);
+      console.log(hwCmpId,"hwCmpIdhwCmpIdhwCmpIdhwCmpIdhwCmpIdhwCmpId");
       let nextHwComponent = next_pack.components[hwCmpId];
       allPacks.blocks[packId].components[hwCmpId] = nextHwComponent;
       let imgIndex = findNumberOfCurrentValue(nextHwComponent, action['action_value']);
+      console.log(imgIndex,"imgIndeximgIndeximgIndeximgIndeximgIndeximgIndeximgIndex");
       nextHwComponent.imgIndex = imgIndex;
+      nextHwComponent.currentValue = action['action_value'];
     });
   }
+}
+console.log(next_actions,"next_actionsnext_actionsnext_actionsnext_actionsnext_actions");
+if(next_actions[0]['name'] != "nan"){
   next_actions.forEach(action => {
     console.log(action,"AAAA");
 
     let packId = findHardwareById(action['apparat_id'], allPacks.blocks);
+    //  document.getElementById(action['apparat_id']).style.border = "thick solid #0000FF";
     console.log(packId,"bbbbbb");
 
     let next_pack = allPacks.blocks[packId];
-
+    
     let hwCmpId = findHardwareComponentById(action['next_id'], next_pack.components);
     
     let nextHwComponent = next_pack.components[hwCmpId];
@@ -105,6 +114,7 @@ if(now_actions)
   //   // Обновляем массив allPacks
     allPacks.blocks[packId].components[hwCmpId] = nextHwComponent;
   });
+}
   return allPacks;
 }
 

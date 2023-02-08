@@ -58,6 +58,7 @@
               :key="pack.name"
               :id = "'block' + pack.id"
               v-show="pack.name === actualPack.name"
+              style = "z-index: 2!important;"
               :hardwareComponents="pack.components"
               :bgImage="pack.background"
               :backgroundSettings="pack.backgroundSettings"
