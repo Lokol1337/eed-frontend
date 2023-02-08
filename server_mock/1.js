@@ -26,14 +26,14 @@ fs.readFile("../src/views/P302O/P302O.json", (err, data) => {
         setNew.delete(comp.name);
       });
     });
-    console.log(setNew);
+    // console.log(setNew);
     setNew.forEach((elem)=>{
       if(elem.search("rotator") !== -1)
       {
         setNew.delete(elem)
       }
     })
-    console.log(setNew);
+    // console.log(setNew);
 
     let blockId = 0;
     oldObj.blocks.forEach((block) => {
@@ -44,8 +44,8 @@ fs.readFile("../src/views/P302O/P302O.json", (err, data) => {
         {
           comp.currentValue = comp.valuesAndPhotos[0].value
           comp.initValue = comp.valuesAndPhotos[0].value
-          console.log(`${blockId}`)
-          console.log(comp)
+          // console.log(`${blockId}`)
+          // console.log(comp)
           newObj.blocks[blockId].components.push(comp);
         }
         compId++;

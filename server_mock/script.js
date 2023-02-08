@@ -3,7 +3,7 @@ const fs = require("fs");
 fs.readFile("../src/views/P302O/P302O.json", (err, data) => {
   if (err) throw err;
   let obj = JSON.parse(data);
-  console.log(obj.blocks[0]);
+  // console.log(obj.blocks[0]);
   let set = new Set();
   let idPanel = 1;
   obj.blocks.forEach((block) => {
@@ -27,8 +27,8 @@ fs.readFile("../src/views/P302O/P302O.json", (err, data) => {
     });
     idPanel++;
   });
-  console.log(set);
-  console.log("Printing");
+  // console.log(set);
+  // console.log("Printing");
   obj.blocks.forEach((block) => {
     block.components.forEach((comp) => {
       console.log(

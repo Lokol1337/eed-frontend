@@ -88,6 +88,8 @@ export default {
     rotate() {
       if (this.imgIndex === this.hardwareComponent.valuesAndPhotos.length - 1) {
         this.imgIndex = 0;
+        this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.imgIndex].value;
+        return;
       }
       else {
         this.imgIndex++;

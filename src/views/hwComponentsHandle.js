@@ -1,3 +1,5 @@
+
+
 export function findHardwareComponentById(id, hardwareComponents){
     let index = -1;
     hardwareComponents.forEach((element, i) => {
@@ -65,11 +67,12 @@ export function uploadHwComponents_Training(allPacks, server_data) {
     console.log(action);
 
     let packId = findHardwareById(action['apparat_id'], allPacks.blocks);
+    console.log(packId);
     let next_pack = allPacks.blocks[packId];
 
     let hwCmpId = findHardwareComponentById(action['next_id'], next_pack.components);
     let nextHwComponent = next_pack.components[hwCmpId];
-
+    console.log(nextHwComponent);
   //   // Подсветить необходимые компоненты
     if (action['draggable']) {
       console.log("NEXT ELEMENT IS DRAGGABLE");
@@ -86,6 +89,7 @@ export function uploadHwComponents_Training(allPacks, server_data) {
 
     nextHwComponent.backgroundColor = "yellow";
     nextHwComponent.opacity = "80%";
+
 
   //   // Обновляем массив allPacks
     allPacks.blocks[packId].components[hwCmpId] = nextHwComponent;

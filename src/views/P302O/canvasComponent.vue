@@ -16,7 +16,6 @@
   >
     <img
       class="component-img"
-      
       :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo"
       :style="{
         width: hardwareComponent.width + 'px',
@@ -71,6 +70,9 @@ export default {
       }
   },
   mounted(){
+      if(this.hardwareComponent.rotatable){
+        this.degreeOfRotation = this.hardwareComponent.currentValue;
+      }
       // this.$session.start();
       // this.$session.set('session_id', Date.now().toString(32));
       // console.log(this.$session.get('session_id'));
@@ -82,32 +84,38 @@ export default {
 
     },
     rotate() {
-      this.changeCurrentValue();
-      if (this.hardwareComponent.imgIndex === this.hardwareComponent.valuesAndPhotos.length - 1) {
-        this.hardwareComponent.imgIndex = 0;
-      }
-      else {
-        this.hardwareComponent.imgIndex++;
-      }
-      this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].value;
+      // console.log(this.hardwareComponent.imgIndex,this.hardwareComponent.valuesAndPhotos.length);
+      // if (this.hardwareComponent.imgIndex === this.hardwareComponent.valuesAndPhotos.length - 1) {
+      //   this.hardwareComponent.imgIndex = 0;
+      // }
+      // else {
+        this.changeCurrentValue();
+      // }
+      // console.log(this.hardwareComponent.imgIndex,"BBBBBBBBBB");
       this.degreeOfRotation = this.hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].value;
+      // console.log(,"CCCCCCCCCCCCC");
     },
     changeCurrentValue(){
       this.hardwareComponent.imgIndex += 1;
       this.hardwareComponent.imgIndex %= this.hardwareComponent.valuesAndPhotos.length;
       this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].value;
+      console.log(this.hardwareComponent.imgIndex,"AAAAAAAAAAAAAAAAAA");
     },
     selectMethodByClick() {
-      if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === false) {
-        this.changePhotoByClick();
-      } 
-      else if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === true) {
-        this.rotate();
+      if(this.hardwareComponent.backgroundColor === "yellow"){
+        if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === false) {
+          console.log("changePhotoByClick");
+          this.changePhotoByClick();
+        } 
+        else if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === true) {
+          console.log("rotate");
+          this.rotate();
+        }
+        //  else if (this.hardwareComponent.draggable === true && this.hardwareComponent.rotatable === false){
+          
+        // }
+        return this.sendRequest();
       }
-      //  else if (this.hardwareComponent.draggable === true && this.hardwareComponent.rotatable === false){
-        
-      // }
-      return this.sendRequest();
     },
     onDrag(x, y) {
       if (this.hardwareComponent) {

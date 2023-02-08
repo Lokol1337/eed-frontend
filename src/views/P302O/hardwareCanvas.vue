@@ -195,8 +195,6 @@ export default {
   },
   methods: {
     sendRequestListener(hardwareComponent) {
-      console.log("sendReq");
-      console.log(hardwareComponent);
       this.sendRequest(hardwareComponent);
     },
     selectComponentHandler(component) {
@@ -238,6 +236,7 @@ export default {
       return index;
     },
     sendRequest(hardwareComponent) {
+      console.log("hardwareComponent",hardwareComponent);
       let v = this;
       let is_training = v.serverHandler.is_training;
       v.serverHandler = new ServerHandler();
@@ -266,15 +265,32 @@ export default {
 
               if (v.serverHandler.is_training) {
                 console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-                if(server_data['status'] == "correct" && server_data['validation'] == false){
-                  v.changeYellow(hardwareComponent);
+                if(!server_data['finish']){
+                  if(server_data['status']){
+                    console.log(server_data['status']);
+                    if(server_data['status'] == "correct" && server_data['validation'] == false){
+                      v.changeYellow(hardwareComponent);
+                    }
+                    if(server_data['status'] == "correct" && server_data['validation'] == true){
+                      v.changeYellow(hardwareComponent);
+                      v.$emit('ann', server_data['annotation']);
+                      v.$emit('step',server_data);
+                      v.$emit('allP',server_data);
+                      // hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data)
+                    }
+                  }
+                  else{
+                    if(server_data['validation'] == true){
+                      v.changeYellow(hardwareComponent);
+                      v.$emit('ann', server_data['annotation']);
+                      v.$emit('step',server_data);
+                      v.$emit('allP',server_data);
+                    }
+                  }
                 }
-                if(server_data['status'] == "correct" && server_data['validation'] == true){
+                else{
                   v.changeYellow(hardwareComponent);
-                  v.$emit('ann', server_data['annotation']);
-                  v.$emit('step',server_data);
-                  v.$emit('allP',server_data);
-                  // hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data)
+                  alert("УРАА!");
                 }
               }
               else {
@@ -297,7 +313,7 @@ export default {
       //       //
       //     }
       // };
-
+      console.log("hardwareComponent",hardwareComponent);
     },
   },
   created() {

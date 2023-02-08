@@ -165,7 +165,9 @@ export default {
   },
   methods: {
     rerenderAllPacks(i){
-      hwCmpHandler.uploadHwComponents_Training(this.allPacks, i)
+      hwCmpHandler.uploadHwComponents_Training(this.allPacks, i);
+      this.rerenderStatment++;
+
     },
     showMenu(){
       if(document.getElementById('menuForShow').style.transform == 'translateX(100%)'){
