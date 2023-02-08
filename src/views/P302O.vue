@@ -42,6 +42,14 @@
     <button @click.prevent="exportJSON">export</button> -->
 
     <div class="container-fluid pb-5">
+      <div class="row">
+        <div class="col-12 mt-3">
+          <p id="p-annotation"> {{this.annotation}}</p>
+          <!-- <textShowVue @inputText="inputTextHandler" 
+            :text = "this.annotation"
+          /> -->
+        </div>
+      </div>
       <div class="row " >
         
             
@@ -73,14 +81,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12 mt-3">
-          <p id="p-annotation"> {{this.annotation}}</p>
-          <!-- <textShowVue @inputText="inputTextHandler" 
-            :text = "this.annotation"
-          /> -->
-        </div>
-      </div>
+      
     </div>
   </div>
 </template>

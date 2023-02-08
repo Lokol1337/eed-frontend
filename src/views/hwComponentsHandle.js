@@ -90,7 +90,7 @@ if(next_actions[0]['name'] != "nan"){
     console.log(action,"AAAA");
 
     let packId = findHardwareById(action['apparat_id'], allPacks.blocks);
-    //  document.getElementById(action['apparat_id']).style.border = "thick solid #0000FF";
+    // document.getElementById(action['apparat_id']).style.border = "thick solid #0000FF";
     console.log(packId,"bbbbbb");
 
     let next_pack = allPacks.blocks[packId];
