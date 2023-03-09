@@ -30,26 +30,26 @@
                 <div class="dropdown ">
                   <button class="btn btn-outline dropdown-toggle w-100" type="button" id="dropdownMenuButton1" 
                   style="background-color: #292c63; color: #f4f7fa;" data-bs-toggle="dropdown" aria-expanded="false">
-                    Прохождение норматива
+                    Прохождение Норматива
                   </button>
                   <ul class="dropdown-menu w-100 h-100" aria-labelledby="dropdownMenuButton1">
                     
                     <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',11)">Норматив 1.1</button></li>
+                      @click.prevent="goToPath('/p-302-o',11)">Шаг 1.1</button></li>
                     <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',12)">Норматив 1.2</button></li>
+                      @click.prevent="goToPath('/p-302-o',12)">Шаг 1.2</button></li>
                     <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',13)">Норматив 1.3</button></li>
+                      @click.prevent="goToPath('/p-302-o',13)">Шаг 1.3</button></li>
                     <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',14)">Норматив 1.4 </button></li>
+                      @click.prevent="goToPath('/p-302-o',14)">Шаг 1.4 </button></li>
                     <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',15)">Норматив 1.5 </button></li>
+                      @click.prevent="goToPath('/p-302-o',15)">Шаг 1.5 </button></li>
                     <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',16)">Норматив 1.6</button></li>
+                      @click.prevent="goToPath('/p-302-o',16)">Шаг 1.6</button></li>
                     <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',18)">Норматив 1.8 </button></li>
+                      @click.prevent="goToPath('/p-302-o',18)">Шаг 1.8 </button></li>
                     <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',19)">Норматив 1.9 </button></li>
+                      @click.prevent="goToPath('/p-302-o',19)">Шаг 1.9 </button></li>
                   </ul>
                 </div>
               </center>

@@ -28,18 +28,12 @@
       </div>
     </div>
       
-    <div>
-      <VueSidebarMenuAkahon @selectPackParent="selectPackHandler"/>
+    <div :key="rerenderStatmentSideBar"> 
+      <sideBarMenu  
+        :key="actualPack.name"
+        :allPacks="allPacks"
+        @selectPackParent="selectPackHandler"/>
     </div>
-
-    <!-- <packManager :packs="allPacks.blocks" @selectPackParent="selectPackHandler" /> -->
-    
-    <!-- <input
-      @change.prevent="importJSON"
-      style="margin-right: 15px"
-      type="file"
-    />
-    <button @click.prevent="exportJSON">export</button> -->
 
     <div class="container-fluid pb-5">
       <div class="row">
@@ -91,7 +85,7 @@
 
 import P302OJSON from "./P302O/P302O.json";
 import hardwareCanvas from "./P302O/hardwareCanvas.vue";
-import VueSidebarMenuAkahon from "./P302O/sideBarMenu.vue";
+import sideBarMenu from "./P302O/sideBarMenu.vue";
 import ServerHandler from '@/api/ServerHandler.js';
 import * as hwCmpHandler from "./hwComponentsHandle.js";
 // import axios from 'axios';
@@ -114,16 +108,22 @@ export default {
       rerenderStatment: 0,
       serverHandler: null,
       sessionId: null,
-      stepServerData: Object,
+      stepServerData: null,
       trainingStatus: true,
-      exersiseId: 0
+      exersiseId: 0, 
+      rerenderStatmentSideBar: 0
     };
   },
 
   created() {
     window.addEventListener('resize', this.updateWidth);
-    this.allPacks = hwCmpHandler.setNullImgIndex(P302OJSON);
+
+    this.allPacks = P302OJSON;
     this.actualPack = P302OJSON.blocks[0];
+
+    this.allPacks = hwCmpHandler.setNullImgIndex(this.allPacks);
+    this.allPacks = hwCmpHandler.setNullBlocksActualStatus(this.allPacks);
+    this.allPacks.blocks[hwCmpHandler.findHardwareById(this.actualPack.id, this.allPacks.blocks)].actual_status = 1;
     
     this.$session.start();
     this.$session.set('session_id', Date.now().toString(32));
@@ -134,12 +134,7 @@ export default {
 
   mounted(){
 
-    this.getFistZoom();
-    var buttonItem = document.querySelectorAll('.menu-for-show__border'), index, button;
-    for (index = 0; index < buttonItem.length; index++) {
-      button = buttonItem[index];
-      button.addEventListener('click', this.updateZoom);
-    }
+    this.updateZoom();
 
     console.log("start listenServer()");
     this.listenServer();
@@ -150,15 +145,8 @@ export default {
     //console.log(event.currentTarget.id);
     //document.getElementById(this.imgId).click();
   },
-  destroyed(){
-    var buttonItem = document.querySelectorAll('.btnBlock'), index, button;
-    for (index = 0; index < buttonItem.length; index++) {
-      button = buttonItem[index];
-      button.addEventListener('click', this.updateZoom);
-    }
-  },
   components: {
-    VueSidebarMenuAkahon,
+    sideBarMenu,
     hardwareCanvas,
     // packManager,
     //menuForShow,
@@ -168,58 +156,28 @@ export default {
   },
   methods: {
     rerenderAllPacks(i){
-      hwCmpHandler.uploadHwComponents_Training(this.allPacks, i);
+      this.allPacks = hwCmpHandler.uploadHwComponents_Training(this.allPacks, i);
       this.rerenderStatment++;
-
+      this.rerenderStatmentSideBar++;
     },
-    showMenu(){
-      if(document.getElementById('menuForShow').style.transform == 'translateX(100%)'){
-        document.getElementById('menuForShow').style.transform = 'translateX(0%)';
-        document.getElementById('btnMenuForShow').style.transform = 'translateX(0%)';
-        document.getElementById('btnMenuForShow').classList.add('menu-btn_active'); 
-        document.getElementById('menuForShow').classList.remove('d-none');
+    updateZoom(){ 
+      console.log("updateZoom()");
+      this.imgId = this.actualPack.id;
 
-      }
-      else{
-        console.log('else');
-        document.getElementById('menuForShow').style.transform = 'translateX(100%)';
-        document.getElementById('btnMenuForShow').style.transform = 'translateX(0%)';
-        document.getElementById('btnMenuForShow').classList.remove('menu-btn_active');
-        document.getElementById('menuForShow').classList.add('d-none');
-      }
-    },
-    getFistZoom(){
-      let firstZoom = 0;
-      let imgWidth = 856;
-      if(this.width > imgWidth){
-        firstZoom = Math.floor((this.width - imgWidth - 100)/imgWidth * 100) + 100;
-      }
-      else if(this.width < imgWidth){
-        firstZoom = Math.ceil((this.width - imgWidth - 100)/imgWidth * 100) + 100;
-      }
-      this.zoom = firstZoom;
-      //document.getElementById('mainBlock').style.zoom = this.firstZoom + '%';
+      this.imgWidth = this.actualPack.backgroundSettings.width;
+      console.log("imgWidth: " + this.imgWidth);
       
-    },
-    updateZoom(){
-      if(event.currentTarget.id){
-        this.imgId = event.currentTarget.id;
-      }
-
-      this.imgWidth = document.getElementById('block' + this.imgId).children[0].style.width;
-      this.imgWidth = this.imgWidth.substr(0,this.imgWidth.length - 2); // убираем символы 'px'
-      
-      this.imgWidth = parseInt(this.imgWidth);
-
       if(this.width > this.imgWidth){
         this.zoom = Math.floor((this.width - 100 - this.imgWidth)/this.imgWidth * 100) + 100;
       }
       else if(this.width < this.imgWidth){
         this.zoom = Math.ceil((this.width - 100 - this.imgWidth)/this.imgWidth * 100) + 100;
       }
+      console.log("zoom: " + this.zoom);
       document.getElementById('mainBlock').style.zoom = this.zoom + '%';
     },
     updateWidth() {
+      console.log("updateWidth()");
       const $html = document.documentElement;
       const width = $html.clientWidth;
       console.log("WIDTH: " + width);
@@ -227,8 +185,14 @@ export default {
       this.updateZoom();
     },
     selectPackHandler(pack) {
+      console.log("-> selectPackHandler()");
       this.actualPack = pack;
       this.packForShow = pack.name;
+      this.allPacks = hwCmpHandler.setNullBlocksActualStatus(this.allPacks);
+      this.allPacks.blocks[hwCmpHandler.findHardwareById(pack.id, this.allPacks.blocks)].actual_status = 1;
+      this.rerenderStatmentSideBar++;
+      console.log("<- selectPackHandler()");
+      this.updateZoom();
     },
     inputTextHandler(text) {
       console.log(text);
@@ -314,6 +278,7 @@ export default {
                   v.stepServerData = server_data;
                   // Принудительное обновление <template> hardwareCanvas
                   v.rerenderStatment++;
+                  v.rerenderStatmentSideBar++;
 
                 } else {
                   console.log("НЕ ТРЕННИРОВКА");

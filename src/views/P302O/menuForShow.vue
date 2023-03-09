@@ -1,43 +1,84 @@
 <template>
-  <div class="menu-for-show ">
-    
+
+  
+  <!--
+  <div class="menu-for-show">
     <div
       class="menu-for-show__border"
 
-      v-for="config in configs"  
-      
-      :key="config.name"
-      :id = "config.id"
-      :title = "config.name"
-      :style="{
-        width: config.rectangleWidth + 'px',
-        height: config.rectangleHeight + 'px',
-        zIndex: 2,
-        border: `0px solid ${config.rectangleColor}`,
-        position: 'absolute',
-        top: config.top + 'px',
-        left: config.left + 'px',
-        cursor: 'pointer',
-        display:block,
-      }" 
-      @click.prevent="selectPack(packs[config.id - 1])"
-    > 
+      v-for="config in configs"
+        :key="config.name"
+        :id = "config.id"
+        :title = "config.name"
+        :style="{
+          width: config.rectangleWidth + 'px',
+          height: config.rectangleHeight + 'px',
+          zIndex: 2,
+          border: `0px solid ${config.rectangleColor}`,
+          position: 'absolute',
+          top: config.top + 'px',
+          left: config.left + 'px',
+          cursor: 'pointer',
+          display: block,
+          backgroundColor: config.lighting,
+          opacity: config.opacity + '%'
+        }" 
+        @click.prevent="selectPack(packs[config.id - 1])"
+      > 
     
-  </div>
-  <img
-      src="images/all_packages_min.png"
-      :style="{
-        width: 190 + 'px',
-        height: 190 + 'px',
-        zIndex: 1,
-      }"
-    />
     </div>
+
+    <img
+        src="images/all_packages_min.png"
+        :style="{
+          width: 190 + 'px',
+          height: 190 + 'px',
+          zIndex: 1,
+        }"
+      />
+
+  </div>
+  -->
+
+  <!--
+  <div class="menu-for-show ">
+
+    <div class="menu-for-show__border"
+      v-for="pack in packs"
+        :key="pack.id"
+        :style="{
+          width: 30 + '%'
+        }"
+        @click.prevent="selectPack(pack)"
+      > 
+
+      <img
+        :src="pack.background"
+        :id = "pack.id"
+        :title = "pack.name"
+        :style="{
+          zIndex: 2,
+          border: `0px solid green`,
+          position: 'absolute',
+          cursor: 'pointer',
+          display: block,
+          backgroundColor: config.lighting,
+          opacity: config.opacity + '%'
+        }" 
+      />
+    
+    </div>
+
+  </div> 
+  -->
+
+
+  
     
 </template>
 
 <script>
-
+//import * as hwCmpHandler from "./hwComponentsHandle.js";
 
 export default {
   props: {
@@ -52,7 +93,7 @@ export default {
     packs: {
       type: Array,
       required: true,
-    },
+    }
   },
   methods: {
     selectPack(pack) {

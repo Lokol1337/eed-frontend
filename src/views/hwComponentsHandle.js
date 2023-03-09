@@ -59,64 +59,83 @@ export function setNullImgIndex(allPacks){
     return allPacks;
 }
 
+export function setNullBlocksActualStatus(allPacks){
+  console.log("setNullBlocksLighting()");
+  allPacks.blocks.forEach(block => {
+    block.actual_status = 0;
+  });
+  return allPacks;
+}
+
+export function setNullBlocksNextStatus(allPacks){
+  console.log("setNullBlocksLighting()");
+  allPacks.blocks.forEach(block => {
+    block.next_status = 0;
+  });
+  return allPacks;
+}
+
 export function uploadHwComponents_Training(allPacks, server_data) {
   // allPacks = setNullBackgroundColors(allPacks);
   console.log('uploadHwComponents_Training')
-  let next_actions = server_data['next_actions'];
   let now_actions = server_data['array_actions'];
+  let count_actions = server_data['count_actions'];
   console.log('uploadHwComponents_Training')
-  console.log(next_actions);
   // console.log(now_actions);
-if(now_actions){
-  
-  if(now_actions[0]['name'] != "nan"){
+  if(now_actions && count_actions > 0){ // Проверка на последний шаг
     now_actions.forEach(action =>{
       let packId = findHardwareById(action['apparat_id'], allPacks.blocks);
       let next_pack = allPacks.blocks[packId];
-      console.log(next_pack,"next_packnext_packnext_packnext_packnext_pack");
+      // console.log(next_pack,"next_packnext_packnext_packnext_packnext_pack");
       let hwCmpId = findHardwareComponentById(action['action_id'], next_pack.components);
-      console.log(hwCmpId,"hwCmpIdhwCmpIdhwCmpIdhwCmpIdhwCmpIdhwCmpId");
+      // console.log(hwCmpId,"hwCmpIdhwCmpIdhwCmpIdhwCmpIdhwCmpIdhwCmpId");
       let nextHwComponent = next_pack.components[hwCmpId];
       allPacks.blocks[packId].components[hwCmpId] = nextHwComponent;
       let imgIndex = findNumberOfCurrentValue(nextHwComponent, action['action_value']);
-      console.log(imgIndex,"imgIndeximgIndeximgIndeximgIndeximgIndeximgIndeximgIndex");
+      // console.log(imgIndex,"imgIndeximgIndeximgIndeximgIndeximgIndeximgIndeximgIndex");
       nextHwComponent.imgIndex = imgIndex;
       nextHwComponent.currentValue = action['action_value'];
     });
   }
-}
-console.log(next_actions,"next_actionsnext_actionsnext_actionsnext_actionsnext_actions");
-if(next_actions[0]['name'] != "nan"){
-  next_actions.forEach(action => {
-    console.log(action,"AAAA");
+  
+  // console.log(next_actions,"next_actions next_actions next_actions next_actions next_actions");
+  
+  let next_actions = server_data['next_actions'];
+  let count_next = server_data['count_next'];
+  allPacks = setNullBlocksNextStatus(allPacks);
+  console.log(next_actions);
+  if(count_next > 0){
 
-    let packId = findHardwareById(action['apparat_id'], allPacks.blocks);
-    // document.getElementById(action['apparat_id']).style.border = "thick solid #0000FF";
-    console.log(packId,"bbbbbb");
+    next_actions.forEach(action => {
+      console.log(action,"AAAA");
 
-    let next_pack = allPacks.blocks[packId];
-    
-    let hwCmpId = findHardwareComponentById(action['next_id'], next_pack.components);
-    
-    let nextHwComponent = next_pack.components[hwCmpId];
-    console.log(next_pack.components,"aaaaa",hwCmpId);
-    console.log(nextHwComponent);
-  //   // Подсветить необходимые компоненты
-    if (action['draggable']) {
-      console.log("NEXT ELEMENT IS DRAGGABLE");
-    } 
-    else {
-      console.log("NEXT ELEMENT IS NOT DRAGGABLE");
-    }
+      let packId = findHardwareById(action['apparat_id'], allPacks.blocks);
 
-    nextHwComponent.backgroundColor = "yellow";
-    nextHwComponent.opacity = "80%";
+      let next_pack = allPacks.blocks[packId];
+      
+      let hwCmpId = findHardwareComponentById(action['next_id'], next_pack.components);
+      
+      let nextHwComponent = next_pack.components[hwCmpId];
 
+      nextHwComponent.backgroundColor = "yellow";
+      nextHwComponent.opacity = "80%";
 
-  //   // Обновляем массив allPacks
-    allPacks.blocks[packId].components[hwCmpId] = nextHwComponent;
-  });
-}
+      // console.log(next_pack.components,"aaaaa",hwCmpId);
+      // console.log(nextHwComponent);
+
+      // Подсветить необходимые компоненты
+      if (action['draggable']) {
+        console.log("NEXT ELEMENT IS DRAGGABLE");
+      } 
+      else {
+        console.log("NEXT ELEMENT IS NOT DRAGGABLE");
+      }
+
+      // Обновляем массив allPacks
+      allPacks.blocks[packId].components[hwCmpId] = nextHwComponent;
+      allPacks.blocks[packId].next_status = 1;
+    });
+  }
   return allPacks;
 }
 
