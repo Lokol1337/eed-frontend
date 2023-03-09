@@ -1,3 +1,6 @@
+
+import { NONAME } from 'dns';
+
 <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
 <template>
 <div
@@ -17,6 +20,15 @@
       :class="'mt-1 hiddenblock ' + slowMenu"
       >&nbsp;ВУЦ РТУ МИРЭА
     </label>
+    <div :class="(isOpened ? 'd-none' : '') + ' row menu-for-show__border'">
+      <menuBlock 
+        v-for="pack in allPacks.blocks"
+          :key="pack.id"
+          :pack="pack" 
+          :col_number="12"
+          @selectPack="selectPackHandler"
+      /> 
+    </div>
     <div class="w-100">
 
     </div>
@@ -37,12 +49,13 @@
 
           <div class="menu-for-show d-flex flex-column p-2" :key="rerenderStatment">
             <div class="row menu-for-show__border" data-masonry='{"percentPosition": true }'>
-                  <menuBlock 
-                    v-for="pack in allPacks.blocks"
-                      :key="pack.id"
-                      :pack="pack" 
-                      @selectPack="selectPackHandler"
-                  />
+              <menuBlock 
+                v-for="pack in allPacks.blocks"
+                  :key="pack.id"
+                  :pack="pack" 
+                  :col_number="6"
+                  @selectPack="selectPackHandler"
+              />
             </div>
 
           </div>

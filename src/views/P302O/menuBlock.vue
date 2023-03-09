@@ -1,6 +1,6 @@
 <template>
 
-  <div class="col-6 p-0 m-0"
+  <div :class="'col-' + `${this.col_number}` + ' p-0 m-0'"
     :style="{
       height: 'auto',
       backgroundColor: `rgba(255, 255, 0, ${this.pack.next_status})`,
@@ -33,7 +33,10 @@
   export default {
     props: {
         pack: {
-            type: Object
+          type: Object
+        }, 
+        col_number: {
+          type: Number
         }
     },
     methods: {

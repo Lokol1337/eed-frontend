@@ -24,12 +24,13 @@
           width: hardwareComponent.width + 'px',
           height: hardwareComponent.height + 'px',
           transform: `rotate(${degreeOfRotation}deg)`,
-          verticalAlign: `top`
+          verticalAlign: `top`, 
+          cursor: 'pointer'
         }"
         @mouseup.prevent="selectMethodByClick"
         @touchend.prevent="selectMethodByClick"
       />
-      <img v-if="hardwareComponent.currentValue === 'none'"
+      <img v-if="hardwareComponent.currentValue === 'none'" 
         class="component-img"
         :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo"
         :style="{
