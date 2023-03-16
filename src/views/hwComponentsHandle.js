@@ -79,8 +79,8 @@ export function uploadHwComponents_Training(allPacks, server_data) {
   // allPacks = setNullBackgroundColors(allPacks);
   console.log('uploadHwComponents_Training')
   let now_actions = server_data['array_actions'];
-  let count_actions = server_data['count_actions'];
-  console.log('uploadHwComponents_Training')
+  let count_actions = parseInt(server_data['count_action']);
+  console.log('count_actions: ' + count_actions>0)
   // console.log(now_actions);
   if(now_actions && count_actions > 0){ // Проверка на последний шаг
     now_actions.forEach(action =>{
@@ -96,12 +96,13 @@ export function uploadHwComponents_Training(allPacks, server_data) {
       nextHwComponent.imgIndex = imgIndex;
       nextHwComponent.currentValue = action['action_value'];
     });
+    console.log("aboba");
   }
   
   // console.log(next_actions,"next_actions next_actions next_actions next_actions next_actions");
   
   let next_actions = server_data['next_actions'];
-  let count_next = server_data['count_next'];
+  let count_next = parseInt(server_data['count_next']);
   allPacks = setNullBlocksNextStatus(allPacks);
   console.log(next_actions);
   if(count_next > 0){

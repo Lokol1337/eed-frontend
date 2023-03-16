@@ -20,7 +20,7 @@ import { NONAME } from 'dns';
       :class="'mt-1 hiddenblock ' + slowMenu"
       >&nbsp;ВУЦ РТУ МИРЭА
     </label>
-    <div :class="(isOpened ? 'd-none' : '') + ' row menu-for-show__border'">
+    <div :class="(isOpened ? 'd-none' : 'barMenu') + ' row menu-for-show__border'">
       <menuBlock 
         v-for="pack in allPacks.blocks"
           :key="pack.id"
@@ -48,7 +48,7 @@ import { NONAME } from 'dns';
           >
 
           <div class="menu-for-show d-flex flex-column p-2" :key="rerenderStatment">
-            <div class="row menu-for-show__border" data-masonry='{"percentPosition": true }'>
+            <div :class="(isOpened ? '' : 'barMenu') + ' row menu-for-show__border'" data-masonry='{"percentPosition": true }'>
               <menuBlock 
                 v-for="pack in allPacks.blocks"
                   :key="pack.id"
@@ -228,6 +228,17 @@ box-sizing: border-box;
 font-family: 'Poppins', sans-serif;
 }
 
+
+
+/* .hiddenblock .is-active{
+  transition: all ease-in-out 0s !important;
+} */
+
+.barMenu{
+  /* display: none; */
+  transition: all ease-in-out 0s !important;
+}
+
 .lighting {
   background-color: yellow;
   opacity: 50%;
@@ -249,7 +260,7 @@ transform: translate(-10%, 0);
 .hiddenblock.is-active {
 opacity: 1;
 pointer-events: auto;
-transition: all ease 0.5s;
+/* transition: all ease 0.5s; */
 transform: translate(0, 0);
 visibility: visible;
 }

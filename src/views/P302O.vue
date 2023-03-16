@@ -39,14 +39,11 @@
       <div class="row">
         <div class="col-12 mt-3">
           <p id="p-annotation"> {{this.annotation}}</p>
-          <!-- <textShowVue @inputText="inputTextHandler" 
-            :text = "this.annotation"
-          /> -->
         </div>
+        <button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+          @click.prevent="goToPath('/p-302-o', this.$route.query.norm != 19 ? this.$route.query.norm + 1 : -1)">Шаг 1.1</button>
       </div>
       <div class="row " >
-        
-            
         <div class="col-auto col-sm-auto col-md-auto col-lg-auto col-xl-auto p-0">
           <div style="width: 85px;">
           </div>
@@ -155,6 +152,11 @@ export default {
   computed: {
   },
   methods: {
+    goToPath(route,norm = 0) {
+      if (norm == -1)
+        this.$router.push({path: '#'});
+      this.$router.push({path: route, query: { norm: norm }});
+    },
     rerenderAllPacks(i){
       this.allPacks = hwCmpHandler.uploadHwComponents_Training(this.allPacks, i);
       this.rerenderStatment++;

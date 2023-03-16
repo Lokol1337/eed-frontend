@@ -3,7 +3,7 @@
   "blocks": [
     {
       "name": "СС-О",
-      "background": "./images/backs/ss.png",
+      "background": "./images/backs/ss_small.png",
       "backgroundSettings": { "width": 856, "height": 300 },
       "components": [
         {
@@ -408,7 +408,7 @@
     },
     {
       "name": "ЛО",
-      "background": "./images/backs/lo.png",
+      "background": "./images/backs/lo_small.png",
       "backgroundSettings": { "width": 856, "height": 300 },
       "components": [
         {
@@ -935,7 +935,7 @@
     },
     {
       "name": "ГО-12",
-      "background": "./images/backs/go.png",
+      "background": "./images/backs/go_small.png",
       "backgroundSettings": { "width": 856, "height": 300 },
       "components": [
         {
@@ -1688,7 +1688,7 @@
     },
     {
       "name": "ПИТ",
-      "background": "./images/backs/pit.png",
+      "background": "./images/backs/pit_small.png",
       "backgroundSettings": { "width": 856, "height": 300 },
       "components": [
         {
@@ -1848,7 +1848,7 @@
     },
     {
       "name": "ВКО-12",
-      "background": "./images/backs/vko.png",
+      "background": "./images/backs/vko_small.png",
       "backgroundSettings": { "width": 856, "height": 300 },
       "components": [
         {
@@ -2159,7 +2159,7 @@
     },
     {
       "name": "ЩКНЧ1",
-      "background": "./images/backs/shknch1.png",
+      "background": "./images/backs/shknch1_small.png",
       "backgroundSettings": { "width": 856, "height": 300 },
       "components": [
         {
@@ -2587,7 +2587,7 @@
     },
     {
       "name": "ЩКНЧ2",
-      "background": "./images/backs/shknch.png",
+      "background": "./images/backs/shknch_small.png",
       "backgroundSettings": { "width": 756, "height": 550 },
       "components": [
         {
@@ -2736,7 +2736,7 @@
     },
     {
       "name": "ЩКВЧ",
-      "background": "./images/backs/shkvch.png",
+      "background": "./images/backs/shkvch_small.png",
       "backgroundSettings": { "width": 1160, "height": 360 },
       "components": [
         {
@@ -2934,7 +2934,7 @@
     },
     {
       "name": "ДСВ",
-      "background": "./images/backs/dsv.png",
+      "background": "./images/backs/dsv_small.png",
       "backgroundSettings": { "width": 1160, "height": 600 },
       "components": [
         {
@@ -3390,7 +3390,7 @@
     },
     {
       "name": "ИПП",
-      "background": "./images/backs/ipp.png",
+      "background": "./images/backs/ipp_small.png",
       "backgroundSettings": { "width": 1160, "height": 600 },
       "components": [
         {
@@ -3917,7 +3917,7 @@
     },
     {
       "name": "ДП",
-      "background": "./images/backs/dp.png",
+      "background": "./images/backs/dp_small.png",
       "backgroundSettings": { "width": 1100, "height": 350 },
       "components": [
         {
