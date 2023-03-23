@@ -110,7 +110,7 @@ export default {
   },
   mounted(){
       if(this.hardwareComponent.rotatable){
-        this.degreeOfRotation = this.hardwareComponent.currentValue;
+        this.degreeOfRotation = this.hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].value;
       }
       if(this.hardwareComponent.currentValue === "none"){
         this.curZindex = "cabel";
