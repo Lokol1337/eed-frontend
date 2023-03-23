@@ -3,7 +3,7 @@
 export function findHardwareComponentById(id, hardwareComponents){
     let index = -1;
     hardwareComponents.forEach((element, i) => {
-      console.log(parseInt(element.id) + " ? " + parseInt(id) + " = " + (parseInt(element.id) == parseInt(id)));
+      // console.log(parseInt(element.id) + " ? " + parseInt(id) + " = " + (parseInt(element.id) == parseInt(id)));
 
       if (parseInt(element.id) == parseInt(id)) {
         index = i;
@@ -73,6 +73,21 @@ export function setNullBlocksNextStatus(allPacks){
     block.next_status = 0;
   });
   return allPacks;
+}
+
+export function setToRandomValue(allPacks,server_data){
+  console.log('setToRandomValue');
+  // console.log(allPacks, server_data);
+  let randomVal = server_data['random_values'];
+  randomVal.forEach(val => {
+    // console.log(allPacks.blocks)
+    console.log(val['next_id']);
+    console.log(allPacks.blocks[findHardwareById(val['apparat_id'],allPacks.blocks)].components[findHardwareComponentById(val['next_id'],allPacks.blocks[findHardwareById(val['apparat_id'],allPacks.blocks)].components)].imgIndex);
+    allPacks.blocks[findHardwareById(val['apparat_id'],allPacks.blocks)].components[findHardwareComponentById(val['next_id'],allPacks.blocks[findHardwareById(val['apparat_id'],allPacks.blocks)].components)].imgIndex = val['current_value'];
+    console.log(allPacks.blocks[findHardwareById(val['apparat_id'],allPacks.blocks)].components[findHardwareComponentById(val['next_id'],allPacks.blocks[findHardwareById(val['apparat_id'],allPacks.blocks)].components)].imgIndex);
+    console.log('end');
+
+  });
 }
 
 export function uploadHwComponents_Training(allPacks, server_data) {

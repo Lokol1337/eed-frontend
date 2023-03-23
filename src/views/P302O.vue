@@ -304,6 +304,7 @@ export default {
                 if (v.serverHandler.is_training) {
                   console.log("ТРЕНИРОВКА!!!");
                   v.annotation = hwCmpHandler.getAnnotation(server_data);
+                  hwCmpHandler.setToRandomValue(v.allPacks,server_data);
                   v.allPacks = hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data);
                   console.log(typeof(server_data));
                   v.stepServerData = server_data;
