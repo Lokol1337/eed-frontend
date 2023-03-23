@@ -3,12 +3,17 @@
   <div class="p-330-6">
     <div class="container-fluid pt-4">
       <div class="row">
-        <div class="col-auto col-sm-auto col-md-auto col-lg-auto col-xl-auto p-0">
-            <div style="width: 85px;">
-              
-            </div>
+        <div class="col-1 p-0">
+
+          <div :key="rerenderStatmentSideBar"> 
+            <sideBarMenu  
+              :key="actualPack.name"
+              :allPacks="allPacks"
+              @selectPackParent="selectPackHandler"/>
+          </div>
+          
         </div>
-        <div class="col-auto">
+        <div class="col-11">
           <nav aria-label="breadcrumb hidden">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
@@ -28,20 +33,21 @@
       </div>
     </div>
       
-    <div :key="rerenderStatmentSideBar"> 
-      <sideBarMenu  
-        :key="actualPack.name"
-        :allPacks="allPacks"
-        @selectPackParent="selectPackHandler"/>
-    </div>
 
     <div class="container-fluid pb-5">
-      <div class="row">
-        <div class="col-12 mt-3">
-          <p id="p-annotation"> {{this.annotation}}</p>
+      <div class="row mb-3 justify-content-center">
+        <div class="col-12 mt-3 mb-1">
+          <div class="d-inline-flex">
+            <div :class="'spinner-border me-3 ' + this.waitingServer()" role="status" style="width: 1.5rem; height: 1.5rem; ">
+              <span class="sr-only"></span>
+            </div>
+            <p id="p-annotation" class="text-center text-break m-0"> {{this.annotation}}</p>
+          </div>
         </div>
-        <button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-          @click.prevent="goToPath('/p-302-o', this.$route.query.norm != 19 ? this.$route.query.norm + 1 : -1)">Шаг 1.1</button>
+        <button :class="'btn w-auto me-0 ' + this.linkForNextExercise()" style="background-color: #292c63; color: #f4f7fa;"
+          @click.prevent="goToPath('/p-302-o', getNextExercisePathId())">Перейти к следующему шагу</button>
+        <!-- <div class="col-3 d-flex align-items-center justify-content-center">
+        </div> -->
       </div>
       <div class="row " >
         <div class="col-auto col-sm-auto col-md-auto col-lg-auto col-xl-auto p-0">
@@ -68,6 +74,7 @@
               @ann="(i) => annotation = i"
               @step="(i) => stepServerData = i "
               @allP="(i) => rerenderAllPacks(i)"
+              @completeExercise="(i) => exerciseComplete = i"
             />
           </div>
         </div>
@@ -101,19 +108,23 @@ export default {
       zoom: 80,
       firstZoom:0,
       actualId: 1001,
-      annotation: "1. Выйти в окно",
+      messageWaitingServer: "Ожидание ответа сервера...",
+      annotation: "",
       rerenderStatment: 0,
       serverHandler: null,
       sessionId: null,
       stepServerData: null,
       trainingStatus: true,
       exersiseId: 0, 
-      rerenderStatmentSideBar: 0
+      rerenderStatmentSideBar: 0,
+      exerciseComplete: false
     };
   },
 
   created() {
     window.addEventListener('resize', this.updateWidth);
+
+    this.annotation = this.messageWaitingServer;
 
     this.allPacks = P302OJSON;
     this.actualPack = P302OJSON.blocks[0];
@@ -145,17 +156,30 @@ export default {
   components: {
     sideBarMenu,
     hardwareCanvas,
-    // packManager,
-    //menuForShow,
-    // textShowVue,
   },
   computed: {
   },
   methods: {
-    goToPath(route,norm = 0) {
-      if (norm == -1)
-        this.$router.push({path: '#'});
-      this.$router.push({path: route, query: { norm: norm }});
+    goToPath(route, normative_id = 0) {
+      console.log("ROUTE: " + route);
+      console.log("NORM: " + normative_id);
+      if (normative_id != -1) {
+        this.$router.push({path: route, query: { norm: normative_id }});
+        window.location.reload();
+      }
+    },
+    getNextExercisePathId() {
+      console.log("getNextExercisePathId()");
+      console.log("normative_id: ", this.$route.query.norm);
+      if (this.$route.query.norm < 19) 
+        return parseInt(this.$route.query.norm) + 1;
+      return -1;
+    },
+    waitingServer() {
+      console.log("annotation: " + this.annotation);
+      if (this.annotation === this.messageWaitingServer)
+        return "";
+      return "d-none";
     },
     rerenderAllPacks(i){
       this.allPacks = hwCmpHandler.uploadHwComponents_Training(this.allPacks, i);
@@ -199,6 +223,11 @@ export default {
     inputTextHandler(text) {
       console.log(text);
     },
+    linkForNextExercise() {
+      if (this.exerciseComplete && this.$route.query.norm < 19)
+        return "";
+      return "d-none";
+    },
     exportJSON() {
       const jsonFile = new Blob([JSON.stringify(this.actualPack)]);
       const downloadLink = document.createElement("a");
@@ -239,9 +268,9 @@ export default {
       // PROMISES: https://stackoverflow.com/questions/42304996/javascript-using-promises-on-websocket
       return new Promise(function(resolve, reject) {
         let serverHandler = new ServerHandler();
-        // console.log(window.location.href);
+        console.log(window.location.href);
         console.log(v.$route.query.norm, 'params');
-        serverHandler.sendFirst(v.$session.get('session_id'), v.trainingStatus, v.exersiseId,String(v.$route.query.norm));
+        serverHandler.sendFirst(v.$session.get('session_id'), v.trainingStatus, v.exersiseId, String(v.$route.query.norm));
         serverHandler.socket.onopen = function() {
           console.log("ONOPEN!");
           serverHandler.socket.send(JSON.stringify(Array.from(serverHandler.sendData.entries())));
@@ -249,7 +278,7 @@ export default {
         };
 
         serverHandler.socket.onerror = function(error) {
-          alert(`[error] ${error.message}`);
+          // alert(`[error] ${error.message}`);
           reject(error);
         };
       });

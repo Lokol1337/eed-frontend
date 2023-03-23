@@ -295,6 +295,8 @@ export default {
                   v.$emit('ann', server_data['annotation']);
                   v.$emit('step',server_data);
                   v.$emit('allP',server_data);
+                  v.$emit('completeExercise', true);
+                  console.log("EXERCISE FINISHED!");
                 }
                 else{
                   alert("УРАА!");
