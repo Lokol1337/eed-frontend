@@ -13,7 +13,7 @@
     :id = hardwareComponent.id
     :style="{
       backgroundColor: hardwareComponent.backgroundColor,
-      opacity: hardwareComponent.opacity,
+      opacity: hardwareComponent.opacity + '%',
       border: `none`
     }"
   >
@@ -25,7 +25,7 @@
           height: hardwareComponent.height + 'px',
           transform: `rotate(${degreeOfRotation}deg)`,
           verticalAlign: `top`, 
-          cursor: 'pointer'
+          cursor: hardwareComponent.opacity == 80 ? 'pointer' : 'unset'
         }"
         @mouseup.prevent="selectMethodByClick"
         @touchend.prevent="selectMethodByClick"

@@ -134,7 +134,7 @@ export function uploadHwComponents_Training(allPacks, server_data) {
       let nextHwComponent = next_pack.components[hwCmpId];
 
       nextHwComponent.backgroundColor = "yellow";
-      nextHwComponent.opacity = "80%";
+      nextHwComponent.opacity = 80;
 
       // console.log(next_pack.components,"aaaaa",hwCmpId);
       // console.log(nextHwComponent);
