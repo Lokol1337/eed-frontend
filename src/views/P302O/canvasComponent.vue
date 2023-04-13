@@ -144,8 +144,11 @@ export default {
       // console.log(,"CCCCCCCCCCCCC");
     },
     changeCurrentValue(){
-      this.hardwareComponent.imgIndex += 1;
-      this.hardwareComponent.imgIndex %= this.hardwareComponent.valuesAndPhotos.length;
+      if (this.hardwareComponent.imgIndex == this.hardwareComponent.valuesAndPhotos.length)
+        this.hardwareComponent.imgIndex = 0;
+      else 
+        this.hardwareComponent.imgIndex += 1;
+      // this.hardwareComponent.imgIndex %= this.hardwareComponent.valuesAndPhotos.length;
       this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].value;
       console.log(this.hardwareComponent.imgIndex,"AAAAAAAAAAAAAAAAAA");
     },
