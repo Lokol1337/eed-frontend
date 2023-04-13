@@ -15,7 +15,7 @@
       <canvasComponent
         v-for="hardwareComponent in allComponents"
           v-on:sendRequest="sendRequestListener($event)"
-          :key="rerenderComponentStatment+hardwareComponent.id"
+          :key="hardwareComponent.id"
           :id="hardwareComponent.id"
           :rerenderStatment="rerenderStatment"
           :hardwareComponents="allComponents" 
@@ -79,7 +79,6 @@ export default {
     return {
       hardZoom: this.zoom,
       rerenderStatment: 0,
-      rerenderComponentStatment: 0,
       actionIds: null,
       componentsForMenu: [
         {
@@ -197,7 +196,7 @@ export default {
   },
   methods: {
     sendRequestListener(hardwareComponent) {
-      rerenderComponentStatment++;
+      this.rerenderStatment++;
       this.sendRequest(hardwareComponent);
     },
     selectComponentHandler(component) {
