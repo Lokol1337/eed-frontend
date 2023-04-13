@@ -144,13 +144,13 @@ export default {
       // console.log(,"CCCCCCCCCCCCC");
     },
     changeCurrentValue(){
-      if (this.hardwareComponent.imgIndex == this.hardwareComponent.valuesAndPhotos.length-1)
+      if (this.hardwareComponent.imgIndex >= this.hardwareComponent.valuesAndPhotos.length-1)
         this.hardwareComponent.imgIndex = 0;
       else 
         this.hardwareComponent.imgIndex += 1;
       // this.hardwareComponent.imgIndex %= this.hardwareComponent.valuesAndPhotos.length;
       this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].value;
-      console.log(this.hardwareComponent.imgIndex,"AAAAAAAAAAAAAAAAAA");
+      console.log(this.hardwareComponent.imgIndex, "AAAAAAAAAAAAAAAAAA");
     },
     selectMethodByClick() {
       if(this.hardwareComponent.backgroundColor === "yellow"){
