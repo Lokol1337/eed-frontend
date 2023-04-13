@@ -144,7 +144,7 @@ export default {
       // console.log(,"CCCCCCCCCCCCC");
     },
     changeCurrentValue(){
-      if (this.hardwareComponent.imgIndex == this.hardwareComponent.valuesAndPhotos.length)
+      if (this.hardwareComponent.imgIndex == this.hardwareComponent.valuesAndPhotos.length-1)
         this.hardwareComponent.imgIndex = 0;
       else 
         this.hardwareComponent.imgIndex += 1;
