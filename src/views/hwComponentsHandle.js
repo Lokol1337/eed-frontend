@@ -155,6 +155,10 @@ export function uploadHwComponents_Training(allPacks, server_data) {
   return allPacks;
 }
 
+export function checkFiledByServerData(server_data) {
+
+}
+
 export function getAnnotation(data) {
   return data['annotation'];
 }
