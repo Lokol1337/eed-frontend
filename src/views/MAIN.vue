@@ -53,6 +53,33 @@
                   </ul>
                 </div>
               </center>
+              <center>
+                <div class="dropdown ">
+                  <button class="btn btn-outline dropdown-toggle w-100" type="button" id="dropdownMenuButton1" 
+                  style="background-color: #292c63; color: #f4f7fa;" data-bs-toggle="dropdown" aria-expanded="false">
+                    Прохождение Норматива
+                  </button>
+                  <ul class="dropdown-menu w-100 h-100" aria-labelledby="dropdownMenuButton1">
+                    
+                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',11, 0)">Шаг 1.1</button></li>
+                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',12, 0)">Шаг 1.2</button></li>
+                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',13, 0)">Шаг 1.3</button></li>
+                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',14, 0)">Шаг 1.4 </button></li>
+                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',15, 0)">Шаг 1.5 </button></li>
+                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',16, 0)">Шаг 1.6</button></li>
+                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',18, 0)">Шаг 1.8 </button></li>
+                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',19, 0)">Шаг 1.9 </button></li>
+                  </ul>
+                </div>
+              </center>
             </div>
           </div>
         </div>
@@ -98,8 +125,8 @@ export default {
 
   
   methods: {
-    goToPath(route,norm = 0) {
-      this.$router.push({path: route, query: { norm: norm }});
+    goToPath(route,norm = 0, is_training = 1) {
+      this.$router.push({path: route, query: { norm: norm , it: is_training}});
     },
   },
   mounted() {

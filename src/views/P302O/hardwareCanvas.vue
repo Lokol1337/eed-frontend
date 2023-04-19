@@ -241,9 +241,9 @@ export default {
       
       console.log("hardwareComponent",hardwareComponent);
       let v = this;
-      let is_training = v.serverHandler.is_training;
+      // let is_training = v.serverHandler.is_training;
       v.serverHandler = new ServerHandler();
-      v.serverHandler.is_training = is_training;
+      v.serverHandler.is_training = v.$route.query.it;
       // let socket = this.serverHandler.getSocket();
       v.serverHandler.sendElse(v.sessionId, hardwareComponent, hardwareComponent.hardZoomScale);
       // console.log("SERVER SENDING_DATA: " + JSON.stringify(Array.from(this.serverHandler.sendData.entries())));
@@ -265,10 +265,14 @@ export default {
             let server_data = v.serverHandler.parseServerData(event.data);
             if(server_data) {
               console.log("ДАННЫЕ С СЕРВЕРА ПОЛУЧЕНЫ!");
-
+            
               if (v.serverHandler.is_training) {
                 console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-                if(!server_data['finish']){
+                if(server_data['fail']){
+                  alert("Попытка провалена");
+                  console.log("failfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfail");
+                }
+                else if(!server_data['finish']){
                   if(server_data['status']){
                     console.log(server_data['status']);
                     if(server_data['status'] == "correct" && server_data['validation'] == false){
@@ -299,6 +303,7 @@ export default {
                   v.$emit('completeExercise', true);
                   console.log("EXERCISE FINISHED!");
                 }
+                
                 else{
                   alert("УРАА!");
                 }

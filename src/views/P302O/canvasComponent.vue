@@ -153,7 +153,7 @@ export default {
       console.log(this.hardwareComponent.imgIndex, "AAAAAAAAAAAAAAAAAA");
     },
     selectMethodByClick() {
-      if(this.hardwareComponent.backgroundColor === "yellow"){
+      if((this.hardwareComponent.backgroundColor === "yellow" && this.$route.query.it == 1) || this.$route.query.it == 0){
         if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === false) {
           console.log("changePhotoByClick");
           this.changePhotoByClick();

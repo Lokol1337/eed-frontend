@@ -1,5 +1,6 @@
 
 
+
 export function findHardwareComponentById(id, hardwareComponents){
     let index = -1;
     hardwareComponents.forEach((element, i) => {
@@ -90,13 +91,14 @@ export function setToRandomValue(allPacks,server_data){
   });
 }
 
-export function uploadHwComponents_Training(allPacks, server_data) {
+export function uploadHwComponents_Training(allPacks, server_data, is_ex) {
   // allPacks = setNullBackgroundColors(allPacks);
   console.log('uploadHwComponents_Training')
   let now_actions = server_data['array_actions'];
   let count_actions = parseInt(server_data['count_action']);
   console.log('count_actions: ' + count_actions>0)
   // console.log(now_actions);
+
   if(now_actions && count_actions > 0){ // Проверка на последний шаг
     now_actions.forEach(action =>{
       let packId = findHardwareById(action['apparat_id'], allPacks.blocks);
@@ -113,15 +115,14 @@ export function uploadHwComponents_Training(allPacks, server_data) {
     });
     console.log("aboba");
   }
-  
+  console.log(is_ex);
   // console.log(next_actions,"next_actions next_actions next_actions next_actions next_actions");
-  
   let next_actions = server_data['next_actions'];
   let count_next = parseInt(server_data['count_next']);
   allPacks = setNullBlocksNextStatus(allPacks);
   console.log(next_actions);
   if(count_next > 0){
-
+    console.log("ЭТО ТРЕНИРОВКА?????????????????? = ",server_data);
     next_actions.forEach(action => {
       console.log(action,"AAAA");
 
@@ -133,8 +134,10 @@ export function uploadHwComponents_Training(allPacks, server_data) {
       
       let nextHwComponent = next_pack.components[hwCmpId];
 
-      nextHwComponent.backgroundColor = "yellow";
-      nextHwComponent.opacity = 80;
+      if(!is_ex){
+        nextHwComponent.backgroundColor = "yellow";
+        nextHwComponent.opacity = 80;
+      }
 
       // console.log(next_pack.components,"aaaaa",hwCmpId);
       // console.log(nextHwComponent);
@@ -149,7 +152,8 @@ export function uploadHwComponents_Training(allPacks, server_data) {
 
       // Обновляем массив allPacks
       allPacks.blocks[packId].components[hwCmpId] = nextHwComponent;
-      allPacks.blocks[packId].next_status = 1;
+      if(!is_ex)
+        allPacks.blocks[packId].next_status = 1;
     });
   }
   return allPacks;

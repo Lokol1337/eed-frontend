@@ -29,7 +29,11 @@
               </li>
             </ol>
           </nav>
-        </div>
+          <!-- (10 > min)?('0' + min):min +  ':' + (10 > sec)?('0' + sec):sec  -->
+          {{(10 > min)?('0' + min):min }}
+          :
+          {{(10 > sec)?('0' + sec):sec }}
+        </div> 
       </div>
     </div>
       
@@ -45,7 +49,7 @@
           </div>
         </div>
         <button :class="'btn w-auto me-0 ' + this.linkForNextExercise()" style="background-color: #292c63; color: #f4f7fa;"
-          @click.prevent="goToPath('/p-302-o', getNextExercisePathId())">Перейти к следующему шагу</button>
+          @click.prevent="goToPath('/p-302-o', getNextExercisePathId(), is_tr)">Перейти к следующему шагу</button>
         <!-- <div class="col-3 d-flex align-items-center justify-content-center">
         </div> -->
       </div>
@@ -117,7 +121,11 @@ export default {
       trainingStatus: true,
       exersiseId: 0, 
       rerenderStatmentSideBar: 0,
-      exerciseComplete: false
+      exerciseComplete: false,
+      sec: 0,
+      min: 0,
+      timer: null,
+      is_tr: this.$route.query.it,
     };
   },
 
@@ -143,7 +151,7 @@ export default {
   mounted(){
 
     this.updateZoom();
-
+    this.startTimer()
     console.log("start listenServer()");
     this.listenServer();
     console.log("stepServerData: " + this.stepServerData);
@@ -153,20 +161,40 @@ export default {
     //console.log(event.currentTarget.id);
     //document.getElementById(this.imgId).click();
   },
+  destroyed() {
+    this.stopTimer()
+  },
   components: {
     sideBarMenu,
     hardwareCanvas,
   },
   computed: {
   },
+  watch: {
+    sec(time) {
+      if (time === 0) {
+        this.stopTimer()
+      }
+    }
+  },
   methods: {
-    goToPath(route, normative_id = 0) {
+    startTimer() {
+      this.timer = setInterval(() => {
+         this.sec++;
+         if(this.sec%60 == 0 && this.sec != 0){
+            this.min++;
+            this.sec = 0;
+          }
+      }, 1000)
+    },
+    stopTimer() {
+      clearTimeout(this.timer)
+    },
+    goToPath(route, normative_id = 0, is_training = 1) {
       console.log("ROUTE: " + route);
       console.log("NORM: " + normative_id);
-      if (normative_id != -1) {
-        this.$router.push({path: route, query: { norm: normative_id }});
-        window.location.reload();
-      }
+      this.$router.push({path: route, query: { norm: normative_id , it: is_training}});
+      window.location.reload();
     },
     getNextExercisePathId() {
       console.log("getNextExercisePathId()");
@@ -270,7 +298,12 @@ export default {
         let serverHandler = new ServerHandler();
         console.log(window.location.href);
         console.log(v.$route.query.norm, 'params');
-        serverHandler.sendFirst(v.$session.get('session_id'), v.trainingStatus, v.exersiseId, String(v.$route.query.norm));
+        let is_tr;
+        if(v.$route.query.it == 0)
+          is_tr = false;
+        else
+          is_tr = true;
+        serverHandler.sendFirst(v.$session.get('session_id'), is_tr, v.exersiseId, String(v.$route.query.norm));
         serverHandler.socket.onopen = function() {
           console.log("ONOPEN!");
           serverHandler.socket.send(JSON.stringify(Array.from(serverHandler.sendData.entries())));
@@ -290,9 +323,13 @@ export default {
       this.connect().then(function(serverHandler) {
         console.log("ДОЖДАЛСЯ!");
         v.serverHandler = serverHandler;
+        if(v.$route.query.it == 0)
+          v.serverHandler.is_training = false;
+        else
+          v.serverHandler.is_training = true;
         // Принудительное обновление <template> hardwareCanvas
         v.rerenderStatment++;
-
+        console.log("ufbgiqwewqehfbhewrnfjkn = == = == = == ", v.serverHandler.is_training);
         //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
         v.serverHandler.socket.onmessage = function(event) {
             try {
@@ -304,7 +341,7 @@ export default {
                 if (v.serverHandler.is_training) {
                   console.log("ТРЕНИРОВКА!!!");
                   v.annotation = hwCmpHandler.getAnnotation(server_data);
-                  v.allPacks = hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data);
+                  v.allPacks = hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data,false);
                   console.log(typeof(server_data));
                   v.stepServerData = server_data;
                  
@@ -316,6 +353,12 @@ export default {
 
                 } else {
                   console.log("НЕ ТРЕННИРОВКА");
+                  v.annotation = hwCmpHandler.getAnnotation(server_data);
+                  v.allPacks = hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data,true);
+                  if(server_data['is_random_step'])
+                    hwCmpHandler.setToRandomValue(v.allPacks,server_data);
+                    v.rerenderStatment++;
+                  v.rerenderStatmentSideBar++;
                 }
                 
               } else {
