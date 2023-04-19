@@ -307,8 +307,9 @@ export default {
                   v.allPacks = hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data);
                   console.log(typeof(server_data));
                   v.stepServerData = server_data;
-                  
-                  hwCmpHandler.setToRandomValue(v.allPacks,server_data);
+                 
+                  if(server_data['is_random_step'])
+                    hwCmpHandler.setToRandomValue(v.allPacks,server_data);
                   // Принудительное обновление <template> hardwareCanvas
                   v.rerenderStatment++;
                   v.rerenderStatmentSideBar++;
