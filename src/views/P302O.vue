@@ -14,25 +14,32 @@
           
         </div>
         <div class="col-11">
-          <nav aria-label="breadcrumb hidden">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="/eed-frontend/#/main" class="svgHome">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 59 576 512" class="uk-icon-up2 uk-svg" width="20" height="20"><path d="M496 512H368a16 16 0 0 1-16-16V368a16 16 0 0 0-16-16h-96a16 16 0 0 0-16 16v128a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V311c1.78-1.21 3.85-1.89 5.47-3.35L288 115l218.74 192.9c1.54 1.38 3.56 2 5.26 3.2V496a16 16 0 0 1-16 16z" class="fa-secondary"></path><path d="M527.92 283.88L298.6 81.61a16 16 0 0 0-21.17 0L48.11 283.89a16 16 0 0 1-22.59-1.21L4.1 258.89a16 16 0 0 1 1.21-22.59l256-226a39.85 39.85 0 0 1 53.45 0L416 99.67V48a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v136.43l58.69 51.83a16 16 0 0 1 1.22 22.59l-21.4 23.82a16 16 0 0 1-22.59 1.21z" class="fa-primary"></path></svg>
-                </a>
-              </li>
-              <li class="breadcrumb-item">
-                П-302-0
-              </li>
-              <li class="breadcrumb-item">
-                {{actualPack.name}}
-              </li>
-            </ol>
-          </nav>
-          <!-- (10 > min)?('0' + min):min +  ':' + (10 > sec)?('0' + sec):sec  -->
-          {{(10 > min)?('0' + min):min }}
-          :
-          {{(10 > sec)?('0' + sec):sec }}
+          <div class="row justify-content-between">
+            <div class="col-auto">
+              <nav aria-label="breadcrumb hidden ">
+                <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="/eed-frontend/#/main" class="svgHome">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 59 576 512" class="uk-icon-up2 uk-svg" width="20" height="20"><path d="M496 512H368a16 16 0 0 1-16-16V368a16 16 0 0 0-16-16h-96a16 16 0 0 0-16 16v128a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V311c1.78-1.21 3.85-1.89 5.47-3.35L288 115l218.74 192.9c1.54 1.38 3.56 2 5.26 3.2V496a16 16 0 0 1-16 16z" class="fa-secondary"></path><path d="M527.92 283.88L298.6 81.61a16 16 0 0 0-21.17 0L48.11 283.89a16 16 0 0 1-22.59-1.21L4.1 258.89a16 16 0 0 1 1.21-22.59l256-226a39.85 39.85 0 0 1 53.45 0L416 99.67V48a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v136.43l58.69 51.83a16 16 0 0 1 1.22 22.59l-21.4 23.82a16 16 0 0 1-22.59 1.21z" class="fa-primary"></path></svg>
+                  </a>
+                </li>
+                <li class="breadcrumb-item">
+                  П-302-0
+                </li>
+                <li class="breadcrumb-item">
+                  {{actualPack.name}}
+                </li>
+                </ol>
+                
+              </nav>
+              </div>
+              <div class="col-auto me-4">
+                <!-- (10 > min)?('0' + min):min +  ':' + (10 > sec)?('0' + sec):sec  -->
+                {{(10 > min)?('0' + min):min }}
+                :
+                {{(10 > sec)?('0' + sec):sec }}
+              </div>
+              </div>
         </div> 
       </div>
     </div>
@@ -45,7 +52,7 @@
             <div :class="'spinner-border me-3 ' + this.waitingServer()" role="status" style="width: 1.5rem; height: 1.5rem; ">
               <span class="sr-only"></span>
             </div>
-            <p id="p-annotation" class="text-center text-break m-0"> {{this.annotation}}</p>
+            <p id="p-annotation" class="text-center text-break m-0"> {{(this.is_tr == 1) ? this.annotation : ""}}</p>
           </div>
         </div>
         <button :class="'btn w-auto me-0 ' + this.linkForNextExercise()" style="background-color: #292c63; color: #f4f7fa;"
@@ -79,6 +86,7 @@
               @step="(i) => stepServerData = i "
               @allP="(i) => rerenderAllPacks(i)"
               @completeExercise="(i) => exerciseComplete = i"
+              @completeApparat="(i) => changeBlockYellow(i)"
             />
           </div>
         </div>
@@ -146,6 +154,11 @@ export default {
     this.sessionId = this.$session.get('session_id');
     console.log("SESSION_ID: " + this.sessionId);
 
+    if (this.$route.query.sec && this.$route.query.min) {
+      this.sec = this.$route.query.sec;
+      this.min = this.$route.query.min;
+    }
+
   },
 
   mounted(){
@@ -173,7 +186,8 @@ export default {
   watch: {
     sec(time) {
       if (time === 0) {
-        this.stopTimer()
+        //this.stopTimer();
+        console.log("STOP TIMER");
       }
     }
   },
@@ -184,17 +198,23 @@ export default {
          if(this.sec%60 == 0 && this.sec != 0){
             this.min++;
             this.sec = 0;
+            console.log(this.min, "min");
           }
       }, 1000)
     },
     stopTimer() {
       clearTimeout(this.timer)
     },
-    goToPath(route, normative_id = 0, is_training = 1) {
+    goToPath(route, normative_id = 0, is_training = 1, min = 0, sec = 0) {
       console.log("ROUTE: " + route);
       console.log("NORM: " + normative_id);
-      this.$router.push({path: route, query: { norm: normative_id , it: is_training}});
+      this.$router.push({path: route, query: { norm: normative_id , it: is_training, min: min, sec: sec}});
       window.location.reload();
+    },
+    changeBlockYellow(apparat_id){
+      let packId = hwCmpHandler.findHardwareById(apparat_id, this.allPacks.blocks);
+      this.allPacks.blocks[packId].next_status = 0;
+      this.rerenderStatmentSideBar++;
     },
     getNextExercisePathId() {
       console.log("getNextExercisePathId()");
@@ -252,8 +272,11 @@ export default {
       console.log(text);
     },
     linkForNextExercise() {
-      if (this.exerciseComplete && this.$route.query.norm < 19)
+      if (this.exerciseComplete && this.$route.query.norm < 19) {
+        this.stopTimer();
+        this.goToPath('/p-302-o', this.getNextExercisePathId(), this.is_tr, this.min, this.sec);
         return "";
+      }
       return "d-none";
     },
     exportJSON() {
@@ -303,6 +326,7 @@ export default {
           is_tr = false;
         else
           is_tr = true;
+        
         serverHandler.sendFirst(v.$session.get('session_id'), is_tr, v.exersiseId, String(v.$route.query.norm));
         serverHandler.socket.onopen = function() {
           console.log("ONOPEN!");
