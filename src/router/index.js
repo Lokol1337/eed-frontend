@@ -12,6 +12,7 @@ import P3020 from '@/views/P302O.vue';
 import P3306 from '@/views/P3306.vue';
 import P327_2 from '@/views/P327-2.vue';
 import MAIN from '@/views/MAIN.vue';
+import EDITOR from '@/views/EDITOR/editor.vue';
 
 Vue.use(VueRouter);
 
@@ -60,6 +61,11 @@ const routes = [
     path: '/main',
     name: 'main',
     component: MAIN,
+  },
+  {
+    path: '/editor',
+    name: 'editor',
+    component: EDITOR,
   }
 ];
 
