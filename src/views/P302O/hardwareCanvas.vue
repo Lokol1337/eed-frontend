@@ -267,6 +267,11 @@ export default {
               console.log("ДАННЫЕ С СЕРВЕРА ПОЛУЧЕНЫ!");
             
               if (v.serverHandler.is_training) {
+                console.log("BLOCK_END", server_data['block_end']);
+                if(server_data['block_end']) {
+                  console.log("APPARAT COMPLETED! Delete yellow!");
+                  v.$emit('completeApparat',server_data['block_end_id']);
+                }
                 console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
                 if(server_data['fail']){
                   alert("Попытка провалена");
