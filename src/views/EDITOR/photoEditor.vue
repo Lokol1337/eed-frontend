@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" style="height: 100%;">
         <div class="impContainer" id="impContainer">
             <link rel="stylesheet"
                 href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -22,9 +22,18 @@
                 }"></div>
             </div>
         </div>
-        <canvas id="cutImage"></canvas>
+        <div id="canvasContainer" style="display: none;">
+            <br><br>
 
-        <button class="" @click="cutPhoto">Обезать</button>
+            <canvas id="cutImage"></canvas>
+            <br><br>
+            <button class="customBtn" @click="cutPhoto">Обрезать</button>
+
+            <br><br>
+
+            <a id="dimg" class="customBtn">download</a>
+        </div>
+
 
     </div>
 </template>
@@ -54,6 +63,7 @@ export default {
                 imageContainer.src = URL.createObjectURL(files);
                 this.photoSrc = imageContainer.src
                 localStorage.setItem('myImage', imageContainer.src);
+                document.getElementById('canvasContainer').style.display = '';
             }
             imageContainer.src = localStorage.getItem('myImage');
         },
@@ -126,13 +136,12 @@ export default {
                 const startImg = document.getElementById('image');
                 const left = this.fTapX - startImg.offsetLeft;
                 const top = this.fTapY - startImg.offsetTop;
-                console.log(left, top, this.canvasWidht, this.canvasHeight);
                 canvas.width = this.canvasWidht;
                 canvas.height = this.canvasHeight;
-                ctx.drawImage(image, left, top, this.canvasWidht, this.canvasHeight, 0 , 0 , this.canvasWidht, this.canvasHeight);
+                ctx.drawImage(image, left, top, this.canvasWidht, this.canvasHeight, 0, 0, this.canvasWidht, this.canvasHeight);
             };
-
             image.src = this.photoSrc;
+            document.getElementById('dimg').href = canvas.toDataURL();
 
 
         }

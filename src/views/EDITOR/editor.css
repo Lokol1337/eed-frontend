@@ -7,6 +7,7 @@ input[type="file"]{
 .impContainer{
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 100%;
 }
 
@@ -50,4 +51,19 @@ input[type="file"]{
 .canvasBorders{
     position: absolute;
     border: 1px dashed red;
+}
+
+.customBtn{
+    border: 1px solid rgb(49, 113, 210);
+    border-radius: 9px;
+    padding: 0.4rem;
+    background-color:white;
+    transition: all ease-in 0.2s;
+
+}
+.customBtn:hover{
+    background-color: rgb(49, 113, 210);
+    color: white;
+    transition: all ease-in 0.2s;
+
 }
