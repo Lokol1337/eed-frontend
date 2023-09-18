@@ -59,7 +59,8 @@ input[type="file"]{
     padding: 0.4rem;
     background-color:white;
     transition: all ease-in 0.2s;
-
+    text-decoration: none;
+    cursor: pointer;
 }
 .customBtn:hover{
     background-color: rgb(49, 113, 210);
@@ -67,3 +68,9 @@ input[type="file"]{
     transition: all ease-in 0.2s;
 
 }
+
+.img {
+    width: 100%;
+    height: 100%;
+}
+
