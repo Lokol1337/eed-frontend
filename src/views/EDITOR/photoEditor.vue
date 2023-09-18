@@ -120,12 +120,18 @@ export default {
             const canvas = document.getElementById("cutImage");
             const ctx = canvas.getContext("2d");
 
-            const image = new Image(60, 45);
+            const image = new Image;
+
             image.onload = () => {
+                const startImg = document.getElementById('image');
+                const left = this.fTapX - startImg.offsetLeft;
+                const top = this.fTapY - startImg.offsetTop;
+                console.log(left, top, this.canvasWidht, this.canvasHeight);
                 canvas.width = this.canvasWidht;
                 canvas.height = this.canvasHeight;
-                ctx.drawImage(image, this.fTapX, this.fTapY ,this.canvasWidht  , this.canvasHeight, 0 , 0, this.canvasWidht , this.canvasHeight);
+                ctx.drawImage(image, left, top, this.canvasWidht, this.canvasHeight, 0 , 0 , this.canvasWidht, this.canvasHeight);
             };
+
             image.src = this.photoSrc;
 
 
