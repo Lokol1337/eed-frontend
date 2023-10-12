@@ -1,19 +1,25 @@
 <template>
     <div class="container-fluid row">
-        <div class="col-9" @drop="dropBlock" @dragover="imgDown" id="dropzone" >
-            <img class="img" src="./Jellyfish.jpg" />
+        <div class="col-10" id="dropzone">
+            <img @drop="dropBlock" @dragover="imgDown" class="img" src="./p-327-2_1_clear.png" />
         </div>
-        <div class="col-3">
+        <div class="col-2">
             <div class="">
-                <div @click="showBlocks">
+                <button class="editorBtn" @click="showBlocks">
                     Кнопки
-                </div>
+                </button>
                 <div class="container-fluid g-0 row" style="display: none;">
                     <div class="col-6">
-                        <img draggable="true" width="50px" height="50px" class=" DDimage" src="./Penguins.jpg" @drag="imgDown" @dragstart ="addBlock" />
+                        <img draggable="true" width="30px" height="30px" class="DDimage" src="./p-327-2_1_control_5.png"
+                            @drag="imgDown" @dragstart="addBlock" />
+                    </div>
+                    <div class="col-6">
+                        <img draggable="true" width="30px" height="30px" class="DDimage"
+                            src="./non-state-button-white-frame-1.png" @drag="imgDown" @dragstart="addBlock" />
                     </div>
                 </div>
             </div>
+            <div class="delzone" id="delzone" @drop="dropBlock" @dragover="imgDown"></div>
         </div>
     </div>
 </template>
@@ -24,27 +30,64 @@ export default {
     data() {
         return {
             curEl: null,
+            curElClone: null,
+            leftInBlock: null,
+            topInBlock: null,
+            shiftX: null,
+            shiftY: null,
         }
     },
     methods: {
         showBlocks(e) {
-            e.target.nextSibling.style.display = '';
+            if (e.target.nextSibling.style.display === 'none')
+                e.target.nextSibling.style.display = '';
+            else
+                e.target.nextSibling.style.display = 'none';
+
         },
         addBlock(e) {
             if (e.target.classList.contains('DDimage')) {
+                this.curElClone = e.target.cloneNode(true);
                 this.curEl = e.target;
             }
-            console.log('start');
+            this.shiftX = e.clientX - e.target.getBoundingClientRect().left;
+            this.shiftY = e.clientY - e.target.getBoundingClientRect().top;
+        },
+        moveBlock(e) {
+            if (e.target.classList.contains('DDimageMove')) {
+                this.curElClone = e.target.cloneNode(true);
+                this.curEl = e.target;
+            }
+            this.shiftX = e.clientX - e.target.getBoundingClientRect().left;
+            this.shiftY = e.clientY - e.target.getBoundingClientRect().top;
         },
         dropBlock(e) {
-            this.curEl.style.position = 'absolute';
-            this.curEl.style.left = e.pageX - e.target.getBoundingClientRect().left + 'px';
-            this.curEl.style.top = e.pageY -  e.target.getBoundingClientRect().top + 'px';
-            this.curEl.style.width = 50 + 'px';
-            this.curEl.style.height = 50 + 'px';
+            let delzone = document.getElementById('delzone');
+            if (e.target === delzone && !this.curEl.classList.contains('DDimage')) {
+                this.curEl.remove();
+                return;
+            }
+            if (e.target === delzone && this.curEl.classList.contains('DDimage'))
+                return;
+            let dropzone = document.getElementById('dropzone');
+            this.curElClone.style.position = 'absolute';
 
-            document.getElementById('dropzone').appendChild(this.curEl);
-            this.curEl = null;
+            this.curElClone.style.left = e.pageX - this.shiftX + 'px'; // абсолютное позиционирование 
+            this.curElClone.style.top = e.pageY - this.shiftY + 'px';  // абсолютное позиционирование
+            this.curElClone.addEventListener('dragstart', this.moveBlock);
+            if (this.curEl.classList.contains('DDimageMove')) {
+                this.curEl.remove();
+            }
+            this.curElClone.classList.add('DDimageMove');
+            this.curElClone.classList.remove('DDimage');
+
+
+            dropzone.appendChild(this.curElClone);
+
+            this.leftInBlock = this.curElClone.style.left - dropzone.offsetLeft;// относительное позиционирование
+            this.topInBlock = this.curElClone.style.top - dropzone.offsetTop;// относительное позиционирование
+
+            this.curElClone = null;
         },
         imgDown(e) {
             e.preventDefault();
