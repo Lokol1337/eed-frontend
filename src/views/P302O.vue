@@ -1,97 +1,89 @@
 <template>
-  
   <div class="p-330-6">
     <div class="container-fluid pt-4">
       <div class="row">
         <div class="col-1 p-0">
 
-          <div :key="rerenderStatmentSideBar"> 
-            <sideBarMenu  
-              :key="actualPack.name"
-              :allPacks="allPacks"
-              @selectPackParent="selectPackHandler"/>
+          <div :key="rerenderStatmentSideBar">
+            <sideBarMenu :key="actualPack.name" :allPacks="allPacks" @selectPackParent="selectPackHandler" />
           </div>
-          
+
         </div>
         <div class="col-11">
           <div class="row justify-content-between">
             <div class="col-auto">
               <nav aria-label="breadcrumb hidden ">
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <a href="/eed-frontend/#/main" class="svgHome">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 59 576 512" class="uk-icon-up2 uk-svg" width="20" height="20"><path d="M496 512H368a16 16 0 0 1-16-16V368a16 16 0 0 0-16-16h-96a16 16 0 0 0-16 16v128a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V311c1.78-1.21 3.85-1.89 5.47-3.35L288 115l218.74 192.9c1.54 1.38 3.56 2 5.26 3.2V496a16 16 0 0 1-16 16z" class="fa-secondary"></path><path d="M527.92 283.88L298.6 81.61a16 16 0 0 0-21.17 0L48.11 283.89a16 16 0 0 1-22.59-1.21L4.1 258.89a16 16 0 0 1 1.21-22.59l256-226a39.85 39.85 0 0 1 53.45 0L416 99.67V48a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v136.43l58.69 51.83a16 16 0 0 1 1.22 22.59l-21.4 23.82a16 16 0 0 1-22.59 1.21z" class="fa-primary"></path></svg>
-                  </a>
-                </li>
-                <li class="breadcrumb-item">
-                  П-302-0
-                </li>
-                <li class="breadcrumb-item">
-                  {{actualPack.name}}
-                </li>
+                  <li class="breadcrumb-item">
+                    <a href="/eed-frontend/#/main" class="svgHome">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 59 576 512" class="uk-icon-up2 uk-svg" width="20"
+                        height="20">
+                        <path
+                          d="M496 512H368a16 16 0 0 1-16-16V368a16 16 0 0 0-16-16h-96a16 16 0 0 0-16 16v128a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V311c1.78-1.21 3.85-1.89 5.47-3.35L288 115l218.74 192.9c1.54 1.38 3.56 2 5.26 3.2V496a16 16 0 0 1-16 16z"
+                          class="fa-secondary"></path>
+                        <path
+                          d="M527.92 283.88L298.6 81.61a16 16 0 0 0-21.17 0L48.11 283.89a16 16 0 0 1-22.59-1.21L4.1 258.89a16 16 0 0 1 1.21-22.59l256-226a39.85 39.85 0 0 1 53.45 0L416 99.67V48a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v136.43l58.69 51.83a16 16 0 0 1 1.22 22.59l-21.4 23.82a16 16 0 0 1-22.59 1.21z"
+                          class="fa-primary"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    П-302-0
+                  </li>
+                  <li class="breadcrumb-item">
+                    {{ actualPack.name }}
+                  </li>
                 </ol>
-                
+
               </nav>
-              </div>
-              <div class="col-auto me-4">
-                <!-- (10 > min)?('0' + min):min +  ':' + (10 > sec)?('0' + sec):sec  -->
-                {{(10 > min)?('0' + min):min }}
-                :
-                {{(10 > sec)?('0' + sec):sec }}
-              </div>
-              </div>
-        </div> 
+            </div>
+            <div class="col-auto me-4">
+              <!-- (10 > min)?('0' + min):min +  ':' + (10 > sec)?('0' + sec):sec  -->
+              {{ (10 > min) ? ('0' + min) : min }}
+              :
+              {{ (10 > sec) ? ('0' + sec) : sec }}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-      
+
 
     <div class="container-fluid pb-5">
       <div class="row mb-3 justify-content-center">
         <div class="col-12 mt-3 mb-1">
           <div class="d-inline-flex">
-            <div :class="'spinner-border me-3 ' + this.waitingServer()" role="status" style="width: 1.5rem; height: 1.5rem; ">
+            <div :class="'spinner-border me-3 ' + this.waitingServer()" role="status"
+              style="width: 1.5rem; height: 1.5rem; ">
               <span class="sr-only"></span>
             </div>
-            <p id="p-annotation" class="text-center text-break m-0"> {{(this.is_tr == 1) ? this.annotation : ""}}</p>
+            <p id="p-annotation" class="text-center text-break m-0"> {{ (this.is_tr == 1) ? this.annotation : "" }}</p>
           </div>
         </div>
-        <button :class="'btn w-auto me-0 ' + this.linkForNextExercise()" style="background-color: #292c63; color: #f4f7fa;"
+        <button :class="'btn w-auto me-0 ' + this.linkForNextExercise()"
+          style="background-color: #292c63; color: #f4f7fa;"
           @click.prevent="goToPath('/p-302-o', getNextExercisePathId(), is_tr)">Перейти к следующему шагу</button>
         <!-- <div class="col-3 d-flex align-items-center justify-content-center">
         </div> -->
       </div>
-      <div class="row " >
+      <div class="row ">
         <div class="col-auto col-sm-auto col-md-auto col-lg-auto col-xl-auto p-0">
           <div style="width: 85px;">
           </div>
         </div>
-        <div id="canvasBlock" class="col-9 col-sm-9 col-md-10 col-lg-11 col-xl-11 p-0" 
-          style="width: auto">
-          
-          <div id="mainBlock" class="hardware-view-page__canvas-wrp" :key="rerenderStatment" :style="{zoom: `${zoom}%`}">
-            <hardwareCanvas
-              v-for="pack in allPacks.blocks"
-              :key="pack.name"
-              :id = "'block' + pack.id"
-              v-show="pack.name === actualPack.name"
-              style = "z-index: 2!important;"
-              :hardwareComponents="pack.components"
-              :bgImage="pack.background"
-              :backgroundSettings="pack.backgroundSettings"
-              :sessionId="sessionId"
-              :serverHandler="serverHandler"
-              :stepServerData="stepServerData"
-              :zoom = "zoom"
-              @ann="(i) => annotation = i"
-              @step="(i) => stepServerData = i "
-              @allP="(i) => rerenderAllPacks(i)"
-              @completeExercise="(i) => exerciseComplete = i"
-              @completeApparat="(i) => changeBlockYellow(i)"
-            />
+        <div id="canvasBlock" class="col-9 col-sm-9 col-md-10 col-lg-11 col-xl-11 p-0" style="width: auto">
+
+          <div id="mainBlock" class="hardware-view-page__canvas-wrp" :key="rerenderStatment" :style="{ zoom: `${zoom}%` }">
+            <hardwareCanvas v-for="pack in allPacks.blocks" :key="pack.name" :id="'block' + pack.id"
+              v-show="pack.name === actualPack.name" style="z-index: 2!important;" :hardwareComponents="pack.components"
+              :bgImage="pack.background" :backgroundSettings="pack.backgroundSettings" :sessionId="sessionId"
+              :serverHandler="serverHandler" :stepServerData="stepServerData" :zoom="zoom" @ann="(i) => annotation = i"
+              @step="(i) => stepServerData = i" @allP="(i) => rerenderAllPacks(i)"
+              @completeExercise="(i) => exerciseComplete = i" @completeApparat="(i) => changeBlockYellow(i)" />
           </div>
         </div>
       </div>
-      
+
     </div>
   </div>
 </template>
@@ -118,7 +110,7 @@ export default {
       imgWidth: 0,
       imgId: 1,
       zoom: 80,
-      firstZoom:0,
+      firstZoom: 0,
       actualId: 1001,
       messageWaitingServer: "Ожидание ответа сервера...",
       annotation: "",
@@ -127,7 +119,7 @@ export default {
       sessionId: null,
       stepServerData: null,
       trainingStatus: true,
-      exersiseId: 0, 
+      exersiseId: 0,
       rerenderStatmentSideBar: 0,
       exerciseComplete: false,
       sec: 0,
@@ -148,7 +140,7 @@ export default {
     this.allPacks = hwCmpHandler.setNullImgIndex(this.allPacks);
     this.allPacks = hwCmpHandler.setNullBlocksActualStatus(this.allPacks);
     this.allPacks.blocks[hwCmpHandler.findHardwareById(this.actualPack.id, this.allPacks.blocks)].actual_status = 1;
-    
+
     this.$session.start();
     this.$session.set('session_id', Date.now().toString(32));
     this.sessionId = this.$session.get('session_id');
@@ -161,7 +153,7 @@ export default {
 
   },
 
-  mounted(){
+  mounted() {
 
     this.updateZoom();
     this.startTimer()
@@ -194,12 +186,12 @@ export default {
   methods: {
     startTimer() {
       this.timer = setInterval(() => {
-         this.sec++;
-         if(this.sec%60 == 0 && this.sec != 0){
-            this.min++;
-            this.sec = 0;
-            console.log(this.min, "min");
-          }
+        this.sec++;
+        if (this.sec % 60 == 0 && this.sec != 0) {
+          this.min++;
+          this.sec = 0;
+          console.log(this.min, "min");
+        }
       }, 1000)
     },
     stopTimer() {
@@ -208,10 +200,10 @@ export default {
     goToPath(route, normative_id = 0, is_training = 1, min = 0, sec = 0) {
       console.log("ROUTE: " + route);
       console.log("NORM: " + normative_id);
-      this.$router.push({path: route, query: { norm: normative_id , it: is_training, min: min, sec: sec}});
+      this.$router.push({ path: route, query: { norm: normative_id, it: is_training, min: min, sec: sec } });
       window.location.reload();
     },
-    changeBlockYellow(apparat_id){
+    changeBlockYellow(apparat_id) {
       let packId = hwCmpHandler.findHardwareById(apparat_id, this.allPacks.blocks);
       this.allPacks.blocks[packId].next_status = 0;
       this.rerenderStatmentSideBar++;
@@ -219,7 +211,7 @@ export default {
     getNextExercisePathId() {
       console.log("getNextExercisePathId()");
       console.log("normative_id: ", this.$route.query.norm);
-      if (this.$route.query.norm < 19) 
+      if (this.$route.query.norm < 19)
         return parseInt(this.$route.query.norm) + 1;
       return -1;
     },
@@ -229,23 +221,23 @@ export default {
         return "";
       return "d-none";
     },
-    rerenderAllPacks(i){
+    rerenderAllPacks(i) {
       this.allPacks = hwCmpHandler.uploadHwComponents_Training(this.allPacks, i);
       this.rerenderStatment++;
       this.rerenderStatmentSideBar++;
     },
-    updateZoom(){ 
+    updateZoom() {
       console.log("updateZoom()");
       this.imgId = this.actualPack.id;
 
       this.imgWidth = this.actualPack.backgroundSettings.width;
       console.log("imgWidth: " + this.imgWidth);
-      
-      if(this.width > this.imgWidth){
-        this.zoom = Math.floor((this.width - 100 - this.imgWidth)/this.imgWidth * 100) + 100;
+
+      if (this.width > this.imgWidth) {
+        this.zoom = Math.floor((this.width - 100 - this.imgWidth) / this.imgWidth * 100) + 100;
       }
-      else if(this.width < this.imgWidth){
-        this.zoom = Math.ceil((this.width - 100 - this.imgWidth)/this.imgWidth * 100) + 100;
+      else if (this.width < this.imgWidth) {
+        this.zoom = Math.ceil((this.width - 100 - this.imgWidth) / this.imgWidth * 100) + 100;
       }
       console.log("zoom: " + this.zoom);
       document.getElementById('mainBlock').style.zoom = this.zoom + '%';
@@ -314,27 +306,27 @@ export default {
         });
 
     },
-    async connect(){
+    async connect() {
       let v = this;
       // PROMISES: https://stackoverflow.com/questions/42304996/javascript-using-promises-on-websocket
-      return new Promise(function(resolve, reject) {
+      return new Promise(function (resolve, reject) {
         let serverHandler = new ServerHandler();
         console.log(window.location.href);
         console.log(v.$route.query.norm, 'params');
         let is_tr;
-        if(v.$route.query.it == 0)
+        if (v.$route.query.it == 0)
           is_tr = false;
         else
           is_tr = true;
-        
+
         serverHandler.sendFirst(v.$session.get('session_id'), is_tr, v.exersiseId, String(v.$route.query.norm));
-        serverHandler.socket.onopen = function() {
+        serverHandler.socket.onopen = function () {
           console.log("ONOPEN!");
           serverHandler.socket.send(JSON.stringify(Array.from(serverHandler.sendData.entries())));
           resolve(serverHandler);
         };
 
-        serverHandler.socket.onerror = function(error) {
+        serverHandler.socket.onerror = function (error) {
           // alert(`[error] ${error.message}`);
           reject(error);
         };
@@ -344,10 +336,10 @@ export default {
       console.log("listenServer()");
       const v = this;
 
-      this.connect().then(function(serverHandler) {
+      this.connect().then(function (serverHandler) {
         console.log("ДОЖДАЛСЯ!");
         v.serverHandler = serverHandler;
-        if(v.$route.query.it == 0)
+        if (v.$route.query.it == 0)
           v.serverHandler.is_training = false;
         else
           v.serverHandler.is_training = true;
@@ -355,55 +347,55 @@ export default {
         v.rerenderStatment++;
         console.log("ufbgiqwewqehfbhewrnfjkn = == = == = == ", v.serverHandler.is_training);
         //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
-        v.serverHandler.socket.onmessage = function(event) {
-            try {
-              let server_data = v.serverHandler.parseServerData(event.data);
-              // v.serverHandler.changeStepServerData(server_data); // В идеале сделать так
-              if(v.serverHandler.checkData(v.data)) {
-                console.log("ДАННЫЕ С СЕРВЕРА ПОЛУЧЕНЫ!");
-                console.log("Я P302O");
-                if (v.serverHandler.is_training) {
-                  console.log("ТРЕНИРОВКА!!!");
-                  v.annotation = hwCmpHandler.getAnnotation(server_data);
-                  v.allPacks = hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data,false);
-                  console.log(typeof(server_data));
-                  v.stepServerData = server_data;
-                 
-                  if(server_data['is_random_step'])
-                    hwCmpHandler.setToRandomValue(v.allPacks,server_data);
-                  // Принудительное обновление <template> hardwareCanvas
-                  v.rerenderStatment++;
-                  v.rerenderStatmentSideBar++;
+        v.serverHandler.socket.onmessage = function (event) {
+          try {
+            let server_data = v.serverHandler.parseServerData(event.data);
+            // v.serverHandler.changeStepServerData(server_data); // В идеале сделать так
+            if (v.serverHandler.checkData(v.data)) {
+              console.log("ДАННЫЕ С СЕРВЕРА ПОЛУЧЕНЫ!");
+              console.log("Я P302O");
+              if (v.serverHandler.is_training) {
+                console.log("ТРЕНИРОВКА!!!");
+                v.annotation = hwCmpHandler.getAnnotation(server_data);
+                v.allPacks = hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data, false);
+                console.log(typeof (server_data));
+                v.stepServerData = server_data;
 
-                } else {
-                  console.log("НЕ ТРЕННИРОВКА");
-                  v.annotation = hwCmpHandler.getAnnotation(server_data);
-                  v.allPacks = hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data,true);
-                  if(server_data['is_random_step'])
-                    hwCmpHandler.setToRandomValue(v.allPacks,server_data);
-                    v.rerenderStatment++;
-                  v.rerenderStatmentSideBar++;
-                }
-                
+                if (server_data['is_random_step'])
+                  hwCmpHandler.setToRandomValue(v.allPacks, server_data);
+                // Принудительное обновление <template> hardwareCanvas
+                v.rerenderStatment++;
+                v.rerenderStatmentSideBar++;
+
               } else {
-                console.log("НЕВЕРНАЯ СТРУКТУРА ДАННЫХ СЕРВЕРА!");
+                console.log("НЕ ТРЕННИРОВКА");
+                v.annotation = hwCmpHandler.getAnnotation(server_data);
+                v.allPacks = hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data, true);
+                if (server_data['is_random_step'])
+                  hwCmpHandler.setToRandomValue(v.allPacks, server_data);
+                v.rerenderStatment++;
+                v.rerenderStatmentSideBar++;
               }
 
-            } 
-            catch (event) {
-              console.log("CATCH: " + event);
+            } else {
+              console.log("НЕВЕРНАЯ СТРУКТУРА ДАННЫХ СЕРВЕРА!");
             }
+
+          }
+          catch (event) {
+            console.log("CATCH: " + event);
+          }
         };
 
-        v.serverHandler.socket.onclose = function(event) {
-            if (event.wasClean) { 
-              //
-            } else {
-              //
-            }
+        v.serverHandler.socket.onclose = function (event) {
+          if (event.wasClean) {
+            //
+          } else {
+            //
+          }
         };
-          
-      }).catch(function(error) {
+
+      }).catch(function (error) {
         console.log("ОШИБКА ПОДКЛЮЧЕНИЯ К СЕРВЕРУ", error);
       });
     }
@@ -414,15 +406,14 @@ export default {
 
 
 <style lang="scss" scoped>
-
-
-.svgHome{
+.svgHome {
   fill: black;
 }
 
-.svgHome:hover{
+.svgHome:hover {
   fill: darkgrey;
 }
+
 .menu-btn {
   cursor: pointer;
   rotate: 180deg;
@@ -433,25 +424,31 @@ export default {
   border-radius: 50%;
   position: relative;
 }
+
 .menu-btn span,
 .menu-btn span::before,
 .menu-btn span::after {
   position: absolute;
-  top: 50%; margin-top: -1px;
-  left: 50%; margin-left: -10px;
+  top: 50%;
+  margin-top: -1px;
+  left: 50%;
+  margin-left: -10px;
   width: 20px;
   height: 2px;
   background-color: #222;
 }
+
 .menu-btn span::before,
 .menu-btn span::after {
   content: '';
   display: block;
   transition: 0.2s;
 }
+
 .menu-btn span::before {
   transform: translateY(-5px);
 }
+
 .menu-btn span::after {
   transform: translateY(5px);
 }
@@ -461,10 +458,10 @@ export default {
   width: 10px;
   transform-origin: left bottom;
 }
+
 .menu-btn_active span:after {
   transform: rotate(-35deg);
   width: 10px;
   transform-origin: left top;
 }
-
 </style>    

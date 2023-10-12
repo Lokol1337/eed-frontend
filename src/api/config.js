@@ -1,5 +1,5 @@
 const host = 'localhost'
 const port = 8083
 
-const $url =`wss://${host}:${port}`;
+const $url = `ws://${host}:${port}`;
 export default $url;

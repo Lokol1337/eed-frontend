@@ -12,7 +12,10 @@ import P3020 from '@/views/P302O.vue';
 import P3306 from '@/views/P3306.vue';
 import P327_2 from '@/views/P327-2.vue';
 import MAIN from '@/views/MAIN.vue';
-import EDITOR from '@/views/EDITOR/editor.vue';
+import EDITOR from '@/views/editor/editor.vue';
+import BLOCK_EDITOR from '@/views/editor/blockEditor.vue';
+import PHOTO_EDITOR from '@/views/editor/photoEditor.vue';
+import ELEMENT_EDITOR from '@/views/editor/elementEditor.vue';
 
 Vue.use(VueRouter);
 
@@ -66,6 +69,21 @@ const routes = [
     path: '/editor',
     name: 'editor',
     component: EDITOR,
+  },
+  {
+    path: '/blockEditor',
+    name: 'blockEditor',
+    component: BLOCK_EDITOR,
+  },
+  {
+    path: '/photoEditor',
+    name: 'photoEditor',
+    component: PHOTO_EDITOR,
+  },
+  {
+    path: '/elementEditor',
+    name: 'elementEditor',
+    component: ELEMENT_EDITOR,
   }
 ];
 

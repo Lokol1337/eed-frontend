@@ -1,8 +1,4 @@
 <template>
-    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
-    <!-- <link href="/path/to/cropper.css" rel="stylesheet"> -->
-    <!-- <script src="/path/to/cropper.js"></script> -->
-
     <div class="container" style="height: 100%;">
         <div class="impContainer" id="impContainer">
             <link rel="stylesheet"
@@ -47,8 +43,7 @@
 export default {
     data() {
         return {
-            photoTempUrl: '',
-            photoSrc: "",
+            photoSrc: '',
             fTapX: 0,
             fTapY: 0,
             curTapX: 0,
@@ -61,9 +56,7 @@ export default {
     },
     methods: {
         gotoElementEditor() {
-            console.log(this.photoSrc);
-            // console.log(document.getElementById('dimg').href);
-            // this.$router.push({ path: 'elementEditor' });
+            this.$router.push({ path: 'elementEditor' });
         },
         takePic(e) {
             let files = e.target.files[0];
@@ -72,7 +65,7 @@ export default {
             if (files) {
 
                 imageContainer.src = URL.createObjectURL(files);
-                this.photoTempUrl = imageContainer.src
+                this.photoSrc = imageContainer.src
                 localStorage.setItem('myImage', imageContainer.src);
                 document.getElementById('canvasContainer').style.display = '';
             }
@@ -151,11 +144,8 @@ export default {
                 canvas.height = this.canvasHeight;
                 ctx.drawImage(image, left, top, this.canvasWidht, this.canvasHeight, 0, 0, this.canvasWidht, this.canvasHeight);
             };
-            image.src = this.photoTempUrl;
-            if (canvas.toDataURL() != null) {
-                // document.getElementById('dimg').href = canvas.toDataURL();
-                this.photoSrc = canvas.toDataURL();
-            }
+            image.src = this.photoSrc;
+            document.getElementById('dimg').href = canvas.toDataURL();
 
 
         }

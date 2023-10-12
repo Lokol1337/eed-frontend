@@ -2815,6 +2815,18 @@
     "safe-buffer" "^5.0.1"
     "sha.js" "^2.4.8"
 
+"cropper@^4.1.0":
+  "integrity" "sha512-dNbkWNT606oMgRQ2aYMerDnPpSVLBMTWyERDHsDwih1ahJiVpyfSM9ev/n6G4ElfRG8t0shUZ5FXLg7YtmDdBQ=="
+  "resolved" "https://registry.npmjs.org/cropper/-/cropper-4.1.0.tgz"
+  "version" "4.1.0"
+  dependencies:
+    "cropperjs" "^1.5.6"
+
+"cropperjs@^1.5.6":
+  "integrity" "sha512-F4wsi+XkDHCOMrHMYjrTEE4QBOrsHHN5/2VsVAaRq8P7E5z7xQpT75S+f/9WikmBEailas3+yo+6zPIomW+NOA=="
+  "resolved" "https://registry.npmjs.org/cropperjs/-/cropperjs-1.6.1.tgz"
+  "version" "1.6.1"
+
 "cross-spawn@^5.0.1":
   "integrity" "sha1-6L0O/uWPz/b4+UUQoKVUu/ojVEk= sha512-pTgQJ5KC0d2hcY8eyL1IzlBPYjTkyH72XRZPnLyKus2mBfNjQs3klqbJU2VILqZryAZUt9JOb3h/mWMy23/f5A=="
   "resolved" "https://registry.npmjs.org/cross-spawn/-/cross-spawn-5.1.0.tgz"
@@ -5090,6 +5102,11 @@
   "integrity" "sha512-JVAfqNPTvNq3sB/VHQJAFxN/sPgKnsKrCwyRt15zwNCdrMMJDdcEOdubuy+DuJYYdm0ox1J4uzEuYKkN+9yhVg=="
   "resolved" "https://registry.npmjs.org/javascript-stringify/-/javascript-stringify-2.1.0.tgz"
   "version" "2.1.0"
+
+"jquery@^3.7.1", "jquery@>=1.9.1":
+  "integrity" "sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg=="
+  "resolved" "https://registry.npmjs.org/jquery/-/jquery-3.7.1.tgz"
+  "version" "3.7.1"
 
 "js-message@1.0.7":
   "integrity" "sha512-efJLHhLjIyKRewNS9EGZ4UpI8NguuL6fKkhRxVuMmrGV2xN/0APGdQYwLFky5w9naebSZ0OwAGp0G6/2Cg90rA=="
