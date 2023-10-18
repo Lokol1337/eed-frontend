@@ -53,7 +53,7 @@ export default {
         // constructor
     },
     created() {
-        console.log(this.$session.exists());
+        // console.log(this.$session.exists());
         if (!this.$session.exists()) {
             this.$session.start();
             // this.sessionId = this.$session.id();
@@ -61,7 +61,6 @@ export default {
 
         this.serverHandler = new ServerHandler(this.$session.id());
         this.serverHandler.connect();
-        alert("Закончил CREATED!");
     }
 };
 </script>

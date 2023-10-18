@@ -1,6 +1,8 @@
 
 import $url from '@/api/config.js';
 
+// export const this.socket = new WebSocket($url);
+
 export default class ServerHandler {
 
     serverData = null;
@@ -42,42 +44,45 @@ export default class ServerHandler {
 
         let sendingData = this.getFirstData();
         this.socket.onopen = () => {
-            alert("Соединение установлено.");
+            // alert("Соединение установлено.");
             this.socket.send(JSON.stringify(Array.from(sendingData.entries())));
         };
 
-        this.socket.onclose = function (event) {
-            if (event.wasClean) {
-                alert('Соединение закрыто чисто');
-            } else {
-                alert('Обрыв соединения'); // например, "убит" процесс сервера
-            }
-            alert('Код: ' + event.code + ' причина: ' + event.reason);
-        };
+        // this.socket.onclose = function (event) {
+        // if (event.wasClean) {
+        //     alert('Соединение закрыто чисто');
+        // } else {
+        //     alert('Обрыв соединения'); // например, "убит" процесс сервера
+        // }
+        // alert('Код: ' + event.code + ' причина: ' + event.reason);
+        // };
 
         let promise = new Promise((resolve) => {
             this.socket.onmessage = function (event) {
-                alert("Получены данные " + event.data);
+                // alert("Получены данные " + event.data);
                 resolve(event.data);
             };
         });
 
         await promise;
 
-        alert("ВЫШЕЛ ИЗ ФУНКЦИИ!");
+        // alert("ВЫШЕЛ ИЗ ФУНКЦИИ!");
     }
 
 
-    async sendData(sendData) {
+    async sendData(sendingData) {
 
         const v = this;
 
-        this.socket.send(JSON.stringify(Array.from(sendData.entries())));
+        this.socket.onopen = () => {
+            // alert("Соединение установлено.");
+            this.socket.send(JSON.stringify(Array.from(sendingData.entries())));
+        };
 
         var serverData = null;
         let promise = new Promise(function (resolve) {
             v.socket.onmessage = function (event) {
-                alert("onmessage(): " + event.data);
+                // alert("onmessage(): " + event.data);
                 resolve(event.data);
             };
 
@@ -106,6 +111,16 @@ export default class ServerHandler {
             ['apparat_name', apparat_name],
             ['apparat_description', apparat_description],
             ['operation', "addApparat"]
+        ]);
+    }
+
+    getCreateBlockData(apparat_id, block_name, src) {
+        return new Map([
+            ['session_hash', this.session_id],
+            ['apparat_id', apparat_id],
+            ['block_name', block_name],
+            ['src', src],
+            ['operation', "addBlock"]
         ]);
     }
 

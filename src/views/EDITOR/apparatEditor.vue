@@ -27,7 +27,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text">Описание аппаратуры</span>
           </div>
-          <textarea class="form-control" aria-label="With textarea"></textarea>
+          <textarea class="form-control" aria-label="With textarea" v-model="apparatDescription"></textarea>
         </div>
 
         <div class="d-flex justify-content-center mt-4">
@@ -63,10 +63,11 @@ export default {
   },
   methods: {
     gotoBlockEditor() {
-      this.handshake();
-      // this.$router.push({ path: 'blockEditor' });
+      this.send();
+      this.$router.push({ path: 'blockEditor' });
     },
-    async handshake() {
+    async send() {
+      this.serverHandler = new ServerHandler(this.$session.id());
       let sendingData = this.serverHandler.getCreateApparatData(this.apparatName, this.apparatDescription);
       this.serverHandler.sendData(sendingData);
     },

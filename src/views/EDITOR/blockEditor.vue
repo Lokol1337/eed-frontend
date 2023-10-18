@@ -6,21 +6,14 @@
             </div>
 
             <div class="flex-column mt-2">
-                <!-- <div class="d-flex justify-content-center">
-            <div class="d-flex">
-              <label for="input-apparatName" class="my-0 me-2"
-                >Введите название аппаратуры:
-              </label>
-              <input id="input-apparatName" type="text" />
-            </div>
-          </div> -->
+
 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text py-2" id="inputGroup-sizing-default">Название блока</span>
                     </div>
                     <input type="text" class="form-control py-2" aria-label="Default"
-                        aria-describedby="inputGroup-sizing-default" />
+                        aria-describedby="inputGroup-sizing-default" v-model="blockName"/>
                 </div>
 
 
@@ -43,15 +36,15 @@
 export default {
     data() {
         return {
-            apparatName: "",
-            apparatDescription: "",
+            apparatId: null,
+            blockName: "",
             flagCreateBlock: false
         };
     },
     methods: {
         gotoPhotoEditor() {
-            this.$router.push({ path: 'photoEditor' });
-        }
+            this.$router.push({ path: 'photoEditor', query: { apparatId: this.apparatId , blockName: this.blockName} });
+        },
     },
 };
 </script>

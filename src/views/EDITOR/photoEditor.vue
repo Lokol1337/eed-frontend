@@ -44,9 +44,15 @@
 </template>
 
 <script>
+import ServerHandler from '@/api/newServerHandler.js';
+
 export default {
     data() {
         return {
+            apparatId: null,
+            blockName: "",
+            originalWidth: null,
+            originalHeight: null,
             photoTempUrl: '',
             photoSrc: "",
             fTapX: 0,
@@ -59,19 +65,34 @@ export default {
             lTapY: 0
         }
     },
+    mounted() {
+        this.apparatId = this.$route.query.apparatId;
+        this.blockName = this.$route.query.blockName;
+
+        console.log(this.apparatId);
+        console.log(this.blockName);
+
+    },
     methods: {
         gotoElementEditor() {
-            console.log(this.photoSrc);
+            this.send();
+            // console.log(this.photoSrc);
             // console.log(document.getElementById('dimg').href);
             // this.$router.push({ path: 'elementEditor' });
         },
+        async send() {
+            this.serverHandler = new ServerHandler(this.$session.id());
+            
+            let sendingData = this.serverHandler.getCreateBlockData(
+                this.apparatId, this.blockName, this.photoSrc);
+            this.serverHandler.sendData(sendingData);
+        },
         takePic(e) {
-            let files = e.target.files[0];
+            let file = e.target.files[0];
             let imageContainer = document.getElementById('image');
             document.getElementById('impContainer').remove();
-            if (files) {
-
-                imageContainer.src = URL.createObjectURL(files);
+            if (file) {
+                imageContainer.src = URL.createObjectURL(file);
                 this.photoTempUrl = imageContainer.src
                 localStorage.setItem('myImage', imageContainer.src);
                 document.getElementById('canvasContainer').style.display = '';
@@ -156,9 +177,7 @@ export default {
                 // document.getElementById('dimg').href = canvas.toDataURL();
                 this.photoSrc = canvas.toDataURL();
             }
-
-
-        }
+        },
 
 
     }
