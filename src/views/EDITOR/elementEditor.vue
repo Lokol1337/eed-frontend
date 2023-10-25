@@ -5,18 +5,9 @@
         </div>
         <div class="col-2">
             <div class="">
-                <button class="editorBtn" @click="showBlocks">
-                    Кнопки
-                </button>
-                <div class="container-fluid g-0 row" style="display: none;">
-                    <div class="col-6">
-                        <img draggable="true" width="30px" height="30px" class="DDimage" src="./control/p-327-2_1_control_5.png"
-                            @drag="imgDown" @dragstart="addBlock" />
-                    </div>
-                    <div class="col-6">
-                        <img draggable="true" width="30px" height="30px" class="DDimage"
-                            src="./control/non-state-button-white-frame-1.png" @drag="imgDown" @dragstart="addBlock" />
-                    </div>
+                
+                <div class="container-fluid g-0 row" >
+                    
                 </div>
             </div>
             <div class="delzone" id="delzone" @drop="dropBlock" @dragover="imgDown"></div>
@@ -25,6 +16,7 @@
 </template>
 
 <script>
+import ServerHandler from '@/api/newServerHandler.js';
 
 export default {
     data() {
@@ -35,9 +27,31 @@ export default {
             topInBlock: null,
             shiftX: null,
             shiftY: null,
+            photoContainer: null,
         }
     },
+    mounted() {
+        this.apparatId = this.$route.query.apparatId;
+        this.blockName = this.$route.query.blockName;
+        console.log(this.apparatId);
+        console.log(this.blockName);
+    },
+    async created(){
+        await this.gotoElementEditor()
+    },
     methods: {
+        async gotoElementEditor() {
+            await this.send();
+        },
+        async send() {
+            this.serverHandler = new ServerHandler(this.$session.id());
+
+            let sendingData = this.serverHandler.getCreateElementsData();
+            let mes = await this.serverHandler.sendData(sendingData);
+            mes = JSON.parse(mes)
+
+            this.photoContainer = mes['elements']
+        },
         showBlocks(e) {
             if (e.target.nextSibling.style.display === 'none')
                 e.target.nextSibling.style.display = '';
@@ -92,6 +106,7 @@ export default {
         imgDown(e) {
             e.preventDefault();
         }
-    }
+    },
+   
 }
 </script>

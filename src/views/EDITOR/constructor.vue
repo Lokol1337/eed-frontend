@@ -35,7 +35,11 @@ export default {
             topInBlock: null,
             shiftX: null,
             shiftY: null,
+            apparatId: null,
         }
+    },
+    mounted() {
+        this.apparatId = this.$route.query.apparatId;
     },
     methods: {
         showBlocks(e) {

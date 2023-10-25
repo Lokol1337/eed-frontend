@@ -63,18 +63,25 @@ export default {
       status: false
     };
   },
+  mounted(){
+    this.apparatId = this.$route.query.apparatId;
+    this.apparatName = this.$route.query.apparatName;
+  },
   methods: {
-    gotoBlockEditor() {
-      this.send();
-      this.$router.push({ path: 'blockEditor', query: { apparatId: this.apparatId , blockName: this.blockName} });
+    async gotoBlockEditor() {
+      await this.send();
+      this.$router.push({ path: 'blockEditor', query: { apparatId: this.apparatId , apparatName: this.apparatName} });
     },
     async send() {
       this.serverHandler = new ServerHandler(this.$session.id());
       let sendingData = this.serverHandler.getCreateApparatData(this.apparatName, this.apparatDescription);
-      let mes = this.serverHandler.sendData(sendingData);
+      let mes = await this.serverHandler.sendData(sendingData);
+
+      mes = JSON.parse(mes)
+
       this.apparatId = mes['apparat_id']
       this.status = mes['status']
-      console.log(this.apparatId)
+
       if(!this.status){
         return
       }

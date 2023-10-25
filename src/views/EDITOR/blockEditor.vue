@@ -32,18 +32,32 @@
 </template>
   
 <script>
+import ServerHandler from '@/api/newServerHandler.js';
 
 export default {
     data() {
         return {
             apparatId: null,
-            blockName: "",
+            apparatName: "",
             flagCreateBlock: false
         };
     },
+    mounted(){
+        this.apparatId = this.$route.query.apparatId;
+        this.apparatName = this.$route.query.apparatName;
+        console.log(this.apparatId,' blockEditor.vue')
+    },
     methods: {
         gotoPhotoEditor() {
+            this.send();
             this.$router.push({ path: 'photoEditor', query: { apparatId: this.apparatId , blockName: this.blockName} });
+        },
+        async send() {
+            this.serverHandler = new ServerHandler(this.$session.id());
+            
+            let sendingData = this.serverHandler.getCreateBlockData(
+                this.apparatId, this.blockName, this.photoSrc );
+            this.serverHandler.sendData(sendingData);
         },
     },
 };

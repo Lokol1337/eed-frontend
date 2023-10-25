@@ -71,7 +71,6 @@ export default {
 
         console.log(this.apparatId);
         console.log(this.blockName);
-
     },
     methods: {
         gotoElementEditor() {
@@ -79,7 +78,7 @@ export default {
             // this.$route.push('/elementEditor').catch(() => {});
             // console.log(this.photoSrc);
             // console.log(document.getElementById('dimg').href);
-            this.$router.push({ path: 'elementEditor' });
+            this.$router.push({ path: 'elementEditor', query: { apparatId: this.apparatId , blockName: this.blockName} });
         },
         async send() {
             this.serverHandler = new ServerHandler(this.$session.id());

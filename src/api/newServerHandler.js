@@ -81,9 +81,10 @@ export default class ServerHandler {
         };
 
         var serverData = null;
-        let promise = new Promise(function (resolve) {
+        var promise = new Promise(function (resolve) {
             v.socket.onmessage = function (event) {
                 // alert("onmessage(): " + event.data);
+                serverData = v.parseServerData(event.data);
                 resolve(event.data);
             };
 
@@ -91,11 +92,10 @@ export default class ServerHandler {
             //     alert("Ошибка jnghfd: " + error.message);
             //     reject(error.message);
             // };
-        });
-        promise.then(function (data) {
-            serverData = v.parseServerData(data);
-        });
 
+        });
+        await promise
+        console.log(serverData)
         return serverData;
     }
 
@@ -124,6 +124,14 @@ export default class ServerHandler {
             ['operation', "addBlock"]
         ]);
     }
+
+    getCreateElementsData() {
+        return new Map([
+            ['session_hash', this.session_id],
+            ['operation', "loadElements"]
+        ]);
+    }
+    
 
 
     parseServerData(data) {
