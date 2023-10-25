@@ -70,8 +70,8 @@ export default {
         this.blockName = this.$route.query.blockName;
     },
     methods: {
-        gotoElementEditor() {
-            this.send();
+        async gotoElementEditor() {
+            await this.send();
             // this.$route.push('/elementEditor').catch(() => {});
             // console.log(this.photoSrc);
             // console.log(document.getElementById('dimg').href);
@@ -82,7 +82,10 @@ export default {
             
             let sendingData = this.serverHandler.getCreateBlockData(
                 this.apparatId, this.blockName, this.photoSrc );
-            this.serverHandler.sendData(sendingData);
+            let mes = await this.serverHandler.sendData(sendingData);
+            mes = JSON.parse(mes)
+            this.blockId = mes['block_id']
+            console.log('blockId', this.blockId)
         },
         takePic(e) {
             let file = e.target.files[0];

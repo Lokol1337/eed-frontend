@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid row">
         <div class="col-10" id="dropzone">
-            <img @drop="dropBlock" @dragover="imgDown" class="img" src="./p-327-2_1_clear.png" />
+            <img @drop="dropBlock" @dragover="imgDown" class="img" :src="'./' + mainPhoto" />
         </div>
         <div class="col-2">
             <div class="">
@@ -32,29 +32,34 @@ export default {
             shiftX: null,
             shiftY: null,
             photoContainer: null,
+            mainPhoto: null,
         }
     },
-    mounted() {
+    async mounted() {
         this.apparatId = this.$route.query.apparatId;
-        this.blockName = this.$route.query.blockName;
-        console.log(this.apparatId);
-        console.log(this.blockName);
-    },
-    async created(){
+        this.blockId = this.$route.query.blockId;
+        console.log(this.apparatId)
+        console.log(this.blockId)
         await this.gotoElementEditor()
     },
+    // async created(){
+    //     // await this.gotoElementEditor()
+    // },
     methods: {
         async gotoElementEditor() {
             await this.send();
         },
         async send() {
             this.serverHandler = new ServerHandler(this.$session.id());
-
-            let sendingData = this.serverHandler.getCreateElementsData();
+            console.log(this.apparatId)
+            console.log(this.blockId)
+            let sendingData = this.serverHandler.getCreateElementsData(this.apparatId, this.blockId);
             let mes = await this.serverHandler.sendData(sendingData);
             mes = JSON.parse(mes)
 
             this.photoContainer = mes['elements']
+            console.log('mainPhoto', this.mainPhoto)
+            this.mainPhoto = mes['src']
         },
         showBlocks(e) {
             if (e.target.nextSibling.style.display === 'none')
