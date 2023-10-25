@@ -43,7 +43,7 @@
 </template>
   
 <script>
-import ServerHandler from '@/api/newServerHandler.js';
+// import ServerHandler from '@/api/newServerHandler.js';
 
 export default {
     data() {
@@ -60,16 +60,18 @@ export default {
     },
     methods: {
         gotoPhotoEditor() {
-            this.send();
+            // this.send();
             this.$router.push({ path: 'photoEditor', query: { apparatId: this.apparatId, blockName: this.blockName } });
         },
-        async send() {
-            this.serverHandler = new ServerHandler(this.$session.id());
+        // async send() {
+        //     this.serverHandler = new ServerHandler(this.$session.id());
 
-            let sendingData = this.serverHandler.getCreateBlockData(
-                this.apparatId, this.blockName, this.photoSrc);
-            this.serverHandler.sendData(sendingData);
-        },
+        //     let sendingData = this.serverHandler.getCreateBlockData(
+        //         this.apparatId, this.blockName, this.photoSrc );
+        //     let mes = await this.serverHandler.sendData(sendingData);
+        //     // mes = JSON.parse(mes)
+
+        // },
     },
 };
 </script>

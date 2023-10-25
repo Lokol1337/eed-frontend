@@ -125,9 +125,11 @@ export default class ServerHandler {
         ]);
     }
 
-    getCreateElementsData() {
+    getCreateElementsData(apparat_id, block_id) {
         return new Map([
             ['session_hash', this.session_id],
+            ['apparat_id', apparat_id],
+            ['block_id', block_id],
             ['operation', "loadElements"]
         ]);
     }

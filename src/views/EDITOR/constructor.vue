@@ -41,6 +41,16 @@ export default {
     mounted() {
         this.apparatId = this.$route.query.apparatId;
     },
+    gotoElementEditor() {
+        this.send();
+    },
+    async send() {
+        this.serverHandler = new ServerHandler(this.$session.id());
+
+        let sendingData = this.serverHandler.getCreateBlockData(
+            this.apparatId, this.blockName, this.photoSrc );
+        this.serverHandler.sendData(sendingData);
+    },
     methods: {
         showBlocks(e) {
             if (e.target.nextSibling.style.display === 'none')

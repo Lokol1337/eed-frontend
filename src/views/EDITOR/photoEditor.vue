@@ -104,24 +104,33 @@ export default {
 
         this.apparatId = this.$route.query.apparatId;
         this.blockName = this.$route.query.blockName;
-
-        console.log(this.apparatId);
-        console.log(this.blockName);
     },
     methods: {
-        gotoElementEditor() {
-            this.send();
+        async gotoElementEditor() {
+            await this.send();
             // this.$route.push('/elementEditor').catch(() => {});
             // console.log(this.photoSrc);
             // console.log(document.getElementById('dimg').href);
+<<<<<<< HEAD
             this.$router.push({ path: 'elementEditor', query: { apparatId: this.apparatId, blockName: this.blockName } });
+=======
+            this.$router.push({ path: 'elementEditor', query: { apparatId: this.apparatId , blockId: this.blockId} });
+>>>>>>> 43dab7e04d557c1287c78d4fae7da2424579f67d
         },
         async send() {
             this.serverHandler = new ServerHandler(this.$session.id());
 
             let sendingData = this.serverHandler.getCreateBlockData(
+<<<<<<< HEAD
                 this.apparatId, this.blockName, this.photoSrc);
             this.serverHandler.sendData(sendingData);
+=======
+                this.apparatId, this.blockName, this.photoSrc );
+            let mes = await this.serverHandler.sendData(sendingData);
+            mes = JSON.parse(mes)
+            this.blockId = mes['block_id']
+            console.log('blockId', this.blockId)
+>>>>>>> 43dab7e04d557c1287c78d4fae7da2424579f67d
         },
         takePic(e) {
             let file = e.target.files[0];
