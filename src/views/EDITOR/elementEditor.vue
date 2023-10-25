@@ -7,7 +7,11 @@
             <div class="">
                 
                 <div class="container-fluid g-0 row" >
-                    
+                    <div v-for="photo in photoContainer"  :key="photo" class="col-6">
+                        <img draggable="true" width="30px" height="30px" class="DDimage" :src="'./' + photo"
+                            @drag="imgDown" @dragstart="addBlock" />
+                    </div>
+                
                 </div>
             </div>
             <div class="delzone" id="delzone" @drop="dropBlock" @dragover="imgDown"></div>
