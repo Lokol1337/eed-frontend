@@ -76,15 +76,16 @@ export default {
     methods: {
         gotoElementEditor() {
             this.send();
+            // this.$route.push('/elementEditor').catch(() => {});
             // console.log(this.photoSrc);
             // console.log(document.getElementById('dimg').href);
-            // this.$router.push({ path: 'elementEditor' });
+            this.$router.push({ path: 'elementEditor' });
         },
         async send() {
             this.serverHandler = new ServerHandler(this.$session.id());
             
             let sendingData = this.serverHandler.getCreateBlockData(
-                this.apparatId, this.blockName, this.photoSrc);
+                this.apparatId, this.blockName, this.photoSrc );
             this.serverHandler.sendData(sendingData);
         },
         takePic(e) {

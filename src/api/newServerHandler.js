@@ -77,6 +77,7 @@ export default class ServerHandler {
         this.socket.onopen = () => {
             // alert("Соединение установлено.");
             this.socket.send(JSON.stringify(Array.from(sendingData.entries())));
+            console.log(JSON.stringify(Array.from(sendingData.entries())))
         };
 
         var serverData = null;

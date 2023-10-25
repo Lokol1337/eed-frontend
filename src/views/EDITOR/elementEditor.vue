@@ -10,12 +10,12 @@
                 </button>
                 <div class="container-fluid g-0 row" style="display: none;">
                     <div class="col-6">
-                        <img draggable="true" width="30px" height="30px" class="DDimage" src="./p-327-2_1_control_5.png"
+                        <img draggable="true" width="30px" height="30px" class="DDimage" src="./control/p-327-2_1_control_5.png"
                             @drag="imgDown" @dragstart="addBlock" />
                     </div>
                     <div class="col-6">
                         <img draggable="true" width="30px" height="30px" class="DDimage"
-                            src="./non-state-button-white-frame-1.png" @drag="imgDown" @dragstart="addBlock" />
+                            src="./control/non-state-button-white-frame-1.png" @drag="imgDown" @dragstart="addBlock" />
                     </div>
                 </div>
             </div>

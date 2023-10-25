@@ -56,20 +56,28 @@ export default {
   },
   data() {
     return {
+      apparatId: '',
       apparatName: "",
       apparatDescription: "",
-      flagCreateBlock: false
+      flagCreateBlock: false,
+      status: false
     };
   },
   methods: {
     gotoBlockEditor() {
       this.send();
-      this.$router.push({ path: 'blockEditor' });
+      this.$router.push({ path: 'blockEditor', query: { apparatId: this.apparatId , blockName: this.blockName} });
     },
     async send() {
       this.serverHandler = new ServerHandler(this.$session.id());
       let sendingData = this.serverHandler.getCreateApparatData(this.apparatName, this.apparatDescription);
-      this.serverHandler.sendData(sendingData);
+      let mes = this.serverHandler.sendData(sendingData);
+      this.apparatId = mes['apparat_id']
+      this.status = mes['status']
+      console.log(this.apparatId)
+      if(!this.status){
+        return
+      }
     },
   },
 };
