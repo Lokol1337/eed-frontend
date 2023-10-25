@@ -1,16 +1,24 @@
 <template>
-    <div class="container-fluid row">
-        <div class="col-10" id="dropzone">
-            <img @drop="dropBlock" @dragover="imgDown" class="img" src="./p-327-2_1_clear.png" />
-        </div>
-        <div class="col-2">
-            <div class="">
-                
-                <div class="container-fluid g-0 row" >
-                    
-                </div>
+    <div>
+        <div class="mb-5 w-100 p-1" style="background-color: #292c63;">
+            <div class="d-flex justify-content-center align-items-center">
+                <img src="./../mirea2.png" height="40">
+                <h6 class="m-0" style="color: white">&nbsp;&nbsp;ВУЦ РТУ МИРЭА</h6>
             </div>
-            <div class="delzone" id="delzone" @drop="dropBlock" @dragover="imgDown"></div>
+        </div>
+        <div class="container-fluid row">
+            <div class="col-10" id="dropzone">
+                <img @drop="dropBlock" @dragover="imgDown" class="img" src="./p-327-2_1_clear.png" />
+            </div>
+            <div class="col-2">
+                <div class="">
+
+                    <div class="container-fluid g-0 row">
+
+                    </div>
+                </div>
+                <div class="delzone" id="delzone" @drop="dropBlock" @dragover="imgDown"></div>
+            </div>
         </div>
     </div>
 </template>
@@ -36,7 +44,7 @@ export default {
         console.log(this.apparatId);
         console.log(this.blockName);
     },
-    async created(){
+    async created() {
         await this.gotoElementEditor()
     },
     methods: {
@@ -107,6 +115,6 @@ export default {
             e.preventDefault();
         }
     },
-   
+
 }
 </script>
