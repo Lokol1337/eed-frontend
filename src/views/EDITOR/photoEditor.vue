@@ -27,7 +27,7 @@
 
     </div> -->
 
-        <div class="container" style="height: 100%;">
+        <div class="container-fluid" style="height: 100%;">
             <div class="impContainer" id="impContainer">
                 <link rel="stylesheet"
                     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -111,26 +111,17 @@ export default {
             // this.$route.push('/elementEditor').catch(() => {});
             // console.log(this.photoSrc);
             // console.log(document.getElementById('dimg').href);
-<<<<<<< HEAD
-            this.$router.push({ path: 'elementEditor', query: { apparatId: this.apparatId, blockName: this.blockName } });
-=======
-            this.$router.push({ path: 'elementEditor', query: { apparatId: this.apparatId , blockId: this.blockId} });
->>>>>>> 43dab7e04d557c1287c78d4fae7da2424579f67d
+            this.$router.push({ path: 'elementEditor', query: { apparatId: this.apparatId, blockId: this.blockId } });
         },
         async send() {
             this.serverHandler = new ServerHandler(this.$session.id());
 
             let sendingData = this.serverHandler.getCreateBlockData(
-<<<<<<< HEAD
                 this.apparatId, this.blockName, this.photoSrc);
-            this.serverHandler.sendData(sendingData);
-=======
-                this.apparatId, this.blockName, this.photoSrc );
             let mes = await this.serverHandler.sendData(sendingData);
             mes = JSON.parse(mes)
             this.blockId = mes['block_id']
             console.log('blockId', this.blockId)
->>>>>>> 43dab7e04d557c1287c78d4fae7da2424579f67d
         },
         takePic(e) {
             let file = e.target.files[0];
