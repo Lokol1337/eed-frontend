@@ -6,28 +6,9 @@
                 <h6 class="m-0" style="color: white">&nbsp;&nbsp;ВУЦ РТУ МИРЭА</h6>
             </div>
         </div>
-        <!-- <div>
 
-        <div class="mb-3">
-            <label for="formFile" class="form-label">Default file input example</label>
-            <input class="form-control" type="file" id="formFile">
-        </div>
-        <button type="button">Save Image File</button>
 
-        <br>
-        <br>
-
-        <div>
-            <div>Crop Mode</div>
-            <button type="button" @click="onClickSaveImageFileInCropMode">Save Image File (Crop)</button>
-            <button type="button" @click="onClickSaveCrop">Save Crop</button>
-            <VueSimpleImageEditor ref="cropCanvas" style="border: 1px solid red;" :width="1000" :height="1000"
-                :imageSrc="imageSrc" :imageObj="imageObj" isCropMode @changeImage="onChangeImage" />
-        </div>
-
-    </div> -->
-
-        <div class="container-fluid" style="height: 100%;">
+        <div class="container-fluid mb-5" style="height: 100%;">
             <div class="impContainer" id="impContainer">
                 <link rel="stylesheet"
                     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -40,7 +21,7 @@
             </div>
 
             <div class="imageContainer" @mousedown="takeBorder" @mouseup="stopBorder">
-                <img id="image" style="z-index: 0;">
+                <img id="image" style="z-index: 0; width: 100%;">
                 <div>
                     <div class="canvasBorders" id="canvasBorders" :style="{
                         display: 'none',
@@ -51,16 +32,19 @@
                     }"></div>
                 </div>
             </div>
-            <div id="canvasContainer" style="display: none;">
-                <br><br>
 
-                <canvas id="cutImage"></canvas>
-                <br><br>
-                <button class="customBtn" @click="cutPhoto">Обрезать</button>
-                <br><br>
 
-                <button class="btn btn-primary" @click="gotoElementEditor()">Далее</button>
+            <div id="canvasContainer" class="d-none">
             </div>
+
+            <button id="button-cutImage" class="btn btn-outline-success mt-3 me-0 d-none"
+                @click="cutPhoto">Обрезать</button>
+            <br><br>
+
+            <canvas id="cutImage" style="border-radius: 15px;"></canvas>
+            <br><br>
+
+            <button id="button-nextPage" class="btn btn-primary me-0 d-none" @click="gotoElementEditor()">Далее</button>
 
         </div>
     </div>
@@ -68,20 +52,14 @@
 
 <script>
 import ServerHandler from '@/api/newServerHandler.js';
-// import Vue from 'vue';
-// import VueSimpleImageEditor from 'vue-simple-image-editor';
-
-// Vue.use(VueSimpleImageEditor);
-
-// const IMAGE_PATH = 'images/backs/dp_small.jpg'
 
 export default {
     data() {
         return {
             apparatId: null,
             blockName: "",
-            originalWidth: null,
-            originalHeight: null,
+            koefWidth: null,
+            koefHeight: null,
             photoTempUrl: '',
             photoSrc: "",
             fTapX: 0,
@@ -91,15 +69,9 @@ export default {
             canvasWidht: 0,
             canvasHeight: 0,
             lTapX: 0,
-            lTapY: 0,
-            // imageSrc: IMAGE_PATH,
-            // imageObj: null,
-            // image: null
+            lTapY: 0
         }
     },
-    // components: {
-    //     VueSimpleImageEditor
-    // },
     mounted() {
 
         this.apparatId = this.$route.query.apparatId;
@@ -125,17 +97,27 @@ export default {
         },
         takePic(e) {
             let file = e.target.files[0];
+            console.log(file)
             let imageContainer = document.getElementById('image');
             document.getElementById('impContainer').remove();
             if (file) {
-                imageContainer.src = URL.createObjectURL(file);
-                this.photoTempUrl = imageContainer.src
-                localStorage.setItem('myImage', imageContainer.src);
-                document.getElementById('canvasContainer').style.display = '';
-            }
-            imageContainer.src = localStorage.getItem('myImage');
-        },
+                let objectUrl = URL.createObjectURL(file);
+                this.photoTempUrl = objectUrl
+                localStorage.setItem('myImage', objectUrl);
+                document.getElementById('canvasContainer').classList.remove('d-none');
 
+                var v = this;
+                imageContainer.onload = () => {
+                    v.koefWidth = imageContainer.naturalWidth / imageContainer.width;
+                    v.koefHeight = imageContainer.naturalHeight / imageContainer.height;
+                    // console.log(v.koefWidth + " " + v.koefHeight);
+                };
+                imageContainer.src = localStorage.getItem('myImage');
+
+                document.getElementById('button-cutImage').classList.remove('d-none');
+            }
+
+        },
         takeBorder(e) {
             e.preventDefault();
             this.fTapX = 0;
@@ -199,14 +181,18 @@ export default {
             const ctx = canvas.getContext("2d");
 
             const image = new Image;
+            var v = this;
 
             image.onload = () => {
                 const startImg = document.getElementById('image');
+                console.log(startImg)
                 const left = this.fTapX - startImg.offsetLeft;
                 const top = this.fTapY - startImg.offsetTop;
                 canvas.width = this.canvasWidht;
                 canvas.height = this.canvasHeight;
-                ctx.drawImage(image, left, top, this.canvasWidht, this.canvasHeight, 0, 0, this.canvasWidht, this.canvasHeight);
+                ctx.drawImage(image, left * v.koefWidth, top * v.koefHeight, this.canvasWidht * v.koefWidth, this.canvasHeight * v.koefHeight, 0, 0, this.canvasWidht, this.canvasHeight);
+                ctx.scale(0.1, 0.1);
+                document.getElementById('button-nextPage').classList.remove('d-none');
             };
             image.src = this.photoTempUrl;
             if (canvas.toDataURL() != null) {
@@ -214,73 +200,6 @@ export default {
                 this.photoSrc = canvas.toDataURL();
             }
         },
-
-        // onChangeImageFile(evt) {
-        //     this.imageSrc = null
-        //     this.imageObj = null
-        //     const files = evt.target.files
-        //     if (files.length > 0) {
-        //         const file = files[0]
-        //         const reader = new FileReader()
-        //         reader.onload = e => {
-        //             const image = new Image()
-        //             image.onload = e => {
-        //                 this.imageObj = image
-        //                 while (this.$refs.container.hasChildNodes()) {
-        //                     this.$refs.container.removeChild(this.$refs.container.firstChild)
-        //                 }
-        //                 this.$refs.container.appendChild(image)
-        //                 console.log(e.target.result)
-        //             }
-        //             image.src = e.target.result
-        //         }
-        //         reader.readAsDataURL(file)
-        //     } else {
-        //         this.imageSrc = IMAGE_PATH
-        //     }
-        // },
-        // onClickSaveImageFile() {
-        //     if (this.image) {
-        //         const { width, height } = this.image
-        //         const canvas = document.createElement('canvas')
-        //         canvas.width = width
-        //         canvas.height = height
-        //         canvas.getContext('2d').drawImage(this.image, 0, 0, width, height)
-        //         canvas.toBlob(function (blob) {
-        //             const downloadLink = document.createElement('a')
-        //             downloadLink.href = URL.createObjectURL(blob)
-        //             downloadLink.download = 'imageFile.jpeg'
-        //             document.body.appendChild(downloadLink)
-        //             downloadLink.click()
-        //             document.body.removeChild(downloadLink)
-        //         }, 'image/jpeg')
-        //     }
-        // },
-        // onClickSaveImageFileInMutliMode() {
-        //     this.$refs.multiCanvas.saveImageFile()
-        // },
-        // onClickSaveImageFileInMutliModeWithFixedCrop() {
-        //     this.$refs.multiCanvasWithFixedCrop.saveImageFile()
-        // },
-        // onClickSaveImageFileInResizeMode() {
-        //     this.$refs.resizeCanvas.saveImageFile()
-        // },
-        // onClickSaveImageFileInCropMode() {
-        //     this.$refs.cropCanvas.saveImageFile()
-        // },
-        // onClickSaveCrop() {
-        //     this.$refs.cropCanvas.crop()
-        // },
-        // onClickSaveImageFileInCropModeWithFixedCrop() {
-        //     this.$refs.cropCanvasWithFixedCrop.saveImageFile()
-        // },
-        // onClickSaveCropWithFixedCrop() {
-        //     this.$refs.cropCanvasWithFixedCrop.crop()
-        // },
-        // onChangeImage(image) {
-        //     this.image = image
-        // }
-
 
     }
 }
