@@ -179,9 +179,11 @@ export default {
         cutPhoto() {
             const canvas = document.getElementById("cutImage");
             const ctx = canvas.getContext("2d");
-
+            
             const image = new Image;
             var v = this;
+            
+            image.src = this.photoTempUrl;
 
             image.onload = () => {
                 const startImg = document.getElementById('image');
@@ -192,13 +194,15 @@ export default {
                 canvas.height = this.canvasHeight;
                 ctx.drawImage(image, left * v.koefWidth, top * v.koefHeight, this.canvasWidht * v.koefWidth, this.canvasHeight * v.koefHeight, 0, 0, this.canvasWidht, this.canvasHeight);
                 ctx.scale(0.1, 0.1);
-                document.getElementById('button-nextPage').classList.remove('d-none');
+                setTimeout(()=>{
+                    document.getElementById('button-nextPage').classList.remove('d-none');
+                    if (canvas.toDataURL() != null) {
+                        console.log("canvas.toDataURL() = ", canvas.toDataURL());
+                        this.photoSrc = canvas.toDataURL();
+                    }
+                }, 500)
             };
-            image.src = this.photoTempUrl;
-            if (canvas.toDataURL() != null) {
-                // document.getElementById('dimg').href = canvas.toDataURL();
-                this.photoSrc = canvas.toDataURL();
-            }
+
         },
 
     }
