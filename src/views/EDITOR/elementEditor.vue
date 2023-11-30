@@ -25,15 +25,26 @@
                 <div class="container-fluid border p-2 w-100" style="border-radius: 10px;">
 
                     <div class="g-0 row">
-                        <div v-for="photo in photoContainer" :key="photo" class="col-3">
-                            <img draggable="true" width="30px" height="30px" class="DDimage btn btn-ling p-0 mb-2"
-                                style="border-radius: 5px;" :src="'./' + photo" @drag="imgDown" @dragstart="addBlock" />
+                        <div v-for="photo in photoContainer" :key="photo" class="col-3 m-2">
+                            <div class="DDimage d-flex" draggable="true" @drag="imgDown" @dragstart="addBlock" style="border-radius: 5px;" >
+                                <img width="35px" height="35px" class="btn btn-link border p-1 m-0" draggable="false"
+                                 :src="'./' + photo"  />
+                                <div class="px-0 mx-0 rounded border d-none" style="background-color: rgba(255, 255, 255, 0.5);">
+                                    <div class="flex-column">
+                                    <p>Состояния:</p>
+                                    <div class="flex-column">
+
+                                    </div>
+                                    <button class="btn btn-success">Сохранить</button>
+                                </div>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
                 </div>
                 <div class="btn btn-outline border-danger bg-white text-danger py-3 mt-1 w-100" id="delzone"
-                    @drop="dropBlock" @dragover="imgDown" @mouseup="onTrashMouseUp" @mouseover="onTrashMouseOver">
+                    @drop="dropBlock" @dragover="imgDown" @mouseover="onTrashMouseOver">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-trash3-fill" viewBox="0 0 16 16">
                         <path
@@ -43,6 +54,7 @@
             </div>
         </div>
     </div>
+    
 </template>
 
 <script>
@@ -98,6 +110,7 @@ export default {
         //         trashElem.classList.add('bg-danger', 'text-white');
         //     }
         // },
+        
         onTrashMouseOver(e) {
             console.log("OVER");
             let trashElem = e.target;
@@ -117,10 +130,13 @@ export default {
 
         },
         addBlock(e) {
+            console.log("e:", e.target);
             if (e.target.classList.contains('DDimage')) {
                 this.curElClone = e.target.cloneNode(true);
                 this.curEl = e.target;
             }
+            console.log("curElClone:", this.curElClone);
+                console.log("curEl:", this.curEl);
             this.shiftX = e.clientX - e.target.getBoundingClientRect().left;
             this.shiftY = e.clientY - e.target.getBoundingClientRect().top;
         },
@@ -144,8 +160,10 @@ export default {
             if (e.target === delzone && this.curEl.classList.contains('DDimage'))
                 return;
             let dropzone = document.getElementById('dropzone');
-            this.curElClone.style.position = 'absolute';
 
+            console.log("dropBlock() -> curElClone: ", this.curElClone);
+
+            this.curElClone.style.position = 'absolute';
             this.curElClone.style.left = e.pageX - this.shiftX + 'px'; // абсолютное позиционирование 
             this.curElClone.style.top = e.pageY - this.shiftY + 'px';  // абсолютное позиционирование
             this.curElClone.addEventListener('dragstart', this.moveBlock);
