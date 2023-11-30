@@ -7,8 +7,13 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="d-flex justify-content-center">
+                <h4 style="font-weight: bold;">{{ blockName.toUpperCase() }}</h4>
+            </div>
+        </div>
 
-        <div class="container-fluid mb-5" style="height: 100%;">
+        <div class="container-fluid my-5" style="height: 100%;">
             <div class="impContainer" id="impContainer">
                 <link rel="stylesheet"
                     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />

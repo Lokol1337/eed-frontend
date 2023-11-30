@@ -7,9 +7,15 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="d-flex justify-content-center">
+                <h4 style="font-weight: bold;">{{ apparatName.toUpperCase() }}</h4>
+            </div>
+        </div>
 
         <div class="container pt-5 pb-5" style="height: 100%">
             <div class="row">
+
                 <div class="d-flex justify-content-center">
                     <h4>ДОБАВЛЕНИЕ БЛОКА</h4>
                 </div>
