@@ -8,7 +8,7 @@
         </div>
         <div class="container-fluid row">
             <div class="col-10" id="dropzone">
-                <img @drop="dropBlock" @dragover="imgDown" class="img" :src="'./' + mainPhoto"
+                <img @drop="dropElement" @dragover="imgDown" class="img" :src="'./' + mainPhoto"
                     style="border-radius: 15px;" />
             </div>
             <div class="col-2">
@@ -26,10 +26,11 @@
 
                     <div class="g-0 row">
                         <div v-for="photo in photoContainer" :key="photo" class="col-3 m-2">
-                            <div class="DDimage d-flex" draggable="true" @drag="imgDown" @dragstart="addBlock" style="border-radius: 5px;" >
+                            <div class="DDimage d-flex" draggable="true" @drag="imgDown" @dragstart="addElement" style="border-radius: 5px;" 
+                            @click="clickToElement">
                                 <img width="35px" height="35px" class="btn btn-link border p-1 m-0" draggable="false"
-                                 :src="'./' + photo"  />
-                                <div class="px-0 mx-0 rounded border d-none" style="background-color: rgba(255, 255, 255, 0.5);">
+                                 :src="'./' + photo" onclick="event.preventDefault();">
+                                <div class="condition-positions px-0 mx-0 rounded border d-none" style="background-color: rgba(255, 255, 255, 0.5);">
                                     <div class="flex-column">
                                     <p>Состояния:</p>
                                     <div class="flex-column">
@@ -44,7 +45,7 @@
                     </div>
                 </div>
                 <div class="btn btn-outline border-danger bg-white text-danger py-3 mt-1 w-100" id="delzone"
-                    @drop="dropBlock" @dragover="imgDown" @mouseover="onTrashMouseOver">
+                    @drop="dropElement" @dragover="imgDown" @mouseover="onTrashMouseOver">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-trash3-fill" viewBox="0 0 16 16">
                         <path
@@ -63,6 +64,7 @@ import ServerHandler from '@/api/newServerHandler.js';
 export default {
     data() {
         return {
+            choosedElement: null,
             curEl: null,
             curElClone: null,
             leftInBlock: null,
@@ -76,8 +78,8 @@ export default {
     async mounted() {
         this.apparatId = this.$route.query.apparatId;
         this.blockId = this.$route.query.blockId;
-        console.log(this.apparatId)
-        console.log(this.blockId)
+        // console.log(this.apparatId)
+        // console.log(this.blockId)
         await this.gotoElementEditor()
     },
     // async created(){
@@ -89,16 +91,31 @@ export default {
         },
         async send() {
             this.serverHandler = new ServerHandler(this.$session.id());
-            console.log(this.apparatId)
-            console.log(this.blockId)
+            // console.log(this.apparatId)
+            // console.log(this.blockId)
             let sendingData = this.serverHandler.getCreateElementsData(this.apparatId, this.blockId);
             let mes = await this.serverHandler.sendData(sendingData);
             mes = JSON.parse(mes)
 
             this.photoContainer = mes['elements']
-            console.log('mainPhoto', this.mainPhoto)
+            // console.log('mainPhoto', this.mainPhoto)
             this.mainPhoto = mes['src']
         },
+        clickToElement(event) {
+            let divParentElement = event.target.parentElement;
+            this.selectElement(divParentElement);
+        },
+        selectElement(divParentElement) {
+            console.log("CHOOSED ELEMENT: ", divParentElement);
+            this.choosedElement = divParentElement;
+            let divConditions = this.choosedElement.querySelector(".condition-positions");
+            console.log("DIV CONDITIONS: ", divConditions);
+            divConditions.classList.remove("d-none");
+        },
+        deselectElement() {
+            this.choosedElement = null;
+        },
+
         // onTrashMouseUp(e) {
         //     console.log("UP");
         //     let trashElem = e.target;
@@ -112,7 +129,7 @@ export default {
         // },
         
         onTrashMouseOver(e) {
-            console.log("OVER");
+            // console.log("OVER");
             let trashElem = e.target;
             if (trashElem.classList.contains('bg-danger')) {
                 trashElem.classList.remove('bg-danger', 'text-white');
@@ -129,29 +146,31 @@ export default {
                 e.target.nextSibling.style.display = 'none';
 
         },
-        addBlock(e) {
-            console.log("e:", e.target);
+        addElement(e) {
+            // console.log("e:", e.target);
             if (e.target.classList.contains('DDimage')) {
                 this.curElClone = e.target.cloneNode(true);
+                this.selectElement(this.curElClone);
                 this.curEl = e.target;
             }
-            console.log("curElClone:", this.curElClone);
-                console.log("curEl:", this.curEl);
+            // console.log("curElClone:", this.curElClone);
+                // console.log("curEl:", this.curEl);
             this.shiftX = e.clientX - e.target.getBoundingClientRect().left;
             this.shiftY = e.clientY - e.target.getBoundingClientRect().top;
         },
         moveBlock(e) {
             if (e.target.classList.contains('DDimageMove')) {
                 this.curElClone = e.target.cloneNode(true);
+                this.selectElement(this.curElClone);
                 this.curEl = e.target;
             } else if (e.target.id == "delzone") {
                 document.getElementById('delzone').classList.add("bg-danger", "text-white");
             }
-            console.log(e);
+            // console.log(e);
             this.shiftX = e.clientX - e.target.getBoundingClientRect().left;
             this.shiftY = e.clientY - e.target.getBoundingClientRect().top;
         },
-        dropBlock(e) {
+        dropElement(e) {
             let delzone = document.getElementById('delzone');
             if (e.target === delzone && !this.curEl.classList.contains('DDimage')) {
                 this.curEl.remove();
@@ -159,10 +178,9 @@ export default {
             }
             if (e.target === delzone && this.curEl.classList.contains('DDimage'))
                 return;
-            let dropzone = document.getElementById('dropzone');
-
-            console.log("dropBlock() -> curElClone: ", this.curElClone);
-
+            
+            // console.log("dropElement() -> curElClone: ", this.curElClone);
+            
             this.curElClone.style.position = 'absolute';
             this.curElClone.style.left = e.pageX - this.shiftX + 'px'; // абсолютное позиционирование 
             this.curElClone.style.top = e.pageY - this.shiftY + 'px';  // абсолютное позиционирование
@@ -172,8 +190,10 @@ export default {
             }
             this.curElClone.classList.add('DDimageMove');
             this.curElClone.classList.remove('DDimage');
-
-
+            
+            // console.log("dropElement() -> curElClone: ", this.curElClone);
+            
+            let dropzone = document.getElementById('dropzone');
             dropzone.appendChild(this.curElClone);
 
             this.leftInBlock = this.curElClone.style.left - dropzone.offsetLeft;// относительное позиционирование
