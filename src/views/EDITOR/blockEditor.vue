@@ -62,7 +62,7 @@ export default {
     mounted() {
         this.apparatId = this.$route.query.apparatId;
         this.apparatName = this.$route.query.apparatName;
-        (this.apparatId, ' blockEditor.vue')
+        console.log(this.apparatId, ' blockEditor.vue')
     },
     methods: {
         gotoPhotoEditor() {

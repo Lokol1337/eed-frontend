@@ -10,5 +10,5 @@ fs.readFile("../src/views/P302O/P302O.json", (err, data) => {
     });
   });
 
-  fs.writeFile("../src/views/P302O/P302O_1.json",JSON.stringify(obj),(err)=>{(err)})
+  fs.writeFile("../src/views/P302O/P302O_1.json",JSON.stringify(obj),(err)=>{console.log(err)})
 });

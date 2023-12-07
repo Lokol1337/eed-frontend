@@ -63,7 +63,7 @@
         }
         document.getElementById(pack.id).style.border = '3px solid green';
         this.actualPack = pack.name;
-        ("selectPack()");
+        console.log("selectPack()");
         // for(let i = 0; i<configs.lenght(); i++)
         this.$emit('selectPack', pack);
       }

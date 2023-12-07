@@ -106,7 +106,7 @@ export default {
       button = buttonItem[index];
       button.addEventListener('click', this.updateZoom);
     }
-      //(event.currentTarget.id);
+      //console.log(event.currentTarget.id);
     document.getElementById(this.imgId).click();
   },
   destroyed(){
@@ -146,7 +146,7 @@ export default {
 
       }
       else{
-        ('else');
+        console.log('else');
         document.getElementById('menuForShow').style.transform = 'translateX(100%)';
         document.getElementById('btnMenuForShow').style.transform = 'translateX(0%)';
         document.getElementById('btnMenuForShow').classList.remove('menu-btn_active');
@@ -188,7 +188,7 @@ export default {
       
       const $html = document.documentElement;
       const width = $html.clientWidth;
-      ("WIDTH: " + width);
+      console.log("WIDTH: " + width);
       this.width = width;
       this.updateZoom();
     },
@@ -197,7 +197,7 @@ export default {
       this.packForShow = pack.name;
     },
     inputTextHandler(text) {
-      (text);
+      console.log(text);
     },
     exportJSON() {
       const jsonFile = new Blob([JSON.stringify(this.actualPack)]);
@@ -230,7 +230,7 @@ export default {
           // TODO: добавит ререндер хардвер канваса
         })
         .catch((error) => {
-          (error);
+          console.log(error);
         });
 
     },

@@ -1,4 +1,4 @@
-("УРАААААааааа!");
+console.log("УРАААААааааа!");
 
 // подключение express
 const express = require("express");
@@ -25,7 +25,7 @@ const urlencodedParser = express.urlencoded({extended: false});
 
 app.post("/someEndpoint", urlencodedParser, function (request, response) {
   if(!request.body) return response.sendStatus(400);
-  (request.body);
+  console.log(request.body);
   let date = new Date();
   values.unshift({id:request.body.id, name:request.body.name, date: date.getHours().toString() + ":" + date.getMinutes().toString()+ ":" + date.getSeconds().toString() + "." + date.getMilliseconds().toString(), value:request.body.currentValue});
   response.send("ПОЛУЧИЛ POST");
@@ -33,7 +33,7 @@ app.post("/someEndpoint", urlencodedParser, function (request, response) {
 
 app.get("/clean", urlencodedParser, function (request, response) {
   values = []
-  ("Clean")
+  console.log("Clean")
   response.send("ПОЛУЧИЛ GET");
 });
 // начинаем прослушивать подключения на 3000 порту

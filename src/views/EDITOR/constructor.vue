@@ -72,11 +72,6 @@ export default {
                 this.curElClone = e.target.cloneNode(true);
                 this.curEl = e.target;
             }
-            (e.target)
-            ("ASDDDDIAGSDYUAHSUIDOASNHUODHOAUSIHDASU")
-            
-            e.target.classList.add("d-none")
-
             this.shiftX = e.clientX - e.target.getBoundingClientRect().left;
             this.shiftY = e.clientY - e.target.getBoundingClientRect().top;
         },

@@ -200,14 +200,14 @@ export default {
       this.sendRequest(hardwareComponent);
     },
     selectComponentHandler(component) {
-      ("added component");
+      console.log("added component");
       this.hardwareComponentsData.push({...component});
     },
     isNeedToChangeYellow(hardwareComponent) {
       let arrayNextActions = this.stepServerData['next_actions']; // может не работать
       let nextAction = this.serverHandler.findNextActionById(arrayNextActions, hardwareComponent.id);
       if (nextAction == null) {
-        ("isNeedToChangeYellow() -> notFound");
+        console.log("isNeedToChangeYellow() -> notFound");
         return false;
       } else {
         if (nextAction['currentValue'] == hardwareComponent.currentValue)
@@ -229,7 +229,7 @@ export default {
     findHardwareComponentById(id){
       let index = -1;
       this.hardwareComponents.forEach((element, i) => {
-        //(parseInt(element.id) + " ? " + parseInt(id) + " = " + (parseInt(element.id) == parseInt(id)));
+        //console.log(parseInt(element.id) + " ? " + parseInt(id) + " = " + (parseInt(element.id) == parseInt(id)));
         if (parseInt(element.id) == parseInt(id)) {
           index = i;
           return;
@@ -239,17 +239,17 @@ export default {
     },
     sendRequest(hardwareComponent) {
       
-      ("hardwareComponent",hardwareComponent);
+      console.log("hardwareComponent",hardwareComponent);
       let v = this;
       // let is_training = v.serverHandler.is_training;
       v.serverHandler = new ServerHandler();
       v.serverHandler.is_training = v.$route.query.it;
       // let socket = this.serverHandler.getSocket();
       v.serverHandler.sendElse(v.sessionId, hardwareComponent, hardwareComponent.hardZoomScale);
-      // ("SERVER SENDING_DATA: " + JSON.stringify(Array.from(this.serverHandler.sendData.entries())));
-      // (this.serverHandler.socket);
+      // console.log("SERVER SENDING_DATA: " + JSON.stringify(Array.from(this.serverHandler.sendData.entries())));
+      // console.log(this.serverHandler.socket);
       v.serverHandler.socket.onopen = function() {
-        ("ONOPEN!");
+        console.log("ONOPEN!");
         v.serverHandler.socket.send(JSON.stringify(Array.from(v.serverHandler.sendData.entries())));
       };    
       //TODO: Я ТУТ ПОДКОМЕНТИЛ, СЕЙЧАС РАБОТА НА ЧИСТОМ ДОВЕРИИИ!!!! 
@@ -261,25 +261,25 @@ export default {
       //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
       v.serverHandler.socket.onmessage = function(event) {
           try {
-            ("Я hardwareCanvas");
+            console.log("Я hardwareCanvas");
             let server_data = v.serverHandler.parseServerData(event.data);
             if(server_data) {
-              ("ДАННЫЕ С СЕРВЕРА ПОЛУЧЕНЫ!");
+              console.log("ДАННЫЕ С СЕРВЕРА ПОЛУЧЕНЫ!");
             
               if (v.serverHandler.is_training) {
-                ("BLOCK_END", server_data['block_end']);
+                console.log("BLOCK_END", server_data['block_end']);
                 if(server_data['block_end']) {
-                  ("APPARAT COMPLETED! Delete yellow!");
+                  console.log("APPARAT COMPLETED! Delete yellow!");
                   v.$emit('completeApparat',server_data['block_end_id']);
                 }
-                ("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+                console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
                 if(server_data['fail']){
                   alert("Попытка провалена");
-                  ("failfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfail");
+                  console.log("failfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfail");
                 }
                 else if(!server_data['finish']){
                   if(server_data['status']){
-                    (server_data['status']);
+                    console.log(server_data['status']);
                     if(server_data['status'] == "correct" && server_data['validation'] == false){
                       v.changeYellow(hardwareComponent);
                     }
@@ -306,7 +306,7 @@ export default {
                   v.$emit('step',server_data);
                   v.$emit('allP',server_data);
                   v.$emit('completeExercise', true);
-                  ("EXERCISE FINISHED!");
+                  console.log("EXERCISE FINISHED!");
                 }
                 
                 else{
@@ -314,15 +314,15 @@ export default {
                 }
               }
               else {
-                ("НЕ ТРЕННИРОВКА");
+                console.log("НЕ ТРЕННИРОВКА");
               }
             } 
             else {
-              ("НЕВЕРНАЯ СТРУКТУРА ДАННЫХ СЕРВЕРА!");
+              console.log("НЕВЕРНАЯ СТРУКТУРА ДАННЫХ СЕРВЕРА!");
             }
 
           } catch (event) {
-            (event);
+            console.log(event);
           }
       };
 
@@ -333,13 +333,13 @@ export default {
       //       //
       //     }
       // };
-      ("hardwareComponent",hardwareComponent);
+      console.log("hardwareComponent",hardwareComponent);
     },
   },
   created() {
     this.hardwareComponentsData = this.hardwareComponents;
-    // ("ServerHandler: " + this.serverHandler);
-    // ("hwSESSION_ID: " + this.sessionId);
+    // console.log("ServerHandler: " + this.serverHandler);
+    // console.log("hwSESSION_ID: " + this.sessionId);
   },
 };
 </script>

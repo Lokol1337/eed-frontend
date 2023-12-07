@@ -78,8 +78,8 @@ export default {
     async mounted() {
         this.apparatId = this.$route.query.apparatId;
         this.blockId = this.$route.query.blockId;
-        // (this.apparatId)
-        // (this.blockId)
+        // console.log(this.apparatId)
+        // console.log(this.blockId)
         await this.gotoElementEditor()
     },
     // async created(){
@@ -91,14 +91,14 @@ export default {
         },
         async send() {
             this.serverHandler = new ServerHandler(this.$session.id());
-            // (this.apparatId)
-            // (this.blockId)
+            // console.log(this.apparatId)
+            // console.log(this.blockId)
             let sendingData = this.serverHandler.getCreateElementsData(this.apparatId, this.blockId);
             let mes = await this.serverHandler.sendData(sendingData);
             mes = JSON.parse(mes)
 
             this.photoContainer = mes['elements']
-            // ('mainPhoto', this.mainPhoto)
+            // console.log('mainPhoto', this.mainPhoto)
             this.mainPhoto = mes['src']
         },
         clickToElement(event) {
@@ -106,10 +106,10 @@ export default {
             this.selectElement(divParentElement);
         },
         selectElement(divParentElement) {
-            ("CHOOSED ELEMENT: ", divParentElement);
+            console.log("CHOOSED ELEMENT: ", divParentElement);
             this.choosedElement = divParentElement;
             let divConditions = this.choosedElement.querySelector(".condition-positions");
-            ("DIV CONDITIONS: ", divConditions);
+            console.log("DIV CONDITIONS: ", divConditions);
             divConditions.classList.remove("d-none");
         },
         deselectElement() {
@@ -117,7 +117,7 @@ export default {
         },
 
         // onTrashMouseUp(e) {
-        //     ("UP");
+        //     console.log("UP");
         //     let trashElem = e.target;
         //     if (trashElem.classList.contains('bg-danger')) {
         //         trashElem.classList.remove('bg-danger', 'text-white');
@@ -129,7 +129,7 @@ export default {
         // },
         
         onTrashMouseOver(e) {
-            // ("OVER");
+            // console.log("OVER");
             let trashElem = e.target;
             if (trashElem.classList.contains('bg-danger')) {
                 trashElem.classList.remove('bg-danger', 'text-white');
@@ -147,14 +147,14 @@ export default {
 
         },
         addElement(e) {
-            // ("e:", e.target);
+            // console.log("e:", e.target);
             if (e.target.classList.contains('DDimage')) {
                 this.curElClone = e.target.cloneNode(true);
                 this.selectElement(this.curElClone);
                 this.curEl = e.target;
             }
-            // ("curElClone:", this.curElClone);
-                // ("curEl:", this.curEl);
+            // console.log("curElClone:", this.curElClone);
+                // console.log("curEl:", this.curEl);
             this.shiftX = e.clientX - e.target.getBoundingClientRect().left;
             this.shiftY = e.clientY - e.target.getBoundingClientRect().top;
         },
@@ -166,7 +166,7 @@ export default {
             } else if (e.target.id == "delzone") {
                 document.getElementById('delzone').classList.add("bg-danger", "text-white");
             }
-            // (e);
+            // console.log(e);
             this.shiftX = e.clientX - e.target.getBoundingClientRect().left;
             this.shiftY = e.clientY - e.target.getBoundingClientRect().top;
         },
@@ -179,7 +179,7 @@ export default {
             if (e.target === delzone && this.curEl.classList.contains('DDimage'))
                 return;
             
-            // ("dropElement() -> curElClone: ", this.curElClone);
+            // console.log("dropElement() -> curElClone: ", this.curElClone);
             
             this.curElClone.style.position = 'absolute';
             this.curElClone.style.left = e.pageX - this.shiftX + 'px'; // абсолютное позиционирование 
@@ -191,7 +191,7 @@ export default {
             this.curElClone.classList.add('DDimageMove');
             this.curElClone.classList.remove('DDimage');
             
-            // ("dropElement() -> curElClone: ", this.curElClone);
+            // console.log("dropElement() -> curElClone: ", this.curElClone);
             
             let dropzone = document.getElementById('dropzone');
             dropzone.appendChild(this.curElClone);

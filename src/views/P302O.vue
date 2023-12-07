@@ -145,7 +145,7 @@ export default {
     this.$session.start();
     this.$session.set('session_id', Date.now().toString(32));
     this.sessionId = this.$session.get('session_id');
-    ("SESSION_ID: " + this.sessionId);
+    console.log("SESSION_ID: " + this.sessionId);
 
     if (this.$route.query.sec && this.$route.query.min) {
       this.sec = this.$route.query.sec;
@@ -158,13 +158,13 @@ export default {
 
     this.updateZoom();
     this.startTimer()
-    ("start listenServer()");
+    console.log("start listenServer()");
     this.listenServer();
-    ("stepServerData: " + this.stepServerData);
-    ("serverHandler: " + this.serverHandler);
-    ("end listenServer()");
+    console.log("stepServerData: " + this.stepServerData);
+    console.log("serverHandler: " + this.serverHandler);
+    console.log("end listenServer()");
 
-    //(event.currentTarget.id);
+    //console.log(event.currentTarget.id);
     //document.getElementById(this.imgId).click();
   },
   destroyed() {
@@ -180,7 +180,7 @@ export default {
     sec(time) {
       if (time === 0) {
         //this.stopTimer();
-        ("STOP TIMER");
+        console.log("STOP TIMER");
       }
     }
   },
@@ -207,7 +207,7 @@ export default {
         if (this.sec % 60 == 0 && this.sec != 0) {
           this.min++;
           this.sec = 0;
-          (this.min, "min");
+          console.log(this.min, "min");
         }
       }, 1000)
     },
@@ -215,8 +215,8 @@ export default {
       clearTimeout(this.timer)
     },
     goToPath(route, normative_id = 0, is_training = 1, min = 0, sec = 0) {
-      ("ROUTE: " + route);
-      ("NORM: " + normative_id);
+      console.log("ROUTE: " + route);
+      console.log("NORM: " + normative_id);
       this.$router.push({ path: route, query: { norm: normative_id, it: is_training, min: min, sec: sec } });
       window.location.reload();
     },
@@ -226,14 +226,14 @@ export default {
       this.rerenderStatmentSideBar++;
     },
     getNextExercisePathId() {
-      ("getNextExercisePathId()");
-      ("normative_id: ", this.$route.query.norm);
+      console.log("getNextExercisePathId()");
+      console.log("normative_id: ", this.$route.query.norm);
       if (this.$route.query.norm < 19)
         return parseInt(this.$route.query.norm) + 1;
       return -1;
     },
     waitingServer() {
-      ("annotation: " + this.annotation);
+      console.log("annotation: " + this.annotation);
       if (this.annotation === this.messageWaitingServer)
         return "";
       return "d-none";
@@ -244,11 +244,11 @@ export default {
       this.rerenderStatmentSideBar++;
     },
     updateZoom() {
-      ("updateZoom()");
+      console.log("updateZoom()");
       this.imgId = this.actualPack.id;
 
       this.imgWidth = this.actualPack.backgroundSettings.width;
-      ("imgWidth: " + this.imgWidth);
+      console.log("imgWidth: " + this.imgWidth);
 
       if (this.width > this.imgWidth) {
         this.zoom = Math.floor((this.width - 100 - this.imgWidth) / this.imgWidth * 100) + 100;
@@ -256,29 +256,29 @@ export default {
       else if (this.width < this.imgWidth) {
         this.zoom = Math.ceil((this.width - 100 - this.imgWidth) / this.imgWidth * 100) + 100;
       }
-      ("zoom: " + this.zoom);
+      console.log("zoom: " + this.zoom);
       document.getElementById('mainBlock').style.zoom = this.zoom + '%';
     },
     updateWidth() {
-      ("updateWidth()");
+      console.log("updateWidth()");
       const $html = document.documentElement;
       const width = $html.clientWidth;
-      ("WIDTH: " + width);
+      console.log("WIDTH: " + width);
       this.width = width;
       this.updateZoom();
     },
     selectPackHandler(pack) {
-      ("-> selectPackHandler()");
+      console.log("-> selectPackHandler()");
       this.actualPack = pack;
       this.packForShow = pack.name;
       this.allPacks = hwCmpHandler.setNullBlocksActualStatus(this.allPacks);
       this.allPacks.blocks[hwCmpHandler.findHardwareById(pack.id, this.allPacks.blocks)].actual_status = 1;
       this.rerenderStatmentSideBar++;
-      ("<- selectPackHandler()");
+      console.log("<- selectPackHandler()");
       this.updateZoom();
     },
     inputTextHandler(text) {
-      (text);
+      console.log(text);
     },
     linkForNextExercise() {
       if (this.exerciseComplete && this.$route.query.norm < 19) {
@@ -319,7 +319,7 @@ export default {
           // TODO: добавит ререндер хардвер канваса
         })
         .catch((error) => {
-          (error);
+          console.log(error);
         });
 
     },
@@ -328,8 +328,8 @@ export default {
       // PROMISES: https://stackoverflow.com/questions/42304996/javascript-using-promises-on-websocket
       return new Promise(function (resolve, reject) {
         let serverHandler = new ServerHandler();
-        (window.location.href);
-        (v.$route.query.norm, 'params');
+        console.log(window.location.href);
+        console.log(v.$route.query.norm, 'params');
         let is_tr;
         if (v.$route.query.it == 0)
           is_tr = false;
@@ -338,7 +338,7 @@ export default {
 
         serverHandler.sendFirst(v.$session.get('session_id'), is_tr, v.exersiseId, String(v.$route.query.norm));
         serverHandler.socket.onopen = function () {
-          ("ONOPEN!");
+          console.log("ONOPEN!");
           serverHandler.socket.send(JSON.stringify(Array.from(serverHandler.sendData.entries())));
           resolve(serverHandler);
         };
@@ -350,11 +350,11 @@ export default {
       });
     },
     listenServer() {
-      ("listenServer()");
+      console.log("listenServer()");
       const v = this;
 
       this.connect().then(function (serverHandler) {
-        ("ДОЖДАЛСЯ!");
+        console.log("ДОЖДАЛСЯ!");
         v.serverHandler = serverHandler;
         if (v.$route.query.it == 0)
           v.serverHandler.is_training = false;
@@ -362,20 +362,20 @@ export default {
           v.serverHandler.is_training = true;
         // Принудительное обновление <template> hardwareCanvas
         v.rerenderStatment++;
-        ("ufbgiqwewqehfbhewrnfjkn = == = == = == ", v.serverHandler.is_training);
+        console.log("ufbgiqwewqehfbhewrnfjkn = == = == = == ", v.serverHandler.is_training);
         //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
         v.serverHandler.socket.onmessage = function (event) {
           try {
             let server_data = v.serverHandler.parseServerData(event.data);
             // v.serverHandler.changeStepServerData(server_data); // В идеале сделать так
             if (v.serverHandler.checkData(v.data)) {
-              ("ДАННЫЕ С СЕРВЕРА ПОЛУЧЕНЫ!");
-              ("Я P302O");
+              console.log("ДАННЫЕ С СЕРВЕРА ПОЛУЧЕНЫ!");
+              console.log("Я P302O");
               if (v.serverHandler.is_training) {
-                ("ТРЕНИРОВКА!!!");
+                console.log("ТРЕНИРОВКА!!!");
                 v.annotation = hwCmpHandler.getAnnotation(server_data);
                 v.allPacks = hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data, false);
-                (typeof (server_data));
+                console.log(typeof (server_data));
                 v.stepServerData = server_data;
 
                 if (server_data['is_random_step'])
@@ -385,7 +385,7 @@ export default {
                 v.rerenderStatmentSideBar++;
 
               } else {
-                ("НЕ ТРЕННИРОВКА");
+                console.log("НЕ ТРЕННИРОВКА");
                 v.annotation = hwCmpHandler.getAnnotation(server_data);
                 v.allPacks = hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data, true);
                 if (server_data['is_random_step'])
@@ -395,12 +395,12 @@ export default {
               }
 
             } else {
-              ("НЕВЕРНАЯ СТРУКТУРА ДАННЫХ СЕРВЕРА!");
+              console.log("НЕВЕРНАЯ СТРУКТУРА ДАННЫХ СЕРВЕРА!");
             }
 
           }
           catch (event) {
-            ("CATCH: " + event);
+            console.log("CATCH: " + event);
           }
         };
 
@@ -413,7 +413,7 @@ export default {
         };
 
       }).catch(function (error) {
-        ("ОШИБКА ПОДКЛЮЧЕНИЯ К СЕРВЕРУ", error);
+        console.log("ОШИБКА ПОДКЛЮЧЕНИЯ К СЕРВЕРУ", error);
       });
     }
   },

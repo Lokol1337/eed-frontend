@@ -46,10 +46,10 @@ export default {
     //     const data = await login(this.email, this.password);
     //     this.email = null;
     //     this.password = null;
-    //     (data);
+    //     console.log(data);
     //   } 
     //   catch (error) {
-    //     (error);
+    //     console.log(error);
     //   }
     // }
     async submitLogin(){

@@ -3,7 +3,7 @@ const fs = require("fs");
 fs.readFile("../src/views/P302O/P302O.json", (err, data) => {
   if (err) throw err;
   let obj = JSON.parse(data);
-  // (obj.blocks[0]);
+  // console.log(obj.blocks[0]);
   let set = new Set();
   let idPanel = 1;
   obj.blocks.forEach((block) => {
@@ -12,7 +12,7 @@ fs.readFile("../src/views/P302O/P302O.json", (err, data) => {
     block.id = idPanel;
     block.components.forEach((comp) => {
       
-      //(comp.name);
+      //console.log(comp.name);
       
       set.add(comp.name);
       comp.id = idPanel * 1000 + idComp;
@@ -27,11 +27,11 @@ fs.readFile("../src/views/P302O/P302O.json", (err, data) => {
     });
     idPanel++;
   });
-  // (set);
-  // ("Printing");
+  // console.log(set);
+  // console.log("Printing");
   obj.blocks.forEach((block) => {
     block.components.forEach((comp) => {
-      (
+      console.log(
         comp.id +
           " : " +
           comp.name +
@@ -42,5 +42,5 @@ fs.readFile("../src/views/P302O/P302O.json", (err, data) => {
       );
     });
   });
-  fs.writeFile("../src/views/P302O/P302O_1.json",JSON.stringify(obj),(err)=>{(err)})
+  fs.writeFile("../src/views/P302O/P302O_1.json",JSON.stringify(obj),(err)=>{console.log(err)})
 });

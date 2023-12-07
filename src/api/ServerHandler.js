@@ -42,7 +42,7 @@ export default class ServerHandler {
 
     checkData(data) {
 
-        (data);
+        console.log(data);
 
         // для теста:
         return true;
@@ -64,7 +64,7 @@ export default class ServerHandler {
     }
 
     changeStepServerData(newstepServerData) {
-        ("--- CHANGING StepServerData");
+        console.log("--- CHANGING StepServerData");
         this.stepServerData = newstepServerData;
     }
 
