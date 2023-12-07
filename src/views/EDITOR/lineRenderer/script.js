@@ -15,7 +15,7 @@ function clearCanvas(canvas) {
 
 const addXY = (event) => {
 	vector.push([event.offsetX, event.offsetY])
-	console.log(vector)
+	(vector)
 }
 
 
@@ -48,7 +48,7 @@ function downloadImage() {
 }
 
 addEventListener("keydown", (event) => {
-	console.log(event.key);
+	(event.key);
 	if (event.code == "Enter" && vector.length > 1)
 		paintLines();
 	else if (event.code == "Delete") {

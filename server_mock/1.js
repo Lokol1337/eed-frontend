@@ -21,19 +21,19 @@ fs.readFile("../src/views/P302O/P302O.json", (err, data) => {
 
     newObj.blocks.forEach((block) => {
       block.components.forEach((comp) => {
-        //console.log(comp.name);
+        //(comp.name);
         delete comp.divisionPrice
         setNew.delete(comp.name);
       });
     });
-    // console.log(setNew);
+    // (setNew);
     setNew.forEach((elem)=>{
       if(elem.search("rotator") !== -1)
       {
         setNew.delete(elem)
       }
     })
-    // console.log(setNew);
+    // (setNew);
 
     let blockId = 0;
     oldObj.blocks.forEach((block) => {
@@ -44,15 +44,15 @@ fs.readFile("../src/views/P302O/P302O.json", (err, data) => {
         {
           comp.currentValue = comp.valuesAndPhotos[0].value
           comp.initValue = comp.valuesAndPhotos[0].value
-          // console.log(`${blockId}`)
-          // console.log(comp)
+          // (`${blockId}`)
+          // (comp)
           newObj.blocks[blockId].components.push(comp);
         }
         compId++;
       });
       blockId++;
     });
-    //console.log(newObj.blocks[0].components)
-    fs.writeFile("../src/views/P302O/P302O_2.json",JSON.stringify(newObj),(err)=>{console.log(err)})
+    //(newObj.blocks[0].components)
+    fs.writeFile("../src/views/P302O/P302O_2.json",JSON.stringify(newObj),(err)=>{(err)})
   });
 });

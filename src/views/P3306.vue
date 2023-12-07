@@ -115,7 +115,7 @@
         button = buttonItem[index];
         button.addEventListener('click', this.updateZoom);
       }
-        //console.log(event.currentTarget.id);
+        //(event.currentTarget.id);
       document.getElementById(this.imgId).click();
     },
     destroyed(){
@@ -155,7 +155,7 @@
   
         }
         else{
-          console.log('else');
+          ('else');
           document.getElementById('menuForShow').style.transform = 'translateX(100%)';
           document.getElementById('btnMenuForShow').style.transform = 'translateX(0%)';
           document.getElementById('btnMenuForShow').classList.remove('menu-btn_active');
@@ -197,7 +197,7 @@
         
         const $html = document.documentElement;
         const width = $html.clientWidth;
-        console.log("WIDTH: " + width);
+        ("WIDTH: " + width);
         this.width = width;
         this.updateZoom();
       },
@@ -206,7 +206,7 @@
         this.packForShow = pack.name;
       },
       inputTextHandler(text) {
-        console.log(text);
+        (text);
       },
       exportJSON() {
         const jsonFile = new Blob([JSON.stringify(this.actualPack)]);
@@ -239,7 +239,7 @@
             // TODO: добавит ререндер хардвер канваса
           })
           .catch((error) => {
-            console.log(error);
+            (error);
           });
   
       },

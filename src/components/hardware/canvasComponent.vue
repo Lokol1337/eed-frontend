@@ -91,7 +91,7 @@ export default {
     // TODO: remove this
     sendTestRequest() {
       demoRequest(this.hardwareComponent);
-      // console.log('Req send');
+      // ('Req send');
     },
     // TODO: remove this
     selectMethodByClick() {

@@ -26,7 +26,7 @@ export default class ServerHandler {
     //     return new Promise(function (resolve, reject) {
 
     //         this.socket.onopen = function () {
-    //             // console.log("ONOPEN!");
+    //             // ("ONOPEN!");
     //             this.socket.send(JSON.stringify(Array.from(sendData.entries())));
     //             resolve(this);
     //         };
@@ -77,7 +77,7 @@ export default class ServerHandler {
         this.socket.onopen = () => {
             // alert("Соединение установлено.");
             this.socket.send(JSON.stringify(Array.from(sendingData.entries())));
-            console.log(JSON.stringify(Array.from(sendingData.entries())))
+            (JSON.stringify(Array.from(sendingData.entries())))
         };
 
         var serverData = null;
@@ -95,7 +95,7 @@ export default class ServerHandler {
 
         });
         await promise
-        console.log(serverData)
+        (serverData)
         return serverData;
     }
 

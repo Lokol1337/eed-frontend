@@ -53,16 +53,16 @@ export default {
   },
   computed: {
       change(){
-        console.log("change()");
+        ("change()");
         if(this.dataServ.length < 1){
           return '';
         }
-        console.log("Я ИЗМЕНИЛСЯ! Z");
+        ("Я ИЗМЕНИЛСЯ! Z");
         debugger;
         if (this.hardwareComponent.valuesAndPhotos.length > 1) {
-          console.log("Блок с состояниями");
+          ("Блок с состояниями");
         } else {
-          console.log("Перетаскивающийся блок");
+          ("Перетаскивающийся блок");
         }
         return this.dataServ;
       }
@@ -70,16 +70,16 @@ export default {
   mounted(){
       // this.$session.start();
       // this.$session.set('session_id', Date.now().toString(32));
-    // console.log(this.$session.get('session_id'))
+    // (this.$session.get('session_id'))
   },
 
   methods: {
     changePhotoByClick() {
-      //console.log(this.imgIndex)
+      //(this.imgIndex)
       if (this.imgIndex === this.hardwareComponent.valuesAndPhotos.length - 1) {
          this.imgIndex = 0;
          this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.imgIndex].value;
-         console.log(this.hardwareComponent);
+         (this.hardwareComponent);
         return;
       }
       this.imgIndex++;
@@ -103,7 +103,7 @@ export default {
     findHardwareComponentById(id){
       let index = -1;
       this.hardwareComponents.forEach((element, i) => {
-        //console.log(parseInt(element.id) + " ? " + parseInt(id) + " = " + (parseInt(element.id) == parseInt(id)));
+        //(parseInt(element.id) + " ? " + parseInt(id) + " = " + (parseInt(element.id) == parseInt(id)));
         if (parseInt(element.id) == parseInt(id)) {
           index = i;
           return;
@@ -141,16 +141,16 @@ export default {
             v.hardwareComponents[indexNowHwCmp].imgIndex %= v.hardwareComponents[indexNowHwCmp].valuesAndPhotos.length;
 
             let indexNextHwCmp = v.findHardwareComponentById(v.dataServ['next_id']);
-            // console.log("PREV_imgindex: " + v.hardwareComponents[indexNextHwCmp].imgIndex);
+            // ("PREV_imgindex: " + v.hardwareComponents[indexNextHwCmp].imgIndex);
             v.hardwareComponents[indexNextHwCmp].imgIndex += 1;
             v.hardwareComponents[indexNextHwCmp].imgIndex %= v.hardwareComponents[indexNextHwCmp].valuesAndPhotos.length;
-            // console.log("NEW_imgindex: " + v.hardwareComponents[indexNextHwCmp].imgIndex);
+            // ("NEW_imgindex: " + v.hardwareComponents[indexNextHwCmp].imgIndex);
             v.emitNextComponents(v.hardwareComponents);
           }
 
-          // console.log(v.dataServ);
+          // (v.dataServ);
         } catch (event) {
-          console.log(event);
+          (event);
         }
       };
 
@@ -191,7 +191,7 @@ export default {
         this.hardwareComponent.left = x;
         this.hardwareComponent.top = y;
       }
-      // console.log(this.hardZoomScale);
+      // (this.hardZoomScale);
     },
   },
 };

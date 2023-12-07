@@ -151,12 +151,12 @@ methods: {
       this.cssWidth = 'open40';
       this.mapZoom = Math.ceil((this.width*0.4 - 190 - 50)/190 * 100) + 100;
       document.getElementById('menuForShow').style.zoom = this.mapZoom + '%';
-      console.log('getFirstZoom');
+      ('getFirstZoom');
     }
     else{
       this.mapZoom = Math.ceil((this.width*0.3 - 190 - 100)/190 * 100) + 100;
       document.getElementById('menuForShow').style.zoom = this.mapZoom + '%';
-      console.log('getFirstZoom');
+      ('getFirstZoom');
       this.cssWidth = 'open30';
     }
   },
@@ -164,11 +164,11 @@ methods: {
     if(this.width < 992){
       // document.getElementById('sidebar').classList.remove('open30');
       // document.getElementById('sidebar').classList.add('open40');
-      console.log('updateZoom');
+      ('updateZoom');
       this.cssWidth = 'open40';
       this.mapZoom = Math.ceil((this.width*0.4 - 190- 50  )/190 * 100) + 100;
       document.getElementById('menuForShow').style.zoom = this.mapZoom + '%';
-      console.log(this.cssWidth);
+      (this.cssWidth);
     }
     else{
       this.mapZoom = Math.ceil((this.width*0.3 - 190 -100)/190 * 100) + 100;
@@ -180,7 +180,7 @@ methods: {
     const $html = document.documentElement;
     const width = $html.clientWidth;
     this.width = width;
-    console.log(this.width);
+    (this.width);
     this.updateZoom();
   },
 },
@@ -211,7 +211,7 @@ watch: {
     // window.document.body.style.paddingLeft = this.isOpened && this.isPaddingLeft ? this.menuOpenedPaddingLeftBody : this.menuClosedPaddingLeftBody
   },
   cssWidth:function(){
-      console.log(111);
+      (111);
     },
 }
 }

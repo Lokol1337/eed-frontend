@@ -86,8 +86,8 @@ export default {
         async gotoElementEditor() {
             await this.send();
             // this.$route.push('/elementEditor').catch(() => {});
-            // console.log(this.photoSrc);
-            // console.log(document.getElementById('dimg').href);
+            // (this.photoSrc);
+            // (document.getElementById('dimg').href);
             this.$router.push({ path: 'elementEditor', query: { apparatId: this.apparatId, blockId: this.blockId } });
         },
         async send() {
@@ -98,11 +98,11 @@ export default {
             let mes = await this.serverHandler.sendData(sendingData);
             mes = JSON.parse(mes)
             this.blockId = mes['block_id']
-            console.log('blockId', this.blockId)
+            ('blockId', this.blockId)
         },
         takePic(e) {
             let file = e.target.files[0];
-            console.log(file)
+            (file)
             let imageContainer = document.getElementById('image');
             document.getElementById('impContainer').remove();
             if (file) {
@@ -115,7 +115,7 @@ export default {
                 imageContainer.onload = () => {
                     v.koefWidth = imageContainer.naturalWidth / imageContainer.width;
                     v.koefHeight = imageContainer.naturalHeight / imageContainer.height;
-                    // console.log(v.koefWidth + " " + v.koefHeight);
+                    // (v.koefWidth + " " + v.koefHeight);
                 };
                 imageContainer.src = localStorage.getItem('myImage');
 
@@ -192,7 +192,7 @@ export default {
 
             image.onload = () => {
                 const startImg = document.getElementById('image');
-                console.log(startImg)
+                (startImg)
                 const left = this.fTapX - startImg.offsetLeft;
                 const top = this.fTapY - startImg.offsetTop;
                 canvas.width = this.canvasWidht;
@@ -202,7 +202,7 @@ export default {
                 setTimeout(()=>{
                     document.getElementById('button-nextPage').classList.remove('d-none');
                     if (canvas.toDataURL() != null) {
-                        console.log("canvas.toDataURL() = ", canvas.toDataURL());
+                        ("canvas.toDataURL() = ", canvas.toDataURL());
                         this.photoSrc = canvas.toDataURL();
                     }
                 }, 500)

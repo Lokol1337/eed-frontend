@@ -53,7 +53,7 @@ export default {
         // constructor
     },
     created() {
-        // console.log(this.$session.exists());
+        // (this.$session.exists());
         if (!this.$session.exists()) {
             this.$session.start();
             // this.sessionId = this.$session.id();

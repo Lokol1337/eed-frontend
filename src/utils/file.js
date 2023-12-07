@@ -11,7 +11,7 @@ export const convertFileToBase64OnChange = async (e) =>  {
       const res = await getBase64(files[i]);
       base64Files.push(res);
     } catch (error) {
-      console.log(error);
+      (error);
     }
   }
   

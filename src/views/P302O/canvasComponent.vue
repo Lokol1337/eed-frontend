@@ -94,16 +94,16 @@ export default {
   },
   computed: {
       change(){
-        console.log("change()");
+        ("change()");
         if(this.dataServ.length < 1){
           return '';
         }
-        console.log("Я ИЗМЕНИЛСЯ! Z");
+        ("Я ИЗМЕНИЛСЯ! Z");
         //debugger;
         if (this.hardwareComponent.valuesAndPhotos.length > 1) {
-          console.log("Блок с состояниями");
+          ("Блок с состояниями");
         } else {
-          console.log("Перетаскивающийся блок");
+          ("Перетаскивающийся блок");
         }
         return this.dataServ;
       }
@@ -123,7 +123,7 @@ export default {
       }
       // this.$session.start();
       // this.$session.set('session_id', Date.now().toString(32));
-      // console.log(this.$session.get('session_id'));
+      // (this.$session.get('session_id'));
   },
 
   methods: {
@@ -132,16 +132,16 @@ export default {
 
     },
     rotate() {
-      // console.log(this.hardwareComponent.imgIndex,this.hardwareComponent.valuesAndPhotos.length);
+      // (this.hardwareComponent.imgIndex,this.hardwareComponent.valuesAndPhotos.length);
       // if (this.hardwareComponent.imgIndex === this.hardwareComponent.valuesAndPhotos.length - 1) {
       //   this.hardwareComponent.imgIndex = 0;
       // }
       // else {
         this.changeCurrentValue();
       // }
-      // console.log(this.hardwareComponent.imgIndex,"BBBBBBBBBB");
+      // (this.hardwareComponent.imgIndex,"BBBBBBBBBB");
       this.degreeOfRotation = this.hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].value;
-      // console.log(,"CCCCCCCCCCCCC");
+      // (,"CCCCCCCCCCCCC");
     },
     changeCurrentValue(){
       if (this.hardwareComponent.imgIndex >= this.hardwareComponent.valuesAndPhotos.length-1)
@@ -150,16 +150,16 @@ export default {
         this.hardwareComponent.imgIndex += 1;
       // this.hardwareComponent.imgIndex %= this.hardwareComponent.valuesAndPhotos.length;
       this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].value;
-      console.log(this.hardwareComponent.imgIndex, "AAAAAAAAAAAAAAAAAA");
+      (this.hardwareComponent.imgIndex, "AAAAAAAAAAAAAAAAAA");
     },
     selectMethodByClick() {
       if((this.hardwareComponent.backgroundColor === "yellow" && this.$route.query.it == 1) || this.$route.query.it == 0){
         if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === false) {
-          console.log("changePhotoByClick");
+          ("changePhotoByClick");
           this.changePhotoByClick();
         } 
         else if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === true) {
-          console.log("rotate");
+          ("rotate");
           this.rotate();
         }
         //  else if (this.hardwareComponent.draggable === true && this.hardwareComponent.rotatable === false){
@@ -174,7 +174,7 @@ export default {
         this.hardwareComponent.left = x;
         this.hardwareComponent.top = y;
       }
-      // console.log(this.hardZoomScale);
+      // (this.hardZoomScale);
     },
     sendRequest() {
       this.$emit('sendRequest', this.hardwareComponent);
