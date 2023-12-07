@@ -73,7 +73,8 @@
         </div>
         <div id="canvasBlock" class="col-9 col-sm-9 col-md-10 col-lg-11 col-xl-11 p-0" style="width: auto">
 
-          <div id="mainBlock" class="hardware-view-page__canvas-wrp" :key="rerenderStatment" :style="{ zoom: `${zoom}%` }">
+          <div id="mainBlock" class="hardware-view-page__canvas-wrp" :key="rerenderStatment"
+            :style="{ zoom: `${zoom}%` }">
             <hardwareCanvas v-for="pack in allPacks.blocks" :key="pack.name" :id="'block' + pack.id"
               v-show="pack.name === actualPack.name" style="z-index: 2!important;" :hardwareComponents="pack.components"
               :bgImage="pack.background" :backgroundSettings="pack.backgroundSettings" :sessionId="sessionId"
@@ -184,6 +185,22 @@ export default {
     }
   },
   methods: {
+    rotate(e) {
+      e.preventDefault()
+
+      // Где-то надо определить self.deg
+
+      var delta = e.deltaX || e.detail || e.wheelDelta;
+
+      if (delta > 0 && deg < 180) deg += 1;
+      else if (delta < 0 && deg > 0) deg -= 1;
+      else
+        return
+
+
+      bolt.style.transform = "rotate(" + deg + "deg)" // Крутим болт
+      arrow.style.transform = "rotate(" + deg + "deg)" // Крутим стрелку
+    },
     startTimer() {
       this.timer = setInterval(() => {
         this.sec++;
