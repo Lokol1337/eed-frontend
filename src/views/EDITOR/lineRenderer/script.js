@@ -1,6 +1,7 @@
 const canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
 
+var vector = []
 
 function resize(width, height) {
 	canvas.width = width;
@@ -11,36 +12,49 @@ function clearCanvas(canvas) {
 	canvas.width = canvas.width;
 }
 
-let vector = []
 
 const addXY = (event) => {
 	vector.push([event.offsetX, event.offsetY])
+	console.log(vector)
 }
 
 
 const paintLines = () => {
 
-	img = document.querySelector("img")
+	img = document.getElementById("div-img")
 	width = img.offsetWidth
 	height = img.offsetHeight
 	resize(width, height)
 
-	context.strokeStyle = "white";
-	context.lineWidth = 1;
+	context.strokeStyle = "black";
+	context.lineWidth = 20;
+
 	context.beginPath();
 	context.moveTo(vector[0][0], vector[0][1]);
 
 	for (let i = 1; i < vector.length; i++) {
-		if (i + 1 == vector.length)
-			break
-
-		context.lineTo(vector[i + 1][0], vector[i + 1][1]);
+		context.lineTo(vector[i][0], vector[i][1]);
 	}
 	context.stroke();
 
+	downloadImage()
+
+}
+
+function downloadImage() {
+
 	document.getElementById("download").setAttribute("href", canvas.toDataURL('image/png'))
 	document.getElementById("download").click()
-
-	vector = []
-	context.clearRect(0, 0, canvas.width, canvas.height);
 }
+
+addEventListener("keydown", (event) => {
+	console.log(event.key);
+	if (event.code == "Enter" && vector.length > 1)
+		paintLines();
+	else if (event.code == "Delete") {
+		vector = []
+		context.clearRect(0, 0, canvas.width, canvas.height);
+		canvas.width = 0;
+		canvas.height = 0;
+	}
+});
