@@ -127,6 +127,7 @@ export default {
       min: 0,
       timer: null,
       is_tr: this.$route.query.it,
+      deg:0
     };
   },
 
@@ -192,14 +193,14 @@ export default {
 
       var delta = e.deltaX || e.detail || e.wheelDelta;
 
-      if (delta > 0 && deg < 180) deg += 1;
-      else if (delta < 0 && deg > 0) deg -= 1;
+      if (delta > 0 && self.deg < 180) self.deg += 1;
+      else if (delta < 0 && self.deg > 0) self.deg -= 1;
       else
         return
 
 
-      bolt.style.transform = "rotate(" + deg + "deg)" // Крутим болт
-      arrow.style.transform = "rotate(" + deg + "deg)" // Крутим стрелку
+      // bolt.style.transform = "rotate(" + self.deg + "deg)" // Крутим болт
+      // arrow.style.transform = "rotate(" + self.deg + "deg)" // Крутим стрелку
     },
     startTimer() {
       this.timer = setInterval(() => {

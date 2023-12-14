@@ -102,6 +102,7 @@ export function uploadHwComponents_Training(allPacks, server_data, is_ex) {
 
   if (now_actions && count_actions > 0) { // Проверка на последний шаг
     now_actions.forEach(action => {
+
       let packId = findHardwareById(action['apparat_id'], allPacks.blocks);
       let next_pack = allPacks.blocks[packId];
       // console.log(next_pack,"next_packnext_packnext_packnext_packnext_pack");
