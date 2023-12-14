@@ -1778,6 +1778,305 @@
         "initValue": "none",
         "caption": null,
         "ids": [6202, 3203]
+      },{
+        "name": "ГО-УУ-кабель",
+        "valuesAndPhotos": [
+          {
+            "value": "none",
+            "photo": " "
+          },
+          {
+            "value": "cabel",
+            "photo": "./images/p-302-o/cabels/cabel (4).png"
+          }
+        ],
+        "rotatable": false,
+        "draggable": false,
+        "left": 0,
+        "top": 0,
+        "width": 856,
+        "height": 321,
+        "id": 3302,
+        "currentValue": "none",
+        "initValue": "none",
+        "caption": null,
+        "ids": [6202, 3203]
+      },{
+        "name": "ГО-УУ-кабель",
+        "valuesAndPhotos": [
+          {
+            "value": "none",
+            "photo": " "
+          },
+          {
+            "value": "cabel",
+            "photo": "./images/p-302-o/cabels/cabel (5).png"
+          }
+        ],
+        "rotatable": false,
+        "draggable": false,
+        "left": 0,
+        "top": 0,
+        "width": 856,
+        "height": 321,
+        "id": 3303,
+        "currentValue": "none",
+        "initValue": "none",
+        "caption": null,
+        "ids": [6202, 3203]
+      },{
+        "name": "ГО-УУ-кабель",
+        "valuesAndPhotos": [
+          {
+            "value": "none",
+            "photo": " "
+          },
+          {
+            "value": "cabel",
+            "photo": "./images/p-302-o/cabels/cabel (6).png"
+          }
+        ],
+        "rotatable": false,
+        "draggable": false,
+        "left": 0,
+        "top": 0,
+        "width": 856,
+        "height": 321,
+        "id": 3304,
+        "currentValue": "none",
+        "initValue": "none",
+        "caption": null,
+        "ids": [6202, 3203]
+      },{
+        "name": "ГО-УУ-кабель",
+        "valuesAndPhotos": [
+          {
+            "value": "none",
+            "photo": " "
+          },
+          {
+            "value": "cabel",
+            "photo": "./images/p-302-o/cabels/cabel (7).png"
+          }
+        ],
+        "rotatable": false,
+        "draggable": false,
+        "left": 0,
+        "top": 0,
+        "width": 856,
+        "height": 321,
+        "id": 3306,
+        "currentValue": "none",
+        "initValue": "none",
+        "caption": null,
+        "ids": [6202, 3203]
+      },{
+        "name": "ГО-УУ-кабель",
+        "valuesAndPhotos": [
+          {
+            "value": "none",
+            "photo": " "
+          },
+          {
+            "value": "cabel",
+            "photo": "./images/p-302-o/cabels/cabel (8).png"
+          }
+        ],
+        "rotatable": false,
+        "draggable": false,
+        "left": 0,
+        "top": 0,
+        "width": 856,
+        "height": 321,
+        "id": 3307,
+        "currentValue": "none",
+        "initValue": "none",
+        "caption": null,
+        "ids": [6202, 3203]
+      },{
+        "name": "ГО-УУ-кабель",
+        "valuesAndPhotos": [
+          {
+            "value": "none",
+            "photo": " "
+          },
+          {
+            "value": "cabel",
+            "photo": "./images/p-302-o/cabels/cabel (9).png"
+          }
+        ],
+        "rotatable": false,
+        "draggable": false,
+        "left": 0,
+        "top": 0,
+        "width": 856,
+        "height": 321,
+        "id": 3308,
+        "currentValue": "none",
+        "initValue": "none",
+        "caption": null,
+        "ids": [6202, 3203]
+      },{
+        "name": "ГО-УУ-кабель",
+        "valuesAndPhotos": [
+          {
+            "value": "none",
+            "photo": " "
+          },
+          {
+            "value": "cabel",
+            "photo": "./images/p-302-o/cabels/cabel (10).png"
+          }
+        ],
+        "rotatable": false,
+        "draggable": false,
+        "left": 0,
+        "top": 0,
+        "width": 856,
+        "height": 321,
+        "id": 3309,
+        "currentValue": "none",
+        "initValue": "none",
+        "caption": null,
+        "ids": [6202, 3203]
+      },{
+        "name": "ГО-УУ-кабель",
+        "valuesAndPhotos": [
+          {
+            "value": "none",
+            "photo": " "
+          },
+          {
+            "value": "cabel",
+            "photo": "./images/p-302-o/cabels/cabel (11).png"
+          }
+        ],
+        "rotatable": false,
+        "draggable": false,
+        "left": 0,
+        "top": 0,
+        "width": 856,
+        "height": 321,
+        "id": 3310,
+        "currentValue": "none",
+        "initValue": "none",
+        "caption": null,
+        "ids": [6202, 3203]
+      },{
+        "name": "ГО-УУ-кабель",
+        "valuesAndPhotos": [
+          {
+            "value": "none",
+            "photo": " "
+          },
+          {
+            "value": "cabel",
+            "photo": "./images/p-302-o/cabels/cabel (12).png"
+          }
+        ],
+        "rotatable": false,
+        "draggable": false,
+        "left": 0,
+        "top": 0,
+        "width": 856,
+        "height": 321,
+        "id": 3311,
+        "currentValue": "none",
+        "initValue": "none",
+        "caption": null,
+        "ids": [6202, 3203]
+      },{
+        "name": "ГО-УУ-кабель",
+        "valuesAndPhotos": [
+          {
+            "value": "none",
+            "photo": " "
+          },
+          {
+            "value": "cabel",
+            "photo": "./images/p-302-o/cabels/cabel (13).png"
+          }
+        ],
+        "rotatable": false,
+        "draggable": false,
+        "left": 0,
+        "top": 0,
+        "width": 856,
+        "height": 321,
+        "id": 3312,
+        "currentValue": "none",
+        "initValue": "none",
+        "caption": null,
+        "ids": [6202, 3203]
+      },{
+        "name": "ГО-УУ-кабель",
+        "valuesAndPhotos": [
+          {
+            "value": "none",
+            "photo": " "
+          },
+          {
+            "value": "cabel",
+            "photo": "./images/p-302-o/cabels/cabel (14).png"
+          }
+        ],
+        "rotatable": false,
+        "draggable": false,
+        "left": 0,
+        "top": 0,
+        "width": 856,
+        "height": 321,
+        "id": 3313,
+        "currentValue": "none",
+        "initValue": "none",
+        "caption": null,
+        "ids": [6202, 3203]
+      },{
+        "name": "ГО-УУ-кабель",
+        "valuesAndPhotos": [
+          {
+            "value": "none",
+            "photo": " "
+          },
+          {
+            "value": "cabel",
+            "photo": "./images/p-302-o/cabels/cabel (15).png"
+          }
+        ],
+        "rotatable": false,
+        "draggable": false,
+        "left": 0,
+        "top": 0,
+        "width": 856,
+        "height": 321,
+        "id": 3314,
+        "currentValue": "none",
+        "initValue": "none",
+        "caption": null,
+        "ids": [6202, 3203]
+      },{
+        "name": "ГО-УУ-кабель",
+        "valuesAndPhotos": [
+          {
+            "value": "none",
+            "photo": " "
+          },
+          {
+            "value": "cabel",
+            "photo": "./images/p-302-o/cabels/cabel (16).png"
+          }
+        ],
+        "rotatable": false,
+        "draggable": false,
+        "left": 0,
+        "top": 0,
+        "width": 856,
+        "height": 321,
+        "id": 3315,
+        "currentValue": "none",
+        "initValue": "none",
+        "caption": null,
+        "ids": [6202, 3203]
       }
       ],
       "id": 3
