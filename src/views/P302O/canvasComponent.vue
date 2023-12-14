@@ -154,13 +154,13 @@ export default {
 
           var delta = e.deltaX || e.detail || e.wheelDelta;
 
-          if (delta > 0 && self.degreeOfRotation < 55) self.degreeOfRotation += 1;
-          else if (delta < 0 && self.degreeOfRotation > -55) self.degreeOfRotation -= 1;
-          console.log("rotete.func - F3 = ",self.degreeOfRotation)
+          if (delta > 0 && this.degreeOfRotation < 55) this.degreeOfRotation += 1;
+          else if (delta < 0 && this.degreeOfRotation > -55) this.degreeOfRotation -= 1;
+          console.log("rotete.func - F3 = ", this.degreeOfRotation)
 
 
-          document.getElementById(this.hardwareComponent.id).style.transform = "rotate(" + self.degreeOfRotation + "deg)" // Крутим болт
-          document.getElementById(this.hardwareComponent.pairRotationId).style.transform = "rotate(" + self.degreeOfRotation + "deg)" // Крутим стрелку
+          document.getElementById(this.hardwareComponent.id).style.transform = "rotate(" + this.degreeOfRotation + "deg)" // Крутим болт
+          document.getElementById(this.hardwareComponent.pairRotationId).style.transform = "rotate(" + this.degreeOfRotation + "deg)" // Крутим стрелку
         }
       // }
     },
