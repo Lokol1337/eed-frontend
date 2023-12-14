@@ -1758,7 +1758,10 @@
       {
         "name": "ГО-УУ-кабель",
         "valuesAndPhotos": [
-          
+          {
+            "value": "none",
+            "photo": " "
+          },
           {
             "value": "cabel",
             "photo": "./images/p-302-o/cabels/1.2.4_2.png"
@@ -1778,7 +1781,10 @@
       },{
         "name": "ГО-УУ-кабель",
         "valuesAndPhotos": [
-          
+          {
+            "value": "none",
+            "photo": " "
+          },
           {
             "value": "cabel",
             "photo": "./images/p-302-o/cabels/cabel (4).png"
@@ -1798,7 +1804,10 @@
       },{
         "name": "ГО-УУ-кабель",
         "valuesAndPhotos": [
-          
+          {
+            "value": "none",
+            "photo": " "
+          },
           {
             "value": "cabel",
             "photo": "./images/p-302-o/cabels/cabel (5).png"
@@ -1818,7 +1827,10 @@
       },{
         "name": "ГО-УУ-кабель",
         "valuesAndPhotos": [
-          
+          {
+            "value": "none",
+            "photo": " "
+          },
           {
             "value": "cabel",
             "photo": "./images/p-302-o/cabels/cabel (6).png"
@@ -1838,7 +1850,10 @@
       },{
         "name": "ГО-УУ-кабель",
         "valuesAndPhotos": [
-          
+          {
+            "value": "none",
+            "photo": " "
+          },
           {
             "value": "cabel",
             "photo": "./images/p-302-o/cabels/cabel (7).png"
@@ -1858,7 +1873,10 @@
       },{
         "name": "ГО-УУ-кабель",
         "valuesAndPhotos": [
-          
+          {
+            "value": "none",
+            "photo": " "
+          },
           {
             "value": "cabel",
             "photo": "./images/p-302-o/cabels/cabel (8).png"
@@ -1878,7 +1896,10 @@
       },{
         "name": "ГО-УУ-кабель",
         "valuesAndPhotos": [
-          
+          {
+            "value": "none",
+            "photo": " "
+          },
           {
             "value": "cabel",
             "photo": "./images/p-302-o/cabels/cabel (9).png"
@@ -1898,7 +1919,10 @@
       },{
         "name": "ГО-УУ-кабель",
         "valuesAndPhotos": [
-          
+          {
+            "value": "none",
+            "photo": " "
+          },
           {
             "value": "cabel",
             "photo": "./images/p-302-o/cabels/cabel (10).png"
@@ -1918,47 +1942,10 @@
       },{
         "name": "ГО-УУ-кабель",
         "valuesAndPhotos": [
-          
           {
-            "value": "cabel",
-            "photo": "./images/p-302-o/cabels/cabel (11).png"
-          }
-        ],
-        "rotatable": false,
-        "draggable": false,
-        "left": 0,
-        "top": 0,
-        "width": 856,
-        "height": 321,
-        "id": 3310,
-        "currentValue": "none",
-        "initValue": "none",
-        "caption": null,
-        "ids": [6202, 3203]
-      },{
-        "name": "ГО-УУ-кабель",
-        "valuesAndPhotos": [
-          
-          {
-            "value": "cabel",
-            "photo": "./images/p-302-o/cabels/cabel (12).png"
-          }
-        ],
-        "rotatable": false,
-        "draggable": false,
-        "left": 0,
-        "top": 0,
-        "width": 856,
-        "height": 321,
-        "id": 3311,
-        "currentValue": "none",
-        "initValue": "none",
-        "caption": null,
-        "ids": [6202, 3203]
-      },{
-        "name": "ГО-УУ-кабель",
-        "valuesAndPhotos": [
-          
+            "value": "none",
+            "photo": " "
+          },
           {
             "value": "cabel",
             "photo": "./images/p-302-o/cabels/cabel (13).png"
@@ -1978,7 +1965,10 @@
       },{
         "name": "ГО-УУ-кабель",
         "valuesAndPhotos": [
-          
+          {
+            "value": "none",
+            "photo": " "
+          },
           {
             "value": "cabel",
             "photo": "./images/p-302-o/cabels/cabel (14).png"
@@ -1998,7 +1988,10 @@
       },{
         "name": "ГО-УУ-кабель",
         "valuesAndPhotos": [
-          
+          {
+            "value": "none",
+            "photo": " "
+          },
           {
             "value": "cabel",
             "photo": "./images/p-302-o/cabels/cabel (15).png"
