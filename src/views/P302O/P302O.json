@@ -2070,6 +2070,29 @@
         "initValue": "none",
         "caption": null,
         "ids": [6202, 3203]
+      },{
+        "name": "ГО-УУ-кабель",
+        "valuesAndPhotos": [
+          {
+            "value": "none",
+            "photo": " "
+          },
+          {
+            "value": "cabel",
+            "photo": "./images/p-302-o/cabels/cabel (18).png"
+          }
+        ],
+        "rotatable": false,
+        "draggable": false,
+        "left": 0,
+        "top": 0,
+        "width": 856,
+        "height": 321,
+        "id": 3316,
+        "currentValue": "none",
+        "initValue": "none",
+        "caption": null,
+        "ids": [6202, 3203]
       }
       ],
       "id": 3
