@@ -1,5 +1,7 @@
 // import e from "express";
 
+import { compileString } from "node-sass";
+
 
 
 export function findHardwareComponentById(id, hardwareComponents) {
@@ -112,6 +114,10 @@ export function uploadHwComponents_Training(allPacks, server_data, is_ex) {
       allPacks.blocks[packId].components[hwCmpId] = nextHwComponent;
       if (action['tag'] === "arrow") {
         document.getElementById(action['action_id']).children[0].style.transform = "rotate(" + action['action_value'] + "deg)"
+        console.log("влад посмотри сюда", document.getElementById(action['action_id']).children[0])
+        console.log("влад посмотри сюда",action['action_value'])
+
+        
       } else {
         let imgIndex = findNumberOfCurrentValue(nextHwComponent, action['action_value']);
         // console.log(imgIndex,"imgIndeximgIndeximgIndeximgIndeximgIndeximgIndeximgIndex");
