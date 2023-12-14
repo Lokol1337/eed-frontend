@@ -4,14 +4,20 @@
     {
       "name": "СС-О",
       "background": "./images/backs/ss_small.png",
-      "backgroundSettings": { "width": 856, "height": 300 },
+      "backgroundSettings": {
+        "width": 856,
+        "height": 300
+      },
       "components": [
         {
           "name": "cable_head2",
           "initValue": null,
           "currentValue": null,
           "valuesAndPhotos": [
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -27,11 +33,18 @@
           "initValue": "up",
           "currentValue": "up",
           "valuesAndPhotos": [
-            { "value": "up", "photo": "./images/controls/lever3up.png" },
             {
-              "value": "center", "photo": "./images/controls/lever3center.png"
+              "value": "up",
+              "photo": "./images/controls/lever3up.png"
             },
-            { "value": "down", "photo": "./images/controls/lever3down.png" }
+            {
+              "value": "center",
+              "photo": "./images/controls/lever3center.png"
+            },
+            {
+              "value": "down",
+              "photo": "./images/controls/lever3down.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -45,12 +58,18 @@
         {
           "name": "lever",
           "valuesAndPhotos": [
-            { "value": "up", "photo": "./images/controls/lever3up.png" },
+            {
+              "value": "up",
+              "photo": "./images/controls/lever3up.png"
+            },
             {
               "value": "center",
               "photo": "./images/controls/lever3center.png"
             },
-            { "value": "down", "photo": "./images/controls/lever3down.png" }
+            {
+              "value": "down",
+              "photo": "./images/controls/lever3down.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -66,17 +85,72 @@
         {
           "name": "rotator",
           "valuesAndPhotos": [
-            { "value": -150, "photo": "./images/controls/rotator.png", "realValue": "0", "units": "км" },
-            { "value": -120, "photo": "./images/controls/rotator.png", "realValue": "2", "units": "км" },
-            { "value": -90, "photo": "./images/controls/rotator.png", "realValue": "4", "units": "км" },
-            { "value": -55, "photo": "./images/controls/rotator.png", "realValue": "6", "units": "км" },
-            { "value": -30, "photo": "./images/controls/rotator.png", "realValue": "8", "units": "км" },
-            { "value": 0, "photo": "./images/controls/rotator.png", "realValue": "10", "units": "км" },
-            { "value": 25, "photo": "./images/controls/rotator.png", "realValue": "12", "units": "км" },
-            { "value": 55, "photo": "./images/controls/rotator.png", "realValue": "14", "units": "км" },
-            { "value": 90, "photo": "./images/controls/rotator.png", "realValue": "16", "units": "км" },
-            { "value": 120, "photo": "./images/controls/rotator.png", "realValue": "18", "units": "км" },
-            { "value": 150, "photo": "./images/controls/rotator.png", "realValue": "20", "units": "км" }
+            {
+              "value": -150,
+              "photo": "./images/controls/rotator.png",
+              "realValue": "0",
+              "units": "км"
+            },
+            {
+              "value": -120,
+              "photo": "./images/controls/rotator.png",
+              "realValue": "2",
+              "units": "км"
+            },
+            {
+              "value": -90,
+              "photo": "./images/controls/rotator.png",
+              "realValue": "4",
+              "units": "км"
+            },
+            {
+              "value": -55,
+              "photo": "./images/controls/rotator.png",
+              "realValue": "6",
+              "units": "км"
+            },
+            {
+              "value": -30,
+              "photo": "./images/controls/rotator.png",
+              "realValue": "8",
+              "units": "км"
+            },
+            {
+              "value": 0,
+              "photo": "./images/controls/rotator.png",
+              "realValue": "10",
+              "units": "км"
+            },
+            {
+              "value": 25,
+              "photo": "./images/controls/rotator.png",
+              "realValue": "12",
+              "units": "км"
+            },
+            {
+              "value": 55,
+              "photo": "./images/controls/rotator.png",
+              "realValue": "14",
+              "units": "км"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/rotator.png",
+              "realValue": "16",
+              "units": "км"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/rotator.png",
+              "realValue": "18",
+              "units": "км"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/rotator.png",
+              "realValue": "20",
+              "units": "км"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -92,10 +166,30 @@
         {
           "name": "rotator",
           "valuesAndPhotos": [
-            { "value": -35, "photo": "./images/controls/rotator.png", "realValue": "0", "units": "Нп" },
-            { "value": -15, "photo": "./images/controls/rotator.png", "realValue": "0.1", "units": "Нп" },
-            { "value": 15, "photo": "./images/controls/rotator.png", "realValue": "0.3", "units": "Нп" },
-            { "value": 35, "photo": "./images/controls/rotator.png", "realValue": "0.4", "units": "Нп" }
+            {
+              "value": -35,
+              "photo": "./images/controls/rotator.png",
+              "realValue": "0",
+              "units": "Нп"
+            },
+            {
+              "value": -15,
+              "photo": "./images/controls/rotator.png",
+              "realValue": "0.1",
+              "units": "Нп"
+            },
+            {
+              "value": 15,
+              "photo": "./images/controls/rotator.png",
+              "realValue": "0.3",
+              "units": "Нп"
+            },
+            {
+              "value": 35,
+              "photo": "./images/controls/rotator.png",
+              "realValue": "0.4",
+              "units": "Нп"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -111,15 +205,60 @@
         {
           "name": "channel",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/channel.png", "realValue": "1", "units": "канал" },
-            { "value": 30, "photo": "./images/controls/channel.png", "realValue": "2", "units": "канал" },
-            { "value": 70, "photo": "./images/controls/channel.png", "realValue": "3", "units": "канал" },
-            { "value": 110, "photo": "./images/controls/channel.png", "realValue": "4", "units": "канал" },
-            { "value": 145, "photo": "./images/controls/channel.png", "realValue": "5", "units": "канал" },
-            { "value": 175, "photo": "./images/controls/channel.png", "realValue": "6", "units": "канал" },
-            { "value": 215, "photo": "./images/controls/channel.png", "realValue": "7", "units": "канал" },
-            { "value": 260, "photo": "./images/controls/channel.png", "realValue": "8", "units": "канал" },
-            { "value": 300, "photo": "./images/controls/channel.png", "realValue": "9", "units": "канал" }
+            {
+              "value": 0,
+              "photo": "./images/controls/channel.png",
+              "realValue": "1",
+              "units": "канал"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/channel.png",
+              "realValue": "2",
+              "units": "канал"
+            },
+            {
+              "value": 70,
+              "photo": "./images/controls/channel.png",
+              "realValue": "3",
+              "units": "канал"
+            },
+            {
+              "value": 110,
+              "photo": "./images/controls/channel.png",
+              "realValue": "4",
+              "units": "канал"
+            },
+            {
+              "value": 145,
+              "photo": "./images/controls/channel.png",
+              "realValue": "5",
+              "units": "канал"
+            },
+            {
+              "value": 175,
+              "photo": "./images/controls/channel.png",
+              "realValue": "6",
+              "units": "канал"
+            },
+            {
+              "value": 215,
+              "photo": "./images/controls/channel.png",
+              "realValue": "7",
+              "units": "канал"
+            },
+            {
+              "value": 260,
+              "photo": "./images/controls/channel.png",
+              "realValue": "8",
+              "units": "канал"
+            },
+            {
+              "value": 300,
+              "photo": "./images/controls/channel.png",
+              "realValue": "9",
+              "units": "канал"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -136,7 +275,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -158,7 +298,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -180,7 +321,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -202,7 +344,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -224,7 +367,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -246,7 +390,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -269,15 +414,15 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/lever2_horizontal_off.png", 
-              "realValue": null, 
-              "units": null 
+              "photo": "./images/controls/lever2_horizontal_off.png",
+              "realValue": null,
+              "units": null
             },
             {
               "value": "on",
-              "photo": "./images/controls/lever2_horizontal_on.png", 
-              "realValue": "ВКЛ", 
-              "units": null 
+              "photo": "./images/controls/lever2_horizontal_on.png",
+              "realValue": "ВКЛ",
+              "units": null
             }
           ],
           "rotatable": false,
@@ -296,15 +441,15 @@
           "valuesAndPhotos": [
             {
               "value": "on",
-              "photo": "./images/controls/lever2_horizontal_off.png", 
-              "realValue": "МЕСТ", 
-              "units": null 
+              "photo": "./images/controls/lever2_horizontal_off.png",
+              "realValue": "МЕСТ",
+              "units": null
             },
             {
               "value": "off",
-              "photo": "./images/controls/lever2_horizontal_on.png", 
-              "realValue": "ВН", 
-              "units": null 
+              "photo": "./images/controls/lever2_horizontal_on.png",
+              "realValue": "ВН",
+              "units": null
             }
           ],
           "rotatable": false,
@@ -321,13 +466,34 @@
         {
           "name": "mover",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/mover.png" },
-            { "value": 30, "photo": "./images/controls/mover.png" },
-            { "value": 60, "photo": "./images/controls/mover.png" },
-            { "value": 90, "photo": "./images/controls/mover.png" },
-            { "value": 120, "photo": "./images/controls/mover.png" },
-            { "value": 150, "photo": "./images/controls/mover.png" },
-            { "value": 180, "photo": "./images/controls/mover.png" }
+            {
+              "value": 0,
+              "photo": "./images/controls/mover.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/mover.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/mover.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/mover.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/mover.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/mover.png"
+            },
+            {
+              "value": 180,
+              "photo": "./images/controls/mover.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -343,8 +509,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -360,8 +532,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -381,7 +559,10 @@
               "value": "off",
               "photo": "./images/controls/light_white_off.png"
             },
-            { "value": "on", "photo": "./images/controls/light_white_on.png" }
+            {
+              "value": "on",
+              "photo": "./images/controls/light_white_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -400,14 +581,14 @@
             {
               "value": "off",
               "photo": "./images/controls/lever2_vertical_off.png",
-              "realValue": "ВКЛ", 
+              "realValue": "ВКЛ",
               "units": null
             },
             {
               "value": "on",
               "photo": "./images/controls/lever2_vertical_on.png",
-              "realValue": "ВЫКЛ", 
-              "units": null 
+              "realValue": "ВЫКЛ",
+              "units": null
             }
           ],
           "rotatable": false,
@@ -427,15 +608,22 @@
     {
       "name": "ЛО",
       "background": "./images/backs/lo_small.png",
-      "backgroundSettings": { "width": 856, "height": 300 },
+      "backgroundSettings": {
+        "width": 856,
+        "height": 300
+      },
       "components": [
         {
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -451,8 +639,14 @@
         {
           "name": "blever",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/bleverOff.png" },
-            { "value": "on", "photo": "./images/controls/bleverOn.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/bleverOff.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/bleverOn.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -491,17 +685,50 @@
         {
           "name": "rotator",
           "valuesAndPhotos": [
-            { "value": -160, "photo": "./images/controls/rotator.png" },
-            { "value": -135, "photo": "./images/controls/rotator.png" },
-            { "value": -90, "photo": "./images/controls/rotator.png" },
-            { "value": -55, "photo": "./images/controls/rotator.png" },
-            { "value": -30, "photo": "./images/controls/rotator.png" },
-            { "value": 0, "photo": "./images/controls/rotator.png" },
-            { "value": 25, "photo": "./images/controls/rotator.png" },
-            { "value": 55, "photo": "./images/controls/rotator.png" },
-            { "value": 90, "photo": "./images/controls/rotator.png" },
-            { "value": 135, "photo": "./images/controls/rotator.png" },
-            { "value": 160, "photo": "./images/controls/rotator.png" }
+            {
+              "value": -160,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -135,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -90,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -55,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -30,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 0,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 25,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 55,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 135,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 160,
+              "photo": "./images/controls/rotator.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -517,15 +744,42 @@
         {
           "name": "channel",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/channel.png" },
-            { "value": 30, "photo": "./images/controls/channel.png" },
-            { "value": 70, "photo": "./images/controls/channel.png" },
-            { "value": 110, "photo": "./images/controls/channel.png" },
-            { "value": 145, "photo": "./images/controls/channel.png" },
-            { "value": 175, "photo": "./images/controls/channel.png" },
-            { "value": 215, "photo": "./images/controls/channel.png" },
-            { "value": 260, "photo": "./images/controls/channel.png" },
-            { "value": 300, "photo": "./images/controls/channel.png" }
+            {
+              "value": 0,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 70,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 110,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 145,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 175,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 215,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 260,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 300,
+              "photo": "./images/controls/channel.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -542,9 +796,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "off", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -561,9 +819,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "off", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -580,9 +842,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "off", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -598,17 +864,50 @@
         {
           "name": "rotator",
           "valuesAndPhotos": [
-            { "value": -160, "photo": "./images/controls/rotator.png" },
-            { "value": -135, "photo": "./images/controls/rotator.png" },
-            { "value": -90, "photo": "./images/controls/rotator.png" },
-            { "value": -55, "photo": "./images/controls/rotator.png" },
-            { "value": -30, "photo": "./images/controls/rotator.png" },
-            { "value": 0, "photo": "./images/controls/rotator.png" },
-            { "value": 25, "photo": "./images/controls/rotator.png" },
-            { "value": 55, "photo": "./images/controls/rotator.png" },
-            { "value": 90, "photo": "./images/controls/rotator.png" },
-            { "value": 135, "photo": "./images/controls/rotator.png" },
-            { "value": 160, "photo": "./images/controls/rotator.png" }
+            {
+              "value": -160,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -135,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -90,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -55,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -30,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 0,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 25,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 55,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 135,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 160,
+              "photo": "./images/controls/rotator.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -716,8 +1015,14 @@
         {
           "name": "blever",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/bleverOff.png" },
-            { "value": "on", "photo": "./images/controls/bleverOn.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/bleverOff.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/bleverOn.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -756,17 +1061,50 @@
         {
           "name": "channel.png",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/channel.png" },
-            { "value": 30, "photo": "./images/controls/channel.png" },
-            { "value": 60, "photo": "./images/controls/channel.png" },
-            { "value": 90, "photo": "./images/controls/channel.png" },
-            { "value": 120, "photo": "./images/controls/channel.png" },
-            { "value": 150, "photo": "./images/controls/channel.png" },
-            { "value": 180, "photo": "./images/controls/channel.png" },
-            { "value": 210, "photo": "./images/controls/channel.png" },
-            { "value": 240, "photo": "./images/controls/channel.png" },
-            { "value": 270, "photo": "./images/controls/channel.png" },
-            { "value": 300, "photo": "./images/controls/channel.png" }
+            {
+              "value": 0,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 180,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 210,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 240,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 270,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 300,
+              "photo": "./images/controls/channel.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -782,11 +1120,26 @@
         {
           "name": "channel.png",
           "valuesAndPhotos": [
-            { "value": 75, "photo": "./images/controls/channel.png" },
-            { "value": 110, "photo": "./images/controls/channel.png" },
-            { "value": 140, "photo": "./images/controls/channel.png" },
-            { "value": 170, "photo": "./images/controls/channel.png" },
-            { "value": 200, "photo": "./images/controls/channel.png" }
+            {
+              "value": 75,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 110,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 140,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 170,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 200,
+              "photo": "./images/controls/channel.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -802,8 +1155,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -819,8 +1178,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -836,8 +1201,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -880,7 +1251,10 @@
               "value": "off",
               "photo": "./images/controls/button_unpressed.png"
             },
-            { "value": "on", "photo": "./images/controls/button_pressed.png" }
+            {
+              "value": "on",
+              "photo": "./images/controls/button_pressed.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -900,7 +1274,10 @@
               "value": "off",
               "photo": "./images/controls/button_unpressed.png"
             },
-            { "value": "on", "photo": "./images/controls/button_pressed.png" }
+            {
+              "value": "on",
+              "photo": "./images/controls/button_pressed.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -958,7 +1335,10 @@
           "currentValue": "none",
           "initValue": "none",
           "caption": null,
-          "ids": [6202, 2201]
+          "ids": [
+            6202,
+            2201
+          ]
         },
         {
           "name": "arrow",
@@ -1005,15 +1385,22 @@
     {
       "name": "ГО-12",
       "background": "./images/backs/go_small.png",
-      "backgroundSettings": { "width": 856, "height": 300 },
+      "backgroundSettings": {
+        "width": 856,
+        "height": 300
+      },
       "components": [
         {
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1030,9 +1417,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1049,9 +1440,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": "./images/controls/jumper2.png"
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": " "
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1068,13 +1463,12 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": "./images/controls/jumper2.png"
             },
             {
-              "value": "off", "photo": " " 
-            },
-            { 
-              "value": "jumper2", "photo": "./images/controls/jumper2.png" 
+              "value": "jumper2",
+              "photo": " "
             }
           ],
           "rotatable": false,
@@ -1092,9 +1486,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1111,9 +1509,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1130,9 +1532,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1149,9 +1555,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1168,9 +1578,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1187,9 +1601,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1206,9 +1624,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1225,9 +1647,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1244,9 +1670,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1263,9 +1693,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1282,9 +1716,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1301,9 +1739,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1320,9 +1762,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1339,9 +1785,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
+            {
+              "value": "jumper2",
+              "photo": "./images/controls/jumper2.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1358,7 +1808,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -1380,7 +1831,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -1402,7 +1854,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -1424,7 +1877,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -1468,8 +1922,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1485,8 +1945,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1502,8 +1968,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1519,8 +1991,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1536,8 +2014,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1553,8 +2037,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1570,8 +2060,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1587,8 +2083,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1604,8 +2106,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1621,8 +2129,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1638,8 +2152,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1655,8 +2175,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1672,8 +2198,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1689,8 +2221,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1706,8 +2244,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1723,8 +2267,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1740,8 +2290,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1757,8 +2313,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -1793,291 +2355,341 @@
           "currentValue": "off",
           "initValue": "off",
           "caption": null
-      },
-      {
-        "name": "ГО-УУ-кабель",
-        "valuesAndPhotos": [
-          {
-            "value": "none",
-            "photo": " "
-          },
-          {
-            "value": "cabel",
-            "photo": "./images/p-302-o/cabels/1.2.4_2.png"
-          }
-        ],
-        "rotatable": false,
-        "draggable": false,
-        "left": 0,
-        "top": 0,
-        "width": 856,
-        "height": 321,
-        "id": 3301,
-        "currentValue": "none",
-        "initValue": "none",
-        "caption": null,
-        "ids": [6202, 3203]
-      },{
-        "name": "ГО-УУ-кабель",
-        "valuesAndPhotos": [
-          {
-            "value": "none",
-            "photo": " "
-          },
-          {
-            "value": "cabel",
-            "photo": "./images/p-302-o/cabels/cabel (4).png"
-          }
-        ],
-        "rotatable": false,
-        "draggable": false,
-        "left": 0,
-        "top": 0,
-        "width": 856,
-        "height": 321,
-        "id": 3302,
-        "currentValue": "none",
-        "initValue": "none",
-        "caption": null,
-        "ids": [6202, 3203]
-      },{
-        "name": "ГО-УУ-кабель",
-        "valuesAndPhotos": [
-          {
-            "value": "none",
-            "photo": " "
-          },
-          {
-            "value": "cabel",
-            "photo": "./images/p-302-o/cabels/cabel (5).png"
-          }
-        ],
-        "rotatable": false,
-        "draggable": false,
-        "left": 0,
-        "top": 0,
-        "width": 856,
-        "height": 321,
-        "id": 3303,
-        "currentValue": "none",
-        "initValue": "none",
-        "caption": null,
-        "ids": [6202, 3203]
-      },{
-        "name": "ГО-УУ-кабель",
-        "valuesAndPhotos": [
-          {
-            "value": "none",
-            "photo": " "
-          },
-          {
-            "value": "cabel",
-            "photo": "./images/p-302-o/cabels/cabel (6).png"
-          }
-        ],
-        "rotatable": false,
-        "draggable": false,
-        "left": 0,
-        "top": 0,
-        "width": 856,
-        "height": 321,
-        "id": 3304,
-        "currentValue": "none",
-        "initValue": "none",
-        "caption": null,
-        "ids": [6202, 3203]
-      },{
-        "name": "ГО-УУ-кабель",
-        "valuesAndPhotos": [
-          {
-            "value": "none",
-            "photo": " "
-          },
-          {
-            "value": "cabel",
-            "photo": "./images/p-302-o/cabels/cabel (7).png"
-          }
-        ],
-        "rotatable": false,
-        "draggable": false,
-        "left": 0,
-        "top": 0,
-        "width": 856,
-        "height": 321,
-        "id": 3306,
-        "currentValue": "none",
-        "initValue": "none",
-        "caption": null,
-        "ids": [6202, 3203]
-      },{
-        "name": "ГО-УУ-кабель",
-        "valuesAndPhotos": [
-          {
-            "value": "none",
-            "photo": " "
-          },
-          {
-            "value": "cabel",
-            "photo": "./images/p-302-o/cabels/cabel (8).png"
-          }
-        ],
-        "rotatable": false,
-        "draggable": false,
-        "left": 0,
-        "top": 0,
-        "width": 856,
-        "height": 321,
-        "id": 3307,
-        "currentValue": "none",
-        "initValue": "none",
-        "caption": null,
-        "ids": [6202, 3203]
-      },{
-        "name": "ГО-УУ-кабель",
-        "valuesAndPhotos": [
-          {
-            "value": "none",
-            "photo": " "
-          },
-          {
-            "value": "cabel",
-            "photo": "./images/p-302-o/cabels/cabel (9).png"
-          }
-        ],
-        "rotatable": false,
-        "draggable": false,
-        "left": 0,
-        "top": 0,
-        "width": 856,
-        "height": 321,
-        "id": 3308,
-        "currentValue": "none",
-        "initValue": "none",
-        "caption": null,
-        "ids": [6202, 3203]
-      },{
-        "name": "ГО-УУ-кабель",
-        "valuesAndPhotos": [
-          {
-            "value": "none",
-            "photo": " "
-          },
-          {
-            "value": "cabel",
-            "photo": "./images/p-302-o/cabels/cabel (10).png"
-          }
-        ],
-        "rotatable": false,
-        "draggable": false,
-        "left": 0,
-        "top": 0,
-        "width": 856,
-        "height": 321,
-        "id": 3309,
-        "currentValue": "none",
-        "initValue": "none",
-        "caption": null,
-        "ids": [6202, 3203]
-      },{
-        "name": "ГО-УУ-кабель",
-        "valuesAndPhotos": [
-          {
-            "value": "none",
-            "photo": " "
-          },
-          {
-            "value": "cabel",
-            "photo": "./images/p-302-o/cabels/cabel (13).png"
-          }
-        ],
-        "rotatable": false,
-        "draggable": false,
-        "left": 0,
-        "top": 0,
-        "width": 856,
-        "height": 321,
-        "id": 3312,
-        "currentValue": "none",
-        "initValue": "none",
-        "caption": null,
-        "ids": [6202, 3203]
-      },{
-        "name": "ГО-УУ-кабель",
-        "valuesAndPhotos": [
-          {
-            "value": "none",
-            "photo": " "
-          },
-          {
-            "value": "cabel",
-            "photo": "./images/p-302-o/cabels/cabel (14).png"
-          }
-        ],
-        "rotatable": false,
-        "draggable": false,
-        "left": 0,
-        "top": 0,
-        "width": 856,
-        "height": 321,
-        "id": 3313,
-        "currentValue": "none",
-        "initValue": "none",
-        "caption": null,
-        "ids": [6202, 3203]
-      },{
-        "name": "ГО-УУ-кабель",
-        "valuesAndPhotos": [
-          {
-            "value": "none",
-            "photo": " "
-          },
-          {
-            "value": "cabel",
-            "photo": "./images/p-302-o/cabels/cabel (15).png"
-          }
-        ],
-        "rotatable": false,
-        "draggable": false,
-        "left": 0,
-        "top": 0,
-        "width": 856,
-        "height": 321,
-        "id": 3314,
-        "currentValue": "none",
-        "initValue": "none",
-        "caption": null,
-        "ids": [6202, 3203]
-      },{
-        "name": "ГО-УУ-кабель",
-        "valuesAndPhotos": [
-          {
-            "value": "none",
-            "photo": "./images/p-302-o/cabels/cabel (16).png"
-          },
-          {
-            "value": "cabel",
-            "photo": "./images/p-302-o/cabels/cabel (16).png"
-          }
-        ],
-        "rotatable": false,
-        "draggable": false,
-        "left": 0,
-        "top": 0,
-        "width": 856,
-        "height": 321,
-        "id": 3315,
-        "currentValue": "none",
-        "initValue": "none",
-        "caption": null,
-        "ids": [6202, 3203]
-      }
+        },
+        {
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": " "
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/1.2.4_2.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 856,
+          "height": 321,
+          "id": 3301,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            6202,
+            3203
+          ]
+        },
+        {
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": " "
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/cabel (4).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 856,
+          "height": 321,
+          "id": 3302,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            6202,
+            3203
+          ]
+        },
+        {
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": " "
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/cabel (5).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 856,
+          "height": 321,
+          "id": 3303,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            6202,
+            3203
+          ]
+        },
+        {
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": " "
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/cabel (6).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 856,
+          "height": 321,
+          "id": 3304,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            6202,
+            3203
+          ]
+        },
+        {
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": " "
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/cabel (7).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 856,
+          "height": 321,
+          "id": 3306,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            6202,
+            3203
+          ]
+        },
+        {
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": " "
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/cabel (8).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 856,
+          "height": 321,
+          "id": 3307,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            6202,
+            3203
+          ]
+        },
+        {
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": " "
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/cabel (9).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 856,
+          "height": 321,
+          "id": 3308,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            6202,
+            3203
+          ]
+        },
+        {
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": " "
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/cabel (10).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 856,
+          "height": 321,
+          "id": 3309,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            6202,
+            3203
+          ]
+        },
+        {
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": " "
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/cabel (13).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 856,
+          "height": 321,
+          "id": 3312,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            6202,
+            3203
+          ]
+        },
+        {
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": " "
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/cabel (14).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 856,
+          "height": 321,
+          "id": 3313,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            6202,
+            3203
+          ]
+        },
+        {
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": " "
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/cabel (15).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 856,
+          "height": 321,
+          "id": 3314,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            6202,
+            3203
+          ]
+        },
+        {
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": " "
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/cabel (16).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 856,
+          "height": 321,
+          "id": 3315,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            6202,
+            3203
+          ]
+        }
       ],
       "id": 3
     },
     {
       "name": "ПИТ",
       "background": "./images/backs/pit_small.png",
-      "backgroundSettings": { "width": 856, "height": 300 },
+      "backgroundSettings": {
+        "width": 856,
+        "height": 300
+      },
       "components": [
         {
           "name": "lever2",
@@ -2090,7 +2702,6 @@
               "value": "on",
               "photo": "./images/controls/lever2_horizontal_on.png"
             }
-            
           ],
           "rotatable": false,
           "draggable": false,
@@ -2133,7 +2744,10 @@
               "value": "off",
               "photo": "./images/controls/light_white_off.png"
             },
-            { "value": "on", "photo": "./images/controls/light_white_on.png" }
+            {
+              "value": "on",
+              "photo": "./images/controls/light_white_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2149,8 +2763,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2166,8 +2786,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2183,8 +2809,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2200,8 +2832,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2217,8 +2855,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2237,13 +2881,17 @@
     {
       "name": "ВКО-12",
       "background": "./images/backs/vko_small.png",
-      "backgroundSettings": { "width": 856, "height": 300 },
+      "backgroundSettings": {
+        "width": 856,
+        "height": 300
+      },
       "components": [
         {
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -2265,7 +2913,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -2287,7 +2936,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -2309,7 +2959,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -2331,7 +2982,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -2353,7 +3005,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -2375,7 +3028,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -2397,9 +3051,13 @@
           "name": "cable_head8",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper8", "photo": "./images/controls/jumper8.png" }
+            {
+              "value": "jumper8",
+              "photo": "./images/controls/jumper8.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2416,9 +3074,13 @@
           "name": "cable_head8",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper8", "photo": "./images/controls/jumper8.png" }
+            {
+              "value": "jumper8",
+              "photo": "./images/controls/jumper8.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2480,13 +3142,34 @@
         {
           "name": "rotator",
           "valuesAndPhotos": [
-            { "value": -90, "photo": "./images/controls/rotator.png" },
-            { "value": -60, "photo": "./images/controls/rotator.png" },
-            { "value": -30, "photo": "./images/controls/rotator.png" },
-            { "value": 0, "photo": "./images/controls/rotator.png" },
-            { "value": 30, "photo": "./images/controls/rotator.png" },
-            { "value": 60, "photo": "./images/controls/rotator.png" },
-            { "value": 90, "photo": "./images/controls/rotator.png" }
+            {
+              "value": -90,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -60,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -30,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 0,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/rotator.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -2567,7 +3250,10 @@
           "currentValue": "none",
           "initValue": "none",
           "caption": null,
-          "ids": [5201, 5202]
+          "ids": [
+            5201,
+            5202
+          ]
         }
       ],
       "id": 5
@@ -2575,20 +3261,50 @@
     {
       "name": "ЩКНЧ1",
       "background": "./images/backs/shknch1_small.png",
-      "backgroundSettings": { "width": 856, "height": 300 },
+      "backgroundSettings": {
+        "width": 856,
+        "height": 300
+      },
       "components": [
         {
           "name": "rotator",
           "valuesAndPhotos": [
-            { "value": -120, "photo": "./images/controls/rotator.png" },
-            { "value": -90, "photo": "./images/controls/rotator.png" },
-            { "value": -60, "photo": "./images/controls/rotator.png" },
-            { "value": -30, "photo": "./images/controls/rotator.png" },
-            { "value": 0, "photo": "./images/controls/rotator.png" },
-            { "value": 30, "photo": "./images/controls/rotator.png" },
-            { "value": 60, "photo": "./images/controls/rotator.png" },
-            { "value": 90, "photo": "./images/controls/rotator.png" },
-            { "value": 120, "photo": "./images/controls/rotator.png" }
+            {
+              "value": -120,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -90,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -60,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -30,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 0,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/rotator.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -2604,14 +3320,38 @@
         {
           "name": "rotator",
           "valuesAndPhotos": [
-            { "value": -110, "photo": "./images/controls/rotator.png" },
-            { "value": -80, "photo": "./images/controls/rotator.png" },
-            { "value": -60, "photo": "./images/controls/rotator.png" },
-            { "value": -30, "photo": "./images/controls/rotator.png" },
-            { "value": 10, "photo": "./images/controls/rotator.png" },
-            { "value": 40, "photo": "./images/controls/rotator.png" },
-            { "value": 80, "photo": "./images/controls/rotator.png" },
-            { "value": 110, "photo": "./images/controls/rotator.png" }
+            {
+              "value": -110,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -80,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -60,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -30,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 10,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 40,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 80,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 110,
+              "photo": "./images/controls/rotator.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -2650,10 +3390,22 @@
         {
           "name": "rotator",
           "valuesAndPhotos": [
-            { "value": -45, "photo": "./images/controls/rotator.png" },
-            { "value": -15, "photo": "./images/controls/rotator.png" },
-            { "value": 15, "photo": "./images/controls/rotator.png" },
-            { "value": 45, "photo": "./images/controls/rotator.png" }
+            {
+              "value": -45,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -15,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 15,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 45,
+              "photo": "./images/controls/rotator.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -2669,14 +3421,38 @@
         {
           "name": "rotator",
           "valuesAndPhotos": [
-            { "value": -110, "photo": "./images/controls/rotator.png" },
-            { "value": -80, "photo": "./images/controls/rotator.png" },
-            { "value": -60, "photo": "./images/controls/rotator.png" },
-            { "value": -30, "photo": "./images/controls/rotator.png" },
-            { "value": 10, "photo": "./images/controls/rotator.png" },
-            { "value": 40, "photo": "./images/controls/rotator.png" },
-            { "value": 80, "photo": "./images/controls/rotator.png" },
-            { "value": 110, "photo": "./images/controls/rotator.png" }
+            {
+              "value": -110,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -80,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -60,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -30,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 10,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 40,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 80,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 110,
+              "photo": "./images/controls/rotator.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -2692,12 +3468,18 @@
         {
           "name": "lever2",
           "valuesAndPhotos": [
-            { "value": "up", "photo": "./images/controls/lever3up.png" },
+            {
+              "value": "up",
+              "photo": "./images/controls/lever3up.png"
+            },
             {
               "value": "center",
               "photo": "./images/controls/lever3center.png"
             },
-            { "value": "down", "photo": "./images/controls/lever3down.png" }
+            {
+              "value": "down",
+              "photo": "./images/controls/lever3down.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2713,12 +3495,18 @@
         {
           "name": "lever3",
           "valuesAndPhotos": [
-            { "value": "up", "photo": "./images/controls/lever3up.png" },
+            {
+              "value": "up",
+              "photo": "./images/controls/lever3up.png"
+            },
             {
               "value": "center",
               "photo": "./images/controls/lever3center.png"
             },
-            { "value": "down", "photo": "./images/controls/lever3down.png" }
+            {
+              "value": "down",
+              "photo": "./images/controls/lever3down.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2734,12 +3522,18 @@
         {
           "name": "lever4",
           "valuesAndPhotos": [
-            { "value": "up", "photo": "./images/controls/lever3up.png" },
+            {
+              "value": "up",
+              "photo": "./images/controls/lever3up.png"
+            },
             {
               "value": "center",
               "photo": "./images/controls/lever3center.png"
             },
-            { "value": "down", "photo": "./images/controls/lever3down.png" }
+            {
+              "value": "down",
+              "photo": "./images/controls/lever3down.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2755,12 +3549,18 @@
         {
           "name": "lever5",
           "valuesAndPhotos": [
-            { "value": "up", "photo": "./images/controls/lever3up.png" },
+            {
+              "value": "up",
+              "photo": "./images/controls/lever3up.png"
+            },
             {
               "value": "center",
               "photo": "./images/controls/lever3center.png"
             },
-            { "value": "down", "photo": "./images/controls/lever3down.png" }
+            {
+              "value": "down",
+              "photo": "./images/controls/lever3down.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2776,12 +3576,18 @@
         {
           "name": "lever6",
           "valuesAndPhotos": [
-            { "value": "up", "photo": "./images/controls/lever3up.png" },
+            {
+              "value": "up",
+              "photo": "./images/controls/lever3up.png"
+            },
             {
               "value": "center",
               "photo": "./images/controls/lever3center.png"
             },
-            { "value": "down", "photo": "./images/controls/lever3down.png" }
+            {
+              "value": "down",
+              "photo": "./images/controls/lever3down.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2797,12 +3603,18 @@
         {
           "name": "lever7",
           "valuesAndPhotos": [
-            { "value": "up", "photo": "./images/controls/lever3up.png" },
+            {
+              "value": "up",
+              "photo": "./images/controls/lever3up.png"
+            },
             {
               "value": "center",
               "photo": "./images/controls/lever3center.png"
             },
-            { "value": "down", "photo": "./images/controls/lever3down.png" }
+            {
+              "value": "down",
+              "photo": "./images/controls/lever3down.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2822,7 +3634,10 @@
               "value": "off",
               "photo": "./images/controls/button_unpressed.png"
             },
-            { "value": "on", "photo": "./images/controls/button_pressed.png" }
+            {
+              "value": "on",
+              "photo": "./images/controls/button_pressed.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2838,8 +3653,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2859,7 +3680,10 @@
               "value": "off",
               "photo": "./images/controls/anti_button_off.png"
             },
-            { "value": "on", "photo": "./images/controls/anti_button_on.png" }
+            {
+              "value": "on",
+              "photo": "./images/controls/anti_button_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -2940,7 +3764,10 @@
           "currentValue": "none",
           "initValue": "none",
           "caption": null,
-          "ids": [6201, 6202]
+          "ids": [
+            6201,
+            6202
+          ]
         },
         {
           "name": "УУ-ГО-кабель",
@@ -2964,7 +3791,10 @@
           "currentValue": "none",
           "initValue": "none",
           "caption": null,
-          "ids": [6202, 3203]
+          "ids": [
+            6202,
+            3203
+          ]
         },
         {
           "name": "arrow",
@@ -2991,15 +3821,22 @@
     {
       "name": "ЩКНЧ2",
       "background": "./images/backs/shknch_small.png",
-      "backgroundSettings": { "width": 756, "height": 550 },
+      "backgroundSettings": {
+        "width": 756,
+        "height": 550
+      },
       "components": [
         {
           "name": "cable_head1",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper8", "photo": "./images/controls/jumper8.png" }
+            {
+              "value": "jumper8",
+              "photo": "./images/controls/jumper8.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -3016,9 +3853,13 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
-            { "value": "jumper8", "photo": "./images/controls/jumper8.png" }
+            {
+              "value": "jumper8",
+              "photo": "./images/controls/jumper8.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -3035,7 +3876,8 @@
           "name": "cable_head3",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3057,7 +3899,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3078,8 +3921,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -3095,8 +3944,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -3112,8 +3967,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -3133,7 +3994,10 @@
               "value": "off",
               "photo": "./images/controls/button_unpressed.png"
             },
-            { "value": "on", "photo": "./images/controls/button_pressed.png" }
+            {
+              "value": "on",
+              "photo": "./images/controls/button_pressed.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -3152,13 +4016,17 @@
     {
       "name": "ЩКВЧ",
       "background": "./images/backs/shkvch_small.png",
-      "backgroundSettings": { "width": 1160, "height": 360 },
+      "backgroundSettings": {
+        "width": 1160,
+        "height": 360
+      },
       "components": [
         {
           "name": "cable_head1",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3180,7 +4048,8 @@
           "name": "cable_head2",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3202,7 +4071,8 @@
           "name": "cable_head3",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3224,7 +4094,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3246,7 +4117,8 @@
           "name": "cable_head5",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3268,7 +4140,8 @@
           "name": "cable_head6",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3290,7 +4163,8 @@
           "name": "cable_head7",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3312,7 +4186,8 @@
           "name": "cable_head6",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3334,7 +4209,8 @@
           "name": "cable_head8",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3356,7 +4232,8 @@
           "name": "cable_head8",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3380,13 +4257,17 @@
     {
       "name": "ДСВ",
       "background": "./images/backs/dsv_small.png",
-      "backgroundSettings": { "width": 1160, "height": 600 },
+      "backgroundSettings": {
+        "width": 1160,
+        "height": 600
+      },
       "components": [
         {
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3408,7 +4289,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3430,7 +4312,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3452,7 +4335,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3474,7 +4358,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3496,7 +4381,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3518,7 +4404,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3540,7 +4427,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3562,7 +4450,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3584,7 +4473,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3629,7 +4519,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3651,7 +4542,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3673,7 +4565,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3695,7 +4588,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3717,7 +4611,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3739,7 +4634,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3764,7 +4660,10 @@
               "value": "off",
               "photo": "./images/controls/light_white_off.png"
             },
-            { "value": "on", "photo": "./images/controls/light_white_on.png" }
+            {
+              "value": "on",
+              "photo": "./images/controls/light_white_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -3784,7 +4683,10 @@
               "value": "off",
               "photo": "./images/controls/light_white_off.png"
             },
-            { "value": "on", "photo": "./images/controls/light_white_on.png" }
+            {
+              "value": "on",
+              "photo": "./images/controls/light_white_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -3800,8 +4702,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -3817,8 +4725,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -3879,28 +4793,32 @@
         },
         {
           "name": "ДСВ-УУ-кабель",
-            "valuesAndPhotos": [
-              {
-                "value": "none",
-                "photo": " "
-              },
-              {
-                "value": "cabel",
-                "photo": "./images/p-302-o/cabels/1.2.5_2.png"
-              }
-            ],
-            "rotatable": false,
-            "draggable": false,
-            "left": 0,
-            "top": 37,
-            "width": 1160,
-            "height": 732,
-            "id": 9301,
-            "currentValue": "none",
-            "initValue": "none",
-            "caption": null,
-            "ids": [6202, 9204]
-        },{
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": " "
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/1.2.5_2.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 37,
+          "width": 1160,
+          "height": 732,
+          "id": 9301,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            6202,
+            9204
+          ]
+        },
+        {
           "name": "ГО-УУ-кабель",
           "valuesAndPhotos": [
             {
@@ -3916,13 +4834,16 @@
           "draggable": false,
           "left": 0,
           "top": 0,
-          "width": 856,
-          "height": 321,
+          "width": 1160,
+          "height": 732,
           "id": 9302,
           "currentValue": "none",
           "initValue": "none",
           "caption": null,
-          "ids": [6202, 3203]
+          "ids": [
+            6202,
+            3203
+          ]
         }
       ],
       "id": 9
@@ -3930,13 +4851,17 @@
     {
       "name": "ИПП",
       "background": "./images/backs/ipp_small.png",
-      "backgroundSettings": { "width": 1160, "height": 600 },
+      "backgroundSettings": {
+        "width": 1160,
+        "height": 600
+      },
       "components": [
         {
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3958,7 +4883,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -3980,7 +4906,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -4002,7 +4929,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -4024,7 +4952,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -4046,7 +4975,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -4068,7 +4998,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -4090,7 +5021,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -4112,7 +5044,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -4134,7 +5067,8 @@
           "name": "cable_head4",
           "valuesAndPhotos": [
             {
-              "value": "off", "photo": " " 
+              "value": "off",
+              "photo": " "
             },
             {
               "value": "jumper4",
@@ -4155,17 +5089,50 @@
         {
           "name": "channel.png",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/channel.png" },
-            { "value": 30, "photo": "./images/controls/channel.png" },
-            { "value": 60, "photo": "./images/controls/channel.png" },
-            { "value": 90, "photo": "./images/controls/channel.png" },
-            { "value": 120, "photo": "./images/controls/channel.png" },
-            { "value": 150, "photo": "./images/controls/channel.png" },
-            { "value": 180, "photo": "./images/controls/channel.png" },
-            { "value": 210, "photo": "./images/controls/channel.png" },
-            { "value": 240, "photo": "./images/controls/channel.png" },
-            { "value": 270, "photo": "./images/controls/channel.png" },
-            { "value": 300, "photo": "./images/controls/channel.png" }
+            {
+              "value": 0,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 180,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 210,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 240,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 270,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 300,
+              "photo": "./images/controls/channel.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -4181,17 +5148,50 @@
         {
           "name": "channel.png",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/channel.png" },
-            { "value": 30, "photo": "./images/controls/channel.png" },
-            { "value": 60, "photo": "./images/controls/channel.png" },
-            { "value": 90, "photo": "./images/controls/channel.png" },
-            { "value": 120, "photo": "./images/controls/channel.png" },
-            { "value": 150, "photo": "./images/controls/channel.png" },
-            { "value": 180, "photo": "./images/controls/channel.png" },
-            { "value": 210, "photo": "./images/controls/channel.png" },
-            { "value": 240, "photo": "./images/controls/channel.png" },
-            { "value": 270, "photo": "./images/controls/channel.png" },
-            { "value": 300, "photo": "./images/controls/channel.png" }
+            {
+              "value": 0,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 180,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 210,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 240,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 270,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 300,
+              "photo": "./images/controls/channel.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -4207,17 +5207,50 @@
         {
           "name": "channel.png",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/channel.png" },
-            { "value": 30, "photo": "./images/controls/channel.png" },
-            { "value": 60, "photo": "./images/controls/channel.png" },
-            { "value": 90, "photo": "./images/controls/channel.png" },
-            { "value": 120, "photo": "./images/controls/channel.png" },
-            { "value": 150, "photo": "./images/controls/channel.png" },
-            { "value": 180, "photo": "./images/controls/channel.png" },
-            { "value": 210, "photo": "./images/controls/channel.png" },
-            { "value": 240, "photo": "./images/controls/channel.png" },
-            { "value": 270, "photo": "./images/controls/channel.png" },
-            { "value": 300, "photo": "./images/controls/channel.png" }
+            {
+              "value": 0,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 180,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 210,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 240,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 270,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 300,
+              "photo": "./images/controls/channel.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -4233,17 +5266,50 @@
         {
           "name": "channel.png",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/channel.png" },
-            { "value": 30, "photo": "./images/controls/channel.png" },
-            { "value": 60, "photo": "./images/controls/channel.png" },
-            { "value": 90, "photo": "./images/controls/channel.png" },
-            { "value": 120, "photo": "./images/controls/channel.png" },
-            { "value": 150, "photo": "./images/controls/channel.png" },
-            { "value": 180, "photo": "./images/controls/channel.png" },
-            { "value": 210, "photo": "./images/controls/channel.png" },
-            { "value": 240, "photo": "./images/controls/channel.png" },
-            { "value": 270, "photo": "./images/controls/channel.png" },
-            { "value": 300, "photo": "./images/controls/channel.png" }
+            {
+              "value": 0,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 180,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 210,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 240,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 270,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 300,
+              "photo": "./images/controls/channel.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -4259,17 +5325,50 @@
         {
           "name": "channel.png",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/channel.png" },
-            { "value": 30, "photo": "./images/controls/channel.png" },
-            { "value": 60, "photo": "./images/controls/channel.png" },
-            { "value": 90, "photo": "./images/controls/channel.png" },
-            { "value": 120, "photo": "./images/controls/channel.png" },
-            { "value": 150, "photo": "./images/controls/channel.png" },
-            { "value": 180, "photo": "./images/controls/channel.png" },
-            { "value": 210, "photo": "./images/controls/channel.png" },
-            { "value": 240, "photo": "./images/controls/channel.png" },
-            { "value": 270, "photo": "./images/controls/channel.png" },
-            { "value": 300, "photo": "./images/controls/channel.png" }
+            {
+              "value": 0,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 180,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 210,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 240,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 270,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 300,
+              "photo": "./images/controls/channel.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -4285,17 +5384,50 @@
         {
           "name": "channel.png",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/channel.png" },
-            { "value": 30, "photo": "./images/controls/channel.png" },
-            { "value": 60, "photo": "./images/controls/channel.png" },
-            { "value": 90, "photo": "./images/controls/channel.png" },
-            { "value": 120, "photo": "./images/controls/channel.png" },
-            { "value": 150, "photo": "./images/controls/channel.png" },
-            { "value": 180, "photo": "./images/controls/channel.png" },
-            { "value": 210, "photo": "./images/controls/channel.png" },
-            { "value": 240, "photo": "./images/controls/channel.png" },
-            { "value": 270, "photo": "./images/controls/channel.png" },
-            { "value": 300, "photo": "./images/controls/channel.png" }
+            {
+              "value": 0,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 180,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 210,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 240,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 270,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 300,
+              "photo": "./images/controls/channel.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -4311,17 +5443,50 @@
         {
           "name": "channel.png",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/channel.png" },
-            { "value": 30, "photo": "./images/controls/channel.png" },
-            { "value": 60, "photo": "./images/controls/channel.png" },
-            { "value": 90, "photo": "./images/controls/channel.png" },
-            { "value": 120, "photo": "./images/controls/channel.png" },
-            { "value": 150, "photo": "./images/controls/channel.png" },
-            { "value": 180, "photo": "./images/controls/channel.png" },
-            { "value": 210, "photo": "./images/controls/channel.png" },
-            { "value": 240, "photo": "./images/controls/channel.png" },
-            { "value": 270, "photo": "./images/controls/channel.png" },
-            { "value": 300, "photo": "./images/controls/channel.png" }
+            {
+              "value": 0,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 180,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 210,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 240,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 270,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 300,
+              "photo": "./images/controls/channel.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -4337,17 +5502,50 @@
         {
           "name": "channel.png",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/channel.png" },
-            { "value": 30, "photo": "./images/controls/channel.png" },
-            { "value": 60, "photo": "./images/controls/channel.png" },
-            { "value": 90, "photo": "./images/controls/channel.png" },
-            { "value": 120, "photo": "./images/controls/channel.png" },
-            { "value": 150, "photo": "./images/controls/channel.png" },
-            { "value": 180, "photo": "./images/controls/channel.png" },
-            { "value": 210, "photo": "./images/controls/channel.png" },
-            { "value": 240, "photo": "./images/controls/channel.png" },
-            { "value": 270, "photo": "./images/controls/channel.png" },
-            { "value": 300, "photo": "./images/controls/channel.png" }
+            {
+              "value": 0,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 180,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 210,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 240,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 270,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 300,
+              "photo": "./images/controls/channel.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -4363,17 +5561,50 @@
         {
           "name": "channel.png",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/channel.png" },
-            { "value": 30, "photo": "./images/controls/channel.png" },
-            { "value": 60, "photo": "./images/controls/channel.png" },
-            { "value": 90, "photo": "./images/controls/channel.png" },
-            { "value": 120, "photo": "./images/controls/channel.png" },
-            { "value": 150, "photo": "./images/controls/channel.png" },
-            { "value": 180, "photo": "./images/controls/channel.png" },
-            { "value": 210, "photo": "./images/controls/channel.png" },
-            { "value": 240, "photo": "./images/controls/channel.png" },
-            { "value": 270, "photo": "./images/controls/channel.png" },
-            { "value": 300, "photo": "./images/controls/channel.png" }
+            {
+              "value": 0,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 180,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 210,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 240,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 270,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 300,
+              "photo": "./images/controls/channel.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -4389,17 +5620,50 @@
         {
           "name": "channel.png",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/channel.png" },
-            { "value": 30, "photo": "./images/controls/channel.png" },
-            { "value": 60, "photo": "./images/controls/channel.png" },
-            { "value": 90, "photo": "./images/controls/channel.png" },
-            { "value": 120, "photo": "./images/controls/channel.png" },
-            { "value": 150, "photo": "./images/controls/channel.png" },
-            { "value": 180, "photo": "./images/controls/channel.png" },
-            { "value": 210, "photo": "./images/controls/channel.png" },
-            { "value": 240, "photo": "./images/controls/channel.png" },
-            { "value": 270, "photo": "./images/controls/channel.png" },
-            { "value": 300, "photo": "./images/controls/channel.png" }
+            {
+              "value": 0,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 180,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 210,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 240,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 270,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 300,
+              "photo": "./images/controls/channel.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -4415,17 +5679,50 @@
         {
           "name": "channel.png",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/channel.png" },
-            { "value": 30, "photo": "./images/controls/channel.png" },
-            { "value": 60, "photo": "./images/controls/channel.png" },
-            { "value": 90, "photo": "./images/controls/channel.png" },
-            { "value": 120, "photo": "./images/controls/channel.png" },
-            { "value": 150, "photo": "./images/controls/channel.png" },
-            { "value": 180, "photo": "./images/controls/channel.png" },
-            { "value": 210, "photo": "./images/controls/channel.png" },
-            { "value": 240, "photo": "./images/controls/channel.png" },
-            { "value": 270, "photo": "./images/controls/channel.png" },
-            { "value": 300, "photo": "./images/controls/channel.png" }
+            {
+              "value": 0,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 180,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 210,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 240,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 270,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 300,
+              "photo": "./images/controls/channel.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -4441,17 +5738,50 @@
         {
           "name": "channel.png",
           "valuesAndPhotos": [
-            { "value": 0, "photo": "./images/controls/channel.png" },
-            { "value": 30, "photo": "./images/controls/channel.png" },
-            { "value": 60, "photo": "./images/controls/channel.png" },
-            { "value": 90, "photo": "./images/controls/channel.png" },
-            { "value": 120, "photo": "./images/controls/channel.png" },
-            { "value": 150, "photo": "./images/controls/channel.png" },
-            { "value": 180, "photo": "./images/controls/channel.png" },
-            { "value": 210, "photo": "./images/controls/channel.png" },
-            { "value": 240, "photo": "./images/controls/channel.png" },
-            { "value": 270, "photo": "./images/controls/channel.png" },
-            { "value": 300, "photo": "./images/controls/channel.png" }
+            {
+              "value": 0,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 180,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 210,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 240,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 270,
+              "photo": "./images/controls/channel.png"
+            },
+            {
+              "value": 300,
+              "photo": "./images/controls/channel.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -4467,8 +5797,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -4487,22 +5823,58 @@
     {
       "name": "ДП",
       "background": "./images/backs/dp_small.png",
-      "backgroundSettings": { "width": 1100, "height": 350 },
+      "backgroundSettings": {
+        "width": 1100,
+        "height": 350
+      },
       "components": [
         {
           "name": "puck",
           "valuesAndPhotos": [
-            { "value": -150, "photo": "./images/controls/puck.png" },
-            { "value": -120, "photo": "./images/controls/puck.png" },
-            { "value": -90, "photo": "./images/controls/puck.png" },
-            { "value": -55, "photo": "./images/controls/puck.png" },
-            { "value": -30, "photo": "./images/controls/puck.png" },
-            { "value": 0, "photo": "./images/controls/puck.png" },
-            { "value": 25, "photo": "./images/controls/puck.png" },
-            { "value": 55, "photo": "./images/controls/puck.png" },
-            { "value": 90, "photo": "./images/controls/puck.png" },
-            { "value": 120, "photo": "./images/controls/puck.png" },
-            { "value": 150, "photo": "./images/controls/puck.png" }
+            {
+              "value": -150,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": -120,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": -90,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": -55,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": -30,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 0,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 25,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 55,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/puck.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -4518,17 +5890,50 @@
         {
           "name": "puck",
           "valuesAndPhotos": [
-            { "value": -150, "photo": "./images/controls/puck.png" },
-            { "value": -120, "photo": "./images/controls/puck.png" },
-            { "value": -90, "photo": "./images/controls/puck.png" },
-            { "value": -55, "photo": "./images/controls/puck.png" },
-            { "value": -30, "photo": "./images/controls/puck.png" },
-            { "value": 0, "photo": "./images/controls/puck.png" },
-            { "value": 25, "photo": "./images/controls/puck.png" },
-            { "value": 55, "photo": "./images/controls/puck.png" },
-            { "value": 90, "photo": "./images/controls/puck.png" },
-            { "value": 120, "photo": "./images/controls/puck.png" },
-            { "value": 150, "photo": "./images/controls/puck.png" }
+            {
+              "value": -150,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": -120,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": -90,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": -55,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": -30,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 0,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 25,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 55,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/puck.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -4544,17 +5949,50 @@
         {
           "name": "puck",
           "valuesAndPhotos": [
-            { "value": -150, "photo": "./images/controls/puck.png" },
-            { "value": -120, "photo": "./images/controls/puck.png" },
-            { "value": -90, "photo": "./images/controls/puck.png" },
-            { "value": -55, "photo": "./images/controls/puck.png" },
-            { "value": -30, "photo": "./images/controls/puck.png" },
-            { "value": 0, "photo": "./images/controls/puck.png" },
-            { "value": 25, "photo": "./images/controls/puck.png" },
-            { "value": 55, "photo": "./images/controls/puck.png" },
-            { "value": 90, "photo": "./images/controls/puck.png" },
-            { "value": 120, "photo": "./images/controls/puck.png" },
-            { "value": 150, "photo": "./images/controls/puck.png" }
+            {
+              "value": -150,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": -120,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": -90,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": -55,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": -30,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 0,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 25,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 55,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 90,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 120,
+              "photo": "./images/controls/puck.png"
+            },
+            {
+              "value": 150,
+              "photo": "./images/controls/puck.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -4570,11 +6008,26 @@
         {
           "name": "rotator",
           "valuesAndPhotos": [
-            { "value": -60, "photo": "./images/controls/rotator.png" },
-            { "value": -30, "photo": "./images/controls/rotator.png" },
-            { "value": 0, "photo": "./images/controls/rotator.png" },
-            { "value": 30, "photo": "./images/controls/rotator.png" },
-            { "value": 60, "photo": "./images/controls/rotator.png" }
+            {
+              "value": -60,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": -30,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 0,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 30,
+              "photo": "./images/controls/rotator.png"
+            },
+            {
+              "value": 60,
+              "photo": "./images/controls/rotator.png"
+            }
           ],
           "rotatable": true,
           "draggable": false,
@@ -4590,8 +6043,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -4607,8 +6066,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -4624,8 +6089,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -4641,8 +6112,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -4658,8 +6135,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -4675,8 +6158,14 @@
         {
           "name": "light_red",
           "valuesAndPhotos": [
-            { "value": "off", "photo": "./images/controls/light_red_off.png" },
-            { "value": "on", "photo": "./images/controls/light_red_on.png" }
+            {
+              "value": "off",
+              "photo": "./images/controls/light_red_off.png"
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/light_red_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
@@ -4696,7 +6185,10 @@
               "value": "off",
               "photo": "./images/controls/light_white_off.png"
             },
-            { "value": "on", "photo": "./images/controls/light_white_on.png" }
+            {
+              "value": "on",
+              "photo": "./images/controls/light_white_on.png"
+            }
           ],
           "rotatable": false,
           "draggable": false,
