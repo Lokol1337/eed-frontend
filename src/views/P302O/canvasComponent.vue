@@ -147,6 +147,7 @@ export default {
     rotate(e) {
       if ((this.hardwareComponent.backgroundColor === "yellow" && this.$route.query.it == 1) || this.$route.query.it == 0) {
         if (this.hardwareComponent.caption == "rotationBlock") {
+          console.log("rotete.func - all cond")
           e.preventDefault()
           // Где-то надо определить self.deg
 
