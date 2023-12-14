@@ -146,7 +146,7 @@ export default {
       }
     },
     scrollRotateELement(e) {
-      if ((this.hardwareComponent.backgroundColor === "yellow" && this.$route.query.it == 1) || this.$route.query.it == 0) {
+      // if ((this.hardwareComponent.backgroundColor === "yellow" && this.$route.query.it == 1) || this.$route.query.it == 0) {
         console.log("rotete.func - F1")
         if (this.hardwareComponent.caption == "rotationBlock") {
           console.log("rotete.func - F2")
@@ -162,7 +162,7 @@ export default {
           document.getElementById(this.hardwareComponent.id).style.transform = "rotate(" + self.deg + "deg)" // Крутим болт
           document.getElementById(this.hardwareComponent.pairRotationId).style.transform = "rotate(" + self.deg + "deg)" // Крутим стрелку
         }
-      }
+      // }
     },
     onDrag(x, y) {
       if (this.hardwareComponent) {
