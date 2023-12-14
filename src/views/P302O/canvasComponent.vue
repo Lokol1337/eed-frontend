@@ -15,14 +15,14 @@
         transform: `rotate(${degreeOfRotation}deg)`,
         verticalAlign: `top`,
         cursor: hardwareComponent.opacity == 80 ? 'pointer' : 'unset'
-      }" @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick" />
+      }" @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick"  @wheel.prevent="scrollRotateELement" />
     <img v-if="hardwareComponent.currentValue === 'none'" class="component-img"
       :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
         width: hardwareComponent.width + 'px',
         height: hardwareComponent.height + 'px',
         transform: `rotate(${degreeOfRotation}deg)`,
         verticalAlign: `top`
-      }" @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick" @wheel.prevent="rotate" />
+      }" @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick" />
     <img v-if="hardwareComponent.currentValue === 'cabel'" class=""
       :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
         width: hardwareComponent.width + 'px',
@@ -144,7 +144,7 @@ export default {
         return this.sendRequest();
       }
     },
-    rotate(e) {
+    scrollRotateELement(e) {
       if ((this.hardwareComponent.backgroundColor === "yellow" && this.$route.query.it == 1) || this.$route.query.it == 0) {
         if (this.hardwareComponent.caption == "rotationBlock") {
           console.log("rotete.func - all cond")
