@@ -34,8 +34,14 @@
                     Треннировка
                   </button>
                   <ul class="dropdown-menu w-100 h-100" aria-labelledby="dropdownMenuButton1">
-                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',11)">Настройка аппаратуры</button></li>
+                    <li>
+                      <button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',11)">Настройка аппаратуры</button>
+                    </li>
+                    <li>
+                      <button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
+                      @click.prevent="goToPath('/p-302-o',21)">Норматив по фильму</button>
+                    </li>
                     <!-- <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
                       @click.prevent="goToPath('/p-302-o',11)">Шаг 1.1</button></li> -->
                     <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
@@ -64,7 +70,7 @@
                   <ul class="dropdown-menu w-100 h-100" aria-labelledby="dropdownMenuButton1">
                     
                     <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',11, 0)">Настройка аппаратуры</button></li>
+                      @click.prevent="goToPath('/p-302-o', 11, 0)">Настройка аппаратуры</button></li>
                     <!-- <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
                       @click.prevent="goToPath('/p-302-o',11, 0)">Шаг 1.1</button></li> -->
                     <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
