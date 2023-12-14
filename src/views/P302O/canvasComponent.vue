@@ -15,7 +15,8 @@
         transform: `rotate(${degreeOfRotation}deg)`,
         verticalAlign: `top`,
         cursor: hardwareComponent.opacity == 80 ? 'pointer' : 'unset'
-      }" @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick"  @wheel.prevent="scrollRotateELement" />
+      }" @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick"
+      @wheel.prevent="scrollRotateELement" />
     <img v-if="hardwareComponent.currentValue === 'none'" class="component-img"
       :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
         width: hardwareComponent.width + 'px',
@@ -146,16 +147,16 @@ export default {
     },
     scrollRotateELement(e) {
       if ((this.hardwareComponent.backgroundColor === "yellow" && this.$route.query.it == 1) || this.$route.query.it == 0) {
+        console.log("rotete.func - F1")
         if (this.hardwareComponent.caption == "rotationBlock") {
-          console.log("rotete.func - all cond")
-          e.preventDefault()
+          console.log("rotete.func - F2")
           // Где-то надо определить self.deg
 
           var delta = e.deltaX || e.detail || e.wheelDelta;
 
           if (delta > 0 && self.degreeOfRotation < 55) self.degreeOfRotation += 1;
           else if (delta < 0 && self.degreeOfRotation > -55) self.degreeOfRotation -= 1;
-          
+
 
 
           document.getElementById(this.hardwareComponent.id).style.transform = "rotate(" + self.deg + "deg)" // Крутим болт
