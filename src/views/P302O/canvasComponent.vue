@@ -154,7 +154,7 @@ export default {
     },
     selectMethodByClick() {
       if((this.hardwareComponent.backgroundColor === "yellow" && this.$route.query.it == 1) || this.$route.query.it == 0){
-        if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === false) {
+        if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === false && this.hardwareComponent.caption != "rotationBlock") {
           console.log("changePhotoByClick");
           this.changePhotoByClick();
         } 
@@ -162,9 +162,9 @@ export default {
           console.log("rotate");
           this.rotate();
         }
-        //  else if (this.hardwareComponent.draggable === true && this.hardwareComponent.rotatable === false){
-          
-        // }
+        else if (this.hardwareComponent.caption == "rotationBlock"){
+          // тут для болта  
+        }
 
         return this.sendRequest();
       }
