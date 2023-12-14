@@ -959,6 +959,45 @@
           "initValue": "none",
           "caption": null,
           "ids": [6202, 2201]
+        },
+        {
+          "name": "arrow",
+          "valuesAndPhotos": [
+            {
+              "value": "arrow",
+              "photo": "./images/p-302-o/arrow/lo_straight_arrow.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 416,
+          "top": 65,
+          "width": 151,
+          "height": 85,
+          "id": 2401,
+          "currentValue": "arrow",
+          "initValue": "arrow",
+          "caption": "arrow"
+        },
+        {
+          "name": "ЛО-ПКК-16/64-болт",
+          "valuesAndPhotos": [
+            {
+              "value": 0,
+              "photo": "./images/controls/BOLT.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 335,
+          "top": 138,
+          "width": 25,
+          "height": 25,
+          "id": 2501,
+          "currentValue": 0,
+          "initValue": 0,
+          "caption": "rotationBlock",
+          "pairRotationId": 2401
         }
       ],
       "id": 2
@@ -2932,18 +2971,18 @@
           "valuesAndPhotos": [
             {
               "value": "arrow",
-              "photo": "./images/p-302-o/arrow/straight_arrpw.png"
+              "photo": "./images/p-302-o/arrow/straight_arrow.png"
             }
           ],
           "rotatable": false,
           "draggable": false,
-          "left": 189,
-          "top": 136,
+          "left": 193,
+          "top": 155,
           "width": 151,
-          "height": 93,
+          "height": 151,
           "id": 6401,
           "currentValue": "pos_1",
-          "initValue": "pos_1",
+          "initValue": -55,
           "caption": "arrow"
         }
       ],

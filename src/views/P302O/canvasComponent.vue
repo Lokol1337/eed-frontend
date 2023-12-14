@@ -8,7 +8,7 @@
       border: `none`
     }">
     <img
-      v-if="hardwareComponent.currentValue !== 'cabel' && hardwareComponent.currentValue !== 'none' && hardwareComponent.caption !== 'arrow'"
+      v-if="hardwareComponent.currentValue !== 'cabel' && hardwareComponent.currentValue !== 'none' && hardwareComponent.caption !== 'arrow' && hardwareComponent.caption !== 'rotationBlock'"  
       class="component-img" :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
         width: hardwareComponent.width + 'px',
         height: hardwareComponent.height + 'px',
@@ -17,7 +17,8 @@
         cursor: hardwareComponent.opacity == 80 ? 'pointer' : 'unset'
       }" @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick"
       @wheel.prevent="scrollRotateELement" />
-    <img v-if="hardwareComponent.currentValue === 'none'" class="component-img"
+      
+      <img v-if="hardwareComponent.currentValue === 'none'" class="component-img"
       :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
         width: hardwareComponent.width + 'px',
         height: hardwareComponent.height + 'px',
@@ -31,6 +32,17 @@
         transform: `rotate(${degreeOfRotation}deg)`,
         verticalAlign: `top`
       }" />
+    <img
+        v-if="hardwareComponent.caption === 'rotationBlock'"
+        class="rotationBlock" :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
+          width: hardwareComponent.width + 'px',
+          height: hardwareComponent.height + 'px',
+          // transform: `rotate(${degreeOfRotation}deg)`,
+          verticalAlign: `top`,
+          cursor:'url(./images/icons/arrow-clockwise.svg) , pointer'
+          // cursor: hardwareComponent.opacity == 80 ? 'url(./images/icons/arrow-clockwise.svg)' : 'unset'
+        }" @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick"
+        @wheel.prevent="scrollRotateELement" />
     <img v-if="hardwareComponent.caption === 'arrow'" class=""
       :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
         width: hardwareComponent.width + 'px',
@@ -58,6 +70,7 @@ export default {
     return {
       curZindex: 1,
       degreeOfRotation: this.hardwareComponent.initValue,
+      deg: 0,
       img_src: this.hardwareComponent.valuesAndPhotos.photo,
       hardZoomScale: this.hardZoom / 100.0,
       dataServ: []
@@ -146,7 +159,7 @@ export default {
       }
     },
     scrollRotateELement(e) {
-      // if ((this.hardwareComponent.backgroundColor === "yellow" && this.$route.query.it == 1) || this.$route.query.it == 0) {
+      if ((this.hardwareComponent.backgroundColor === "yellow" && this.$route.query.it == 1) || this.$route.query.it == 0) {
         console.log("rotete.func - F1")
         if (this.hardwareComponent.caption == "rotationBlock") {
           console.log("rotete.func - F2")
@@ -156,13 +169,16 @@ export default {
 
           if (delta > 0 && this.degreeOfRotation < 55) this.degreeOfRotation += 1;
           else if (delta < 0 && this.degreeOfRotation > -55) this.degreeOfRotation -= 1;
+          this.hardwareComponent.initValue = this.degreeOfRotation 
           console.log("rotete.func - F3 = ", this.degreeOfRotation)
 
 
-          document.getElementById(this.hardwareComponent.id).firstChild.style.transform = "rotate(" + this.degreeOfRotation + "deg)" // Крутим болт
-          document.getElementById(this.hardwareComponent.pairRotationId).firstChild.style.transform = "rotate(" + this.degreeOfRotation + "deg)" // Крутим стрелку
+          document.getElementById(this.hardwareComponent.id).children[0].style.transform = "rotate(" + this.degreeOfRotation + "deg)" // Крутим болт
+          
+          console.log(document.getElementById(this.hardwareComponent.pairRotationId));
+          document.getElementById(this.hardwareComponent.pairRotationId).children[0].style.transform = "rotate(" + this.degreeOfRotation + "deg)" // Крутим стрелку
         }
-      // }
+      }
     },
     onDrag(x, y) {
       if (this.hardwareComponent) {
