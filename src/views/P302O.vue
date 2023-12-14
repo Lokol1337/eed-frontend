@@ -185,23 +185,7 @@ export default {
       }
     }
   },
-  methods: {
-    rotate(e) {
-      e.preventDefault()
-
-      // Где-то надо определить self.deg
-
-      var delta = e.deltaX || e.detail || e.wheelDelta;
-
-      if (delta > 0 && self.deg < 180) self.deg += 1;
-      else if (delta < 0 && self.deg > 0) self.deg -= 1;
-      else
-        return
-
-
-      // bolt.style.transform = "rotate(" + self.deg + "deg)" // Крутим болт
-      // arrow.style.transform = "rotate(" + self.deg + "deg)" // Крутим стрелку
-    },
+  methods: {  
     startTimer() {
       this.timer = setInterval(() => {
         this.sec++;
