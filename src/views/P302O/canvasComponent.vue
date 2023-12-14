@@ -156,11 +156,11 @@ export default {
 
           if (delta > 0 && self.degreeOfRotation < 55) self.degreeOfRotation += 1;
           else if (delta < 0 && self.degreeOfRotation > -55) self.degreeOfRotation -= 1;
+          console.log("rotete.func - F3 = ",self.degreeOfRotation)
 
 
-
-          document.getElementById(this.hardwareComponent.id).style.transform = "rotate(" + self.deg + "deg)" // Крутим болт
-          document.getElementById(this.hardwareComponent.pairRotationId).style.transform = "rotate(" + self.deg + "deg)" // Крутим стрелку
+          document.getElementById(this.hardwareComponent.id).style.transform = "rotate(" + self.degreeOfRotation + "deg)" // Крутим болт
+          document.getElementById(this.hardwareComponent.pairRotationId).style.transform = "rotate(" + self.degreeOfRotation + "deg)" // Крутим стрелку
         }
       // }
     },
