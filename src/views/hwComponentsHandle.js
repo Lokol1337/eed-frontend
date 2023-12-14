@@ -110,10 +110,14 @@ export function uploadHwComponents_Training(allPacks, server_data, is_ex) {
       // console.log(hwCmpId,"hwCmpIdhwCmpIdhwCmpIdhwCmpIdhwCmpIdhwCmpId");
       let nextHwComponent = next_pack.components[hwCmpId];
       allPacks.blocks[packId].components[hwCmpId] = nextHwComponent;
-      let imgIndex = findNumberOfCurrentValue(nextHwComponent, action['action_value']);
-      // console.log(imgIndex,"imgIndeximgIndeximgIndeximgIndeximgIndeximgIndeximgIndex");
-      nextHwComponent.imgIndex = imgIndex;
-      nextHwComponent.currentValue = action['action_value'];
+      if (action['tag'] === "arrow") {
+        document.getElementById(action['action_id']).children[0].style.transform = "rotate(" + action['action_value'] + "deg)"
+      } else {
+        let imgIndex = findNumberOfCurrentValue(nextHwComponent, action['action_value']);
+        // console.log(imgIndex,"imgIndeximgIndeximgIndeximgIndeximgIndeximgIndeximgIndex");
+        nextHwComponent.imgIndex = imgIndex;
+        nextHwComponent.currentValue = action['action_value'];
+      }
     });
     console.log("aboba");
   }
