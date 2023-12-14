@@ -108,19 +108,18 @@ export function uploadHwComponents_Training(allPacks, server_data, is_ex) {
       let hwCmpId = findHardwareComponentById(action['action_id'], next_pack.components);
       // console.log(hwCmpId,"hwCmpIdhwCmpIdhwCmpIdhwCmpIdhwCmpIdhwCmpId");
       let nextHwComponent = next_pack.components[hwCmpId];
-      allPacks.blocks[packId].components[hwCmpId] = nextHwComponent;
       if (action['tag'] === "arrow") {
         document.getElementById(action['action_id']).children[0].style.transform = "rotate(" + action['action_value'] + "deg)"
         console.log("влад посмотри сюда", document.getElementById(action['action_id']).children[0])
         console.log("влад посмотри сюда",action['action_value'])
-
-        
       } else {
+        allPacks.blocks[packId].components[hwCmpId] = nextHwComponent;
         let imgIndex = findNumberOfCurrentValue(nextHwComponent, action['action_value']);
         // console.log(imgIndex,"imgIndeximgIndeximgIndeximgIndeximgIndeximgIndeximgIndex");
         nextHwComponent.imgIndex = imgIndex;
         nextHwComponent.currentValue = action['action_value'];
       }
+      console.log("влад посмотри сюдаAAAAAAAAAAA", document.getElementById(action['action_id']).children[0])
     });
     console.log("aboba");
   }
