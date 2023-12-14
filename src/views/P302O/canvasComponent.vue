@@ -159,8 +159,8 @@ export default {
           console.log("rotete.func - F3 = ", this.degreeOfRotation)
 
 
-          document.getElementById(this.hardwareComponent.id).style.transform = "rotate(" + this.degreeOfRotation + "deg)" // Крутим болт
-          document.getElementById(this.hardwareComponent.pairRotationId).style.transform = "rotate(" + this.degreeOfRotation + "deg)" // Крутим стрелку
+          document.getElementById(this.hardwareComponent.id).firstChild.style.transform = "rotate(" + this.degreeOfRotation + "deg)" // Крутим болт
+          document.getElementById(this.hardwareComponent.pairRotationId).firstChild.style.transform = "rotate(" + this.degreeOfRotation + "deg)" // Крутим стрелку
         }
       // }
     },
