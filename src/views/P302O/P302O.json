@@ -14,7 +14,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 530,
           "top": 143,
           "width": 10,
@@ -141,7 +141,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 461,
           "top": 99,
           "width": 15,
@@ -160,7 +160,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 480,
           "top": 99,
           "width": 15,
@@ -179,7 +179,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 411,
           "top": 99,
           "width": 15,
@@ -198,7 +198,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 514,
           "top": 99,
           "width": 15,
@@ -217,7 +217,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 465,
           "top": 60,
           "width": 27,
@@ -236,7 +236,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 512,
           "top": 60,
           "width": 27,
@@ -417,7 +417,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 107,
           "top": 90,
           "width": 20,
@@ -523,7 +523,7 @@
             { "value": "off", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 185,
           "top": 152,
           "width": 10,
@@ -539,7 +539,7 @@
             { "value": "off", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 195,
           "top": 152,
           "width": 10,
@@ -555,7 +555,7 @@
             { "value": "off", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 210,
           "top": 152,
           "width": 10,
@@ -944,7 +944,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 334,
           "top": 111,
           "width": 15,
@@ -960,7 +960,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 364,
           "top": 111,
           "width": 15,
@@ -1013,7 +1013,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 120,
           "top": 110,
           "width": 15,
@@ -1029,7 +1029,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 217,
           "top": 208,
           "width": 15,
@@ -1045,7 +1045,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 327,
           "top": 206,
           "width": 15,
@@ -1061,7 +1061,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 121,
           "top": 243,
           "width": 15,
@@ -1077,7 +1077,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 404,
           "top": 206,
           "width": 15,
@@ -1093,7 +1093,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 523,
           "top": 183,
           "width": 15,
@@ -1109,7 +1109,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 565,
           "top": 206,
           "width": 15,
@@ -1125,7 +1125,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 522,
           "top": 219,
           "width": 15,
@@ -1141,7 +1141,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 641,
           "top": 207,
           "width": 15,
@@ -1157,7 +1157,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 684,
           "top": 207,
           "width": 15,
@@ -1173,7 +1173,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 567,
           "top": 76,
           "width": 15,
@@ -1189,7 +1189,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 760,
           "top": 207,
           "width": 15,
@@ -1205,7 +1205,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 686,
           "top": 76,
           "width": 15,
@@ -1221,7 +1221,7 @@
             { "value": "jumper2", "photo": "./images/controls/jumper2.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 643,
           "top": 76,
           "width": 15,
@@ -1240,7 +1240,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 482,
           "top": 112,
           "width": 17,
@@ -1259,7 +1259,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 423,
           "top": 112,
           "width": 17,
@@ -1278,7 +1278,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 242,
           "top": 111,
           "width": 17,
@@ -1297,7 +1297,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 180,
           "top": 111,
           "width": 17,
@@ -1860,7 +1860,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 109,
           "top": 123,
           "width": 20,
@@ -1879,7 +1879,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 298,
           "top": 69,
           "width": 20,
@@ -1898,7 +1898,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 298,
           "top": 170,
           "width": 20,
@@ -1917,7 +1917,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 408,
           "top": 68,
           "width": 20,
@@ -1936,7 +1936,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 409,
           "top": 170,
           "width": 20,
@@ -1955,7 +1955,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 600,
           "top": 123,
           "width": 20,
@@ -1974,7 +1974,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 600,
           "top": 168,
           "width": 20,
@@ -1990,7 +1990,7 @@
             { "value": "jumper8", "photo": "./images/controls/jumper8.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 298,
           "top": 94,
           "width": 18,
@@ -2006,7 +2006,7 @@
             { "value": "jumper8", "photo": "./images/controls/jumper8.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 409,
           "top": 94,
           "width": 18,
@@ -2596,7 +2596,7 @@
             { "value": "jumper8", "photo": "./images/controls/jumper8.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 69,
           "top": 66,
           "width": 27,
@@ -2612,7 +2612,7 @@
             { "value": "jumper8", "photo": "./images/controls/jumper8.png" }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 414,
           "top": 67,
           "width": 27,
@@ -2631,7 +2631,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 71,
           "top": 137,
           "width": 26,
@@ -2650,7 +2650,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 97,
           "top": 137,
           "width": 26,
@@ -2748,7 +2748,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 241,
           "top": 94,
           "width": 42,
@@ -2767,7 +2767,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 349,
           "top": 94,
           "width": 42,
@@ -2786,7 +2786,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 241,
           "top": 176,
           "width": 42,
@@ -2805,7 +2805,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 349,
           "top": 176,
           "width": 42,
@@ -2824,7 +2824,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 794,
           "top": 96,
           "width": 42,
@@ -2843,7 +2843,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 896,
           "top": 96,
           "width": 42,
@@ -2862,7 +2862,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 792,
           "top": 175,
           "width": 42,
@@ -2881,7 +2881,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 895,
           "top": 175,
           "width": 42,
@@ -2900,7 +2900,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 450,
           "top": 119,
           "width": 42,
@@ -2919,7 +2919,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 691,
           "top": 119,
           "width": 42,
@@ -2946,7 +2946,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 142,
           "top": 85,
           "width": 18,
@@ -2965,7 +2965,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 243,
           "top": 86,
           "width": 18,
@@ -2984,7 +2984,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 344,
           "top": 86,
           "width": 18,
@@ -3003,7 +3003,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 471,
           "top": 88,
           "width": 18,
@@ -3022,7 +3022,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 570,
           "top": 88,
           "width": 18,
@@ -3041,7 +3041,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 668,
           "top": 88,
           "width": 18,
@@ -3060,7 +3060,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 795,
           "top": 88,
           "width": 18,
@@ -3079,7 +3079,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 892,
           "top": 88,
           "width": 18,
@@ -3098,7 +3098,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 993,
           "top": 89,
           "width": 18,
@@ -3117,7 +3117,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 984,
           "top": 434,
           "width": 18,
@@ -3159,7 +3159,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 144,
           "top": 335,
           "width": 18,
@@ -3178,7 +3178,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 244,
           "top": 335,
           "width": 18,
@@ -3197,7 +3197,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 348,
           "top": 335,
           "width": 18,
@@ -3216,7 +3216,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 472,
           "top": 336,
           "width": 18,
@@ -3235,7 +3235,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 572,
           "top": 336,
           "width": 18,
@@ -3254,7 +3254,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 670,
           "top": 336,
           "width": 18,
@@ -3402,7 +3402,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 466,
           "top": 138,
           "width": 21,
@@ -3421,7 +3421,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 448,
           "top": 184,
           "width": 21,
@@ -3440,7 +3440,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 529,
           "top": 184,
           "width": 21,
@@ -3459,7 +3459,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 446,
           "top": 229,
           "width": 21,
@@ -3478,7 +3478,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 527,
           "top": 229,
           "width": 21,
@@ -3497,7 +3497,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 465,
           "top": 361,
           "width": 21,
@@ -3516,7 +3516,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 446,
           "top": 410,
           "width": 21,
@@ -3535,7 +3535,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 526,
           "top": 409,
           "width": 21,
@@ -3554,7 +3554,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 444,
           "top": 454,
           "width": 21,
@@ -3573,7 +3573,7 @@
             }
           ],
           "rotatable": false,
-          "draggable": true,
+          "draggable": false,
           "left": 525,
           "top": 455,
           "width": 21,
