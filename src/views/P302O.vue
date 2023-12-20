@@ -200,10 +200,11 @@ export default {
       clearTimeout(this.timer)
     },
     goToPath(route, normative_id = 0, is_training = 1, min = 0, sec = 0) {
-      console.log("ROUTE: " + route);
-      console.log("NORM: " + normative_id);
+      // window.location.reload();
+      // console.log();
+      // console.log(is_training + min + sec);
+      console.log("NEW NORMATIVE ID", normative_id);
       this.$router.push({ path: route, query: { norm: normative_id, it: is_training, min: min, sec: sec } });
-      window.location.reload();
     },
     changeBlockYellow(apparat_id) {
       let packId = hwCmpHandler.findHardwareById(apparat_id, this.allPacks.blocks);
@@ -211,9 +212,7 @@ export default {
       this.rerenderStatmentSideBar++;
     },
     getNextExercisePathId() {
-      console.log("getNextExercisePathId()");
-      console.log("normative_id: ", this.$route.query.norm);
-      if (this.$route.query.norm < 19)
+      if (parseInt(this.$route.query.norm) % 10 < 9)
         return parseInt(this.$route.query.norm) + 1;
       return -1;
     },
@@ -266,9 +265,11 @@ export default {
       console.log(text);
     },
     linkForNextExercise() {
-      if (this.exerciseComplete && this.$route.query.norm < 19) {
+      if (this.exerciseComplete) {
         this.stopTimer();
-        this.goToPath('/p-302-o', this.getNextExercisePathId(), this.is_tr, this.min, this.sec);
+        let nextExercisePathId = this.getNextExercisePathId();
+        if (nextExercisePathId != -1)
+          this.goToPath('/p-302-o', nextExercisePathId, this.is_tr, this.min, this.sec);
         return "";
       }
       return "d-none";
