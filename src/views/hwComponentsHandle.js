@@ -109,7 +109,8 @@ export function uploadHwComponents_Training(allPacks, server_data, is_ex) {
       // console.log(hwCmpId,"hwCmpIdhwCmpIdhwCmpIdhwCmpIdhwCmpIdhwCmpId");
       let nextHwComponent = next_pack.components[hwCmpId];
       if (action['tag'] === "arrow") {
-        document.getElementById(action['action_id']).children[0].style.transform = "rotate(" + action['action_value'] + "deg)"
+        nextHwComponent.currentValue = action['action_value']
+        // document.getElementById(action['action_id']).children[0].style.transform = "rotate(" + action['action_value'] + "deg)"
         console.log("влад посмотри сюда", document.getElementById(action['action_id']).children[0])
         console.log("влад посмотри сюда",action['action_value'])
       } else {

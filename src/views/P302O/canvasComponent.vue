@@ -60,6 +60,7 @@
 // import $url from '@/api/config.js';
 import Vue from "vue";
 import VueSession from "vue-session";
+import { findHardwareComponentById } from "../hwComponentsHandle";
 
 Vue.use(VueSession);
 
@@ -69,11 +70,11 @@ export default {
   data() {
     return {
       curZindex: 1,
-      degreeOfRotation: this.hardwareComponent.initValue,
+      degreeOfRotation: this.hardwareComponent.currentValue,
       deg: 0,
       img_src: this.hardwareComponent.valuesAndPhotos.photo,
       hardZoomScale: this.hardZoom / 100.0,
-      dataServ: []
+      dataServ: [],
     };
   },
   watch: {
@@ -164,19 +165,28 @@ export default {
         if (this.hardwareComponent.caption == "rotationBlock") {
           console.log("rotete.func - F2")
           // Где-то надо определить self.deg
+          let arrow_ell = findHardwareComponentById(this.hardwareComponent.pairRotationId, this.hardwareComponents)   
 
           var delta = e.deltaX || e.detail || e.wheelDelta;
+          if(this.hardwareComponents[arrow_ell].currentValue == "arrow")
+            this.hardwareComponents[arrow_ell].currentValue = this.hardwareComponents[arrow_ell].initValue
+          
 
-          if (delta > 0 && this.degreeOfRotation < 55) this.degreeOfRotation += 1;
-          else if (delta < 0 && this.degreeOfRotation > -55) this.degreeOfRotation -= 1;
-          this.hardwareComponent.initValue = this.degreeOfRotation 
-          console.log("rotete.func - F3 = ", this.degreeOfRotation)
+          if (delta > 0 && this.hardwareComponents[arrow_ell].currentValue < 55) this.hardwareComponents[arrow_ell].currentValue += 1;
+          else if (delta < 0 && this.hardwareComponents[arrow_ell].currentValue > -55) this.hardwareComponents[arrow_ell].currentValue -= 1;
+          this.hardwareComponent.currentValue = this.degreeOfRotation
+          console.log("rotete.func - F3 = ", this.hardwareComponents[arrow_ell] )
+
 
 
           document.getElementById(this.hardwareComponent.id).children[0].style.transform = "rotate(" + this.degreeOfRotation + "deg)" // Крутим болт
           
-          console.log(document.getElementById(this.hardwareComponent.pairRotationId));
-          document.getElementById(this.hardwareComponent.pairRotationId).children[0].style.transform = "rotate(" + this.degreeOfRotation + "deg)" // Крутим стрелку
+          console.log(this.hardwareComponent.pairRotationId)
+
+          // this.hardwareComponents[arrow_ell].currentValue = this.degreeOfRotation
+          console.log(this.hardwareComponents[arrow_ell].currentValue)
+          // arrow_ell.currentValue = this.degreeOfRotation 
+          // document.getElementById(this.hardwareComponent.pairRotationId).children[0].style.transform = "rotate(" + this.degreeOfRotation + "deg)" // Крутим стрелку
         }
       }
     },

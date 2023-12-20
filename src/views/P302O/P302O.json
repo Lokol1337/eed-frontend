@@ -1420,8 +1420,8 @@
           "width": 151,
           "height": 85,
           "id": 2401,
-          "currentValue": "arrow",
-          "initValue": "arrow",
+          "currentValue": 0,
+          "initValue": 0,
           "caption": "arrow"
         },
         {
