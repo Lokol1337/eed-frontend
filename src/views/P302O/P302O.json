@@ -3120,7 +3120,7 @@
               "photo": " "
             },
             {
-              "value": "jumper8",
+              "value": "on",
               "photo": "./images/controls/jumper8.png"
             }
           ],
@@ -3143,7 +3143,7 @@
               "photo": " "
             },
             {
-              "value": "jumper8",
+              "value": "on",
               "photo": "./images/controls/jumper8.png"
             }
           ],
@@ -3948,7 +3948,7 @@
               "photo": " "
             },
             {
-              "value": "jumper8",
+              "value": "on",
               "photo": "./images/controls/jumper8.png"
             }
           ],
@@ -3971,7 +3971,7 @@
               "photo": " "
             },
             {
-              "value": "jumper8",
+              "value": "on",
               "photo": "./images/controls/h_cabel_head.png"
             }
           ],
