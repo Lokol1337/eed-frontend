@@ -4307,6 +4307,104 @@
           ]
         },
         {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 539,
+          "top": 122,
+          "width": 27,
+          "height": 10,
+          "id": 7107,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": " "
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/cabel (24).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7707,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7107
+          ]
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 539,
+          "top": 132,
+          "width": 27,
+          "height": 10,
+          "id": 7108,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": " "
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/cabels/cabel (25).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7708,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7108
+          ]
+        },
+        {
           "name": "cable_head3",
           "valuesAndPhotos": [
             {
