@@ -162,7 +162,7 @@ export default {
                 }
                 console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
                 if(server_data['fail']){
-                  alert("Попытка провалена");
+                  //alert("Попытка провалена");
                   console.log("failfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfail");
                 }
                 else if(!server_data['finish']){

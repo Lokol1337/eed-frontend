@@ -1420,8 +1420,8 @@
           "width": 151,
           "height": 85,
           "id": 2401,
-          "currentValue": 0,
-          "initValue": 0,
+          "currentValue": -55,
+          "initValue": -55,
           "caption": "arrow"
         },
         {
@@ -1439,8 +1439,8 @@
           "width": 25,
           "height": 25,
           "id": 2501,
-          "currentValue": 0,
-          "initValue": 0,
+          "currentValue": -55,
+          "initValue": -55,
           "caption": "rotationBlock",
           "pairRotationId": 2401
         }
@@ -3925,7 +3925,7 @@
           "width": 151,
           "height": 151,
           "id": 6401,
-          "currentValue": "pos_1",
+          "currentValue": -55,
           "initValue": -55,
           "caption": "arrow"
         }
