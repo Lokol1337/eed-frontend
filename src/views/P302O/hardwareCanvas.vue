@@ -32,7 +32,7 @@
 
 import canvasComponent from "./canvasComponent.vue";
 // import * as hwCmpHandler from "../hwComponentsHandle.js";
-import ServerHandler from '@/api/ServerHandler.js';
+// import ServerHandler from '@/api/ServerHandler.js';
 export default {
   props: {
     zoom: {
@@ -126,108 +126,15 @@ export default {
       return index;
     },
     sendRequest(hardwareComponent) {
-      
-      console.log("hardwareComponent",hardwareComponent);
-      let v = this;
-      // let is_training = v.serverHandler.is_training;
-      v.serverHandler = new ServerHandler();
-      v.serverHandler.is_training = v.$route.query.it;
-      // let socket = this.serverHandler.getSocket();
-      v.serverHandler.sendElse(v.sessionId, hardwareComponent, hardwareComponent.hardZoomScale);
-      // console.log("SERVER SENDING_DATA: " + JSON.stringify(Array.from(this.serverHandler.sendData.entries())));
-      // console.log(this.serverHandler.socket);
-      v.serverHandler.socket.onopen = function() {
-        console.log("ONOPEN!");
-        v.serverHandler.socket.send(JSON.stringify(Array.from(v.serverHandler.sendData.entries())));
-      };    
-      //TODO: Я ТУТ ПОДКОМЕНТИЛ, СЕЙЧАС РАБОТА НА ЧИСТОМ ДОВЕРИИИ!!!! 
-      // this.serverHandler.socket.onerror = function(error) {
-      //   alert(`[error] ${error.message}`);
-      // };
-      
-      
-      //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
-      v.serverHandler.socket.onmessage = function(event) {
-          try {
-            console.log("Я hardwareCanvas");
-            let server_data = v.serverHandler.parseServerData(event.data);
-            if(server_data) {
-              console.log("ДАННЫЕ С СЕРВЕРА ПОЛУЧЕНЫ!");
-            
-              if (v.serverHandler.is_training) {
-                console.log("BLOCK_END", server_data['block_end']);
-                if(server_data['block_end']) {
-                  console.log("APPARAT COMPLETED! Delete yellow!");
-                  v.$emit('completeApparat',server_data['block_end_id']);
-                }
-                console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-                if(server_data['fail']){
-                  //alert("Попытка провалена");
-                  console.log("failfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfailfail");
-                }
-                else if(!server_data['finish']){
-                  if(server_data['status']){
-                    console.log(server_data['status']);
-                    if(server_data['status'] == "correct" && server_data['validation'] == false){
-                      v.changeYellow(hardwareComponent);
-                    }
-                    if(server_data['status'] == "correct" && server_data['validation'] == true){
-                      v.changeYellow(hardwareComponent);
-                      v.$emit('ann', server_data['annotation']);
-                      v.$emit('step',server_data);
-                      v.$emit('allP',server_data);
-                      // hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data)
-                    }
-                  }
-                  else{
-                    if(server_data['validation'] == true){
-                      v.changeYellow(hardwareComponent);
-                      v.$emit('ann', server_data['annotation']);
-                      v.$emit('step',server_data);
-                      v.$emit('allP',server_data);
-                    }
-                  }
-                }
-                else if(server_data['finish'] && server_data['array_actions'][0]!="nan"){
-                  v.changeYellow(hardwareComponent);
-                  v.$emit('ann', server_data['annotation']);
-                  v.$emit('step',server_data);
-                  v.$emit('allP',server_data);
-                  v.$emit('completeExercise', true);
-                  console.log("EXERCISE FINISHED!");
-                }
-                
-                else{
-                  alert("УРАА!");
-                }
-              }
-              else {
-                console.log("НЕ ТРЕННИРОВКА");
-              }
-            } 
-            else {
-              console.log("НЕВЕРНАЯ СТРУКТУРА ДАННЫХ СЕРВЕРА!");
-            }
 
-          } catch (event) {
-            console.log(event);
-          }
-      };
+      this.serverHandler.defineActionStepOnMessage(this, hardwareComponent);
+      let elseData = this.serverHandler.getElseData(hardwareComponent, hardwareComponent.hardZoomScale);
+      this.serverHandler.sendData(elseData);
 
-      // socket.onclose = function(event) {
-      //     if (event.wasClean) { 
-      //       //
-      //     } else {
-      //       //
-      //     }
-      // };
-      console.log("hardwareComponent",hardwareComponent);
     },
   },
   created() {
     this.hardwareComponentsData = this.hardwareComponents;
-    // console.log("ServerHandler: " + this.serverHandler);
-    // console.log("hwSESSION_ID: " + this.sessionId);
   },
 };
 </script>

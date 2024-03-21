@@ -96,7 +96,7 @@ import P302OJSON from "./P302O/P302O.json";
 import hardwareCanvas from "./P302O/hardwareCanvas.vue";
 import sideBarMenu from "./P302O/sideBarMenu.vue";
 import ServerHandler from '@/api/ServerHandler.js';
-import * as hwCmpHandler from "./hwComponentsHandle.js";
+import ContextHandler, * as hwCmpHandler from "./hwComponentsHandle.js";
 // import axios from 'axios';
 // import get from 'axios';
 
@@ -106,6 +106,7 @@ export default {
     return {
       actualPack: null,
       allPacks: null,
+      contextHandler: new ContextHandler(this),
       packForShow: null,
       width: window.innerWidth,
       imgWidth: 0,
@@ -156,17 +157,20 @@ export default {
   },
 
   mounted() {
-
     this.updateZoom();
     this.startTimer()
-    console.log("start listenServer()");
-    this.listenServer();
+
+    let is_traning;
+    if (this.$route.query.it == 0)
+      is_traning = false;
+    else
+      is_traning = true;
+
+    this.serverHandler = new ServerHandler(this.$session.get('session_id'), this.contextHandler,  is_traning, this.exersiseId, this.$route.query.norm);
+
     console.log("stepServerData: " + this.stepServerData);
     console.log("serverHandler: " + this.serverHandler);
-    console.log("end listenServer()");
 
-    //console.log(event.currentTarget.id);
-    //document.getElementById(this.imgId).click();
   },
   destroyed() {
     this.stopTimer()
@@ -309,99 +313,6 @@ export default {
           console.log(error);
         });
 
-    },
-    async connect() {
-      let v = this;
-      // PROMISES: https://stackoverflow.com/questions/42304996/javascript-using-promises-on-websocket
-      return new Promise(function (resolve, reject) {
-        let serverHandler = new ServerHandler();
-        console.log(window.location.href);
-        console.log(v.$route.query.norm, 'params');
-        let is_tr;
-        if (v.$route.query.it == 0)
-          is_tr = false;
-        else
-          is_tr = true;
-
-        serverHandler.sendFirst(v.$session.get('session_id'), is_tr, v.exersiseId, String(v.$route.query.norm));
-        serverHandler.socket.onopen = function () {
-          console.log("ONOPEN!");
-          serverHandler.socket.send(JSON.stringify(Array.from(serverHandler.sendData.entries())));
-          resolve(serverHandler);
-        };
-
-        serverHandler.socket.onerror = function (error) {
-          // alert(`[error] ${error.message}`);
-          reject(error);
-        };
-      });
-    },
-    listenServer() {
-      console.log("listenServer()");
-      const v = this;
-
-      this.connect().then(function (serverHandler) {
-        console.log("ДОЖДАЛСЯ!");
-        v.serverHandler = serverHandler;
-        if (v.$route.query.it == 0)
-          v.serverHandler.is_training = false;
-        else
-          v.serverHandler.is_training = true;
-        // Принудительное обновление <template> hardwareCanvas
-        v.rerenderStatment++;
-        console.log("ufbgiqwewqehfbhewrnfjkn = == = == = == ", v.serverHandler.is_training);
-        //https://stackoverflow.com/questions/67376026/vue-js-updating-html-inside-websocket-onmessage-event
-        v.serverHandler.socket.onmessage = function (event) {
-          try {
-            let server_data = v.serverHandler.parseServerData(event.data);
-            // v.serverHandler.changeStepServerData(server_data); // В идеале сделать так
-            if (v.serverHandler.checkData(v.data)) {
-              console.log("ДАННЫЕ С СЕРВЕРА ПОЛУЧЕНЫ!");
-              console.log("Я P302O");
-              if (v.serverHandler.is_training) {
-                console.log("ТРЕНИРОВКА!!!");
-                v.annotation = hwCmpHandler.getAnnotation(server_data);
-                v.allPacks = hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data, false);
-                console.log(typeof (server_data));
-                v.stepServerData = server_data;
-
-                if (server_data['is_random_step'])
-                  hwCmpHandler.setToRandomValue(v.allPacks, server_data);
-                // Принудительное обновление <template> hardwareCanvas
-                v.rerenderStatment++;
-                v.rerenderStatmentSideBar++;
-
-              } else {
-                console.log("НЕ ТРЕННИРОВКА");
-                v.annotation = hwCmpHandler.getAnnotation(server_data);
-                v.allPacks = hwCmpHandler.uploadHwComponents_Training(v.allPacks, server_data, true);
-                if (server_data['is_random_step'])
-                  hwCmpHandler.setToRandomValue(v.allPacks, server_data);
-                v.rerenderStatment++;
-                v.rerenderStatmentSideBar++;
-              }
-
-            } else {
-              console.log("НЕВЕРНАЯ СТРУКТУРА ДАННЫХ СЕРВЕРА!");
-            }
-
-          }
-          catch (event) {
-            console.log("CATCH: " + event);
-          }
-        };
-
-        v.serverHandler.socket.onclose = function (event) {
-          if (event.wasClean) {
-            //
-          } else {
-            //
-          }
-        };
-
-      }).catch(function (error) {
-        console.log("ОШИБКА ПОДКЛЮЧЕНИЯ К СЕРВЕРУ", error);
-      });
     }
   },
 };

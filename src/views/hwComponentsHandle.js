@@ -1,5 +1,44 @@
-// import e from "express";
 
+
+export default class ContextHandler {
+
+  context = null;
+
+  constructor(context) {
+    this.context = context;
+  }
+
+  getAllPacks() {
+    return this.context.allPacks;
+  }
+
+  setAnnotation(annotation) {
+    this.context.annotation = annotation;
+  }
+
+  setAllPacks(allPacks) {
+    this.context.allPacks = allPacks;
+  }
+
+  setStepServerData(stepServerData) {
+    this.context.stepServerData = stepServerData;
+  }
+
+  setRerenderStatmentSideBar(rerenderStatment) {
+    this.context.rerenderStatment = rerenderStatment;
+  }
+
+  setRerenderStatment(rerenderStatmentSideBar) {
+    this.context.rerenderStatmentSideBar = rerenderStatmentSideBar;
+  }
+
+  // Принудительное обновление <template> hardwareCanvas
+  rerender() {
+    this.context.rerenderStatment++;
+    this.context.rerenderStatmentSideBar++;
+  }
+
+}
 
 export function findHardwareComponentById(id, hardwareComponents) {
   let index = -1;
@@ -112,7 +151,7 @@ export function uploadHwComponents_Training(allPacks, server_data, is_ex) {
         nextHwComponent.currentValue = action['action_value']
         // document.getElementById(action['action_id']).children[0].style.transform = "rotate(" + action['action_value'] + "deg)"
         console.log("влад посмотри сюда", document.getElementById(action['action_id']).children[0])
-        console.log("влад посмотри сюда",action['action_value'])
+        console.log("влад посмотри сюда", action['action_value'])
       } else {
         allPacks.blocks[packId].components[hwCmpId] = nextHwComponent;
         let imgIndex = findNumberOfCurrentValue(nextHwComponent, action['action_value']);
