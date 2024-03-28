@@ -50,8 +50,6 @@ export default class ServerHandler {
 
 
                     if (this.is_training) {
-
-
                         let new_stepServerData = server_data;
                         this.contextApparatHandler.setStepServerData(new_stepServerData);
                     }
@@ -86,6 +84,8 @@ export default class ServerHandler {
         this.contextCanvasHandler = contextCanvasHandler;
 
         this.socket.onmessage = (event) => {
+
+            console.log("onmessage -> setServerAnswerStatus()");
             this.contextCanvasHandler.setServerAnswerStatus(true);
 
             try {

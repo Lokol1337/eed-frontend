@@ -87,6 +87,10 @@ export default {
   },
   methods: {
     sendRequestListener(hardwareComponent) {
+
+      console.log("sendRequestListener() -> setServerAnswerStatus()");
+      this.setServerAnswerStatus(false);
+
       this.rerenderStatment++;
       this.sendRequest(hardwareComponent);
     },

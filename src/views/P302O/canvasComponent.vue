@@ -145,11 +145,9 @@ export default {
     selectMethodByClick() {
 
       if (!this.serverAnswerStatus) {
+        console.log("serverAnswerStatus -> BLOCKED!");
         return;
       }
-
-      this.setServerAnswerStatus(false);
-      
 
       if ((this.hardwareComponent.backgroundColor === "yellow" && this.$route.query.it == 1) || this.$route.query.it == 0) {
         if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === false && this.hardwareComponent.caption != "rotationBlock") {
