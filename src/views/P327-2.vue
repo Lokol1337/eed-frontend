@@ -70,7 +70,7 @@
       <div class="row">
         <div class="col-12">
           <p id="p-annotation">Переведите левый верхний рычаг ЦРК вниз</p>
-          <textShowVue @inputText="inputTextHandler" />
+          <!-- <textShowVue @inputText="inputTextHandler" /> -->
         </div>
       </div>
     </div>
@@ -86,7 +86,7 @@ import JSON from "./P327-2/P327-2.json";
 import hardwareCanvas from "./P327-2/hardwareCanvas.vue";
 import packManager from "./P302O/packManager.vue";
 //import menuForShow from "./P302O/menuForShow.vue";
-import textShowVue from "./P302O/textShow.vue";
+// import textShowVue from "./P302O/textShow.vue";
 import VueSidebarMenuAkahon from "./P327-2/sideBarMenu.vue";
   
 
@@ -106,7 +106,7 @@ export default {
       button = buttonItem[index];
       button.addEventListener('click', this.updateZoom);
     }
-      //console.log(event.currentTarget.id);
+      //
     document.getElementById(this.imgId).click();
   },
   destroyed(){
@@ -121,7 +121,7 @@ export default {
     hardwareCanvas,
     packManager,
     //menuForShow,
-    textShowVue
+    // textShowVue
   },
   data() {
     return {
@@ -146,7 +146,7 @@ export default {
 
       }
       else{
-        console.log('else');
+        
         document.getElementById('menuForShow').style.transform = 'translateX(100%)';
         document.getElementById('btnMenuForShow').style.transform = 'translateX(0%)';
         document.getElementById('btnMenuForShow').classList.remove('menu-btn_active');
@@ -188,16 +188,13 @@ export default {
       
       const $html = document.documentElement;
       const width = $html.clientWidth;
-      console.log("WIDTH: " + width);
+      
       this.width = width;
       this.updateZoom();
     },
     selectPackHandler(pack) {
       this.actualPack = pack;
       this.packForShow = pack.name;
-    },
-    inputTextHandler(text) {
-      console.log(text);
     },
     exportJSON() {
       const jsonFile = new Blob([JSON.stringify(this.actualPack)]);

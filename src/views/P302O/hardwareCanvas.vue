@@ -15,6 +15,7 @@
       <canvasComponent
         v-for="hardwareComponent in allComponents"
           v-on:sendRequest="sendRequestListener($event)"
+          v-on:setServerAnswerStatus="setServerAnswerStatus($event)"
           :key="hardwareComponent.id"
           :id="hardwareComponent.id"
           :rerenderStatment="rerenderStatment"
@@ -22,6 +23,7 @@
           :hardwareComponent="hardwareComponent"
           :hardZoom = "hardZoom"    
           :sessionId = "sessionId"
+          :serverAnswerStatus = "serverAnswerStatus"
       />
     </div>
   </div>
@@ -75,6 +77,7 @@ export default {
       rerenderStatment: 0,
       actionIds: null,
       hardwareComponentsData: [],
+      serverAnswerStatus: true,
     };
   },
   computed: {
@@ -87,15 +90,21 @@ export default {
       this.rerenderStatment++;
       this.sendRequest(hardwareComponent);
     },
+    getServerAnswerStatus() {
+      return this.serverAnswerStatus;
+    },
+    setServerAnswerStatus(newStatus) {
+      this.serverAnswerStatus = newStatus;
+    },
     selectComponentHandler(component) {
-      console.log("added component");
+      
       this.hardwareComponentsData.push({...component});
     },
     isNeedToChangeYellow(hardwareComponent) {
       let arrayNextActions = this.stepServerData['next_actions']; // может не работать
       let nextAction = this.serverHandler.findNextActionById(arrayNextActions, hardwareComponent.id);
       if (nextAction == null) {
-        console.log("isNeedToChangeYellow() -> notFound");
+        
         return false;
       } else {
         if (nextAction['currentValue'] == hardwareComponent.currentValue)
@@ -105,19 +114,21 @@ export default {
     },
     changeYellow(hardwareComponent){
       // if (this.isNeedToChangeYellow(hardwareComponent)) {
-        let index = this.findHardwareComponentById(hardwareComponent.id);
-        if (this.hardwareComponentsData[index].backgroundColor == "yellow") {
-          this.hardwareComponentsData[index].backgroundColor = "";
-          this.hardwareComponentsData[index].opacity = "";
+        // let index = this.findHardwareComponentById(hardwareComponent.id);
+        if (hardwareComponent.backgroundColor == "yellow") {
+          hardwareComponent.backgroundColor = "";
+          hardwareComponent.opacity = "";
         }
-        // Принудительное обновление <template> 
+
         this.rerenderStatment++;
+        // Принудительное обновление <template> 
       // }
     },
+
     findHardwareComponentById(id){
       let index = -1;
       this.hardwareComponents.forEach((element, i) => {
-        //console.log(parseInt(element.id) + " ? " + parseInt(id) + " = " + (parseInt(element.id) == parseInt(id)));
+        //
         if (parseInt(element.id) == parseInt(id)) {
           index = i;
           return;

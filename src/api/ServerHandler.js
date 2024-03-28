@@ -1,6 +1,6 @@
 
 import $url from '@/api/config.js';
-// import contextCanvasHandler from '../views/hwComponentsHandle';
+// import contextApparatHandler from '../views/hwComponentsHandle';
 import * as hwCmpHandler from '../views/hwComponentsHandle';
 
 export default class ServerHandler {
@@ -11,10 +11,10 @@ export default class ServerHandler {
     is_training = null;
     socket = null;
 
+    contextApparatHandler = null;
     contextCanvasHandler = null;
-    contextComponentHandler = null;
 
-    constructor(session_id, contextCanvasHandler, is_training, exercise_id, normative_id) {
+    constructor(session_id, contextApparatHandler, is_training, exercise_id, normative_id) {
 
         this.session_id = session_id;
         this.socket = new WebSocket($url);
@@ -27,7 +27,7 @@ export default class ServerHandler {
 
         };
 
-        this.defineInitOnMessage(contextCanvasHandler);
+        this.defineInitOnMessage(contextApparatHandler);
 
         this.socket.onerror = function (error) {
             alert("Ошибка соединения: " + error.message);
@@ -39,111 +39,106 @@ export default class ServerHandler {
 
     }
 
-    defineInitOnMessage(contextCanvasHandler) {
-        this.contextCanvasHandler = contextCanvasHandler;
+    defineInitOnMessage(contextApparatHandler) {
+        this.contextApparatHandler = contextApparatHandler;
 
         this.socket.onmessage = (event) => {
+
             try {
                 let server_data = this.parseServerData(event.data);
                 if (this.checkData(server_data)) {
-                    console.log("ДАННЫЕ С СЕРВЕРА ПОЛУЧЕНЫ!");
+
 
                     if (this.is_training) {
-                        console.log("ТРЕНИРОВКА");
+
 
                         let new_stepServerData = server_data;
-                        this.contextCanvasHandler.setStepServerData(new_stepServerData);
+                        this.contextApparatHandler.setStepServerData(new_stepServerData);
                     }
-                    else {
-                        console.log("NOT ТРЕНИРОВКА");
-                    }
+                    // else {
+
+                    // }
 
                     let new_annotation = hwCmpHandler.getAnnotation(server_data);
-                    this.contextCanvasHandler.setAnnotation(new_annotation);
+                    this.contextApparatHandler.setAnnotation(new_annotation);
 
-                    let new_allPacks = hwCmpHandler.uploadHwComponents_Training(this.contextCanvasHandler.getAllPacks(), server_data, !this.is_training);
-                    this.contextCanvasHandler.setAllPacks(new_allPacks);
+                    let new_allPacks = hwCmpHandler.uploadHwComponents_Training(this.contextApparatHandler.getAllPacks(), server_data, !this.is_training);
+                    this.contextApparatHandler.setAllPacks(new_allPacks);
 
                     if (server_data['is_random_step'])
-                        hwCmpHandler.setToRandomValue(this.contextCanvasHandler.getAllPacks(), server_data);
+                        hwCmpHandler.setToRandomValue(this.contextApparatHandler.getAllPacks(), server_data);
 
-                    this.contextCanvasHandler.rerender();
+                    this.contextApparatHandler.rerender();
 
-                } else {
-                    console.log("НЕВЕРНАЯ СТРУКТУРА ДАННЫХ СЕРВЕРА!");
                 }
+                // else {
+
+                // }
 
             }
-            catch (event) {
-                console.log("CATCH: " + event);
+            catch (error) {
+                console.log(error);
             }
-
         };
     }
 
-    defineActionStepOnMessage(contextComponentHandler, hardwareComponent) {
-        this.contextComponentHandler = contextComponentHandler;
+    defineActionStepOnMessage(contextCanvasHandler, hardwareComponent) {
+        this.contextCanvasHandler = contextCanvasHandler;
 
         this.socket.onmessage = (event) => {
+            this.contextCanvasHandler.setServerAnswerStatus(true);
+
             try {
+
                 let server_data = this.parseServerData(event.data);
                 if (server_data) {
-                    console.log("ДАННЫЕ С СЕРВЕРА ПОЛУЧЕНЫ!");
+
 
                     if (this.is_training) {
                         if (server_data['block_end']) {
-                            this.contextComponentHandler.$emit('completeApparat', server_data['block_end_id']);
+                            this.contextCanvasHandler.$emit('completeApparat', server_data['block_end_id']);
                         }
-                        if (server_data['fail']) {
-                            console.log("FAIL!");
-                        }
-                        else if (!server_data['finish']) {
+                        if (!server_data['finish']) {
                             if (server_data['status']) {
                                 if (server_data['status'] == "correct" && server_data['validation'] == false) {
-                                    this.contextComponentHandler.changeYellow(hardwareComponent);
-                                    this.contextCanvasHandler.rerender()
+                                    this.contextCanvasHandler.changeYellow(hardwareComponent);
+                                    // this.contextApparatHandler.rerender()
 
                                 }
                                 if (server_data['status'] == "correct" && server_data['validation'] == true) {
-                                    this.contextComponentHandler.changeYellow(hardwareComponent);
-                                    this.contextComponentHandler.$emit('ann', server_data['annotation']);
-                                    this.contextComponentHandler.$emit('step', server_data);
-                                    this.contextComponentHandler.$emit('allP', server_data);
+                                    this.contextCanvasHandler.changeYellow(hardwareComponent);
+                                    this.contextCanvasHandler.$emit('ann', server_data['annotation']);
+                                    this.contextCanvasHandler.$emit('step', server_data);
+                                    this.contextCanvasHandler.$emit('allP', server_data);
                                 }
                             }
                             else {
                                 if (server_data['validation'] == true) {
-                                    this.contextComponentHandler.changeYellow(hardwareComponent);
-                                    this.contextComponentHandler.$emit('ann', server_data['annotation']);
-                                    this.contextComponentHandler.$emit('step', server_data);
-                                    this.contextComponentHandler.$emit('allP', server_data);
+                                    this.contextCanvasHandler.changeYellow(hardwareComponent);
+                                    this.contextCanvasHandler.$emit('ann', server_data['annotation']);
+                                    this.contextCanvasHandler.$emit('step', server_data);
+                                    this.contextCanvasHandler.$emit('allP', server_data);
                                 }
                             }
                         }
                         else if (server_data['finish'] && server_data['array_actions'][0] != "nan") {
-                            console.log("EXERCISE FINISHED!");
 
-                            this.contextComponentHandler.changeYellow(hardwareComponent);
-                            this.contextComponentHandler.$emit('ann', server_data['annotation']);
-                            this.contextComponentHandler.$emit('step', server_data);
-                            this.contextComponentHandler.$emit('allP', server_data);
-                            this.contextComponentHandler.$emit('completeExercise', true);
+
+                            this.contextCanvasHandler.changeYellow(hardwareComponent);
+                            this.contextCanvasHandler.$emit('ann', server_data['annotation']);
+                            this.contextCanvasHandler.$emit('step', server_data);
+                            this.contextCanvasHandler.$emit('allP', server_data);
+                            this.contextCanvasHandler.$emit('completeExercise', true);
                         }
 
                         else {
                             alert("УРАА!");
                         }
                     }
-                    else {
-                        console.log("НЕ ТРЕННИРОВКА");
-                    }
-                }
-                else {
-                    console.log("НЕВЕРНАЯ СТРУКТУРА ДАННЫХ СЕРВЕРА!");
                 }
 
-            } catch (event) {
-                console.log(event);
+            } catch (error) {
+                console.log(error);
             }
         };
     }
@@ -203,9 +198,7 @@ export default class ServerHandler {
         return JSON.parse(data);
     }
 
-    checkData(data) {
-
-        console.log(data);
+    checkData() {
 
         // для теста:
         return true;
@@ -227,7 +220,7 @@ export default class ServerHandler {
     }
 
     changeStepServerData(newstepServerData) {
-        console.log("--- CHANGING StepServerData");
+
         this.stepServerData = newstepServerData;
     }
 

@@ -147,7 +147,7 @@ export default {
     this.$session.start();
     this.$session.set('session_id', Date.now().toString(32));
     this.sessionId = this.$session.get('session_id');
-    console.log("SESSION_ID: " + this.sessionId);
+    
 
     if (this.$route.query.sec && this.$route.query.min) {
       this.sec = this.$route.query.sec;
@@ -168,8 +168,8 @@ export default {
 
     this.serverHandler = new ServerHandler(this.$session.get('session_id'), this.contextHandler,  is_traning, this.exersiseId, this.$route.query.norm);
 
-    console.log("stepServerData: " + this.stepServerData);
-    console.log("serverHandler: " + this.serverHandler);
+    
+    
 
   },
   destroyed() {
@@ -185,7 +185,7 @@ export default {
     sec(time) {
       if (time === 0) {
         //this.stopTimer();
-        console.log("STOP TIMER");
+        
       }
     }
   },
@@ -196,7 +196,7 @@ export default {
         if (this.sec % 60 == 0 && this.sec != 0) {
           this.min++;
           this.sec = 0;
-          console.log(this.min, "min");
+          
         }
       }, 1000)
     },
@@ -204,9 +204,9 @@ export default {
       clearTimeout(this.timer)
     },
     goToPath(route, normative_id = 0, is_training = 1, min = 0, sec = 0) {
-      // console.log();
-      // console.log(is_training + min + sec);
-      console.log("NEW NORMATIVE ID", normative_id);
+      // 
+      // 
+      
       this.$router.push({ path: route, query: { norm: normative_id, it: is_training, min: min, sec: sec } });
       window.location.reload();
     },
@@ -216,13 +216,13 @@ export default {
       this.rerenderStatmentSideBar++;
     },
     getNextExercisePathId() {
-      console.log("ФФФФФФФФФАВААА",this.$route.query.norm)
+      
       if (parseInt(this.$route.query.norm) % 10 < 9)
         return parseInt(this.$route.query.norm) + 1;
       return -1;
     },
     waitingServer() {
-      console.log("annotation: " + this.annotation);
+      
       if (this.annotation === this.messageWaitingServer)
         return "";
       return "d-none";
@@ -233,11 +233,11 @@ export default {
       this.rerenderStatmentSideBar++;
     },
     updateZoom() {
-      console.log("updateZoom()");
+      
       this.imgId = this.actualPack.id;
 
       this.imgWidth = this.actualPack.backgroundSettings.width;
-      console.log("imgWidth: " + this.imgWidth);
+      
 
       if (this.width > this.imgWidth) {
         this.zoom = Math.floor((this.width - 100 - this.imgWidth) / this.imgWidth * 100) + 100;
@@ -245,29 +245,26 @@ export default {
       else if (this.width < this.imgWidth) {
         this.zoom = Math.ceil((this.width - 100 - this.imgWidth) / this.imgWidth * 100) + 100;
       }
-      console.log("zoom: " + this.zoom);
+      
       document.getElementById('mainBlock').style.zoom = this.zoom + '%';
     },
     updateWidth() {
-      console.log("updateWidth()");
+      
       const $html = document.documentElement;
       const width = $html.clientWidth;
-      console.log("WIDTH: " + width);
+      
       this.width = width;
       this.updateZoom();
     },
     selectPackHandler(pack) {
-      console.log("-> selectPackHandler()");
+      
       this.actualPack = pack;
       this.packForShow = pack.name;
       this.allPacks = hwCmpHandler.setNullBlocksActualStatus(this.allPacks);
       this.allPacks.blocks[hwCmpHandler.findHardwareById(pack.id, this.allPacks.blocks)].actual_status = 1;
       this.rerenderStatmentSideBar++;
-      console.log("<- selectPackHandler()");
+      
       this.updateZoom();
-    },
-    inputTextHandler(text) {
-      console.log(text);
     },
     linkForNextExercise() {
       if (this.exerciseComplete) {

@@ -80,12 +80,12 @@ export default {
   },
   methods: {
     nextHardwareComponentListener(nextHardwareComponents) {
-      console.log(nextHardwareComponents);
+      
       this.hardwareComponentsData = nextHardwareComponents;
       this.rerenderStatment++;
     },
     selectComponentHandler(component) {
-      console.log("added component");
+      
       this.hardwareComponentsData.push({...component});
     }
   },
