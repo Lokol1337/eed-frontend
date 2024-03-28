@@ -102,7 +102,7 @@ export default class ServerHandler {
                             if (server_data['status']) {
                                 if (server_data['status'] == "correct" && server_data['validation'] == false) {
                                     this.contextCanvasHandler.changeYellow(hardwareComponent);
-                                    // this.contextApparatHandler.rerender()
+                                    this.contextApparatHandler.rerenderMenuBlocksStatus(server_data['next_actions']);
 
                                 }
                                 if (server_data['status'] == "correct" && server_data['validation'] == true) {

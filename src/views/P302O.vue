@@ -232,6 +232,11 @@ export default {
       this.rerenderStatment++;
       this.rerenderStatmentSideBar++;
     },
+    rerenderMenuBlocksStatus(next_actions) {
+      this.allPacks = hwCmpHandler.changeBlocksStatus(this.allPacks, next_actions, this.is_tr);
+      this.rerenderStatment++;
+      this.rerenderStatmentSideBar++;
+    },
     updateZoom() {
       
       this.imgId = this.actualPack.id;

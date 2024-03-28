@@ -12,6 +12,10 @@ export default class ContextHandler {
     return this.context.allPacks;
   }
 
+  rerenderMenuBlocksStatus(next_actions) {
+    this.context.rerenderMenuBlocksStatus(next_actions);
+  }
+
   setAnnotation(annotation) {
     this.context.annotation = annotation;
   }
@@ -162,39 +166,49 @@ export function uploadHwComponents_Training(allPacks, server_data, is_ex) {
     });
 
   }
-
   // 
   let next_actions = server_data['next_actions'];
   let count_next = parseInt(server_data['count_next']);
-  allPacks = setNullBlocksNextStatus(allPacks);
 
   if (count_next > 0) {
+    allPacks = changeBlocksStatus(allPacks, next_actions, !is_ex);
+  } else
+    allPacks = setNullBlocksNextStatus(allPacks);
 
-    next_actions.forEach(action => {
+  return allPacks;
+}
 
+export function changeBlocksStatus(allPacks, next_actions, isTraining) {
 
-      let packId = findHardwareById(action['apparat_id'], allPacks.blocks);
+  allPacks = setNullBlocksNextStatus(allPacks);
 
-      let next_pack = allPacks.blocks[packId];
+  console.log(next_actions);
+  console.log(isTraining);
 
-      let hwCmpId = findHardwareComponentById(action['next_id'], next_pack.components);
+  next_actions.forEach(action => {
 
-      let nextHwComponent = next_pack.components[hwCmpId];
+    let packId = findHardwareById(action['apparat_id'], allPacks.blocks);
 
-      if (!is_ex) {
-        nextHwComponent.backgroundColor = "yellow";
-        nextHwComponent.opacity = 80;
-      }
+    let next_pack = allPacks.blocks[packId];
 
-      // 
-      // 
+    let hwCmpId = findHardwareComponentById(action['next_id'], next_pack.components);
 
-      // Обновляем массив allPacks
-      allPacks.blocks[packId].components[hwCmpId] = nextHwComponent;
-      if (!is_ex)
-        allPacks.blocks[packId].next_status = 1;
-    });
-  }
+    let nextHwComponent = next_pack.components[hwCmpId];
+
+    if (isTraining) {
+      nextHwComponent.backgroundColor = "yellow";
+      nextHwComponent.opacity = 80;
+    }
+
+    // 
+    // 
+
+    // Обновляем массив allPacks
+    allPacks.blocks[packId].components[hwCmpId] = nextHwComponent;
+    if (isTraining)
+      allPacks.blocks[packId].next_status = 1;
+  });
+
   return allPacks;
 }
 
