@@ -37,6 +37,9 @@
 
               </nav>
             </div>
+
+            
+            
             <div class="col-auto me-4">
               <!-- (10 > min)?('0' + min):min +  ':' + (10 > sec)?('0' + sec):sec  -->
               {{ (10 > min) ? ('0' + min) : min }}
@@ -49,7 +52,7 @@
     </div>
 
 
-    <div class="container-fluid pb-5">
+    <div class="container-fluid pb-5 pt-5">
       <div class="row mb-3 justify-content-center">
         <div class="col-12 mt-3 mb-1">
           <div class="d-inline-flex">
@@ -80,15 +83,49 @@
               :bgImage="pack.background" :backgroundSettings="pack.backgroundSettings" :sessionId="sessionId"
               :serverHandler="serverHandler" :stepServerData="stepServerData" :zoom="zoom" @ann="(i) => annotation = i"
               @step="(i) => stepServerData = i" @allP="(i) => rerenderAllPacks(i)"
-              @completeExercise="(i) => exerciseComplete = i" @completeApparat="(i) => changeBlockYellow(i)" />
+              @completeExercise="(i) => exerciseComplete = i" @completeApparat="(i) => changeBlockYellow(i)"
+              @showDiscription="(arg) => showDiscription(arg)" 
+              @hideDiscription="(arg) => hideDiscription(arg)"
+              />
           </div>
         </div>
       </div>
 
     </div>
-  </div>
-</template>
+    <div :class="'row notification_block ' + (this.discriptionActive?' active':'')"
+    :style="'top:' + (this.discriptionActive?'10px':'-100px')"
+    > 
 
+    <div style="position: absolute; right: 5px; bottom: 5px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+      </svg>
+      <!-- <span class="fw-bold ms-1">ПОЯСНЕНИЕ!</span> -->
+    </div>
+
+      {{ this.discription }}
+    </div>
+  </div>
+  
+</template>
+<style>
+    .notification_block{
+      position: fixed;
+      z-index: 10000000;
+      left: calc(50% - 85px - 100px);
+      width: 600px;
+      display: none;
+      height: 100px;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 15px;
+      text-align: left;
+      top: 10px;
+    }
+    .notification_block.active{
+      display: block;
+    }
+  </style>
 <script>
 
 
@@ -128,7 +165,9 @@ export default {
       min: 0,
       timer: null,
       is_tr: this.$route.query.it,
-      deg:0
+      deg:0,
+      discription: null,
+      discriptionActive: false
     };
   },
 
@@ -168,9 +207,6 @@ export default {
 
     this.serverHandler = new ServerHandler(this.$session.get('session_id'), this.contextHandler,  is_traning, this.exersiseId, this.$route.query.norm);
 
-    
-    
-
   },
   destroyed() {
     this.stopTimer()
@@ -190,6 +226,13 @@ export default {
     }
   },
   methods: {  
+    showDiscription(text){
+      this.discription = text;
+      this.discriptionActive = true;
+    },
+    hideDiscription(){
+      this.discriptionActive = false;
+    },
     startTimer() {
       this.timer = setInterval(() => {
         this.sec++;
@@ -204,9 +247,6 @@ export default {
       clearTimeout(this.timer)
     },
     goToPath(route, normative_id = 0, is_training = 1, min = 0, sec = 0) {
-      // 
-      // 
-      
       this.$router.push({ path: route, query: { norm: normative_id, it: is_training, min: min, sec: sec } });
       window.location.reload();
     },
@@ -216,10 +256,7 @@ export default {
       this.rerenderStatmentSideBar++;
     },
     getNextExercisePathId() {
-      
-      if (parseInt(this.$route.query.norm) % 10 < 9)
-        return parseInt(this.$route.query.norm) + 1;
-      return -1;
+      return parseInt(this.$route.query.norm) + 1;
     },
     waitingServer() {
       

@@ -6,7 +6,8 @@
       backgroundColor: hardwareComponent.backgroundColor,
       opacity: hardwareComponent.opacity + '%',
       border: `none`
-    }">
+    }"
+    >
     <img
       v-if="hardwareComponent.currentValue !== 'cabel' && hardwareComponent.currentValue !== 'none' && hardwareComponent.caption !== 'arrow' && hardwareComponent.caption !== 'rotationBlock'"  
       class="component-img" :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
@@ -16,7 +17,10 @@
         verticalAlign: `top`,
         cursor: hardwareComponent.opacity == 80 ? 'pointer' : 'unset'
       }" @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick"
-      @wheel.prevent="scrollRotateELement" />
+      @wheel.prevent="scrollRotateELement" 
+      @mouseover = "hardwareComponent.backgroundColor === 'yellow'?$emit('showDiscription', '123'):''"
+      @mouseleave = "hardwareComponent.backgroundColor === 'yellow'?$emit('hideDiscription'):''"
+      />
       
       <img v-if="hardwareComponent.currentValue === 'none'" class="component-img"
       :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
@@ -24,14 +28,18 @@
         height: hardwareComponent.height + 'px',
         transform: `rotate(${degreeOfRotation}deg)`,
         verticalAlign: `top`
-      }" @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick" />
+      }" @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick" 
+    
+      />
     <img v-if="hardwareComponent.currentValue === 'cabel'" class=""
       :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
         width: hardwareComponent.width + 'px',
         height: hardwareComponent.height + 'px',
         transform: `rotate(${degreeOfRotation}deg)`,
         verticalAlign: `top`
-      }" />
+      }" 
+    
+      />
     <img
         v-if="hardwareComponent.caption === 'rotationBlock'"
         class="rotationBlock" :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
@@ -42,14 +50,17 @@
           cursor:'url(./images/icons/arrow-clockwise.svg) , pointer'
           // cursor: hardwareComponent.opacity == 80 ? 'url(./images/icons/arrow-clockwise.svg)' : 'unset'
         }" @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick"
-        @wheel.prevent="scrollRotateELement" />
+        @wheel.prevent="scrollRotateELement" 
+    
+        />
     <img v-if="hardwareComponent.caption === 'arrow'" class=""
       :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
         width: hardwareComponent.width + 'px',
         height: hardwareComponent.height + 'px',
         transform: `rotate(${degreeOfRotation}deg)`,
         verticalAlign: `top`
-      }" />
+      }" 
+    />
 
   </vue-draggable-resizable>
 </template>
@@ -75,6 +86,7 @@ export default {
       img_src: this.hardwareComponent.valuesAndPhotos.photo,
       hardZoomScale: this.hardZoom / 100.0,
       dataServ: [],
+      mockText: "Я в своем познании настолько преисполнился, что я как будто бы уже сто триллионов миллиардов лет проживаю на триллионах и"
     };
   },
   watch: {

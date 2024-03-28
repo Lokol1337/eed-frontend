@@ -24,6 +24,8 @@
           :hardZoom = "hardZoom"    
           :sessionId = "sessionId"
           :serverAnswerStatus = "serverAnswerStatus"
+          @showDiscription="(arg) => $emit('showDiscription', arg)" 
+          @hideDiscription="(arg) => $emit('hideDiscription', arg)"
       />
     </div>
   </div>
