@@ -14,6 +14,8 @@ export default class ServerHandler {
     contextApparatHandler = null;
     contextCanvasHandler = null;
 
+    next_actions = null;
+
     constructor(session_id, contextApparatHandler, is_training, exercise_id, normative_id) {
 
         this.session_id = session_id;
@@ -48,6 +50,7 @@ export default class ServerHandler {
                 let server_data = this.parseServerData(event.data);
                 if (this.checkData(server_data)) {
 
+                    this.next_actions = server_data['next_actions'];
 
                     if (this.is_training) {
                         let new_stepServerData = server_data;
@@ -93,7 +96,6 @@ export default class ServerHandler {
                 let server_data = this.parseServerData(event.data);
                 if (server_data) {
 
-
                     if (this.is_training) {
                         if (server_data['block_end']) {
                             this.contextCanvasHandler.$emit('completeApparat', server_data['block_end_id']);
@@ -102,12 +104,14 @@ export default class ServerHandler {
                             if (server_data['status']) {
                                 if (server_data['status'] == "correct" && server_data['validation'] == false) {
                                     this.contextCanvasHandler.changeYellow(hardwareComponent);
-                                    this.contextApparatHandler.rerenderMenuBlocksStatus(server_data['next_actions']);
+                                    this.next_actions = this.next_actions.filter((action) => action.next_id != hardwareComponent.id);
+                                    this.contextApparatHandler.rerenderMenuBlocksStatus(this.next_actions);
 
                                 }
                                 if (server_data['status'] == "correct" && server_data['validation'] == true) {
                                     this.contextCanvasHandler.changeYellow(hardwareComponent);
                                     this.contextCanvasHandler.$emit('ann', server_data['annotation']);
+                                    this.next_actions = server_data['next_actions'];
                                     this.contextCanvasHandler.$emit('step', server_data);
                                     this.contextCanvasHandler.$emit('allP', server_data);
                                 }

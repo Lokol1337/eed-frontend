@@ -182,9 +182,6 @@ export function changeBlocksStatus(allPacks, next_actions, isTraining) {
 
   allPacks = setNullBlocksNextStatus(allPacks);
 
-  console.log(next_actions);
-  console.log(isTraining);
-
   next_actions.forEach(action => {
 
     let packId = findHardwareById(action['apparat_id'], allPacks.blocks);
