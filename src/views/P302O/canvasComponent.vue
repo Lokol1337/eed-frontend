@@ -2,7 +2,8 @@
   <vue-draggable-resizable v-if="!hardwareComponent.draggable" @dragging="onDrag" :class="curZindex"
     :w="hardwareComponent.width" :h="hardwareComponent.height" :x="hardwareComponent.left" :y="hardwareComponent.top"
     :draggable="hardwareComponent.draggable" :resizable="false" :parent="true" :scale="(hardZoomScale)"
-    :id=hardwareComponent.id :style="{
+    :id=hardwareComponent.id 
+    :style="{
       backgroundColor: hardwareComponent.backgroundColor,
       opacity: hardwareComponent.opacity + '%',
       border: `none`
@@ -10,29 +11,35 @@
     >
     <img
       v-if="hardwareComponent.currentValue !== 'cabel' && hardwareComponent.currentValue !== 'none' && hardwareComponent.caption !== 'arrow' && hardwareComponent.caption !== 'rotationBlock'"  
-      class="component-img" :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
+      class="component-img" :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" 
+      :style="{
         width: hardwareComponent.width + 'px',
         height: hardwareComponent.height + 'px',
         transform: `rotate(${degreeOfRotation}deg)`,
         verticalAlign: `top`,
         cursor: hardwareComponent.opacity == 80 ? 'pointer' : 'unset'
-      }" @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick"
+      }" 
+      @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick"
       @wheel.prevent="scrollRotateELement" 
       @mouseover = "hardwareComponent.backgroundColor === 'yellow' ? $emit('showDiscription', 'Поочередно соединить 2-х пр. шнуром гн. «ВХ» на бл. УУ и гн. на ГО-12 с гравировками, соответствующими значениям измеряемых частот'):''"
       @mouseleave = "$emit('hideDiscription')"
       />
       
       <img v-if="hardwareComponent.currentValue === 'none'" class="component-img"
-      :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
+      :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" 
+      :style="{
         width: hardwareComponent.width + 'px',
         height: hardwareComponent.height + 'px',
         transform: `rotate(${degreeOfRotation}deg)`,
         verticalAlign: `top`
-      }" @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick" 
+
+      }" 
+      @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick" 
     
       />
     <img v-if="hardwareComponent.currentValue === 'cabel'" class=""
-      :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
+      :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" 
+      :style="{
         width: hardwareComponent.width + 'px',
         height: hardwareComponent.height + 'px',
         transform: `rotate(${degreeOfRotation}deg)`,
@@ -42,19 +49,22 @@
       />
     <img
         v-if="hardwareComponent.caption === 'rotationBlock'"
-        class="rotationBlock" :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
+        class="rotationBlock" :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" 
+        :style="{
           width: hardwareComponent.width + 'px',
           height: hardwareComponent.height + 'px',
           // transform: `rotate(${degreeOfRotation}deg)`,
           verticalAlign: `top`,
           cursor:'url(./images/icons/arrow-clockwise.svg) , pointer'
           // cursor: hardwareComponent.opacity == 80 ? 'url(./images/icons/arrow-clockwise.svg)' : 'unset'
-        }" @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick"
+        }" 
+        @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick"
         @wheel.prevent="scrollRotateELement" 
     
         />
     <img v-if="hardwareComponent.caption === 'arrow'" class=""
-      :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" :style="{
+      :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" 
+      :style="{
         width: hardwareComponent.width + 'px',
         height: hardwareComponent.height + 'px',
         transform: `rotate(${degreeOfRotation}deg)`,
@@ -80,7 +90,7 @@ export default {
   props: ['hardZoom', 'hardwareComponents', 'hardwareComponent', /*'hardwareComponent.imgIndex',*/ 'id', 'serverAnswerStatus'],
   data() {
     return {
-      curZindex: 1,
+      curZindex: (this.hardwareComponent.caption === 'arrow' ? '97' : '98'),
       degreeOfRotation: this.hardwareComponent.currentValue,
       deg: 0,
       img_src: this.hardwareComponent.valuesAndPhotos.photo,
@@ -119,6 +129,9 @@ export default {
     }
     else if (this.hardwareComponent.currentValue === "cabel") {
       this.curZindex = "none";
+    }
+    else if (this.hardwareComponent.caption === "arrow") {
+      this.curZindex = "arrow";
     }
     else {
       this.curZindex = "btnTop";

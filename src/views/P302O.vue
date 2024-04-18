@@ -46,7 +46,7 @@
             </div>
 
             <div class="col-4 d-flex justify-content-end">
-              <button :class="'btn btn-success w-auto me-0 ' + this.linkForNextExercise()"
+              <button :class="'btn btn-success w-auto me-0 ' + this.linkForNextStage()"
                 @click.prevent="goToPath('/p-302-o', getNextExercisePathId(), is_tr, min, sec)">
                 Перейти к следующему шагу {{exersizeName}}
               </button>
@@ -85,10 +85,11 @@
               :serverHandler="serverHandler" :stepServerData="stepServerData" :zoom="zoom" @ann="(i) => annotation = i"
               @step="(i) => stepServerData = i" 
               @allP="(i) => rerenderAllPacks(i)"
-              @completeExercise="() => endNormative()" 
               @completeApparat="(i) => changeBlockYellow(i)"
               @showDiscription="(arg) => showDiscription(arg)" 
               @hideDiscription="(arg) => hideDiscription(arg)"
+              @endStage="() => endStage()" 
+              @endNormative="() => endNormative()"
               />
           </div>
         </div>
@@ -113,23 +114,10 @@
 
     </div>
 
-    <div id="div-modalCongratulation" class="modal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>Modal body text goes here.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Save changes</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
+    <div 
+    :class="'congratulation_modal' + (this.congratulationActive?' show':'')">
+      <div class="modal_body">
+
       </div>
     </div>
 
@@ -138,9 +126,29 @@
 
 </template>
 <style>
+    .congratulation_modal{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(128,128,128,0.3);
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+    }
+    .congratulation_modal.show{
+      visibility: unset;
+      z-index: 1000;
+    }
+    .modal_body{
+      width: 40%;
+      height: 40%;
+      background-color: white;
+    }
     .notification_block{
       position: fixed;
-      z-index: 10000000;
+      z-index: 1000;
       left: calc(50% - 85px - 100px  - 50px);
       width: 600px;
       display: none;
@@ -196,7 +204,8 @@ export default {
       is_tr: this.$route.query.it,
       deg:0,
       discription: null,
-      discriptionActive: false
+      discriptionActive: false,
+      congratulationActive: false,
     };
   },
 
@@ -263,16 +272,19 @@ export default {
       this.discriptionActive = false;
     },
     showCongratulationModal(){
-      document.getElementById('div-modalCongratulation').style.display = "block";
+      this.congratulationActive = true;
     },
     hideCongratulationModal(){
-      
+      this.congratulationActive = false;
     },
-    endNormative() {
+    endStage() {
       this.stopTimer();
       this.hideDiscription();
+      this.completeStage = true;
+    },
+    endNormative() {
+      this.endStage();
       this.showCongratulationModal();
-      this.completeExercise = true;
     },
     startTimer() {
       this.timer = setInterval(() => {
@@ -349,9 +361,9 @@ export default {
       
       this.updateZoom();
     },
-    linkForNextExercise() {
-      if (this.exerciseComplete) {
-        this.endNormative();
+    linkForNextStage() {
+      if (this.completeStage) {
+        this.endStage();
         return "";
       }
       return "d-none";

@@ -97,9 +97,20 @@ export default class ServerHandler {
                 if (server_data) {
 
                     if (this.is_training) {
+
                         if (server_data['block_end']) {
                             this.contextCanvasHandler.$emit('completeApparat', server_data['block_end_id']);
                         }
+
+                        if (server_data['is_norm_finish']) {
+                            this.contextCanvasHandler.changeYellow(hardwareComponent);
+                            this.contextCanvasHandler.$emit('ann', server_data['annotation']);
+                            this.contextCanvasHandler.$emit('step', server_data);
+                            this.contextCanvasHandler.$emit('allP', server_data);
+                            this.contextCanvasHandler.$emit('endNormative');
+                            return;
+                        }
+
                         if (!server_data['finish']) {
                             if (server_data['status']) {
                                 if (server_data['status'] == "correct" && server_data['validation'] == false) {
@@ -132,7 +143,7 @@ export default class ServerHandler {
                                 this.contextCanvasHandler.$emit('ann', server_data['annotation']);
                                 this.contextCanvasHandler.$emit('step', server_data);
                                 this.contextCanvasHandler.$emit('allP', server_data);
-                                this.contextCanvasHandler.$emit('completeExercise');
+                                this.contextCanvasHandler.$emit('endStage');
                             }
                         }
 
