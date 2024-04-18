@@ -9,7 +9,7 @@
       </div>
         <div class="card " style="background-color: inherit;" >
           <div class="card-body text-center"> 
-            <form method="post" action="#/main" id="loginForm"> 
+            <form method="post" action="#/main" id="loginForm" @submit="submitLogin"> 
               <div class="input-group mb-3"> 
                 <input class="form-control" id="username" placeholder="Имя пользователя или почта" type="text" name="username" value="test" v-model="username"> 
               </div>
@@ -17,7 +17,7 @@
                 <input class="form-control" id="password" placeholder="Пароль" type="password" name="password" value="pass" v-model="password"> 
               </div > 
               <div class="my-4"><span class="my-2" id="loginError" style="color: red;"></span></div>
-              <button type="button" @click="submitLogin" name="login" class="btn shadow-2" style="background-color: #007cbe; border-color:white; color:white; width: 100%;">Войти</button>
+              <button type="submit" name="login" class="btn shadow-2" style="background-color: #007cbe; border-color:white; color:white; width: 100%;">Войти</button>
             </form>
           </div>
         </div>
@@ -52,9 +52,10 @@ export default {
     //     
     //   }
     // }
-    async submitLogin(){
+    async submitLogin(event){
       const data = await login(this.username, this.password);
       if(!data){
+        event.preventDefault();
         document.getElementById('loginError').innerHTML = "Не верный логин или пароль.";
       }
       else{

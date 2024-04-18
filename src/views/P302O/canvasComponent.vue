@@ -18,8 +18,8 @@
         cursor: hardwareComponent.opacity == 80 ? 'pointer' : 'unset'
       }" @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick"
       @wheel.prevent="scrollRotateELement" 
-      @mouseover = "hardwareComponent.backgroundColor === 'yellow'?$emit('showDiscription', 'Поочередно соединить 2-х пр. шнуром гн. «ВХ» на бл. УУ и гн. на ГО-12 с гравировками, соответствующими значениям измеряемых частот'):''"
-      @mouseleave = "hardwareComponent.backgroundColor === 'yellow'?$emit('hideDiscription'):''"
+      @mouseover = "hardwareComponent.backgroundColor === 'yellow' ? $emit('showDiscription', 'Поочередно соединить 2-х пр. шнуром гн. «ВХ» на бл. УУ и гн. на ГО-12 с гравировками, соответствующими значениям измеряемых частот'):''"
+      @mouseleave = "$emit('hideDiscription')"
       />
       
       <img v-if="hardwareComponent.currentValue === 'none'" class="component-img"
