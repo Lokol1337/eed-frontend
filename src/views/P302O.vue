@@ -117,7 +117,39 @@
     <div 
     :class="'congratulation_modal' + (this.congratulationActive?' show':'')">
       <div class="modal_body">
+            <div class="col-12 d-flex justify-content-center align-items-center ">
+              <h1 class="m-0" style="font-size: 10rem;" >
+                <strong>
+                  {{ (10 > min) ? ('0' + min) : min }}:{{ (10 > sec) ? ('0' + sec) : sec }}
+                </strong>
+              </h1>
+            </div>
+            <button class="restart btn"
+              @click.prevent="goToPath('/main')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+              </svg>
+            </button>
 
+            <div class="col-12 d-flex justify-content-around h-auto g-0">
+              <div class="col-4">
+
+              </div>
+              <button :class="'btn col-4 me-0 '"
+                @click.prevent="goToPath('/p-302-o', String($route.query.norm[0]) + '1', is_tr, 0, 0)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
+                    <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
+                  </svg>
+              </button>
+              <button :class="'btn col-4 me-0 d-flex justify-content-end'"
+                @click.prevent="goToPath('/p-302-o', String($route.query.norm[0]) + '1', is_tr, 0, 0)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                </svg>
+              </button>
+            </div>
       </div>
     </div>
 
@@ -126,6 +158,7 @@
 
 </template>
 <style>
+
     .congratulation_modal{
       position: absolute;
       width: 100%;
@@ -145,6 +178,15 @@
       width: 40%;
       height: 40%;
       background-color: white;
+      padding: 2rem;
+      border-radius: 15px;
+      position: relative;
+    }
+    .modal_body .restart{
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin: 0;
     }
     .notification_block{
       position: fixed;
@@ -283,7 +325,8 @@ export default {
       this.completeStage = true;
     },
     endNormative() {
-      this.endStage();
+      this.stopTimer();
+      this.hideDiscription();
       this.showCongratulationModal();
     },
     startTimer() {
@@ -300,6 +343,9 @@ export default {
       clearTimeout(this.timer)
     },
     goToPath(route, normative_id = 0, is_training = 1, min = 0, sec = 0) {
+      if(normative_id == 0)
+        this.$router.push({path: route});
+
       this.$router.push({ path: route, query: { norm: normative_id, it: is_training, min: min, sec: sec } });
       window.location.reload();
     },
