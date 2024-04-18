@@ -6,18 +6,13 @@
           <img src="./mirea2.png" height="40">
           <h6 class="m-0" style="color: white">&nbsp;&nbsp;ВУЦ РТУ МИРЭА</h6>
         </div>
-        <!--<div class="col-12 col-md-4 d-flex justify-content-center">
-          <img src="./mirea1.png" height="40">
-        </div>
-        <div class="col-12 col-md-4 d-flex justify-content-center">
-          <img src="./mirea3.png" height="40">
-        </div>-->
     </div>
 
     <div class="container pt-5" style="background-color: #f4f7fa;">
 
       <div class="row d-dlex justify-content-center">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center"> 
           <div class="card" style="width: 18rem">
             <!-- <img class="card-img-top" alt="Card image cap" /> -->
             <div class="card-body">
@@ -35,29 +30,15 @@
                   </button>
                   <ul class="dropdown-menu w-100 h-100" aria-labelledby="dropdownMenuButton1">
                     <li>
-                      <button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',11)">Настройка аппаратуры</button>
+                      <button class="btn btn-secondary w-100 h-100"
+                      @click.prevent="goToPath('/p-302-o',11)">Приведение в первоначальное состояние</button>
                     </li>
+                    <li><button class="btn btn-secondary w-100 h-100"
+                      @click.prevent="goToPath('/p-302-o',12)">Настройка</button></li>
                     <li>
-                      <button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',21)">Норматив по фильму</button>
+                      <button class="btn btn-secondary w-100 h-100"
+                      @click.prevent="goToPath('/p-302-o',21)">Настройка на себя</button>
                     </li>
-                    <!-- <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',11)">Шаг 1.1</button></li> -->
-                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',12)">Шаг 1.2</button></li>
-                    <!-- <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',13)">Шаг 1.3</button></li>
-                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',14)">Шаг 1.4 </button></li>
-                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',15)">Шаг 1.5 </button></li>
-                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',16)">Шаг 1.6</button></li>
-                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',18)">Шаг 1.8 </button></li>
-                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',19)">Шаг 1.9 </button></li> -->
                   </ul>
                 </div>
               </center>
@@ -68,34 +49,28 @@
                     Экзамен
                   </button>
                   <ul class="dropdown-menu w-100 h-100" aria-labelledby="dropdownMenuButton1">
+
+                    <li>
+                      <button class="btn btn-secondary w-100 h-100" 
+                      @click.prevent="goToPath('/p-302-o',11, 0)">Приведение в первоначальное состояние</button>
+                    </li>
+                    <li><button class="btn btn-secondary w-100 h-100"  
+                      @click.prevent="goToPath('/p-302-o',12, 0)">Настройка</button></li>
+                    <li>
+                      <button class="btn btn-secondary w-100 h-100"  
+                      @click.prevent="goToPath('/p-302-o',21, 0)">Настройка на себя</button>
+                    </li>
                     
-                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o', 11, 0)">Настройка аппаратуры</button></li>
-                    <!-- <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',11, 0)">Шаг 1.1</button></li> -->
-                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',12, 0)">Шаг 1.2</button></li>
-                    <!-- <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',13, 0)">Шаг 1.3</button></li>
-                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',14, 0)">Шаг 1.4 </button></li>
-                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',15, 0)">Шаг 1.5 </button></li>
-                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',16, 0)">Шаг 1.6</button></li>
-                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',18, 0)">Шаг 1.8 </button></li>
-                    <li><button class="btn btn-outline w-100 h-100"  style="background-color: #292c63; color: #f4f7fa;"
-                      @click.prevent="goToPath('/p-302-o',19, 0)">Шаг 1.9 </button></li> -->
                   </ul>
                 </div>
               </center>
             </div>
           </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+
+
+        <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
           <div class="card" style="width: 18rem">
-            <!-- <img class="card-img-top" alt="Card image cap" /> -->
             <div class="card-body">
               <h5 class="card-title">П-327-2</h5>
               <p class="card-text">
@@ -107,10 +82,10 @@
                 @click.prevent="goToPath('/p-327-2')">Начать</button>
             </div>
           </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+        </div> -->
+
+        <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
           <div class="card" style="width: 18rem">
-            <!-- <img class="card-img-top" alt="Card image cap" /> -->
             <div class="card-body">
               <h5 class="card-title">П-330-6</h5>
               <p class="card-text">
@@ -120,7 +95,8 @@
                 @click.prevent="goToPath('/p-330-6')">Начать</button>
             </div>
           </div>
-        </div>
+        </div> -->
+        
       </div>
       
     </div>

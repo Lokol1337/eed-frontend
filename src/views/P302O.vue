@@ -1,7 +1,8 @@
 <template>
   <div class="p-330-6">
+
     <div class="container-fluid pt-4">
-      <div class="row">
+      <div class="row px-0">
         <div class="col-1 p-0">
 
           <div :key="rerenderStatmentSideBar">
@@ -9,11 +10,11 @@
           </div>
 
         </div>
-        <div class="col-11">
-          <div class="row justify-content-between">
-            <div class="col-auto">
+        <div class="col-11 row justify-content-around p-0">
+
+            <div class="col-4 align-content-center">
               <nav aria-label="breadcrumb hidden ">
-                <ol class="breadcrumb">
+                <ol class="breadcrumb m-0 p-0">
                   <li class="breadcrumb-item">
                     <a href="/eed-frontend/#/main" class="svgHome">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 59 576 512" class="uk-icon-up2 uk-svg" width="20"
@@ -38,38 +39,38 @@
               </nav>
             </div>
 
-            
-            
-            <div class="col-auto me-4">
-              <!-- (10 > min)?('0' + min):min +  ':' + (10 > sec)?('0' + sec):sec  -->
-              {{ (10 > min) ? ('0' + min) : min }}
-              :
-              {{ (10 > sec) ? ('0' + sec) : sec }}
+            <div class="col-4 d-flex justify-content-center align-items-center">
+              <p class="m-0"><strong>
+              {{ (10 > min) ? ('0' + min) : min }}:{{ (10 > sec) ? ('0' + sec) : sec }}
+            </strong></p>
             </div>
+
+            <div class="col-4 d-flex justify-content-end">
+              <button :class="'btn btn-success w-auto me-0 ' + this.linkForNextExercise()"
+                @click.prevent="goToPath('/p-302-o', getNextExercisePathId(), is_tr)">
+                Перейти к следующему шагу {{exersizeName}}
+              </button>
           </div>
+          
         </div>
       </div>
     </div>
 
 
-    <div class="container-fluid pb-5 pt-5">
+    <div class="container-fluid py-5">
       <div class="row mb-3 justify-content-center">
-        <div class="col-12 mt-3 mb-1">
-          <div class="d-inline-flex">
+        <div class="col-1"></div>
+        <div class="col-11 d-inline-flex mt-3 mb-1 justify-content-center">
             <div :class="'spinner-border me-3 ' + this.waitingServer()" role="status"
               style="width: 1.5rem; height: 1.5rem; ">
               <span class="sr-only"></span>
             </div>
             <p id="p-annotation" class="text-center text-break m-0"> {{ (this.is_tr == 1) ? this.annotation : "" }}</p>
-          </div>
         </div>
-        <button :class="'btn w-auto me-0 ' + this.linkForNextExercise()"
-          style="background-color: #292c63; color: #f4f7fa;"
-          @click.prevent="goToPath('/p-302-o', getNextExercisePathId(), is_tr)">Перейти к следующему шагу</button>
         <!-- <div class="col-3 d-flex align-items-center justify-content-center">
         </div> -->
       </div>
-      <div class="row ">
+      <div class="row">
         <div class="col-auto col-sm-auto col-md-auto col-lg-auto col-xl-auto p-0">
           <div style="width: 85px;">
           </div>
@@ -82,8 +83,10 @@
               v-show="pack.name === actualPack.name" style="z-index: 2!important;" :hardwareComponents="pack.components"
               :bgImage="pack.background" :backgroundSettings="pack.backgroundSettings" :sessionId="sessionId"
               :serverHandler="serverHandler" :stepServerData="stepServerData" :zoom="zoom" @ann="(i) => annotation = i"
-              @step="(i) => stepServerData = i" @allP="(i) => rerenderAllPacks(i)"
-              @completeExercise="(i) => exerciseComplete = i" @completeApparat="(i) => changeBlockYellow(i)"
+              @step="(i) => stepServerData = i" 
+              @allP="(i) => rerenderAllPacks(i)"
+              @completeExercise="(i) => exerciseComplete = i" 
+              @completeApparat="(i) => changeBlockYellow(i)"
               @showDiscription="(arg) => showDiscription(arg)" 
               @hideDiscription="(arg) => hideDiscription(arg)"
               />
@@ -92,19 +95,23 @@
       </div>
 
     </div>
-    <div :class="'row notification_block ' + (this.discriptionActive?' active':'')"
-    :style="'top:' + (this.discriptionActive?'10px':'-100px')"
-    > 
 
-    <div style="position: absolute; right: 5px; bottom: 5px;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
-        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
-      </svg>
-      <!-- <span class="fw-bold ms-1">ПОЯСНЕНИЕ!</span> -->
-    </div>
 
-      {{ this.discription }}
-    </div>
+    <div id="div-notification-block" :class="'row notification_block' + (this.discriptionActive?' active' : 'd-none')"
+    :style="{ top: this.discriptionActive ? '10px' : '-100px'}"> 
+
+      <div class="p-1 text-primary" style="position: absolute;right: 5px;width:  auto;bottom: 5px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+        </svg>
+        <!-- <span class="fw-bold ms-1">ПОЯСНЕНИЕ!</span> -->
+      </div>
+
+      <div class="p-0" style="text-align: justify;">
+        {{ this.discription }}
+      </div>
+
+  </div>
   </div>
   
 </template>
@@ -112,10 +119,9 @@
     .notification_block{
       position: fixed;
       z-index: 10000000;
-      left: calc(50% - 85px - 100px);
+      left: calc(50% - 85px - 100px  - 50px);
       width: 600px;
       display: none;
-      height: 100px;
       padding: 1rem;
       background-color: white;
       border-radius: 15px;
@@ -150,6 +156,7 @@ export default {
       imgId: 1,
       zoom: 80,
       firstZoom: 0,
+      exersizeName: "",
       actualId: 1001,
       messageWaitingServer: "Ожидание ответа сервера...",
       annotation: "",
@@ -308,12 +315,13 @@ export default {
       
       this.updateZoom();
     },
+    endNormative() {
+      this.stopTimer();
+      this.discriptionActive = false;
+    },
     linkForNextExercise() {
       if (this.exerciseComplete) {
-        this.stopTimer();
-        // let nextExercisePathId = this.getNextExercisePathId();
-        // if (nextExercisePathId != -1)
-        //   this.goToPath('/p-302-o', nextExercisePathId, this.is_tr, this.min, this.sec);
+        this.endNormative();
         return "";
       }
       return "d-none";
