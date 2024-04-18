@@ -125,19 +125,17 @@ export default class ServerHandler {
                                 }
                             }
                         }
-                        else if (server_data['finish'] && server_data['array_actions'][0] != "nan") {
-
-
-                            this.contextCanvasHandler.changeYellow(hardwareComponent);
-                            this.contextCanvasHandler.$emit('ann', server_data['annotation']);
-                            this.contextCanvasHandler.$emit('step', server_data);
-                            this.contextCanvasHandler.$emit('allP', server_data);
-                            this.contextCanvasHandler.$emit('completeExercise', true);
-                        }
-
                         else {
-                            alert("УРАА!");
+
+                            if (server_data['array_actions'][0] != "nan") {
+                                this.contextCanvasHandler.changeYellow(hardwareComponent);
+                                this.contextCanvasHandler.$emit('ann', server_data['annotation']);
+                                this.contextCanvasHandler.$emit('step', server_data);
+                                this.contextCanvasHandler.$emit('allP', server_data);
+                                this.contextCanvasHandler.$emit('completeExercise');
+                            }
                         }
+
                     }
                 }
 

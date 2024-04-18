@@ -47,7 +47,7 @@
 
             <div class="col-4 d-flex justify-content-end">
               <button :class="'btn btn-success w-auto me-0 ' + this.linkForNextExercise()"
-                @click.prevent="goToPath('/p-302-o', getNextExercisePathId(), is_tr)">
+                @click.prevent="goToPath('/p-302-o', getNextExercisePathId(), is_tr, min, sec)">
                 Перейти к следующему шагу {{exersizeName}}
               </button>
           </div>
@@ -85,7 +85,7 @@
               :serverHandler="serverHandler" :stepServerData="stepServerData" :zoom="zoom" @ann="(i) => annotation = i"
               @step="(i) => stepServerData = i" 
               @allP="(i) => rerenderAllPacks(i)"
-              @completeExercise="(i) => exerciseComplete = i" 
+              @completeExercise="() => endNormative()" 
               @completeApparat="(i) => changeBlockYellow(i)"
               @showDiscription="(arg) => showDiscription(arg)" 
               @hideDiscription="(arg) => hideDiscription(arg)"
@@ -113,8 +113,29 @@
 
     </div>
 
+    <div id="div-modalCongratulation" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
-  
+
 </template>
 <style>
     .notification_block{
@@ -241,6 +262,18 @@ export default {
     hideDiscription(){
       this.discriptionActive = false;
     },
+    showCongratulationModal(){
+      document.getElementById('div-modalCongratulation').style.display = "block";
+    },
+    hideCongratulationModal(){
+      
+    },
+    endNormative() {
+      this.stopTimer();
+      this.hideDiscription();
+      this.showCongratulationModal();
+      this.completeExercise = true;
+    },
     startTimer() {
       this.timer = setInterval(() => {
         this.sec++;
@@ -315,10 +348,6 @@ export default {
       this.rerenderStatmentSideBar++;
       
       this.updateZoom();
-    },
-    endNormative() {
-      this.stopTimer();
-      this.hideDiscription();
     },
     linkForNextExercise() {
       if (this.exerciseComplete) {
