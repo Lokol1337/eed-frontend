@@ -43,7 +43,7 @@
                 </div>
               </center>
               <center>
-                <div class="dropdown ">
+                <div class="dropdown d-none">
                   <button class="btn btn-outline dropdown-toggle w-100" type="button" id="dropdownMenuButton1" 
                   style="background-color: #292c63; color: #f4f7fa;" data-bs-toggle="dropdown" aria-expanded="false">
                     Экзамен

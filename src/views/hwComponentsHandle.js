@@ -119,6 +119,16 @@ export function setNullBlocksNextStatus(allPacks) {
   return allPacks;
 }
 
+export function setNullBlockComponentsYellow(allPacks) {
+  allPacks.blocks.forEach(block => {
+    block.components.forEach(component => {
+      component.backgroundColor = "";
+      component.opacity = "";
+    });
+  });
+  return allPacks;
+}
+
 export function setToRandomValue(allPacks, server_data) {
 
   // 

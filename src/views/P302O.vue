@@ -261,6 +261,7 @@ export default {
 
     this.allPacks = hwCmpHandler.setNullImgIndex(this.allPacks);
     this.allPacks = hwCmpHandler.setNullBlocksActualStatus(this.allPacks);
+    this.allPacks = hwCmpHandler.setNullBlockComponentsYellow(this.allPacks);
     this.allPacks.blocks[hwCmpHandler.findHardwareById(this.actualPack.id, this.allPacks.blocks)].actual_status = 1;
 
     this.$session.start();
