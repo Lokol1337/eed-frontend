@@ -622,19 +622,45 @@
             },
             {
               "value": "jumper2",
-              "photo": "./images/controls/jumper2.png"
+              "photo": "./images/controls/h_cabel_head.png"
             }
           ],
           "rotatable": false,
           "draggable": false,
-          "left": 107,
-          "top": 90,
-          "width": 20,
-          "height": 10,
+          "left": 105,
+          "top": 98,
+          "width": 23,
+          "height": 14,
           "id": 2000,
           "initValue": null,
           "currentValue": null,
           "caption": null
+        },
+        {
+          "name": "УУ-ГО-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": " "
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch1_cables/cabel.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 856,
+          "height": 325,
+          "id": 2200,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            6221
+          ]
         },
         {
           "name": "blever",
