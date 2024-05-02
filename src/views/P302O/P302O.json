@@ -4244,7 +4244,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4267,7 +4267,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4290,7 +4290,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4313,7 +4313,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4336,7 +4336,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4359,7 +4359,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4382,7 +4382,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4405,7 +4405,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4428,7 +4428,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4451,7 +4451,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4474,7 +4474,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4497,7 +4497,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4520,7 +4520,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4543,7 +4543,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4566,7 +4566,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4589,7 +4589,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4612,7 +4612,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4635,7 +4635,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4658,7 +4658,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4681,7 +4681,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4704,7 +4704,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4727,7 +4727,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4750,7 +4750,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4773,7 +4773,7 @@
           "valuesAndPhotos": [
             {
               "value": "off",
-              "photo": "./images/controls/h_cabel_head.png"
+              "photo": " "
             },
             {
               "value": "on",
@@ -4791,6 +4791,519 @@
           "currentValue": null,
           "caption": null
         },
+
+
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 477,
+          "top": 67,
+          "width": 27,
+          "height": 10,
+          "id": 7133,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 477,
+          "top": 78,
+          "width": 27,
+          "height": 10,
+          "id": 7134,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 503,
+          "top": 67,
+          "width": 27,
+          "height": 10,
+          "id": 7135,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 503,
+          "top": 78,
+          "width": 27,
+          "height": 10,
+          "id": 7136,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 539,
+          "top": 67,
+          "width": 27,
+          "height": 10,
+          "id": 7137,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 539,
+          "top": 78,
+          "width": 27,
+          "height": 10,
+          "id": 7138,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 539,
+          "top": 89,
+          "width": 27,
+          "height": 10,
+          "id": 7139,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 565,
+          "top": 67,
+          "width": 27,
+          "height": 10,
+          "id": 7140,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 565,
+          "top": 78,
+          "width": 27,
+          "height": 10,
+          "id": 7141,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 602,
+          "top": 67,
+          "width": 27,
+          "height": 10,
+          "id": 7142,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 602,
+          "top": 78,
+          "width": 27,
+          "height": 10,
+          "id": 7143,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 627,
+          "top": 67,
+          "width": 27,
+          "height": 10,
+          "id": 7144,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 627,
+          "top": 78,
+          "width": 27,
+          "height": 10,
+          "id": 7145,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 477,
+          "top": 112,
+          "width": 27,
+          "height": 10,
+          "id": 7146,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 477,
+          "top": 123,
+          "width": 27,
+          "height": 10,
+          "id": 7147,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 539,
+          "top": 112,
+          "width": 27,
+          "height": 10,
+          "id": 7148,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 565,
+          "top": 112,
+          "width": 27,
+          "height": 10,
+          "id": 7149,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 565,
+          "top": 123,
+          "width": 27,
+          "height": 10,
+          "id": 7150,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 602,
+          "top": 112,
+          "width": 27,
+          "height": 10,
+          "id": 7151,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 602,
+          "top": 123,
+          "width": 27,
+          "height": 10,
+          "id": 7152,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 627,
+          "top": 112,
+          "width": 27,
+          "height": 10,
+          "id": 7153,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": " "
+            },
+            {
+              "value": "on",
+              "photo": "./images/controls/h_cabel_head.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 627,
+          "top": 123,
+          "width": 27,
+          "height": 10,
+          "id": 7154,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+
 
         {
           "name": "ГО-УУ-кабель",
