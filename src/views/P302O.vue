@@ -46,8 +46,8 @@
             </div>
 
             <div class="col-4 d-flex justify-content-end">
-              <button :class="'btn btn-success w-auto me-0 ' + this.linkForNextStage()"
-                @click.prevent="goToPath('/p-302-o', getNextExercisePathId(), is_tr, min, sec)">
+              <button id="button-nextNormative" :class="'btn btn-success w-auto me-0 d-none'"
+                @click.prevent="goToPath('/p-302-o', getNextExercisePathId(), is_tr)">
                 Перейти к следующему шагу {{exersizeName}}
               </button>
           </div>
@@ -78,7 +78,7 @@
         <div id="canvasBlock" class="col-9 col-sm-9 col-md-10 col-lg-11 col-xl-11 p-0" style="width: auto">
 
           <div id="mainBlock" class="hardware-view-page__canvas-wrp" :key="rerenderStatment"
-            :style="{ zoom: `${zoom}%` }">
+            :style="{ zoom: `${zoom}%` }" v-if="renderHardwareCanvas">
             <hardwareCanvas v-for="pack in allPacks.blocks" :key="pack.name" :id="'block' + pack.id"
               v-show="pack.name === actualPack.name" style="z-index: 2!important;" :hardwareComponents="pack.components"
               :bgImage="pack.background" :backgroundSettings="pack.backgroundSettings" :sessionId="sessionId"
@@ -98,7 +98,7 @@
     </div>
 
 
-    <div id="div-notification-block" :class="'row notification_block' + (this.discriptionActive ? ' active' : ' d-none')"
+    <div id="div-notification-block" :class="'row notification_block' "
     :style="{ top: this.discriptionActive ? '10px' : '-100px', position: 'absolute'}"> 
 
       <div class="p-1 text-primary" style="position: absolute; right: 5px; width:  auto; bottom: 5px;">
@@ -137,14 +137,14 @@
 
               </div>
               <button :class="'btn col-4 me-0 '"
-                @click.prevent="goToPath('/p-302-o', String($route.query.norm[0]) + '1', is_tr, 0, 0)">
+                @click.prevent="goToPath('/p-302-o', String($route.query.norm[0]) + '1', is_tr)">
                   <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
                     <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
                     <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
                   </svg>
               </button>
               <button :class="'btn col-4 me-0 d-flex justify-content-end'"
-                @click.prevent="goToPath('/p-302-o', String($route.query.norm[0]) + '1', is_tr, 0, 0)">
+                @click.prevent="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
                 </svg>
@@ -237,7 +237,7 @@ export default {
       sessionId: null,
       stepServerData: null,
       trainingStatus: true,
-      exersiseId: 0,
+      normative_id: 0,
       rerenderStatmentSideBar: 0,
       exerciseComplete: false,
       sec: 0,
@@ -248,6 +248,7 @@ export default {
       discription: null,
       discriptionActive: false,
       congratulationActive: false,
+      renderHardwareCanvas: true
     };
   },
 
@@ -256,19 +257,20 @@ export default {
 
     this.annotation = this.messageWaitingServer;
 
-    this.allPacks = P302OJSON;
-    this.actualPack = P302OJSON.blocks[0];
+    
+    if (this.$route.query.it == 0)
+      this.is_tr = 0;
+    else
+      this.is_tr = 1;
 
-    this.allPacks = hwCmpHandler.setNullImgIndex(this.allPacks);
-    this.allPacks = hwCmpHandler.setNullBlocksActualStatus(this.allPacks);
-    this.allPacks = hwCmpHandler.setNullBlockComponentsYellow(this.allPacks);
+    this.setNull();
+
     this.allPacks.blocks[hwCmpHandler.findHardwareById(this.actualPack.id, this.allPacks.blocks)].actual_status = 1;
 
     this.$session.start();
     this.$session.set('session_id', Date.now().toString(32));
     this.sessionId = this.$session.get('session_id');
     
-
     if (this.$route.query.sec && this.$route.query.min) {
       this.sec = this.$route.query.sec;
       this.min = this.$route.query.min;
@@ -278,19 +280,9 @@ export default {
 
   mounted() {
     this.updateZoom();
-    this.startTimer()
 
-    let is_traning;
-    if (this.$route.query.it == 0)
-      is_traning = false;
-    else
-      is_traning = true;
+      
 
-    this.serverHandler = new ServerHandler(this.$session.get('session_id'), this.contextHandler,  is_traning, this.exersiseId, this.$route.query.norm);
-
-  },
-  destroyed() {
-    this.stopTimer()
   },
   components: {
     sideBarMenu,
@@ -307,12 +299,44 @@ export default {
     }
   },
   methods: {  
+    setNull() {
+      
+        this.allPacks = P302OJSON;
+        this.actualPack = P302OJSON.blocks[0];
+        this.allPacks = hwCmpHandler.setNullImgIndex(this.allPacks);
+        this.allPacks = hwCmpHandler.setNullBlocksActualStatus(this.allPacks);
+        this.allPacks = hwCmpHandler.setNullBlockComponentsYellow(this.allPacks);
+        this.beginNormative()
+    },
+    beginNormative() {
+      this.allPacks = hwCmpHandler.setNullBlockComponentsYellow(this.allPacks);
+      this.normative_id = this.$route.query.norm;
+
+      this.serverHandler = new ServerHandler(this.$session.get('session_id'), this.contextHandler, this.is_tr, 0, this.normative_id);
+
+      this.renderHardwareCanvas = false;  
+        this.$nextTick(() => {
+          this.renderHardwareCanvas = true;
+        });
+
+      // this.hideButtonNextNormative();
+      this.startTimer();
+
+    },
     showDiscription(text){
       this.discription = text;
       this.discriptionActive = true;
     },
     hideDiscription(){
       this.discriptionActive = false;
+    },
+    showButtonNextNormative() {
+      document.getElementById("button-nextNormative").classList.add("active");
+      document.getElementById("button-nextNormative").classList.remove("d-none");
+    },
+    hideButtonNextNormative() {
+      document.getElementById("button-nextNormative").classList.remove("active");
+      document.getElementById("button-nextNormative").classList.add("d-none");
     },
     showCongratulationModal(){
       this.congratulationActive = true;
@@ -324,6 +348,7 @@ export default {
       this.stopTimer();
       this.hideDiscription();
       this.completeStage = true;
+      this.showButtonNextNormative();
     },
     endNormative() {
       this.stopTimer();
@@ -343,12 +368,13 @@ export default {
     stopTimer() {
       clearTimeout(this.timer)
     },
-    goToPath(route, normative_id = 0, is_training = 1, min = 0, sec = 0) {
+    goToPath(route, normative_id = 0, is_training = 1) {
+      this.stopTimer();
       if(normative_id == 0)
         this.$router.push({path: route});
-
-      this.$router.push({ path: route, query: { norm: normative_id, it: is_training, min: min, sec: sec } });
-      window.location.reload();
+        
+      this.$router.push({ path: route, query: { norm: normative_id, it: is_training} });
+      this.beginNormative();
     },
     changeBlockYellow(apparat_id) {
       let packId = hwCmpHandler.findHardwareById(apparat_id, this.allPacks.blocks);
