@@ -3944,12 +3944,12 @@
           "name": "cable_head1",
           "valuesAndPhotos": [
             {
-              "value": "off",
-              "photo": " "
-            },
-            {
               "value": "on",
               "photo": "./images/controls/jumper8.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
             }
           ],
           "rotatable": false,
@@ -3967,8 +3967,261 @@
           "name": "cable_head1",
           "valuesAndPhotos": [
             {
+              "value": "on",
+              "photo": "./images/controls/jumper8.png"
+            },
+            {
               "value": "off",
               "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 96,
+          "top": 66,
+          "width": 27,
+          "height": 39,
+          "id": 7001,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper8.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 136,
+          "top": 66,
+          "width": 27,
+          "height": 39,
+          "id": 7002,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper8.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 160,
+          "top": 66,
+          "width": 27,
+          "height": 39,
+          "id": 7003,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper8.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 200,
+          "top": 66,
+          "width": 27,
+          "height": 39,
+          "id": 7004,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper8.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 224,
+          "top": 66,
+          "width": 27,
+          "height": 39,
+          "id": 7005,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper8.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 264,
+          "top": 66,
+          "width": 27,
+          "height": 39,
+          "id": 7006,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper8.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 288,
+          "top": 66,
+          "width": 27,
+          "height": 39,
+          "id": 7007,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper8.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 328,
+          "top": 66,
+          "width": 27,
+          "height": 39,
+          "id": 7008,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper8.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 352,
+          "top": 66,
+          "width": 27,
+          "height": 39,
+          "id": 7009,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper8.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 392,
+          "top": 66,
+          "width": 27,
+          "height": 39,
+          "id": 7010,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper8.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 416,
+          "top": 66,
+          "width": 27,
+          "height": 39,
+          "id": 7011,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head1",
+          "valuesAndPhotos": [
+            {
+              "value": "off",
+              "photo": "./images/controls/h_cabel_head.png"
             },
             {
               "value": "on",
@@ -3978,7 +4231,7 @@
           "rotatable": false,
           "draggable": false,
           "left": 69,
-          "top": 107,
+          "top": 80,
           "width": 27,
           "height": 10,
           "id": 7100,
@@ -4408,27 +4661,280 @@
           "name": "cable_head3",
           "valuesAndPhotos": [
             {
-              "value": "off",
-              "photo": " "
+              "value": "on",
+              "photo": "./images/controls/jumper4_horizontal.png"
             },
             {
-              "value": "jumper4",
-              "photo": "./images/controls/jumper4_horizontal.png"
+              "value": "off",
+              "photo": " "
             }
           ],
           "rotatable": false,
           "draggable": false,
           "left": 71,
-          "top": 137,
+          "top": 140,
           "width": 26,
-          "height": 19,
-          "id": 7002,
+          "height": 23,
+          "id": 7202,
           "initValue": null,
           "currentValue": null,
           "caption": null
         },
         {
           "name": "cable_head4",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 97,
+          "top": 140,
+          "width": 26,
+          "height": 23,
+          "id": 7203,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head3",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 135,
+          "top": 140,
+          "width": 26,
+          "height": 23,
+          "id": 7204,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head3",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 163,
+          "top": 140,
+          "width": 26,
+          "height": 23,
+          "id": 7205,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head3",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 200,
+          "top": 140,
+          "width": 26,
+          "height": 23,
+          "id": 7206,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head3",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 226,
+          "top": 140,
+          "width": 26,
+          "height": 23,
+          "id": 7207,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head3",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 263,
+          "top": 140,
+          "width": 26,
+          "height": 23,
+          "id": 7208,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head3",
+          "valuesAndPhotos": [
+            {
+              "value": "jumper4",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 289,
+          "top": 140,
+          "width": 26,
+          "height": 23,
+          "id": 7209,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head3",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 326,
+          "top": 140,
+          "width": 26,
+          "height": 23,
+          "id": 7210,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head3",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 352,
+          "top": 140,
+          "width": 26,
+          "height": 23,
+          "id": 7211,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head3",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 390,
+          "top": 140,
+          "width": 26,
+          "height": 23,
+          "id": 7212,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head3",
+          "valuesAndPhotos": [
+            {
+              "value": "on",
+              "photo": "./images/controls/jumper4_horizontal.png"
+            },
+            {
+              "value": "off",
+              "photo": " "
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 416,
+          "top": 140,
+          "width": 26,
+          "height": 23,
+          "id": 7213,
+          "initValue": null,
+          "currentValue": null,
+          "caption": null
+        },
+        {
+          "name": "cable_head3",
           "valuesAndPhotos": [
             {
               "value": "off",
@@ -4441,11 +4947,11 @@
           ],
           "rotatable": false,
           "draggable": false,
-          "left": 97,
-          "top": 137,
+          "left": 71,
+          "top": 140,
           "width": 26,
-          "height": 19,
-          "id": 7003,
+          "height": 23,
+          "id": 7202,
           "initValue": null,
           "currentValue": null,
           "caption": null
