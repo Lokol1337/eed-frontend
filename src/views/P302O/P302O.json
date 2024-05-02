@@ -5332,6 +5332,1183 @@
           ]
         },
         {
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (1).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (1).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7701,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (2).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (2).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7702,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (3).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (3).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7703,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (4).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (4).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7704,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (5).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (5).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7705,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (6).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (6).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7706,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (7).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (7).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7707,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (8).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (8).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7708,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (9).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (9).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7709,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (10).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (10).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7710,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (11).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (11).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7711,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (12).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (12).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7712,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (13).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (13).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7713,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (14).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (14).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7714,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (15).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (15).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7715,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (16).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (16).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7716,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (17).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (17).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7717,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (18).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (18).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7718,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (19).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (19).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7719,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (20).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (20).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7720,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (21).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (21).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7721,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (22).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (22).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7722,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (23).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (23).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7723,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (24).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (24).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7724,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (25).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (25).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7725,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (26).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (26).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7726,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (27).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (27).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7727,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (28).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (28).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7728,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (29).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (29).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7729,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (30).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (30).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7730,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (31).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (31).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7731,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (32).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (32).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7732,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (33).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (33).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7733,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (34).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (34).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7734,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (35).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (35).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7735,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (36).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (36).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7736,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (37).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (37).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7737,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (38).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (38).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7738,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },
+        {
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (39).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (39).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7739,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (40).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (40).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7740,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (41).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (41).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7741,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (42).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (42.png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7742,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (43).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (43).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7743,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (44).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (44).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7744,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (45).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (45).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7745,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (46).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (46).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7746,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },{
+          "name": "ГО-УУ-кабель",
+          "valuesAndPhotos": [
+            {
+              "value": "none",
+              "photo": "./images/p-302-o/schknch_cables/cabel (47).png"
+            },
+            {
+              "value": "cabel",
+              "photo": "./images/p-302-o/schknch_cables/cabel (47).png"
+            }
+          ],
+          "rotatable": false,
+          "draggable": false,
+          "left": 0,
+          "top": 0,
+          "width": 756,
+          "height": 550,
+          "id": 7747,
+          "currentValue": "none",
+          "initValue": "none",
+          "caption": null,
+          "ids": [
+            7100
+          ]
+        },
+        {
           "name": "cable_head1",
           "valuesAndPhotos": [
             {
