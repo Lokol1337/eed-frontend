@@ -309,7 +309,7 @@ export default {
   methods: {  
     showDiscription(text){
       this.discription = text;
-      this.discriptionActive = true;
+      this.discriptionActive = false;
     },
     hideDiscription(){
       this.discriptionActive = false;
