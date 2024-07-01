@@ -65,6 +65,11 @@ export default {
             type: Object,
         }
     },
+    methods: {
+        goToPath(route,norm = 0, is_training = 1) {
+            this.$router.push({path: route, query: { norm: norm , it: is_training}});
+        },
+  },
 }
 
 </script>
