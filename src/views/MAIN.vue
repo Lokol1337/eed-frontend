@@ -12,7 +12,7 @@
 
       <div class="row d-dlex justify-content-center">
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4 d-flex justify-content-center">
           <ApparatCard v-for="apparat in apparats" :key="apparat.id"
             :name="apparat.name"
             :description="apparat.description"

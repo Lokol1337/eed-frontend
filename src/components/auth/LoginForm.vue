@@ -37,21 +37,6 @@ export default {
     }
   },
   methods: {
-    // async submitLogin() {
-    //   try {
-    //     if(!this.email) 
-    //       this.errors.push("EMAIL required.")
-    //     if(!this.password) 
-    //       this.errors.push("PASSWORD required.")
-    //     const data = await login(this.email, this.password);
-    //     this.email = null;
-    //     this.password = null;
-    //     
-    //   } 
-    //   catch (error) {
-    //     
-    //   }
-    // }
     async submitLogin(event){
       const data = await login(this.username, this.password);
       if(!data){
@@ -59,9 +44,17 @@ export default {
         document.getElementById('loginError').innerHTML = "Не верный логин или пароль.";
       }
       else{
+        
         window.location.href = '#/main';
       }
-    }
+    },
+    sendRequest(hardwareComponent) {
+
+      this.serverHandler.defineActionStepOnMessage(this, hardwareComponent);
+      let elseData = this.serverHandler.getElseData(hardwareComponent, hardwareComponent.hardZoomScale);
+      this.serverHandler.sendData(elseData);
+
+    },
   }
 }
 </script>
