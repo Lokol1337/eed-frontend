@@ -87,7 +87,7 @@ Vue.use(VueSession);
 
 
 export default {
-  props: ['hardZoom', 'hardwareComponents', 'hardwareComponent', /*'hardwareComponent.imgIndex',*/ 'id', 'serverAnswerStatus'],
+  props: ['hardZoom', 'hardwareComponents', 'hardwareComponent', /*'hardwareComponent.imgIndex',*/ 'id', 'serverAnswerStatus', 'editStatus'],
   data() {
     return {
       curZindex: (this.hardwareComponent.caption === 'arrow' ? '97' : '98'),
@@ -168,13 +168,13 @@ export default {
       
     },
     selectMethodByClick() {
-
-      if (!this.serverAnswerStatus) {
+      if (!this.serverAnswerStatus && !this.editStatus) {
         console.log("serverAnswerStatus -> BLOCKED!");
         return;
       }
-
-      if ((this.hardwareComponent.backgroundColor === "yellow" && this.$route.query.it == 1) || this.$route.query.it == 0) {
+      console.log(this.editStatus)
+      if ((this.hardwareComponent.backgroundColor === "yellow" && this.$route.query.it == 1) || this.$route.query.it == 0 || this.editStatus) {
+        console.log("selectMethodByClick");
         if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === false && this.hardwareComponent.caption != "rotationBlock") {
           
           this.changePhotoByClick();
@@ -186,7 +186,6 @@ export default {
         else if (this.hardwareComponent.caption == "rotationBlock") {
           // тут для болта  
         }
-
         return this.sendRequest();
       }
     },

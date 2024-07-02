@@ -1,32 +1,20 @@
 <template>
 
   <div class="canvas">
-    <div :key="rerenderStatment"
-      class="canvas__body"
-      :style="{
-        backgroundImage: 'url(' + bgImage + ')',
-        width: `${backgroundSettings.width}px`,
-        height: `${backgroundSettings.height}px`,
-        backgroundSize: `${backgroundSettings.width}px ${backgroundSettings.height}px`,
-      }"
-      style="border-radius: 15px;"
-    >
-      
-      <canvasComponent
-        v-for="hardwareComponent in allComponents"
-          v-on:sendRequest="sendRequestListener($event)"
-          v-on:setServerAnswerStatus="setServerAnswerStatus($event)"
-          :key="hardwareComponent.id"
-          :id="hardwareComponent.id"
-          :rerenderStatment="rerenderStatment"
-          :hardwareComponents="allComponents" 
-          :hardwareComponent="hardwareComponent"
-          :hardZoom = "hardZoom"    
-          :sessionId = "sessionId"
-          :serverAnswerStatus = "serverAnswerStatus"
-          @showDiscription="(arg) => $emit('showDiscription', arg)" 
-          @hideDiscription="(arg) => $emit('hideDiscription', arg)"
-      />
+    <div :key="rerenderStatment" class="canvas__body" :style="{
+      backgroundImage: 'url(' + bgImage + ')',
+      width: `${backgroundSettings.width}px`,
+      height: `${backgroundSettings.height}px`,
+      backgroundSize: `${backgroundSettings.width}px ${backgroundSettings.height}px`,
+    }" style="border-radius: 15px;">
+
+      <canvasComponent v-for="hardwareComponent in allComponents" v-on:sendRequest="sendRequestListener($event)"
+        v-on:setServerAnswerStatus="setServerAnswerStatus($event)" :key="hardwareComponent.id"
+        :id="hardwareComponent.id" :rerenderStatment="rerenderStatment" :hardwareComponents="allComponents"
+        :hardwareComponent="hardwareComponent" :hardZoom="hardZoom" :sessionId="sessionId"
+        :serverAnswerStatus="serverAnswerStatus" @showDiscription="(arg) => $emit('showDiscription', arg)"
+        :editStatus = "editStatus"
+        @hideDiscription="(arg) => $emit('hideDiscription', arg)" />
     </div>
   </div>
 </template>
@@ -62,10 +50,13 @@ export default {
     },
     sessionId: {
       type: String
+    },
+    editStatus: {
+      type: Boolean
     }
   },
-  watch:{
-    zoom(val){
+  watch: {
+    zoom(val) {
       this.hardZoom = val
     }
   },
@@ -89,7 +80,7 @@ export default {
   },
   methods: {
     sendRequestListener(hardwareComponent) {
-
+      console.log(this.editStatus)
       console.log("sendRequestListener() -> setServerAnswerStatus()");
       this.setServerAnswerStatus(false);
 
@@ -103,14 +94,14 @@ export default {
       this.serverAnswerStatus = newStatus;
     },
     selectComponentHandler(component) {
-      
-      this.hardwareComponentsData.push({...component});
+
+      this.hardwareComponentsData.push({ ...component });
     },
     isNeedToChangeYellow(hardwareComponent) {
       let arrayNextActions = this.stepServerData['next_actions']; // может не работать
       let nextAction = this.serverHandler.findNextActionById(arrayNextActions, hardwareComponent.id);
       if (nextAction == null) {
-        
+
         return false;
       } else {
         if (nextAction['currentValue'] == hardwareComponent.currentValue)
@@ -118,20 +109,20 @@ export default {
       }
       return false;
     },
-    changeYellow(hardwareComponent){
+    changeYellow(hardwareComponent) {
       // if (this.isNeedToChangeYellow(hardwareComponent)) {
-        // let index = this.findHardwareComponentById(hardwareComponent.id);
-        if (hardwareComponent.backgroundColor == "yellow") {
-          hardwareComponent.backgroundColor = "";
-          hardwareComponent.opacity = "";
-        }
+      // let index = this.findHardwareComponentById(hardwareComponent.id);
+      if (hardwareComponent.backgroundColor == "yellow") {
+        hardwareComponent.backgroundColor = "";
+        hardwareComponent.opacity = "";
+      }
 
-        this.rerenderStatment++;
-        // Принудительное обновление <template> 
+      this.rerenderStatment++;
+      // Принудительное обновление <template> 
       // }
     },
 
-    findHardwareComponentById(id){
+    findHardwareComponentById(id) {
       let index = -1;
       this.hardwareComponents.forEach((element, i) => {
         //
@@ -143,6 +134,10 @@ export default {
       return index;
     },
     sendRequest(hardwareComponent) {
+      if (this.editStatus) {
+        this.$emit('addSubStep', hardwareComponent)
+        return
+      }
 
       this.serverHandler.defineActionStepOnMessage(this, hardwareComponent);
       let elseData = this.serverHandler.getElseData(hardwareComponent, hardwareComponent.hardZoomScale);
@@ -160,9 +155,10 @@ export default {
 .canvas {
   display: flex;
   justify-content: center;
-border-radius: 15px;
-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-border:none;
+  border-radius: 15px;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  border: none;
+
   &__body {
     position: relative;
     background-repeat: no-repeat;

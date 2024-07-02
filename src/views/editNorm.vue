@@ -39,15 +39,15 @@
                 </nav>
               </div>
   
-              <div class="col-4 d-flex justify-content-center align-items-center">
+              <!-- <div class="col-4 d-flex justify-content-center align-items-center">
                 <p class="m-0"><strong>
                 {{ (10 > min) ? ('0' + min) : min }}:{{ (10 > sec) ? ('0' + sec) : sec }}
               </strong></p>
-              </div>
+              </div> -->
   
               <div class="col-4 d-flex justify-content-end">
                 <button :class="'btn btn-success w-auto me-0 ' + this.linkForNextStage()"
-                  @click.prevent="goToPath('/p-302-o', getNextExercisePathId(), is_tr, min, sec)">
+                  @click.prevent="goToPath('/edit', getNextExercisePathId(), is_tr, min, sec)">
                   Перейти к следующему шагу {{exersizeName}}
                 </button>
             </div>
@@ -82,7 +82,9 @@
               <hardwareCanvas v-for="pack in allPacks.blocks" :key="pack.name" :id="'block' + pack.id"
                 v-show="pack.name === actualPack.name" style="z-index: 2!important;" :hardwareComponents="pack.components"
                 :bgImage="pack.background" :backgroundSettings="pack.backgroundSettings" :sessionId="sessionId"
-                :serverHandler="serverHandler" :stepServerData="stepServerData" :zoom="zoom" @ann="(i) => annotation = i"
+                :serverHandler="serverHandler" :stepServerData="stepServerData" :zoom="zoom" 
+                :editStatus="true"
+                @ann="(i) => annotation = i"
                 @step="(i) => stepServerData = i" 
                 @allP="(i) => rerenderAllPacks(i)"
                 @completeApparat="(i) => changeBlockYellow(i)"
@@ -207,7 +209,7 @@
   <script>
   
   
-  import P302OJSON from "./P302O/P302O.json";
+  import APPARATJSON from "./P302O/P302O.json";
   import hardwareCanvas from "./P302O/hardwareCanvas.vue";
   import sideBarMenu from "./P302O/sideBarMenu.vue";
   import ServerHandler from '@/api/ServerHandler.js';
@@ -256,8 +258,8 @@
   
       this.annotation = this.messageWaitingServer;
   
-      this.allPacks = P302OJSON;
-      this.actualPack = P302OJSON.blocks[0];
+      this.allPacks = APPARATJSON;
+      this.actualPack = APPARATJSON.blocks[0];
   
       this.allPacks = hwCmpHandler.setNullImgIndex(this.allPacks);
       this.allPacks = hwCmpHandler.setNullBlocksActualStatus(this.allPacks);
