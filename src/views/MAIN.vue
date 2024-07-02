@@ -12,60 +12,12 @@
 
       <div class="row d-dlex justify-content-center">
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center"> 
-          <div class="card" style="width: 18rem">
-            <!-- <img class="card-img-top" alt="Card image cap" /> -->
-            <div class="card-body">
-              <h5 class="card-title">П-302-О</h5>
-              <p class="card-text">
-                Аппаратура для уплотнения кабеля дальней связи П-296 и
-                радиорелейных линий двенадцатью телефонными каналами.
-              </p>
-              <center>
-                
-                <div class="dropdown ">
-                  <button class="btn btn-outline dropdown-toggle w-100" type="button" id="dropdownMenuButton1" 
-                  style="background-color: #292c63; color: #f4f7fa;" data-bs-toggle="dropdown" aria-expanded="false">
-                    Треннировка
-                  </button>
-                  <ul class="dropdown-menu w-100 h-100" aria-labelledby="dropdownMenuButton1">
-                    <li>
-                      <button class="btn btn-secondary w-100 h-100"
-                      @click.prevent="goToPath('/p-302-o',11)">Приведение в первоначальное состояние</button>
-                    </li>
-                    <li><button class="btn btn-secondary w-100 h-100"
-                      @click.prevent="goToPath('/p-302-o',12)">Настройка</button></li>
-                    <li>
-                      <button class="btn btn-secondary w-100 h-100"
-                      @click.prevent="goToPath('/p-302-o',21)">Настройка на себя</button>
-                    </li>
-                  </ul>
-                </div>
-              </center>
-              <center>
-                <div class="dropdown d-none">
-                  <button class="btn btn-outline dropdown-toggle w-100" type="button" id="dropdownMenuButton1" 
-                  style="background-color: #292c63; color: #f4f7fa;" data-bs-toggle="dropdown" aria-expanded="false">
-                    Экзамен
-                  </button>
-                  <ul class="dropdown-menu w-100 h-100" aria-labelledby="dropdownMenuButton1">
-
-                    <li>
-                      <button class="btn btn-secondary w-100 h-100" 
-                      @click.prevent="goToPath('/p-302-o',11, 0)">Приведение в первоначальное состояние</button>
-                    </li>
-                    <li><button class="btn btn-secondary w-100 h-100"  
-                      @click.prevent="goToPath('/p-302-o',12, 0)">Настройка</button></li>
-                    <li>
-                      <button class="btn btn-secondary w-100 h-100"  
-                      @click.prevent="goToPath('/p-302-o',21, 0)">Настройка на себя</button>
-                    </li>
-                    
-                  </ul>
-                </div>
-              </center>
-            </div>
-          </div>
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4 d-flex justify-content-center">
+          <ApparatCard v-for="apparat in apparats" :key="apparat.id"
+            :name="apparat.name"
+            :description="apparat.description"
+            :normatives="apparat.normatives"
+          />
         </div>
 
 
@@ -106,14 +58,38 @@
 <script>
 import Vue from "vue";
 import VueSession from "vue-session";
-Vue.use(VueSession);
-export default {
+import ApparatCard from "./ApparatCard.vue";
 
-  
-  methods: {
-    goToPath(route,norm = 0, is_training = 1) {
-      this.$router.push({path: route, query: { norm: norm , it: is_training}});
-    },
+Vue.use(VueSession);
+
+export default {
+  components: {
+    ApparatCard,
+  },
+  data() {
+    return {
+      apparats: [
+        {
+          id: 1,
+          name: "П-302-О",
+          description: "Аппаратура для уплотнения кабеля дальней связи П-296 и радиорелейных линий двенадцатью телефонными каналами.",
+          normatives: [
+            {
+                id: 11,
+                name: "Приведение в первоначальное состояние",
+            }, 
+            {
+                id: 12,
+                name: "Настройка",
+            }, 
+            {
+                id: 21,
+                name: "Настройка на себя",
+            }, 
+          ]
+        },
+      ],
+    };
   },
   mounted() {
   }

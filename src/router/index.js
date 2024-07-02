@@ -2,9 +2,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 // import Home from '@/views/Home.vue';
-// import CreateComponent from '@/views/CreateComponent.vue';
-// import CreateHardware from '@/views/CreateHardware.vue';
-// import HardwaresView from '@/views/HardwaresView.vue';
+import CreateComponent from '@/views/CreateComponent.vue';
+import CreateHardware from '@/views/CreateHardware.vue';
+import HardwaresView from '@/views/HardwaresView.vue';
 import Login from '@/views/Login.vue';
 
 // not designer hardware, demo page P-302-O
@@ -26,21 +26,21 @@ const routes = [
   //   name: 'Home',
   //   component: Home,
   // },
-  // {
-  //   path: '/create-component',
-  //   name: 'createComponent',
-  //   component: CreateComponent,
-  // },
-  // {
-  //   path: '/create-hardware',
-  //   name: 'createHardware',
-  //   component: CreateHardware,
-  // },
-  // {
-  //   path: '/hardwares-view',
-  //   name: 'hardwaresView',
-  //   component: HardwaresView,
-  // },
+  {
+    path: '/create-component',
+    name: 'createComponent',
+    component: CreateComponent,
+  },
+  {
+    path: '/create-hardware',
+    name: 'createHardware',
+    component: CreateHardware,
+  },
+  {
+    path: '/hardwares-view',
+    name: 'hardwaresView',
+    component: HardwaresView,
+  },
   {
     path: '/',
     name: 'login',
