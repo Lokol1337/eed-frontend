@@ -9,6 +9,7 @@ import Login from '@/views/Login.vue';
 
 // not designer hardware, demo page P-302-O
 import P3020 from '@/views/P302O.vue';
+import editPage from '@/views/editPage.vue';
 import P3306 from '@/views/P3306.vue';
 import P327_2 from '@/views/P327-2.vue';
 import MAIN from '@/views/MAIN.vue';
@@ -49,6 +50,11 @@ const routes = [
     path: '/p-302-o',
     name: 'p-302-o',
     component: P3020,
+  },
+  {
+    path: '/edit',
+    name: 'edit',
+    component: editPage,
   },
   {
     path: '/p-330-6',
