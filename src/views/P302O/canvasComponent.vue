@@ -1,223 +1,267 @@
 <template>
-  <vue-draggable-resizable v-if="!hardwareComponent.draggable" @dragging="onDrag" :class="curZindex"
-    :w="hardwareComponent.width" :h="hardwareComponent.height" :x="hardwareComponent.left" :y="hardwareComponent.top"
-    :draggable="hardwareComponent.draggable" :resizable="false" :parent="true" :scale="(hardZoomScale)"
-    :id=hardwareComponent.id 
+  <vue-draggable-resizable
+    v-if="!hardwareComponent.draggable"
+    @dragging="onDrag"
+    :class="curZindex"
+    :w="hardwareComponent.width"
+    :h="hardwareComponent.height"
+    :x="hardwareComponent.left"
+    :y="hardwareComponent.top"
+    :draggable="hardwareComponent.draggable"
+    :resizable="false"
+    :parent="true"
+    :scale="hardZoomScale"
+    :id="hardwareComponent.id"
     :style="{
       backgroundColor: hardwareComponent.backgroundColor,
       opacity: hardwareComponent.opacity + '%',
-      border: `none`
+      border: `none`,
     }"
-    >
+  >
     <img
-      v-if="hardwareComponent.currentValue !== 'cabel' && hardwareComponent.currentValue !== 'none' && hardwareComponent.caption !== 'arrow' && hardwareComponent.caption !== 'rotationBlock'"  
-      class="component-img" :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" 
+      v-if="
+        hardwareComponent.currentValue !== 'cabel' &&
+        hardwareComponent.currentValue !== 'none' &&
+        hardwareComponent.caption !== 'arrow' &&
+        hardwareComponent.caption !== 'rotationBlock'
+      "
+      class="component-img"
+      :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo"
       :style="{
         width: hardwareComponent.width + 'px',
         height: hardwareComponent.height + 'px',
         transform: `rotate(${degreeOfRotation}deg)`,
         verticalAlign: `top`,
-        cursor: hardwareComponent.opacity == 80 ? 'pointer' : 'unset'
-      }" 
-      @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick"
-      @wheel.prevent="scrollRotateELement" 
-      @mouseover = "hardwareComponent.backgroundColor === 'yellow' ? $emit('showDiscription', 'Поочередно соединить 2-х пр. шнуром гн. «ВХ» на бл. УУ и гн. на ГО-12 с гравировками, соответствующими значениям измеряемых частот'):''"
-      @mouseleave = "$emit('hideDiscription')"
-      />
-      
-      <img v-if="hardwareComponent.currentValue === 'none'" class="component-img"
-      :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" 
-      :style="{
-        width: hardwareComponent.width + 'px',
-        height: hardwareComponent.height + 'px',
-        transform: `rotate(${degreeOfRotation}deg)`,
-        verticalAlign: `top`
-
-      }" 
-      @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick" 
-    
-      />
-    <img v-if="hardwareComponent.currentValue === 'cabel'" class=""
-      :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" 
-      :style="{
-        width: hardwareComponent.width + 'px',
-        height: hardwareComponent.height + 'px',
-        transform: `rotate(${degreeOfRotation}deg)`,
-        verticalAlign: `top`
-      }" 
-    
-      />
-    <img
-        v-if="hardwareComponent.caption === 'rotationBlock'"
-        class="rotationBlock" :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" 
-        :style="{
-          width: hardwareComponent.width + 'px',
-          height: hardwareComponent.height + 'px',
-          // transform: `rotate(${degreeOfRotation}deg)`,
-          verticalAlign: `top`,
-          cursor:'url(./images/icons/arrow-clockwise.svg) , pointer'
-          // cursor: hardwareComponent.opacity == 80 ? 'url(./images/icons/arrow-clockwise.svg)' : 'unset'
-        }" 
-        @mouseup.prevent="selectMethodByClick" @touchend.prevent="selectMethodByClick"
-        @wheel.prevent="scrollRotateELement" 
-    
-        />
-    <img v-if="hardwareComponent.caption === 'arrow'" class=""
-      :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo" 
-      :style="{
-        width: hardwareComponent.width + 'px',
-        height: hardwareComponent.height + 'px',
-        transform: `rotate(${degreeOfRotation}deg)`,
-        verticalAlign: `top`
-      }" 
+        cursor: hardwareComponent.opacity == 80 ? 'pointer' : 'unset',
+      }"
+      @mouseup.prevent="selectMethodByClick"
+      @touchend.prevent="selectMethodByClick"
+      @wheel.prevent="scrollRotateELement"
+      @mouseover="
+        hardwareComponent.backgroundColor === 'yellow'
+          ? $emit(
+              'showDiscription',
+              'Поочередно соединить 2-х пр. шнуром гн. «ВХ» на бл. УУ и гн. на ГО-12 с гравировками, соответствующими значениям измеряемых частот'
+            )
+          : ''
+      "
+      @mouseleave="$emit('hideDiscription')"
     />
 
+    <img
+      v-if="hardwareComponent.currentValue === 'none'"
+      class="component-img"
+      :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo"
+      :style="{
+        width: hardwareComponent.width + 'px',
+        height: hardwareComponent.height + 'px',
+        transform: `rotate(${degreeOfRotation}deg)`,
+        verticalAlign: `top`,
+      }"
+      @mouseup.prevent="selectMethodByClick"
+      @touchend.prevent="selectMethodByClick"
+    />
+    <img
+      v-if="hardwareComponent.currentValue === 'cabel'"
+      class=""
+      :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo"
+      :style="{
+        width: hardwareComponent.width + 'px',
+        height: hardwareComponent.height + 'px',
+        transform: `rotate(${degreeOfRotation}deg)`,
+        verticalAlign: `top`,
+      }"
+    />
+    <img
+      v-if="hardwareComponent.caption === 'rotationBlock'"
+      class="rotationBlock"
+      :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo"
+      :style="{
+        width: hardwareComponent.width + 'px',
+        height: hardwareComponent.height + 'px',
+        // transform: `rotate(${degreeOfRotation}deg)`,
+        verticalAlign: `top`,
+        cursor: 'url(./images/icons/arrow-clockwise.svg) , pointer',
+        // cursor: hardwareComponent.opacity == 80 ? 'url(./images/icons/arrow-clockwise.svg)' : 'unset'
+      }"
+      @mouseup.prevent="selectMethodByClick"
+      @touchend.prevent="selectMethodByClick"
+      @wheel.prevent="scrollRotateELement"
+    />
+    <img
+      v-if="hardwareComponent.caption === 'arrow'"
+      class=""
+      :src="hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].photo"
+      :style="{
+        width: hardwareComponent.width + 'px',
+        height: hardwareComponent.height + 'px',
+        transform: `rotate(${degreeOfRotation}deg)`,
+        verticalAlign: `top`,
+      }"
+    />
   </vue-draggable-resizable>
 </template>
 
 <script>
-
 // TODO: remove this!
 // import $url from '@/api/config.js';
 import Vue from "vue";
 import VueSession from "vue-session";
-import { findHardwareComponentById } from "../hwComponentsHandle";
+import { findHardwareComponentById } from "@/handlers/hwComponentsHandle";
 
 Vue.use(VueSession);
 
-
 export default {
-  props: ['hardZoom', 'hardwareComponents', 'hardwareComponent', /*'hardwareComponent.imgIndex',*/ 'id', 'serverAnswerStatus', 'editStatus'],
+  props: [
+    "hardZoom",
+    "hardwareComponents",
+    "hardwareComponent",
+    /*'hardwareComponent.imgIndex',*/ "id",
+    "serverAnswerStatus",
+    "editStatus",
+  ],
   data() {
     return {
-      curZindex: (this.hardwareComponent.caption === 'arrow' ? '97' : '98'),
+      curZindex: this.hardwareComponent.caption === "arrow" ? "97" : "98",
       degreeOfRotation: this.hardwareComponent.currentValue,
       deg: 0,
       img_src: this.hardwareComponent.valuesAndPhotos.photo,
       hardZoomScale: this.hardZoom / 100.0,
       dataServ: [],
-      mockText: "Я в своем познании настолько преисполнился, что я как будто бы уже сто триллионов миллиардов лет проживаю на триллионах и"
+      mockText:
+        "Я в своем познании настолько преисполнился, что я как будто бы уже сто триллионов миллиардов лет проживаю на триллионах и",
     };
   },
   watch: {
     hardZoom(val) {
-      this.hardZoomScale = val / 100.0
-    }
+      this.hardZoomScale = val / 100.0;
+    },
   },
   computed: {
     change() {
-      
       if (this.dataServ.length < 1) {
-        return '';
+        return "";
       }
-      
+
       //debugger;
       // if (this.hardwareComponent.valuesAndPhotos.length > 1) {
-        
+
       // } else {
-        
+
       // }
       return this.dataServ;
-    }
+    },
   },
   mounted() {
     if (this.hardwareComponent.rotatable) {
-      this.degreeOfRotation = this.hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].value;
+      this.degreeOfRotation = this.hardwareComponent.valuesAndPhotos[
+        this.hardwareComponent.imgIndex
+      ].value;
     }
     if (this.hardwareComponent.currentValue === "none") {
       this.curZindex = "cabel";
-    }
-    else if (this.hardwareComponent.currentValue === "cabel") {
+    } else if (this.hardwareComponent.currentValue === "cabel") {
       this.curZindex = "none";
-    }
-    else if (this.hardwareComponent.caption === "arrow") {
+    } else if (this.hardwareComponent.caption === "arrow") {
       this.curZindex = "arrow";
-    }
-    else {
+    } else {
       this.curZindex = "btnTop";
     }
     // this.$session.start();
     // this.$session.set('session_id', Date.now().toString(32));
-    // 
+    //
   },
 
   methods: {
     changePhotoByClick() {
       this.changeCurrentValue();
-
     },
     rotate() {
-      // 
+      //
       // if (this.hardwareComponent.imgIndex === this.hardwareComponent.valuesAndPhotos.length - 1) {
       //   this.hardwareComponent.imgIndex = 0;
       // }
       // else {
       this.changeCurrentValue();
       // }
-      // 
-      this.degreeOfRotation = this.hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].value;
-      // 
+      //
+      this.degreeOfRotation = this.hardwareComponent.valuesAndPhotos[
+        this.hardwareComponent.imgIndex
+      ].value;
+      //
     },
     changeCurrentValue() {
-      if (this.hardwareComponent.imgIndex >= this.hardwareComponent.valuesAndPhotos.length - 1)
+      if (
+        this.hardwareComponent.imgIndex >=
+        this.hardwareComponent.valuesAndPhotos.length - 1
+      )
         this.hardwareComponent.imgIndex = 0;
-      else
-        this.hardwareComponent.imgIndex += 1;
+      else this.hardwareComponent.imgIndex += 1;
       // this.hardwareComponent.imgIndex %= this.hardwareComponent.valuesAndPhotos.length;
-      this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[this.hardwareComponent.imgIndex].value;
-      
+      this.hardwareComponent.currentValue = this.hardwareComponent.valuesAndPhotos[
+        this.hardwareComponent.imgIndex
+      ].value;
     },
     selectMethodByClick() {
       if (!this.serverAnswerStatus && !this.editStatus) {
         console.log("serverAnswerStatus -> BLOCKED!");
         return;
       }
-      console.log(this.editStatus)
-      if ((this.hardwareComponent.backgroundColor === "yellow" && this.$route.query.it == 1) || this.$route.query.it == 0 || this.editStatus) {
+      console.log(this.editStatus);
+      if (
+        (this.hardwareComponent.backgroundColor === "yellow" &&
+          this.$route.query.it == 1) ||
+        this.$route.query.it == 0 ||
+        this.editStatus
+      ) {
         console.log("selectMethodByClick");
-        if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === false && this.hardwareComponent.caption != "rotationBlock") {
-          
+        if (
+          this.hardwareComponent.draggable === false &&
+          this.hardwareComponent.rotatable === false &&
+          this.hardwareComponent.caption != "rotationBlock"
+        ) {
           this.changePhotoByClick();
-        }
-        else if (this.hardwareComponent.draggable === false && this.hardwareComponent.rotatable === true) {
-          
+        } else if (
+          this.hardwareComponent.draggable === false &&
+          this.hardwareComponent.rotatable === true
+        ) {
           this.rotate();
-        }
-        else if (this.hardwareComponent.caption == "rotationBlock") {
-          // тут для болта  
+        } else if (this.hardwareComponent.caption == "rotationBlock") {
+          // тут для болта
         }
         return this.sendRequest();
       }
     },
     scrollRotateELement(e) {
       // if ((this.hardwareComponent.backgroundColor === "yellow" && this.$route.query.it == 1) || this.$route.query.it == 0) {
-        
-        if (this.hardwareComponent.caption == "rotationBlock") {
-          
-          // Где-то надо определить self.deg
-          let arrow_ell = findHardwareComponentById(this.hardwareComponent.pairRotationId, this.hardwareComponents)   
 
-          var delta = e.deltaX || e.detail || e.wheelDelta;
-          if(this.hardwareComponents[arrow_ell].currentValue == "arrow")
-            this.hardwareComponents[arrow_ell].currentValue = this.hardwareComponents[arrow_ell].initValue
-          
+      if (this.hardwareComponent.caption == "rotationBlock") {
+        // Где-то надо определить self.deg
+        let arrow_ell = findHardwareComponentById(
+          this.hardwareComponent.pairRotationId,
+          this.hardwareComponents
+        );
 
-          if (delta > 0 && this.degreeOfRotation < 55) this.degreeOfRotation += 1;
-          else if (delta < 0 && this.degreeOfRotation > -55) this.degreeOfRotation -= 1;
-          // this.hardwareComponent.currentValue = this.degreeOfRotation
-          // 
+        var delta = e.deltaX || e.detail || e.wheelDelta;
+        if (this.hardwareComponents[arrow_ell].currentValue == "arrow")
+          this.hardwareComponents[arrow_ell].currentValue = this.hardwareComponents[
+            arrow_ell
+          ].initValue;
 
+        if (delta > 0 && this.degreeOfRotation < 55) this.degreeOfRotation += 1;
+        else if (delta < 0 && this.degreeOfRotation > -55) this.degreeOfRotation -= 1;
+        // this.hardwareComponent.currentValue = this.degreeOfRotation
+        //
 
+        document.getElementById(
+          this.hardwareComponent.pairRotationId
+        ).children[0].style.transform = "rotate(" + this.degreeOfRotation + "deg)"; // Крутим болт
 
-          document.getElementById(this.hardwareComponent.pairRotationId).children[0].style.transform = "rotate(" + this.degreeOfRotation + "deg)" // Крутим болт
-          
-          
+        // this.hardwareComponents[arrow_ell].currentValue = this.degreeOfRotation
 
-          // this.hardwareComponents[arrow_ell].currentValue = this.degreeOfRotation
-          
-          // arrow_ell.currentValue = this.degreeOfRotation 
-          // document.getElementById(this.hardwareComponent.pairRotationId).children[0].style.transform = "rotate(" + this.degreeOfRotation + "deg)" // Крутим стрелку
-        }
+        // arrow_ell.currentValue = this.degreeOfRotation
+        // document.getElementById(this.hardwareComponent.pairRotationId).children[0].style.transform = "rotate(" + this.degreeOfRotation + "deg)" // Крутим стрелку
+      }
       // }
     },
     onDrag(x, y) {
@@ -225,19 +269,19 @@ export default {
         this.hardwareComponent.left = x;
         this.hardwareComponent.top = y;
       }
-      // 
+      //
     },
     sendRequest() {
-      this.$emit('sendRequest', this.hardwareComponent);
+      this.$emit("sendRequest", this.hardwareComponent);
     },
     setServerAnswerStatus(newStatus) {
-      this.$emit('setServerAnswerStatus', newStatus);
-    }
+      this.$emit("setServerAnswerStatus", newStatus);
+    },
   },
 };
 </script>
 
-<style  scoped>
+<style scoped>
 .btnTop {
   z-index: 98 !important;
 }

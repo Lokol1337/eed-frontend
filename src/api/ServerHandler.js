@@ -1,7 +1,7 @@
 
 import $url from '@/api/config.js';
-// import contextApparatHandler from '../views/hwComponentsHandle';
-import * as hwCmpHandler from '../views/hwComponentsHandle';
+// import contextApparatHandler from '@/handlers/hwComponentsHandle';
+import * as hwCmpHandler from '@/handlers/hwComponentsHandle';
 
 export default class ServerHandler {
 

@@ -1,9 +1,8 @@
 <template>
   <div>
-
-    <div class="mb-5 w-100 p-1" style="background-color: #292c63;">
+    <div class="mb-5 w-100 p-1" style="background-color: #292c63">
       <div class="d-flex justify-content-center align-items-center">
-        <img src="./../mirea2.png" height="40">
+        <img src="@/icons/mirea2.png" height="40" />
         <h6 class="m-0" style="color: white">&nbsp;&nbsp;ВУЦ РТУ МИРЭА</h6>
       </div>
     </div>
@@ -26,26 +25,46 @@
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text py-2" id="inputGroup-sizing-default">Название аппаратуры</span>
+              <span class="input-group-text py-2" id="inputGroup-sizing-default"
+                >Название аппаратуры</span
+              >
             </div>
-            <input id="input-apparatName" type="text" class="form-control py-2" aria-label="Default"
-              aria-describedby="inputGroup-sizing-default" v-model="apparatName" />
+            <input
+              id="input-apparatName"
+              type="text"
+              class="form-control py-2"
+              aria-label="Default"
+              aria-describedby="inputGroup-sizing-default"
+              v-model="apparatName"
+            />
           </div>
 
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">Описание аппаратуры</span>
             </div>
-            <textarea class="form-control" aria-label="With textarea" v-model="apparatDescription"></textarea>
+            <textarea
+              class="form-control"
+              aria-label="With textarea"
+              v-model="apparatDescription"
+            ></textarea>
           </div>
 
           <div class="d-flex justify-content-center mt-4">
             <button class="btn btn-primary me-0" @click="gotoBlockEditor()">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
-                viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                  d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
-              </svg>&nbsp;Добавить блок
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-plus-lg"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                /></svg
+              >&nbsp;Добавить блок
             </button>
           </div>
         </div>
@@ -56,7 +75,7 @@
 
 <script>
 // import * as util from "../utilities.js";
-import ServerHandler from '@/api/newServerHandler.js';
+import ServerHandler from "@/api/newServerHandler.js";
 
 export default {
   props: {
@@ -66,11 +85,11 @@ export default {
   },
   data() {
     return {
-      apparatId: '',
+      apparatId: "",
       apparatName: "",
       apparatDescription: "",
       flagCreateBlock: false,
-      status: false
+      status: false,
     };
   },
   mounted() {
@@ -80,20 +99,26 @@ export default {
   methods: {
     async gotoBlockEditor() {
       await this.send();
-      this.$router.push({ path: 'blockEditor', query: { apparatId: this.apparatId, apparatName: this.apparatName } });
+      this.$router.push({
+        path: "blockEditor",
+        query: { apparatId: this.apparatId, apparatName: this.apparatName },
+      });
     },
     async send() {
       this.serverHandler = new ServerHandler(this.$session.id());
-      let sendingData = this.serverHandler.getCreateApparatData(this.apparatName, this.apparatDescription);
+      let sendingData = this.serverHandler.getCreateApparatData(
+        this.apparatName,
+        this.apparatDescription
+      );
       let mes = await this.serverHandler.sendData(sendingData);
 
-      mes = JSON.parse(mes)
+      mes = JSON.parse(mes);
 
-      this.apparatId = mes['apparat_id']
-      this.status = mes['status']
+      this.apparatId = mes["apparat_id"];
+      this.status = mes["status"];
 
       if (!this.status) {
-        return
+        return;
       }
     },
   },

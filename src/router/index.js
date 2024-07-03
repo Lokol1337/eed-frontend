@@ -2,14 +2,14 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 // import Home from '@/views/Home.vue';
-import CreateComponent from '@/views/CreateComponent.vue';
-import CreateHardware from '@/views/CreateHardware.vue';
-import HardwaresView from '@/views/HardwaresView.vue';
+import CreateComponent from '@/views/etc/CreateComponent.vue';
+import CreateHardware from '@/views/etc/CreateHardware.vue';
+import HardwaresView from '@/views/etc/HardwaresView.vue';
 import Login from '@/views/Login.vue';
 
 // not designer hardware, demo page P-302-O
 import P3020 from '@/views/P302O.vue';
-import editNorm from '@/views/editNorm.vue';
+import EditNormative from '@/views/editor/EditNormative.vue';
 import P3306 from '@/views/P3306.vue';
 import P327_2 from '@/views/P327-2.vue';
 import MAIN from '@/views/MAIN.vue';
@@ -54,7 +54,7 @@ const routes = [
   {
     path: '/edit',
     name: 'edit',
-    component: editNorm,
+    component: EditNormative,
   },
   {
     path: '/p-330-6',

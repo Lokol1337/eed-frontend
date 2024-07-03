@@ -1,6 +1,4 @@
 <template>
-
-  
   <!--
   <div class="menu-for-show">
     <div
@@ -71,20 +69,16 @@
 
   </div> 
   -->
-
-
-  
-    
 </template>
 
 <script>
-//import * as hwCmpHandler from "./hwComponentsHandle.js";
+//import * as hwCmpHandler from "@/handlers/hwComponentsHandle.js";
 
 export default {
   props: {
     rectColor: {
       type: String,
-      default: 'green'
+      default: "green",
     },
     packName: {
       type: String,
@@ -93,27 +87,27 @@ export default {
     packs: {
       type: Array,
       required: true,
-    }
+    },
   },
   methods: {
     selectPack(pack) {
       let borderImgArr = [];
-      borderImgArr = document.getElementsByClassName('menu-for-show__border');
+      borderImgArr = document.getElementsByClassName("menu-for-show__border");
 
-      for(let i = 0; i < borderImgArr.length; i++){
-        borderImgArr[i].style.border = '0px solid';  
+      for (let i = 0; i < borderImgArr.length; i++) {
+        borderImgArr[i].style.border = "0px solid";
       }
-      document.getElementById(pack.id).style.border = '3px solid green';
+      document.getElementById(pack.id).style.border = "3px solid green";
       this.actualPack = pack.name;
       // for(let i = 0; i<configs.lenght(); i++)
-      this.$emit('selectPack', pack);
-    }
+      this.$emit("selectPack", pack);
+    },
   },
   data() {
     return {
       configs: [
         {
-          name: 'ВКО-12',
+          name: "ВКО-12",
           rectangleWidth: 63,
           rectangleHeight: 30,
           rectangleColor: this.rectColor,
@@ -123,7 +117,7 @@ export default {
           zoom: 100,
         },
         {
-          name: 'СС-О',
+          name: "СС-О",
           rectangleWidth: 63,
           rectangleHeight: 30,
           rectangleColor: this.rectColor,
@@ -132,7 +126,7 @@ export default {
           id: 1,
         },
         {
-          name: 'ЛО',
+          name: "ЛО",
           rectangleWidth: 63,
           rectangleHeight: 30,
           rectangleColor: this.rectColor,
@@ -141,7 +135,7 @@ export default {
           id: 2,
         },
         {
-          name: 'ГО-12',
+          name: "ГО-12",
           rectangleWidth: 63,
           rectangleHeight: 55,
           rectangleColor: this.rectColor,
@@ -150,7 +144,7 @@ export default {
           id: 3,
         },
         {
-          name: 'ПИТ',
+          name: "ПИТ",
           rectangleWidth: 63,
           rectangleHeight: 30,
           rectangleColor: this.rectColor,
@@ -159,7 +153,7 @@ export default {
           id: 4,
         },
         {
-          name: 'ЩКНЧ1',
+          name: "ЩКНЧ1",
           rectangleWidth: 63,
           rectangleHeight: 37,
           rectangleColor: this.rectColor,
@@ -168,7 +162,7 @@ export default {
           id: 6,
         },
         {
-          name: 'ЩКНЧ2',
+          name: "ЩКНЧ2",
           rectangleWidth: 63,
           rectangleHeight: 90,
           rectangleColor: this.rectColor,
@@ -177,7 +171,7 @@ export default {
           id: 7,
         },
         {
-          name: 'ЩКВЧ',
+          name: "ЩКВЧ",
           rectangleWidth: 63,
           rectangleHeight: 32,
           rectangleColor: this.rectColor,
@@ -186,7 +180,7 @@ export default {
           id: 8,
         },
         {
-          name: 'ИПП',
+          name: "ИПП",
           rectangleWidth: 57,
           rectangleHeight: 61,
           rectangleColor: this.rectColor,
@@ -195,7 +189,7 @@ export default {
           id: 10,
         },
         {
-          name: 'ДСВ',
+          name: "ДСВ",
           rectangleWidth: 57,
           rectangleHeight: 54,
           rectangleColor: this.rectColor,
@@ -204,19 +198,18 @@ export default {
           id: 9,
         },
         {
-          name: 'ДП',
+          name: "ДП",
           rectangleWidth: 57,
           rectangleHeight: 32,
           rectangleColor: this.rectColor,
           top: 155,
           left: 130,
           id: 11,
-        },              
+        },
       ],
     };
   },
 };
-
 </script>
 
 <style lang="scss" scoped>

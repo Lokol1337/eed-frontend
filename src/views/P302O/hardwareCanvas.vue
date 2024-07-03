@@ -1,20 +1,32 @@
 <template>
-
   <div class="canvas">
-    <div :key="rerenderStatment" class="canvas__body" :style="{
-      backgroundImage: 'url(' + bgImage + ')',
-      width: `${backgroundSettings.width}px`,
-      height: `${backgroundSettings.height}px`,
-      backgroundSize: `${backgroundSettings.width}px ${backgroundSettings.height}px`,
-    }" style="border-radius: 15px;">
-
-      <canvasComponent v-for="hardwareComponent in allComponents" v-on:sendRequest="sendRequestListener($event)"
-        v-on:setServerAnswerStatus="setServerAnswerStatus($event)" :key="hardwareComponent.id"
-        :id="hardwareComponent.id" :rerenderStatment="rerenderStatment" :hardwareComponents="allComponents"
-        :hardwareComponent="hardwareComponent" :hardZoom="hardZoom" :sessionId="sessionId"
-        :serverAnswerStatus="serverAnswerStatus" @showDiscription="(arg) => $emit('showDiscription', arg)"
-        :editStatus = "editStatus"
-        @hideDiscription="(arg) => $emit('hideDiscription', arg)" />
+    <div
+      :key="rerenderStatment"
+      class="canvas__body"
+      :style="{
+        backgroundImage: 'url(' + bgImage + ')',
+        width: `${backgroundSettings.width}px`,
+        height: `${backgroundSettings.height}px`,
+        backgroundSize: `${backgroundSettings.width}px ${backgroundSettings.height}px`,
+      }"
+      style="border-radius: 15px"
+    >
+      <canvasComponent
+        v-for="hardwareComponent in allComponents"
+        v-on:sendRequest="sendRequestListener($event)"
+        v-on:setServerAnswerStatus="setServerAnswerStatus($event)"
+        :key="hardwareComponent.id"
+        :id="hardwareComponent.id"
+        :rerenderStatment="rerenderStatment"
+        :hardwareComponents="allComponents"
+        :hardwareComponent="hardwareComponent"
+        :hardZoom="hardZoom"
+        :sessionId="sessionId"
+        :serverAnswerStatus="serverAnswerStatus"
+        @showDiscription="(arg) => $emit('showDiscription', arg)"
+        :editStatus="editStatus"
+        @hideDiscription="(arg) => $emit('hideDiscription', arg)"
+      />
     </div>
   </div>
 </template>
@@ -23,7 +35,7 @@
 // import addableComponentsMenu from "./addableComponentsMenu.vue";
 
 import canvasComponent from "./canvasComponent.vue";
-// import * as hwCmpHandler from "../hwComponentsHandle.js";
+// import * as hwCmpHandler from "@/handlers/hwComponentsHandle.js";
 // import ServerHandler from '@/api/ServerHandler.js';
 export default {
   props: {
@@ -49,16 +61,16 @@ export default {
       default: () => [],
     },
     sessionId: {
-      type: String
+      type: String,
     },
     editStatus: {
-      type: Boolean
-    }
+      type: Boolean,
+    },
   },
   watch: {
     zoom(val) {
-      this.hardZoom = val
-    }
+      this.hardZoom = val;
+    },
   },
   components: {
     canvasComponent,
@@ -76,11 +88,11 @@ export default {
   computed: {
     allComponents() {
       return this.hardwareComponentsData;
-    }
+    },
   },
   methods: {
     sendRequestListener(hardwareComponent) {
-      console.log(this.editStatus)
+      console.log(this.editStatus);
       console.log("sendRequestListener() -> setServerAnswerStatus()");
       this.setServerAnswerStatus(false);
 
@@ -94,18 +106,18 @@ export default {
       this.serverAnswerStatus = newStatus;
     },
     selectComponentHandler(component) {
-
       this.hardwareComponentsData.push({ ...component });
     },
     isNeedToChangeYellow(hardwareComponent) {
-      let arrayNextActions = this.stepServerData['next_actions']; // может не работать
-      let nextAction = this.serverHandler.findNextActionById(arrayNextActions, hardwareComponent.id);
+      let arrayNextActions = this.stepServerData["next_actions"]; // может не работать
+      let nextAction = this.serverHandler.findNextActionById(
+        arrayNextActions,
+        hardwareComponent.id
+      );
       if (nextAction == null) {
-
         return false;
       } else {
-        if (nextAction['currentValue'] == hardwareComponent.currentValue)
-          return true;
+        if (nextAction["currentValue"] == hardwareComponent.currentValue) return true;
       }
       return false;
     },
@@ -118,7 +130,7 @@ export default {
       }
 
       this.rerenderStatment++;
-      // Принудительное обновление <template> 
+      // Принудительное обновление <template>
       // }
     },
 
@@ -135,14 +147,16 @@ export default {
     },
     sendRequest(hardwareComponent) {
       if (this.editStatus) {
-        this.$emit('addSubStep', hardwareComponent)
-        return
+        this.$emit("addSubStep", hardwareComponent);
+        return;
       }
 
       this.serverHandler.defineActionStepOnMessage(this, hardwareComponent);
-      let elseData = this.serverHandler.getElseData(hardwareComponent, hardwareComponent.hardZoomScale);
+      let elseData = this.serverHandler.getElseData(
+        hardwareComponent,
+        hardwareComponent.hardZoomScale
+      );
       this.serverHandler.sendData(elseData);
-
     },
   },
   created() {
