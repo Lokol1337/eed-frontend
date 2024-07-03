@@ -12,6 +12,9 @@
         <div class="col-12 col-sm-8 col-md-6 col-lg-4 d-flex justify-content-center">
           <ApparatCard
             v-for="apparat in apparats"
+            v-on:editNormative="editNormative($event)"
+            v-on:changeVisibility="changeVisibility($event)"
+            v-on:deleteNormative="deleteNormative($event)"
             :key="apparat.id"
             :isAdmin="isAdmin"
             :name="apparat.name"
@@ -48,19 +51,36 @@ export default {
             {
               id: 11,
               name: "Приведение в первоначальное состояние",
+              status: true,
             },
             {
               id: 12,
               name: "Настройка",
+              status: true,
             },
             {
               id: 21,
               name: "Настройка на себя",
+              status: true,
             },
           ],
         },
       ],
     };
+  },
+  methods: {
+    goToPath(route, norm = 0, is_training = 1) {
+      this.$router.push({ path: route, query: { norm: norm, it: is_training } });
+    },
+    editNormative(normative_id) {
+      console.log("editNormative(" + normative_id + ")");
+    },
+    changeVisibility(normative_id) {
+      console.log("changeVisibility(" + normative_id + ")");
+    },
+    deleteNormative(normative_id) {
+      console.log("deleteNormative(" + normative_id + ")");
+    },
   },
   mounted() {},
 };
