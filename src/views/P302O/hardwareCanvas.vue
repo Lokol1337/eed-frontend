@@ -147,7 +147,7 @@ export default {
     },
     sendRequest(hardwareComponent) {
       if (this.editStatus) {
-        this.$emit("addSubStep", hardwareComponent);
+        this.$emit('addStepEvent', hardwareComponent);
         return;
       }
 

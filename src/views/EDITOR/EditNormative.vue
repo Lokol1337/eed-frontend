@@ -111,6 +111,7 @@
               @ann="(i) => (annotation = i)"
               @step="(i) => (stepServerData = i)"
               @allP="(i) => rerenderAllPacks(i)"
+              v-on:addStepEvent= "addSubStep"
               @completeApparat="(i) => changeBlockYellow(i)"
               @showDiscription="(arg) => showDiscription(arg)"
               @hideDiscription="(arg) => hideDiscription(arg)"
@@ -317,6 +318,12 @@ export default {
       discription: null,
       discriptionActive: false,
       congratulationActive: false,
+      stepData: { 
+        "operation": "setInitNormConfig", 
+        "equipment_id": 1,
+        "array_actions": []
+      }
+        
     };
   },
 
@@ -521,6 +528,14 @@ export default {
           console.log(error);
         });
     },
+    addSubStep(element){
+      this.stepData['array_actions'].push( 
+      {
+        'action_id': element['id'],
+        'action_value': element['currentValue'],
+      })
+      console.log(this.stepData)
+    }
   },
 };
 </script>
