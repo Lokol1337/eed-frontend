@@ -17,13 +17,16 @@
             >
               <button
                 class="btn btn-primary w-100 my-0 me-2"
-                @click="editNormative(normative.id)"
+                @click="goToNormative(normative.id, 1)"
               >
                 {{ normative.name }}
               </button>
 
               <div v-if="isAdmin" class="d-flex justify-content-between">
-                <button class="btn btn-secondary px-2 py-0 m-0 me-1 h-100">
+                <button
+                  class="btn btn-secondary px-2 py-0 m-0 me-1 h-100"
+                  @click="editNormative(normative.id)"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -109,13 +112,13 @@
 
                 <li>
                     <button class="btn btn-secondary w-100 h-100" 
-                    @click.prevent="goToPath('/p-302-o',11, 0)">Приведение в первоначальное состояние</button>
+                    @click.prevent="goToPath('/P-302-O',11, 0)">Приведение в первоначальное состояние</button>
                 </li>
                 <li><button class="btn btn-secondary w-100 h-100"  
-                    @click.prevent="goToPath('/p-302-o',12, 0)">Настройка</button></li>
+                    @click.prevent="goToPath('/P-302-O',12, 0)">Настройка</button></li>
                 <li>
                     <button class="btn btn-secondary w-100 h-100"  
-                    @click.prevent="goToPath('/p-302-o',21, 0)">Настройка на себя</button>
+                    @click.prevent="goToPath('/P-302-O',21, 0)">Настройка на себя</button>
                 </li>
                 
                 </ul>
@@ -134,6 +137,9 @@ export default {
     name: {
       type: String,
     },
+    name_eng: {
+      type: String,
+    },
     description: {
       type: String,
     },
@@ -147,6 +153,9 @@ export default {
         "Вы уверены, что хотите удалить этот норматив? Внимание! В случае подтверждения норматив будет удалён навсегда!"
       );
       if (flag) this.deleteNormative(normative_id);
+    },
+    goToNormative(normative_id, isTranning) {
+      this.$emit("goToNormative", [this.name_eng, normative_id, isTranning]);
     },
     editNormative(normative_id) {
       this.$emit("editNormative", normative_id);

@@ -10,16 +10,18 @@
     <div class="container pt-5" style="background-color: #f4f7fa">
       <div class="row d-dlex justify-content-center">
         <div class="col-12 col-sm-8 col-md-6 col-lg-4 d-flex justify-content-center">
-          <ApparatCard
-            v-for="apparat in apparats"
+          <EquipmentCard
+            v-for="equipment in equipments"
+            @goToNormative="(arg) => goToNormative(...arg)"
             v-on:editNormative="editNormative($event)"
             v-on:changeVisibility="changeVisibility($event)"
             v-on:deleteNormative="deleteNormative($event)"
-            :key="apparat.id"
+            :key="equipment.id"
             :isAdmin="isAdmin"
-            :name="apparat.name"
-            :description="apparat.description"
-            :normatives="apparat.normatives"
+            :name="equipment.name"
+            :name_eng="equipment.name_eng"
+            :description="equipment.description"
+            :normatives="equipment.normatives"
           />
         </div>
       </div>
@@ -30,21 +32,22 @@
 <script>
 import Vue from "vue";
 import VueSession from "vue-session";
-import ApparatCard from "../components/ApparatCard.vue";
+import EquipmentCard from "../components/EquipmentCard.vue";
 
 Vue.use(VueSession);
 
 export default {
   components: {
-    ApparatCard,
+    EquipmentCard,
   },
   data() {
     return {
       isAdmin: true,
-      apparats: [
+      equipments: [
         {
           id: 1,
           name: "П-302-О",
+          name_eng: "P-302-O",
           description:
             "Аппаратура для уплотнения кабеля дальней связи П-296 и радиорелейных линий двенадцатью телефонными каналами.",
           normatives: [
@@ -71,6 +74,10 @@ export default {
   methods: {
     goToPath(route, norm = 0, is_training = 1) {
       this.$router.push({ path: route, query: { norm: norm, it: is_training } });
+    },
+    goToNormative(equipment_name_eng, normative_id, isTranning) {
+      // console.log("goToNormative()", equipment_name_eng, normative_id, isTranning);
+      this.goToPath("/" + equipment_name_eng, normative_id, isTranning);
     },
     editNormative(normative_id) {
       console.log("editNormative(" + normative_id + ")");

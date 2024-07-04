@@ -185,7 +185,7 @@
           <button
             :class="'btn col-4 me-0 '"
             @click.prevent="
-              goToPath('/p-302-o', String($route.query.norm[0]) + '1', is_tr, 0, 0)
+              goToPath('/P-302-O', String($route.query.norm[0]) + '1', is_tr, 0, 0)
             "
           >
             <svg
@@ -208,7 +208,7 @@
           <button
             :class="'btn col-4 me-0 d-flex justify-content-end'"
             @click.prevent="
-              goToPath('/p-302-o', String($route.query.norm[0]) + '1', is_tr, 0, 0)
+              goToPath('/P-302-O', String($route.query.norm[0]) + '1', is_tr, 0, 0)
             "
           >
             <svg

@@ -55,7 +55,7 @@
             <button
               :class="'btn btn-success w-auto me-0 ' + this.linkForNextStage()"
               @click.prevent="
-                goToPath('/p-302-o', getNextExercisePathId(), is_tr, min, sec)
+                goToPath('/P-302-O', getNextExercisePathId(), is_tr, min, sec)
               "
             >
               Перейти к следующему шагу {{ exersizeName }}
@@ -188,7 +188,7 @@
           <button
             :class="'btn col-4 me-0 '"
             @click.prevent="
-              goToPath('/p-302-o', String($route.query.norm[0]) + '1', is_tr, 0, 0)
+              goToPath('/P-302-O', String($route.query.norm[0]) + '1', is_tr, 0, 0)
             "
           >
             <svg
@@ -211,7 +211,7 @@
           <button
             :class="'btn col-4 me-0 d-flex justify-content-end'"
             @click.prevent="
-              goToPath('/p-302-o', String($route.query.norm[0]) + '1', is_tr, 0, 0)
+              goToPath('/P-302-O', String($route.query.norm[0]) + '1', is_tr, 0, 0)
             "
           >
             <svg

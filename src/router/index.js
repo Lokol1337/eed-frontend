@@ -1,22 +1,22 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
+import Vue from "vue";
+import VueRouter from "vue-router";
 
 // import Home from '@/views/Home.vue';
-import CreateComponent from '@/views/etc/CreateComponent.vue';
-import CreateHardware from '@/views/etc/CreateHardware.vue';
-import HardwaresView from '@/views/etc/HardwaresView.vue';
-import Login from '@/views/Login.vue';
+import CreateComponent from "@/views/etc/CreateComponent.vue";
+import CreateHardware from "@/views/etc/CreateHardware.vue";
+import HardwaresView from "@/views/etc/HardwaresView.vue";
+import Login from "@/views/Login.vue";
 
 // not designer hardware, demo page P-302-O
-import P3020 from '@/views/P302O.vue';
-import EditNormative from '@/views/editor/EditNormative.vue';
-import P3306 from '@/views/P3306.vue';
-import P327_2 from '@/views/P327-2.vue';
-import MAIN from '@/views/MAIN.vue';
-import EDITOR from '@/views/editor/editor.vue';
-import BLOCK_EDITOR from '@/views/editor/blockEditor.vue';
-import PHOTO_EDITOR from '@/views/editor/photoEditor.vue';
-import ELEMENT_EDITOR from '@/views/editor/elementEditor.vue';
+import P3020 from "@/views/P302O.vue";
+import EditNormative from "@/views/editor/EditNormative.vue";
+import P3306 from "@/views/P3306.vue";
+import P327_2 from "@/views/P327-2.vue";
+import MAIN from "@/views/MAIN.vue";
+import EDITOR from "@/views/editor/editor.vue";
+import BLOCK_EDITOR from "@/views/editor/blockEditor.vue";
+import PHOTO_EDITOR from "@/views/editor/photoEditor.vue";
+import ELEMENT_EDITOR from "@/views/editor/elementEditor.vue";
 
 Vue.use(VueRouter);
 
@@ -27,76 +27,76 @@ const routes = [
   //   component: Home,
   // },
   {
-    path: '/create-component',
-    name: 'createComponent',
+    path: "/create-component",
+    name: "createComponent",
     component: CreateComponent,
   },
   {
-    path: '/create-hardware',
-    name: 'createHardware',
+    path: "/create-hardware",
+    name: "createHardware",
     component: CreateHardware,
   },
   {
-    path: '/hardwares-view',
-    name: 'hardwaresView',
+    path: "/hardwares-view",
+    name: "hardwaresView",
     component: HardwaresView,
   },
   {
-    path: '/',
-    name: 'login',
+    path: "/",
+    name: "login",
     component: Login,
   },
   {
-    path: '/p-302-o',
-    name: 'p-302-o',
+    path: "/P-302-O",
+    name: "P-302-O",
     component: P3020,
   },
   {
-    path: '/edit',
-    name: 'edit',
+    path: "/edit",
+    name: "edit",
     component: EditNormative,
   },
   {
-    path: '/p-330-6',
-    name: 'p-330-6',
-    component: P3306
+    path: "/p-330-6",
+    name: "p-330-6",
+    component: P3306,
   },
   {
-    path: '/p-327-2',
-    name: 'p-327-2',
-    component: P327_2
+    path: "/p-327-2",
+    name: "p-327-2",
+    component: P327_2,
   },
   {
-    path: '/main',
-    name: 'main',
+    path: "/main",
+    name: "main",
     component: MAIN,
   },
   {
-    path: '/editor',
-    name: 'editor',
+    path: "/editor",
+    name: "editor",
     component: EDITOR,
   },
   {
-    path: '/blockEditor',
-    name: 'blockEditor',
+    path: "/blockEditor",
+    name: "blockEditor",
     component: BLOCK_EDITOR,
   },
   {
-    path: '/photoEditor',
-    name: 'photoEditor',
+    path: "/photoEditor",
+    name: "photoEditor",
     component: PHOTO_EDITOR,
   },
   {
-    path: '/elementEditor',
-    name: 'elementEditor',
+    path: "/elementEditor",
+    name: "elementEditor",
     component: ELEMENT_EDITOR,
-  }
+  },
 ];
 
 const router = new VueRouter({
   // mode: 'history',
-  base: '/eed-frontend/',
-  routes
+  base: "/eed-frontend/",
+  routes,
 });
 
-export default router
+export default router;
