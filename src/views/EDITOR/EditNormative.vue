@@ -229,16 +229,14 @@
         </div>
       </div>
     </div>
-    <div class="b-nav">
-  
-    </div>
+    <div class="b-nav"></div>
   </div>
 </template>
 <style>
-.b-nav{
+.b-nav {
   position: sticky;
   bottom: 0;
-  width:100%;
+  width: 100%;
   height: 5em;
 }
 .congratulation_modal {
@@ -328,12 +326,11 @@ export default {
       discriptionActive: false,
       congratulationActive: false,
       initData: true,
-      stepData: { 
-        "operation": this.initData? "setInitNormConfig" : "setNewStep", 
-        "equipment_id": 1,
-        "array_actions": []
-      }
-        
+      stepData: {
+        operation: this.initData ? "setInitNormConfig" : "setNewStep",
+        equipment_id: 1,
+        array_actions: [],
+      },
     };
   },
 
@@ -538,21 +535,6 @@ export default {
           console.log(error);
         });
     },
-<<<<<<< HEAD
-    addSubStep(element){
-      this.stepData['array_actions'].push( 
-      {
-        'action_id': element['id'],
-        'action_value': element['currentValue'],
-      })
-      console.log(this.stepData)
-    },
-    sendData(){
-      // тут отправка данных на бек
-      this.initData = false;
-      this.stepData['array_actions'] = [];
-    }
-=======
     addSubStep(element) {
       this.stepData["array_actions"].push({
         action_id: element["id"],
@@ -560,7 +542,6 @@ export default {
       });
       console.log(this.stepData);
     },
->>>>>>> 658e224a29baee42f7eb9b37d19918d9ca5a618c
   },
 };
 </script>

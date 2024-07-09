@@ -21,7 +21,7 @@
             v-on:changeVisibility="changeVisibility($event)"
             v-on:deleteNormative="deleteNormative($event)"
             :key="equipment.id"
-            :isAdmin="test_data.isAdmin"
+            :isAdmin="data.isAdmin"
             :name="equipment.name"
             :name_eng="equipment.name_eng"
             :description="equipment.description"
@@ -48,35 +48,6 @@ export default {
   data() {
     return {
       data: null,
-      test_data: {
-        isAdmin: true,
-        equipments: [
-          {
-            id: 1,
-            name: "П-302-О",
-            name_eng: "P-302-O",
-            description:
-              "Аппаратура для уплотнения кабеля дальней связи П-296 и радиорелейных линий двенадцатью телефонными каналами.",
-            normatives: [
-              {
-                id: 11,
-                name: "Приведение в первоначальное состояние",
-                status: true,
-              },
-              {
-                id: 12,
-                name: "Настройка",
-                status: true,
-              },
-              {
-                id: 21,
-                name: "Настройка на себя",
-                status: true,
-              },
-            ],
-          },
-        ],
-      },
     };
   },
   methods: {
