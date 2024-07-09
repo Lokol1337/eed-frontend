@@ -75,7 +75,7 @@
 
 <script>
 // import * as util from "../utilities.js";
-import ServerHandler from "@/api/newServerHandler.js";
+import ServerHandler from "@/handlers/newServerHandler.js";
 
 export default {
   props: {

@@ -9,15 +9,18 @@
 
     <div class="container pt-5" style="background-color: #f4f7fa">
       <div class="row d-dlex justify-content-center">
-        <div class="col-12 col-sm-8 col-md-6 col-lg-4 d-flex justify-content-center">
+        <div
+          class="col-12 col-sm-8 col-md-6 col-lg-4 d-flex justify-content-center"
+          v-if="data != null"
+        >
           <EquipmentCard
-            v-for="equipment in equipments"
+            v-for="equipment in data.equipments"
             @goToNormative="(arg) => goToNormative(...arg)"
             v-on:editNormative="editNormative($event)"
             v-on:changeVisibility="changeVisibility($event)"
             v-on:deleteNormative="deleteNormative($event)"
             :key="equipment.id"
-            :isAdmin="isAdmin"
+            :isAdmin="data.isAdmin"
             :name="equipment.name"
             :name_eng="equipment.name_eng"
             :description="equipment.description"
@@ -33,6 +36,7 @@
 import Vue from "vue";
 import VueSession from "vue-session";
 import EquipmentCard from "../components/EquipmentCard.vue";
+import ServerHandler from "@/handlers/ServerHandler.js";
 
 Vue.use(VueSession);
 
@@ -42,33 +46,36 @@ export default {
   },
   data() {
     return {
-      isAdmin: true,
-      equipments: [
-        {
-          id: 1,
-          name: "П-302-О",
-          name_eng: "P-302-O",
-          description:
-            "Аппаратура для уплотнения кабеля дальней связи П-296 и радиорелейных линий двенадцатью телефонными каналами.",
-          normatives: [
-            {
-              id: 11,
-              name: "Приведение в первоначальное состояние",
-              status: true,
-            },
-            {
-              id: 12,
-              name: "Настройка",
-              status: true,
-            },
-            {
-              id: 21,
-              name: "Настройка на себя",
-              status: true,
-            },
-          ],
-        },
-      ],
+      data: null,
+      last_data: {
+        isAdmin: true,
+        equipments: [
+          {
+            id: 1,
+            name: "П-302-О",
+            name_eng: "P-302-O",
+            description:
+              "Аппаратура для уплотнения кабеля дальней связи П-296 и радиорелейных линий двенадцатью телефонными каналами.",
+            normatives: [
+              {
+                id: 11,
+                name: "Приведение в первоначальное состояние",
+                status: true,
+              },
+              {
+                id: 12,
+                name: "Настройка",
+                status: true,
+              },
+              {
+                id: 21,
+                name: "Настройка на себя",
+                status: true,
+              },
+            ],
+          },
+        ],
+      },
     };
   },
   methods: {
@@ -88,8 +95,28 @@ export default {
     deleteNormative(normative_id) {
       console.log("deleteNormative(" + normative_id + ")");
     },
+    async sendRequest() {
+      this.serverHandler = new ServerHandler(this.$session.id());
+      this.serverHandler.getListEquipmentsNormatives(this);
+
+      let maxCount = 10;
+      let currentCount = 0;
+      while (this.data == null && currentCount < maxCount) {
+        console.log("Жду...");
+        currentCount += 1;
+        setTimeout(500);
+      }
+      console.log("sendRequest() дождался");
+    },
+    setEquipment(new_data) {
+      console.log("data: ", new_data);
+      this.data = new_data;
+    },
   },
-  mounted() {},
+  async created() {
+    console.log("created()");
+    await this.sendRequest();
+  },
 };
 </script>
 

@@ -111,7 +111,7 @@
               @ann="(i) => (annotation = i)"
               @step="(i) => (stepServerData = i)"
               @allP="(i) => rerenderAllPacks(i)"
-              v-on:addStepEvent= "addSubStep"
+              v-on:addStepEvent="addSubStep"
               @completeApparat="(i) => changeBlockYellow(i)"
               @showDiscription="(arg) => showDiscription(arg)"
               @hideDiscription="(arg) => hideDiscription(arg)"
@@ -281,7 +281,7 @@
 import APPARATJSON from "../P302O/P302O.json";
 import hardwareCanvas from "../P302O/hardwareCanvas.vue";
 import sideBarMenu from "../P302O/sideBarMenu.vue";
-import ServerHandler from "@/api/ServerHandler.js";
+import ServerHandler from "@/handlers/ServerHandler.js";
 import ContextHandler, * as hwCmpHandler from "@/handlers/hwComponentsHandle.js";
 // import axios from 'axios';
 // import get from 'axios';
@@ -318,12 +318,11 @@ export default {
       discription: null,
       discriptionActive: false,
       congratulationActive: false,
-      stepData: { 
-        "operation": "setInitNormConfig", 
-        "equipment_id": 1,
-        "array_actions": []
-      }
-        
+      stepData: {
+        operation: "setInitNormConfig",
+        equipment_id: 1,
+        array_actions: [],
+      },
     };
   },
 
@@ -360,8 +359,8 @@ export default {
     if (this.$route.query.it == 0) is_traning = false;
     else is_traning = true;
 
-    this.serverHandler = new ServerHandler(
-      this.$session.get("session_id"),
+    this.serverHandler = new ServerHandler(this.$session.get("session_id"));
+    this.serverHandler.startNormative(
       this.contextHandler,
       is_traning,
       this.exersiseId,
@@ -528,14 +527,13 @@ export default {
           console.log(error);
         });
     },
-    addSubStep(element){
-      this.stepData['array_actions'].push( 
-      {
-        'action_id': element['id'],
-        'action_value': element['currentValue'],
-      })
-      console.log(this.stepData)
-    }
+    addSubStep(element) {
+      this.stepData["array_actions"].push({
+        action_id: element["id"],
+        action_value: element["currentValue"],
+      });
+      console.log(this.stepData);
+    },
   },
 };
 </script>

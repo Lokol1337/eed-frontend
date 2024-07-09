@@ -1,29 +1,29 @@
 <template>
-    <!-- Редактор аппаратуры: название + добавление блоков-->
-    <apparatEditor :key="editor" :serverHandler="this.serverHandler" />
-    <!-- ==> blockEditor -->
-    <!-- ==> routeEditor -->
+  <!-- Редактор аппаратуры: название + добавление блоков-->
+  <apparatEditor :key="editor" :serverHandler="this.serverHandler" />
+  <!-- ==> blockEditor -->
+  <!-- ==> routeEditor -->
 
-    <!-- Редактор блока -->
-    <!-- <blockEditor /> -->
-    <!-- ==> photoEditor -->
+  <!-- Редактор блока -->
+  <!-- <blockEditor /> -->
+  <!-- ==> photoEditor -->
 
-    <!-- Загрузка + обрезка фотографии -->
-    <!-- <photoEditor /> -->
-    <!-- Возвращает: сохраняет на клиенте новую фотографию -->
-    <!-- ==> buttonEditor -->
+  <!-- Загрузка + обрезка фотографии -->
+  <!-- <photoEditor /> -->
+  <!-- Возвращает: сохраняет на клиенте новую фотографию -->
+  <!-- ==> buttonEditor -->
 
-    <!-- Добавление элементов -->
-    <!-- <elementEditor /> -->
+  <!-- Добавление элементов -->
+  <!-- <elementEditor /> -->
 
-    <!-- ==> cableEditor -->
+  <!-- ==> cableEditor -->
 
-    <!-- Добавление кабелей -->
-    <!-- <cableEditor /> -->
-    <!-- ==> apparatEditor -->
+  <!-- Добавление кабелей -->
+  <!-- <cableEditor /> -->
+  <!-- ==> apparatEditor -->
 
-    <!-- <constructor/> -->
-    <!--  -->
+  <!-- <constructor/> -->
+  <!--  -->
 </template>
 
 <style>
@@ -33,34 +33,31 @@
 <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
 
 <script>
-
 // import photoEditor from "./photoEditor";
 // import constructor from "./constructor";
-import ServerHandler from "../../api/newServerHandler";
+import ServerHandler from "@/handlers/newServerHandler";
 import apparatEditor from "./apparatEditor";
 
-
-
 export default {
-    data() {
-        return {
-            serverHandler: null
-        };
-    },
-    components: {
-        apparatEditor,
-        // photoEditor,
-        // constructor
-    },
-    created() {
-        // 
-        if (!this.$session.exists()) {
-            this.$session.start();
-            // this.sessionId = this.$session.id();
-        }
-
-        this.serverHandler = new ServerHandler(this.$session.id());
-        this.serverHandler.connect();
+  data() {
+    return {
+      serverHandler: null,
+    };
+  },
+  components: {
+    apparatEditor,
+    // photoEditor,
+    // constructor
+  },
+  created() {
+    //
+    if (!this.$session.exists()) {
+      this.$session.start();
+      // this.sessionId = this.$session.id();
     }
+
+    this.serverHandler = new ServerHandler(this.$session.id());
+    this.serverHandler.connect();
+  },
 };
 </script>

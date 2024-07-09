@@ -144,7 +144,7 @@ export default {
       type: String,
     },
     normatives: {
-      type: Object,
+      type: Array,
     },
   },
   methods: {

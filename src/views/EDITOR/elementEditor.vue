@@ -94,7 +94,7 @@
 </template>
 
 <script>
-import ServerHandler from "@/api/newServerHandler.js";
+import ServerHandler from "@/handlers/newServerHandler.js";
 
 export default {
   data() {
