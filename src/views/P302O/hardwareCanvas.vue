@@ -36,7 +36,7 @@
 
 import canvasComponent from "./canvasComponent.vue";
 // import * as hwCmpHandler from "@/handlers/hwComponentsHandle.js";
-// import ServerHandler from '@/api/ServerHandler.js';
+// import ServerHandler from '@/handlers/ServerHandler.js';
 export default {
   props: {
     zoom: {
@@ -147,7 +147,7 @@ export default {
     },
     sendRequest(hardwareComponent) {
       if (this.editStatus) {
-        this.$emit('addStepEvent', hardwareComponent);
+        this.$emit("addStepEvent", hardwareComponent);
         return;
       }
 

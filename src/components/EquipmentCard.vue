@@ -9,7 +9,7 @@
       <center>
         <div class="w-100">
           <p class="text-primary bg-black w-100 m-0">Треннировка</p>
-          <ul class="w-100 p-1">
+          <ul class="w-100 p-1 mb-0 pb-0">
             <li
               class="d-flex justify-content-between p-0 me-2 my-2 w-100"
               v-for="normative in normatives"
@@ -99,6 +99,24 @@
               </div>
             </li>
           </ul>
+          <button
+            class="btn btn-primary w-100 py-0 px-2 m-0 h-100"
+            @click="addNormative()"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-plus-lg"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"
+              />
+            </svg>
+          </button>
         </div>
       </center>
 
@@ -144,7 +162,7 @@ export default {
       type: String,
     },
     normatives: {
-      type: Object,
+      type: Array,
     },
   },
   methods: {
@@ -156,6 +174,9 @@ export default {
     },
     goToNormative(normative_id, isTranning) {
       this.$emit("goToNormative", [this.name_eng, normative_id, isTranning]);
+    },
+    addNormative() {
+      this.$emit("addNormative");
     },
     editNormative(normative_id) {
       this.$emit("editNormative", normative_id);

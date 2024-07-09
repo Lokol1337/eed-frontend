@@ -13,14 +13,17 @@ export default class ServerHandler {
 
     contextApparatHandler = null;
     contextCanvasHandler = null;
+    contextMain = null;
 
     next_actions = null;
 
-    constructor(session_id, contextApparatHandler, is_training, exercise_id, normative_id) {
-
+    constructor(session_id) {
         this.session_id = session_id;
         this.socket = new WebSocket($url);
         this.stepServerData = null;
+    }
+
+    startNormative(contextApparatHandler, is_training, exercise_id, normative_id) {
         this.is_training = is_training;
 
         let initData = this.getInitData(exercise_id, String(normative_id));
@@ -40,6 +43,31 @@ export default class ServerHandler {
         // }
 
     }
+
+
+    getListEquipmentsNormatives(contextMain) {
+        let listEquipmentsNormativesData = this.getListEquipmentsNormativesData();
+        this.socket.onopen = () => {
+            this.sendData(listEquipmentsNormativesData);
+
+        };
+
+        this.contextMain = contextMain;
+
+        this.socket.onmessage = (event) => {
+            try {
+                let server_data = this.parseServerData(event.data);
+                if (this.checkData(server_data)) {
+                    this.contextMain.setEquipment(server_data);
+                }
+
+            }
+            catch (error) {
+                console.log(error);
+            }
+        };
+    }
+
 
     defineInitOnMessage(contextApparatHandler) {
         this.contextApparatHandler = contextApparatHandler;
@@ -156,6 +184,10 @@ export default class ServerHandler {
         };
     }
 
+    ////
+    ////
+    ////
+
     sendData(data) {
         this.socket.send(JSON.stringify(Array.from(data.entries())));
     }
@@ -164,6 +196,12 @@ export default class ServerHandler {
 
     getSocket() {
         return this.socket;
+    }
+
+    getListEquipmentsNormativesData() {
+        return new Map([
+            ["operation", "getListEquipmentsNormatives"]
+        ]);
     }
 
     getOpenData() {

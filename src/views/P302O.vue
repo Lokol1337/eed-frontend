@@ -283,7 +283,7 @@
 import P302OJSON from "./P302O/P302O.json";
 import hardwareCanvas from "./P302O/hardwareCanvas.vue";
 import sideBarMenu from "./P302O/sideBarMenu.vue";
-import ServerHandler from "@/api/ServerHandler.js";
+import ServerHandler from "@/handlers/ServerHandler.js";
 import ContextHandler, * as hwCmpHandler from "@/handlers/hwComponentsHandle.js";
 // import axios from 'axios';
 // import get from 'axios';
@@ -356,8 +356,8 @@ export default {
     if (this.$route.query.it == 0) is_traning = false;
     else is_traning = true;
 
-    this.serverHandler = new ServerHandler(
-      this.$session.get("session_id"),
+    this.serverHandler = new ServerHandler(this.$session.get("session_id"));
+    this.serverHandler.startNormative(
       this.contextHandler,
       is_traning,
       this.exersiseId,

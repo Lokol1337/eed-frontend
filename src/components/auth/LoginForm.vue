@@ -76,14 +76,6 @@ export default {
         window.location.href = "#/main";
       }
     },
-    sendRequest(hardwareComponent) {
-      this.serverHandler.defineActionStepOnMessage(this, hardwareComponent);
-      let elseData = this.serverHandler.getElseData(
-        hardwareComponent,
-        hardwareComponent.hardZoomScale
-      );
-      this.serverHandler.sendData(elseData);
-    },
   },
 };
 </script>
