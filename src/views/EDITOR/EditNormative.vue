@@ -229,9 +229,18 @@
         </div>
       </div>
     </div>
+    <div class="b-nav">
+  
+    </div>
   </div>
 </template>
 <style>
+.b-nav{
+  position: sticky;
+  bottom: 0;
+  width:100%;
+  height: 5em;
+}
 .congratulation_modal {
   position: absolute;
   width: 100%;
@@ -318,8 +327,9 @@ export default {
       discription: null,
       discriptionActive: false,
       congratulationActive: false,
+      initData: true,
       stepData: { 
-        "operation": "setInitNormConfig", 
+        "operation": this.initData? "setInitNormConfig" : "setNewStep", 
         "equipment_id": 1,
         "array_actions": []
       }
@@ -535,6 +545,11 @@ export default {
         'action_value': element['currentValue'],
       })
       console.log(this.stepData)
+    },
+    sendData(){
+      // тут отправка данных на бек
+      this.initData = false;
+      this.stepData['array_actions'] = [];
     }
   },
 };
