@@ -1,14 +1,10 @@
 <template>
-  <div class="p-330-6">
+  <div class="p-330-6 h-100">
     <div class="container-fluid pt-4">
       <div class="row px-0">
         <div class="col-1 p-0">
           <div :key="rerenderStatmentSideBar">
-            <sideBarMenu
-              :key="actualPack.name"
-              :allPacks="allPacks"
-              @selectPackParent="selectPackHandler"
-            />
+            <sideBarMenu :key="actualPack.name" :allPacks="allPacks" @selectPackParent="selectPackHandler" />
           </div>
         </div>
         <div class="col-11 row justify-content-around p-0">
@@ -17,21 +13,14 @@
               <ol class="breadcrumb m-0 p-0">
                 <li class="breadcrumb-item">
                   <a href="/eed-frontend/#/main" class="svgHome">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 59 576 512"
-                      class="uk-icon-up2 uk-svg"
-                      width="20"
-                      height="20"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 59 576 512" class="uk-icon-up2 uk-svg" width="20"
+                      height="20">
                       <path
                         d="M496 512H368a16 16 0 0 1-16-16V368a16 16 0 0 0-16-16h-96a16 16 0 0 0-16 16v128a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V311c1.78-1.21 3.85-1.89 5.47-3.35L288 115l218.74 192.9c1.54 1.38 3.56 2 5.26 3.2V496a16 16 0 0 1-16 16z"
-                        class="fa-secondary"
-                      ></path>
+                        class="fa-secondary"></path>
                       <path
                         d="M527.92 283.88L298.6 81.61a16 16 0 0 0-21.17 0L48.11 283.89a16 16 0 0 1-22.59-1.21L4.1 258.89a16 16 0 0 1 1.21-22.59l256-226a39.85 39.85 0 0 1 53.45 0L416 99.67V48a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v136.43l58.69 51.83a16 16 0 0 1 1.22 22.59l-21.4 23.82a16 16 0 0 1-22.59 1.21z"
-                        class="fa-primary"
-                      ></path>
+                        class="fa-primary"></path>
                     </svg>
                   </a>
                 </li>
@@ -50,10 +39,8 @@
               </div> -->
 
           <div class="col-4 d-flex justify-content-end">
-            <button
-              :class="'btn btn-success w-auto me-0 ' + this.linkForNextStage()"
-              @click.prevent="goToPath('/edit', getNextExercisePathId(), is_tr, min, sec)"
-            >
+            <button :class="'btn btn-success w-auto me-0 ' + this.linkForNextStage()"
+              @click.prevent="goToPath('/edit', getNextExercisePathId(), is_tr, min, sec)">
               Перейти к следующему шагу {{ exersizeName }}
             </button>
           </div>
@@ -61,15 +48,12 @@
       </div>
     </div>
 
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5 h-100">
       <div class="row mb-3 justify-content-center">
         <div class="col-1"></div>
         <div class="col-11 d-inline-flex mt-3 mb-1 justify-content-center">
-          <div
-            :class="'spinner-border me-3 ' + this.waitingServer()"
-            role="status"
-            style="width: 1.5rem; height: 1.5rem"
-          >
+          <div :class="'spinner-border me-3 ' + this.waitingServer()" role="status"
+            style="width: 1.5rem; height: 1.5rem">
             <span class="sr-only"></span>
           </div>
           <p id="p-annotation" class="text-center text-break m-0">
@@ -83,66 +67,30 @@
         <div class="col-auto col-sm-auto col-md-auto col-lg-auto col-xl-auto p-0">
           <div style="width: 85px"></div>
         </div>
-        <div
-          id="canvasBlock"
-          class="col-9 col-sm-9 col-md-10 col-lg-11 col-xl-11 p-0"
-          style="width: auto"
-        >
-          <div
-            id="mainBlock"
-            class="hardware-view-page__canvas-wrp"
-            :key="rerenderStatment"
-            :style="{ zoom: `${zoom}%` }"
-          >
-            <hardwareCanvas
-              v-for="pack in allPacks.blocks"
-              :key="pack.name"
-              :id="'block' + pack.id"
-              v-show="pack.name === actualPack.name"
-              style="z-index: 2 !important"
-              :hardwareComponents="pack.components"
-              :bgImage="pack.background"
-              :backgroundSettings="pack.backgroundSettings"
-              :sessionId="sessionId"
-              :serverHandler="serverHandler"
-              :stepServerData="stepServerData"
-              :zoom="zoom"
-              :editStatus="true"
-              @ann="(i) => (annotation = i)"
-              @step="(i) => (stepServerData = i)"
-              @allP="(i) => rerenderAllPacks(i)"
-              v-on:addStepEvent="addSubStep"
-              @completeApparat="(i) => changeBlockYellow(i)"
-              @showDiscription="(arg) => showDiscription(arg)"
-              @hideDiscription="(arg) => hideDiscription(arg)"
-              @endStage="() => endStage()"
-              @endNormative="() => endNormative()"
-            />
+        <div id="canvasBlock" class="col-9 col-sm-9 col-md-10 col-lg-11 col-xl-11 p-0" style="width: auto">
+          <div id="mainBlock" class="hardware-view-page__canvas-wrp" :key="rerenderStatment"
+            :style="{ zoom: `${zoom}%` }">
+            <hardwareCanvas v-for="pack in allPacks.blocks" :key="pack.name" :id="'block' + pack.id"
+              v-show="pack.name === actualPack.name" style="z-index: 2 !important" :hardwareComponents="pack.components"
+              :bgImage="pack.background" :backgroundSettings="pack.backgroundSettings" :sessionId="sessionId"
+              :serverHandler="serverHandler" :stepServerData="stepServerData" :zoom="zoom" :editStatus="true"
+              @ann="(i) => (annotation = i)" @step="(i) => (stepServerData = i)" @allP="(i) => rerenderAllPacks(i)"
+              v-on:addStepEvent="addSubStep" @completeApparat="(i) => changeBlockYellow(i)"
+              @showDiscription="(arg) => showDiscription(arg)" @hideDiscription="(arg) => hideDiscription(arg)"
+              @endStage="() => endStage()" @endNormative="() => endNormative()" />
           </div>
         </div>
       </div>
     </div>
 
-    <div
-      id="div-notification-block"
+    <div id="div-notification-block"
       :class="'row notification_block' + (this.discriptionActive ? ' active' : ' d-none')"
-      :style="{ top: this.discriptionActive ? '10px' : '-100px', position: 'absolute' }"
-    >
-      <div
-        class="p-1 text-primary"
-        style="position: absolute; right: 5px; width: auto; bottom: 5px"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-info-circle-fill"
-          viewBox="0 0 16 16"
-        >
+      :style="{ top: this.discriptionActive ? '10px' : '-100px', position: 'absolute' }">
+      <div class="p-1 text-primary" style="position: absolute; right: 5px; width: auto; bottom: 5px">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+          class="bi bi-info-circle-fill" viewBox="0 0 16 16">
           <path
-            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"
-          />
+            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2" />
         </svg>
         <!-- <span class="fw-bold ms-1">ПОЯСНЕНИЕ!</span> -->
       </div>
@@ -162,74 +110,73 @@
           </h1>
         </div>
         <button class="restart btn" @click.prevent="goToPath('/main')">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-            fill="currentColor"
-            class="bi bi-box-arrow-up-right"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
-            />
-            <path
-              fill-rule="evenodd"
-              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+            class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
+            <path fill-rule="evenodd"
+              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" />
           </svg>
         </button>
 
         <div class="col-12 d-flex justify-content-around h-auto g-0">
           <div class="col-4"></div>
-          <button
-            :class="'btn col-4 me-0 '"
-            @click.prevent="
-              goToPath('/P-302-O', String($route.query.norm[0]) + '1', is_tr, 0, 0)
-            "
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="50"
-              height="50"
-              fill="currentColor"
-              class="bi bi-arrow-repeat"
-              viewBox="0 0 16 16"
-            >
+          <button :class="'btn col-4 me-0 '" @click.prevent="
+            goToPath('/P-302-O', String($route.query.norm[0]) + '1', is_tr, 0, 0)
+            ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+              class="bi bi-arrow-repeat" viewBox="0 0 16 16">
               <path
-                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"
-              />
-              <path
-                fill-rule="evenodd"
-                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"
-              />
+                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+              <path fill-rule="evenodd"
+                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
             </svg>
           </button>
-          <button
-            :class="'btn col-4 me-0 d-flex justify-content-end'"
-            @click.prevent="
-              goToPath('/P-302-O', String($route.query.norm[0]) + '1', is_tr, 0, 0)
-            "
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="50"
-              height="50"
-              fill="currentColor"
-              class="bi bi-arrow-right"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-              />
+          <button :class="'btn col-4 me-0 d-flex justify-content-end'" @click.prevent="
+            goToPath('/P-302-O', String($route.query.norm[0]) + '1', is_tr, 0, 0)
+            ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-right"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
             </svg>
           </button>
         </div>
       </div>
     </div>
-    <div class="b-nav"></div>
+    <div style="height: 100%">
+
+    </div>
+    <div class="b-nav">
+      <div class="b-content">
+        <div class="b-item step">
+          1
+          <button class="btn">
+            <svg xmlns="http://www.w3.org/2000/svg" height="3rem" fill="currentColor" class="bi bi-x"
+              viewBox="0 0 16 16">
+              <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+            </svg>
+          </button>
+        </div>
+        <div class="b-item action">
+          1
+          <button class="btn">
+            <svg xmlns="http://www.w3.org/2000/svg" height="3rem" fill="currentColor" class="bi bi-x"
+              viewBox="0 0 16 16">
+              <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <button class="btn b-btn p-1">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+          <path
+            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+        </svg>
+      </button>
+    </div>
   </div>
 </template>
 <style>
@@ -237,8 +184,87 @@
   position: sticky;
   bottom: 0;
   width: 100%;
-  height: 5em;
+  height: 5rem;
+  padding-left: 85px;
+  padding-top: .3rem;
+  padding-bottom: .3rem;
+  padding-right: 1rem;
+  background-color: #292c636d;
+  z-index: 10000000;
+  display: flex;
+  justify-content: space-between;
 }
+
+.b-nav .b-btn {
+  border-radius: 9px;
+  background-color: #292c63;
+  width: 4rem;
+  height: 4rem;
+  margin: .3rem
+}
+
+.b-nav .b-btn svg {
+  fill: white;
+  height: 100%;
+  transition: all .5s;
+
+}
+
+.b-nav .b-btn:hover svg {
+  fill: rgb(38, 38, 38);
+  rotate: 180deg;
+  transition: all .5s;
+}
+
+.b-nav .b-btn:hover {
+  background-color: #565ee7;
+}
+
+.b-nav .b-content {
+  width: 85%;
+  padding: .3rem;
+  display: flex;
+}
+
+.b-nav .b-content * {
+  margin-right: .4rem
+}
+
+.b-nav .b-content .b-item {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9px;
+  /* background-color: red; */
+  font-size: 2.5rem;
+  padding-top: .3rem;
+  padding-bottom: .3rem;
+}
+
+.b-nav .b-content .b-item button{
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+.b-nav .b-content .b-item:hover  button{
+  display: block;
+}
+
+.b-nav .b-content .b-item:hover{
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+
+.b-item.step {
+  background-color: yellow;
+
+}
+
+.b-item.action {
+  background-color: red;
+}
+
 .congratulation_modal {
   position: absolute;
   width: 100%;
@@ -250,10 +276,12 @@
   align-items: center;
   visibility: hidden;
 }
+
 .congratulation_modal.show {
   visibility: unset;
   z-index: 1000;
 }
+
 .modal_body {
   width: 40%;
   height: 40%;
@@ -262,12 +290,14 @@
   border-radius: 15px;
   position: relative;
 }
+
 .modal_body .restart {
   position: absolute;
   right: 0;
   top: 0;
   margin: 0;
 }
+
 .notification_block {
   position: fixed;
   z-index: 1000;
@@ -280,6 +310,7 @@
   text-align: left;
   top: 10px;
 }
+
 .notification_block.active {
   display: block;
 }
