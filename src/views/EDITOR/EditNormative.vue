@@ -327,7 +327,6 @@ export default {
       discription: null,
       discriptionActive: false,
       congratulationActive: false,
-<<<<<<< HEAD
       initData: true,
       stepData: { 
         "operation": this.initData? "setInitNormConfig" : "setNewStep", 
@@ -335,13 +334,6 @@ export default {
         "array_actions": []
       }
         
-=======
-      stepData: {
-        operation: "setInitNormConfig",
-        equipment_id: 1,
-        array_actions: [],
-      },
->>>>>>> 658e224a29baee42f7eb9b37d19918d9ca5a618c
     };
   },
 
