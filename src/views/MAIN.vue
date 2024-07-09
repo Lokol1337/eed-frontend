@@ -16,11 +16,12 @@
           <EquipmentCard
             v-for="equipment in data.equipments"
             @goToNormative="(arg) => goToNormative(...arg)"
+            v-on:addNormative="addNormative($event)"
             v-on:editNormative="editNormative($event)"
             v-on:changeVisibility="changeVisibility($event)"
             v-on:deleteNormative="deleteNormative($event)"
             :key="equipment.id"
-            :isAdmin="data.isAdmin"
+            :isAdmin="test_data.isAdmin"
             :name="equipment.name"
             :name_eng="equipment.name_eng"
             :description="equipment.description"
@@ -47,7 +48,7 @@ export default {
   data() {
     return {
       data: null,
-      last_data: {
+      test_data: {
         isAdmin: true,
         equipments: [
           {
@@ -86,8 +87,13 @@ export default {
       // console.log("goToNormative()", equipment_name_eng, normative_id, isTranning);
       this.goToPath("/" + equipment_name_eng, normative_id, isTranning);
     },
+    addNormative() {
+      console.log("addNormative()");
+      this.goToPath("/edit");
+    },
     editNormative(normative_id) {
       console.log("editNormative(" + normative_id + ")");
+      // this.goToPath("/" + equipment_name_eng, normative_id, isTranning);
     },
     changeVisibility(normative_id) {
       console.log("changeVisibility(" + normative_id + ")");
@@ -99,7 +105,7 @@ export default {
       this.serverHandler = new ServerHandler(this.$session.id());
       this.serverHandler.getListEquipmentsNormatives(this);
 
-      let maxCount = 10;
+      let maxCount = 100;
       let currentCount = 0;
       while (this.data == null && currentCount < maxCount) {
         console.log("Жду...");
