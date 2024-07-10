@@ -147,7 +147,7 @@
     <div style="height: 100%">
 
     </div>
-
+    <bNavMenu></bNavMenu>
   </div>
 </template>
 <style>
