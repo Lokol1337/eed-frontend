@@ -66,7 +66,6 @@
 </style>
 
 <script>
-import BNavItem from './bNavItem.vue';
 import bNavItem from './bNavItem.vue';
 export default {
     data() {
