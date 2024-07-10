@@ -1,4 +1,5 @@
 <template>
+    <div>
     <div class="b-item step">
         1
         <button class="btn">
@@ -19,6 +20,7 @@
             </svg>
         </button>
     </div>
+</div>
 </template>
 
 <style>
@@ -68,7 +70,7 @@ export default{
 
     },
     methods:{
-        
+
     }
 }
 </script>
