@@ -1,8 +1,8 @@
 <template>
     <div class="b-nav">
         <div class="b-content">
-            <BNavItem
-            ></BNavItem>
+            <bNavItem
+            ></bNavItem>
         </div>
         <button class="btn b-btn p-1">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
